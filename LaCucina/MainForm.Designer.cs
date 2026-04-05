@@ -35,6 +35,7 @@
             this.rjButton2 = new CustomControls.RJControls.RJButton();
             this.rjPanel3 = new CustomControls.RJControls.RJPanel();
             this.rjButton3 = new CustomControls.RJControls.RJButton();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.rjPanel1.SuspendLayout();
             this.rjPanel2.SuspendLayout();
@@ -68,6 +69,7 @@
             this.rjPanel1.BorderRadius = 15;
             this.rjPanel1.BorderSize = 0;
             this.rjPanel1.Controls.Add(this.rjButton1);
+            this.rjPanel1.Controls.Add(this.rjButton2);
             this.rjPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rjPanel1.ForeColor = System.Drawing.Color.Black;
             this.rjPanel1.Location = new System.Drawing.Point(215, 66);
@@ -100,7 +102,7 @@
             this.rjPanel2.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel2.BorderRadius = 15;
             this.rjPanel2.BorderSize = 0;
-            this.rjPanel2.Controls.Add(this.rjButton2);
+            this.rjPanel2.Controls.Add(this.tableLayoutPanel2);
             this.rjPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rjPanel2.ForeColor = System.Drawing.Color.Black;
             this.rjPanel2.Location = new System.Drawing.Point(895, 66);
@@ -119,7 +121,7 @@
             this.rjButton2.FlatAppearance.BorderSize = 0;
             this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton2.ForeColor = System.Drawing.Color.White;
-            this.rjButton2.Location = new System.Drawing.Point(93, 527);
+            this.rjButton2.Location = new System.Drawing.Point(324, 271);
             this.rjButton2.Name = "rjButton2";
             this.rjButton2.Size = new System.Drawing.Size(150, 40);
             this.rjButton2.TabIndex = 1;
@@ -160,6 +162,22 @@
             this.rjButton3.TextColor = System.Drawing.Color.White;
             this.rjButton3.UseVisualStyleBackColor = false;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.88889F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.33333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.88889F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.88889F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(333, 648);
+            this.tableLayoutPanel2.TabIndex = 2;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
@@ -188,5 +206,6 @@
         private CustomControls.RJControls.RJButton rjButton3;
         private CustomControls.RJControls.RJPanel rjPanel2;
         private CustomControls.RJControls.RJButton rjButton2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
     }
 }
