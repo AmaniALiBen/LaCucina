@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LaCucina;
 
 namespace LaCucina
 {
@@ -15,6 +16,22 @@ namespace LaCucina
         public Form1()
         {
             InitializeComponent();
+        }
+
+       
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+         
+
+        }
+
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            MainForm form = new MainForm();
+            form.ShowDialog();
+            this.Hide();
         }
     }
 }
