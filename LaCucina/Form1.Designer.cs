@@ -42,31 +42,31 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 11F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(43, 262);
+            this.label1.Location = new System.Drawing.Point(43, 276);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 28);
+            this.label1.Size = new System.Drawing.Size(123, 24);
             this.label1.TabIndex = 4;
             this.label1.Text = "User Name :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Nirmala UI", 9.75F);
+            this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(43, 350);
+            this.label2.Location = new System.Drawing.Point(43, 368);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 28);
+            this.label2.Size = new System.Drawing.Size(107, 24);
             this.label2.TabIndex = 5;
             this.label2.Text = "Password :";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::LaCucina.Properties.Resources.Gemini_Generated_Image_bh7zy4bh7zy4bh7z_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(73, 31);
+            this.pictureBox1.Location = new System.Drawing.Point(73, 33);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(291, 216);
+            this.pictureBox1.Size = new System.Drawing.Size(291, 227);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -102,7 +102,7 @@
             this.txtUserName.BorderSize = 1;
             this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtUserName.Location = new System.Drawing.Point(48, 294);
+            this.txtUserName.Location = new System.Drawing.Point(48, 309);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(4);
             this.txtUserName.Multiline = false;
             this.txtUserName.Name = "txtUserName";
@@ -124,7 +124,7 @@
             this.txtPassword.BorderSize = 1;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtPassword.Location = new System.Drawing.Point(48, 382);
+            this.txtPassword.Location = new System.Drawing.Point(48, 402);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Multiline = false;
             this.txtPassword.Name = "txtPassword";
@@ -148,9 +148,9 @@
             this.btnLogIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogIn.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogIn.ForeColor = System.Drawing.Color.White;
-            this.btnLogIn.Location = new System.Drawing.Point(137, 440);
+            this.btnLogIn.Location = new System.Drawing.Point(137, 463);
             this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(158, 46);
+            this.btnLogIn.Size = new System.Drawing.Size(158, 48);
             this.btnLogIn.TabIndex = 1;
             this.btnLogIn.Text = "Log In";
             this.btnLogIn.TextColor = System.Drawing.Color.White;
@@ -159,10 +159,10 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(244)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(443, 520);
+            this.ClientSize = new System.Drawing.Size(443, 547);
             this.ControlBox = false;
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
