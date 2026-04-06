@@ -21,5 +21,30 @@ namespace LaCucina
         {
 
         }
+
+        private void rjButton2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rjPanel8_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void rjPanel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -69,5 +69,15 @@ namespace LaCucina.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap photo_2026_04_06_18_45_05 {
+            get {
+                object obj = ResourceManager.GetObject("photo_2026-04-06_18-45-05", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

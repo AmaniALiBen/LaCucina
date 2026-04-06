@@ -136,5 +136,8 @@
   <ItemGroup>
     <None Include="Resources\Gemini_Generated_Image_bh7zy4bh7zy4bh7z-removebg-preview.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\photo_2026-04-06_18-45-05.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
