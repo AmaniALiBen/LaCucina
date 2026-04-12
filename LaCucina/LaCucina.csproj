@@ -65,6 +65,9 @@
     <Compile Include="controls\RJDropdownMenu.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="controls\RJgradiantPanal.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="controls\RJPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -83,6 +86,12 @@
     <Compile Include="controls\RJToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FloorPlanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FloorPlanForm.Designer.cs">
+      <DependentUpon>FloorPlanForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="controls\SmoothFlowPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -91,6 +100,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HorizontalTableUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HorizontalTableUserControl.Designer.cs">
+      <DependentUpon>HorizontalTableUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="KDS.cs">
       <SubType>Form</SubType>
@@ -134,11 +149,23 @@
       <DependentUpon>UC_ProductCard.cs</DependentUpon>
     </Compile>
     <Compile Include="UIHelper.cs" />
+    <Compile Include="VerticalTableUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VerticalTableUserControl.Designer.cs">
+      <DependentUpon>VerticalTableUserControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="controls\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FloorPlanForm.resx">
+      <DependentUpon>FloorPlanForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HorizontalTableUserControl.resx">
+      <DependentUpon>HorizontalTableUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KDS.resx">
       <DependentUpon>KDS.cs</DependentUpon>
@@ -156,6 +183,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="VerticalTableUserControl.resx">
+      <DependentUpon>VerticalTableUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
