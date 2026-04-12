@@ -83,11 +83,20 @@
     <Compile Include="controls\RJToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="controls\SmoothFlowPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KDS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KDS.Designer.cs">
+      <DependentUpon>KDS.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -100,12 +109,39 @@
     <Compile Include="RoundButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCInvoiceCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCInvoiceCard.Designer.cs">
+      <DependentUpon>UCInvoiceCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_InvoiceItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_InvoiceItem.Designer.cs">
+      <DependentUpon>UC_InvoiceItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_ProductCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_ProductCard.Designer.cs">
+      <DependentUpon>UC_ProductCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="UIHelper.cs" />
     <EmbeddedResource Include="controls\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KDS.resx">
+      <DependentUpon>KDS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -120,6 +156,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCInvoiceCard.resx">
+      <DependentUpon>UCInvoiceCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_InvoiceItem.resx">
+      <DependentUpon>UC_InvoiceItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_ProductCard.resx">
+      <DependentUpon>UC_ProductCard.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -139,6 +187,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\photo_2026-04-06_18-45-05.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\turn-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\تنزيل-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
