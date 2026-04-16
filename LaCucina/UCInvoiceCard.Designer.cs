@@ -36,12 +36,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.rjPanel1 = new CustomControls.RJControls.RJPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.rjPanel3 = new CustomControls.RJControls.RJPanel();
             this.lblTime = new System.Windows.Forms.Label();
+            this.rjPanel1 = new CustomControls.RJControls.RJPanel();
+            this.lblTableNum = new System.Windows.Forms.Label();
+            this.lblOrderNum = new System.Windows.Forms.Label();
             this.rjPanel2.SuspendLayout();
             this.smoothFlowPanel1.SuspendLayout();
+            this.rjPanel3.SuspendLayout();
             this.rjPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,33 +57,41 @@
             // 
             // rjPanel2
             // 
-            this.rjPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(52)))), ((int)(((byte)(60)))));
-            this.rjPanel2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjPanel2.AutoSize = true;
+            this.rjPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.rjPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.rjPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.rjPanel2.BorderRadius = 15;
             this.rjPanel2.BorderSize = 2;
             this.rjPanel2.Controls.Add(this.smoothFlowPanel1);
+            this.rjPanel2.Controls.Add(this.rjPanel3);
             this.rjPanel2.Controls.Add(this.rjPanel1);
             this.rjPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rjPanel2.ForeColor = System.Drawing.Color.Black;
             this.rjPanel2.Location = new System.Drawing.Point(0, 0);
             this.rjPanel2.Name = "rjPanel2";
             this.rjPanel2.Padding = new System.Windows.Forms.Padding(10);
-            this.rjPanel2.Size = new System.Drawing.Size(313, 183);
+            this.rjPanel2.Size = new System.Drawing.Size(250, 290);
             this.rjPanel2.TabIndex = 1;
             this.rjPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.rjPanel2_Paint);
             // 
             // smoothFlowPanel1
             // 
             this.smoothFlowPanel1.AutoScroll = true;
+            this.smoothFlowPanel1.AutoSize = true;
+            this.smoothFlowPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.smoothFlowPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(45)))));
             this.smoothFlowPanel1.Controls.Add(this.label1);
             this.smoothFlowPanel1.Controls.Add(this.label2);
             this.smoothFlowPanel1.Controls.Add(this.label4);
             this.smoothFlowPanel1.Controls.Add(this.label6);
+            this.smoothFlowPanel1.Controls.Add(this.label7);
+            this.smoothFlowPanel1.Controls.Add(this.label8);
             this.smoothFlowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.smoothFlowPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.smoothFlowPanel1.Location = new System.Drawing.Point(10, 41);
+            this.smoothFlowPanel1.Location = new System.Drawing.Point(10, 40);
             this.smoothFlowPanel1.Name = "smoothFlowPanel1";
-            this.smoothFlowPanel1.Size = new System.Drawing.Size(293, 132);
+            this.smoothFlowPanel1.Size = new System.Drawing.Size(230, 210);
             this.smoothFlowPanel1.TabIndex = 2;
             // 
             // label1
@@ -87,115 +99,167 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label1.Location = new System.Drawing.Point(2, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(10, 10);
+            this.label1.Margin = new System.Windows.Forms.Padding(10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 15);
+            this.label1.Size = new System.Drawing.Size(161, 15);
             this.label1.TabIndex = 5;
-            this.label1.Text = "TABLE:12";
+            this.label1.Text = "CHEESE BURGER DOUBLE";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label2.Location = new System.Drawing.Point(2, 15);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(10, 45);
+            this.label2.Margin = new System.Windows.Forms.Padding(10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 15);
+            this.label2.Size = new System.Drawing.Size(97, 15);
             this.label2.TabIndex = 6;
-            this.label2.Text = "TABLE:12";
+            this.label2.Text = "FRENCH FRICE";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label4.Location = new System.Drawing.Point(2, 30);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(10, 80);
+            this.label4.Margin = new System.Windows.Forms.Padding(10);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 15);
+            this.label4.Size = new System.Drawing.Size(138, 15);
             this.label4.TabIndex = 7;
-            this.label4.Text = "TABLE:12";
+            this.label4.Text = "MASHROOM BURGER";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label6.Location = new System.Drawing.Point(2, 45);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(10, 115);
+            this.label6.Margin = new System.Windows.Forms.Padding(10);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 15);
+            this.label6.Size = new System.Drawing.Size(161, 15);
             this.label6.TabIndex = 8;
-            this.label6.Text = "TABLE:12";
+            this.label6.Text = "CHEESE BURGER DOUBLE";
             // 
-            // rjPanel1
+            // label7
             // 
-            this.rjPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(40)))), ((int)(((byte)(46)))));
-            this.rjPanel1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjPanel1.BorderRadius = 15;
-            this.rjPanel1.BorderSize = 0;
-            this.rjPanel1.Controls.Add(this.label3);
-            this.rjPanel1.Controls.Add(this.label5);
-            this.rjPanel1.Controls.Add(this.lblTime);
-            this.rjPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rjPanel1.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel1.Location = new System.Drawing.Point(10, 10);
-            this.rjPanel1.Name = "rjPanel1";
-            this.rjPanel1.Size = new System.Drawing.Size(293, 31);
-            this.rjPanel1.TabIndex = 1;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.label7.Location = new System.Drawing.Point(10, 150);
+            this.label7.Margin = new System.Windows.Forms.Padding(10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(97, 15);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "FRENCH FRICE";
             // 
-            // label3
+            // label8
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label3.Location = new System.Drawing.Point(95, 6);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 15);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "TABLE:12";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.label8.Location = new System.Drawing.Point(10, 185);
+            this.label8.Margin = new System.Windows.Forms.Padding(10);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(138, 15);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "MASHROOM BURGER";
             // 
-            // label5
+            // rjPanel3
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label5.Location = new System.Drawing.Point(12, 6);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 15);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "ORDER :#23";
+            this.rjPanel3.AutoSize = true;
+            this.rjPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.rjPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.rjPanel3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjPanel3.BorderRadius = 5;
+            this.rjPanel3.BorderSize = 0;
+            this.rjPanel3.Controls.Add(this.lblTime);
+            this.rjPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.rjPanel3.ForeColor = System.Drawing.Color.Black;
+            this.rjPanel3.Location = new System.Drawing.Point(10, 250);
+            this.rjPanel3.MinimumSize = new System.Drawing.Size(230, 30);
+            this.rjPanel3.Name = "rjPanel3";
+            this.rjPanel3.Size = new System.Drawing.Size(230, 30);
+            this.rjPanel3.TabIndex = 3;
             // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
             this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.lblTime.Location = new System.Drawing.Point(175, 6);
+            this.lblTime.Location = new System.Drawing.Point(154, 8);
             this.lblTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(11, 15);
+            this.lblTime.Size = new System.Drawing.Size(13, 15);
             this.lblTime.TabIndex = 11;
-            this.lblTime.Text = "l";
+            this.lblTime.Text = "_";
+            // 
+            // rjPanel1
+            // 
+            this.rjPanel1.AutoSize = true;
+            this.rjPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.rjPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
+            this.rjPanel1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjPanel1.BorderRadius = 10;
+            this.rjPanel1.BorderSize = 0;
+            this.rjPanel1.Controls.Add(this.lblTableNum);
+            this.rjPanel1.Controls.Add(this.lblOrderNum);
+            this.rjPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rjPanel1.ForeColor = System.Drawing.Color.Black;
+            this.rjPanel1.Location = new System.Drawing.Point(10, 10);
+            this.rjPanel1.MinimumSize = new System.Drawing.Size(230, 30);
+            this.rjPanel1.Name = "rjPanel1";
+            this.rjPanel1.Size = new System.Drawing.Size(230, 30);
+            this.rjPanel1.TabIndex = 1;
+            // 
+            // lblTableNum
+            // 
+            this.lblTableNum.AutoSize = true;
+            this.lblTableNum.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
+            this.lblTableNum.ForeColor = System.Drawing.Color.Black;
+            this.lblTableNum.Location = new System.Drawing.Point(154, 6);
+            this.lblTableNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTableNum.Name = "lblTableNum";
+            this.lblTableNum.Size = new System.Drawing.Size(64, 15);
+            this.lblTableNum.TabIndex = 13;
+            this.lblTableNum.Text = "TABLE:12";
+            // 
+            // lblOrderNum
+            // 
+            this.lblOrderNum.AutoSize = true;
+            this.lblOrderNum.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
+            this.lblOrderNum.ForeColor = System.Drawing.Color.Black;
+            this.lblOrderNum.Location = new System.Drawing.Point(12, 6);
+            this.lblOrderNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblOrderNum.Name = "lblOrderNum";
+            this.lblOrderNum.Size = new System.Drawing.Size(79, 15);
+            this.lblOrderNum.TabIndex = 12;
+            this.lblOrderNum.Text = "ORDER :#23";
             // 
             // UCInvoiceCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.Controls.Add(this.rjPanel2);
+            this.Margin = new System.Windows.Forms.Padding(7);
+            this.MaximumSize = new System.Drawing.Size(300, 500);
+            this.MinimumSize = new System.Drawing.Size(250, 70);
             this.Name = "UCInvoiceCard";
-            this.Size = new System.Drawing.Size(313, 183);
+            this.Size = new System.Drawing.Size(250, 290);
             this.rjPanel2.ResumeLayout(false);
+            this.rjPanel2.PerformLayout();
             this.smoothFlowPanel1.ResumeLayout(false);
             this.smoothFlowPanel1.PerformLayout();
+            this.rjPanel3.ResumeLayout(false);
+            this.rjPanel3.PerformLayout();
             this.rjPanel1.ResumeLayout(false);
             this.rjPanel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -205,11 +269,14 @@
         private CustomControls.RJControls.RJPanel rjPanel1;
         private System.Windows.Forms.Label lblTime;
         private SmoothFlowPanel smoothFlowPanel1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblOrderNum;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTableNum;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private CustomControls.RJControls.RJPanel rjPanel3;
     }
 }
