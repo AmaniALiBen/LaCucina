@@ -19,24 +19,24 @@ namespace LaCucina
 
         private void FloorPlanForm_Load(object sender, EventArgs e)
         {
-            HorizontalTableUserControl t=new HorizontalTableUserControl("01",4, "occupied");
-            t.Location=new Point(0,10);
-             this.Controls.Add(t);
+            //HorizontalTableUserControl t=new HorizontalTableUserControl("01",4, "occupied");
+            //t.Location=new Point(0,10);
+            // this.Controls.Add(t);
 
             
-            HorizontalTableUserControl ta = new HorizontalTableUserControl("05",12, "vacant");
+            //HorizontalTableUserControl ta = new HorizontalTableUserControl("05",12, "vacant");
             
-            ta.Location = new Point(140,10);
-            this.Controls.Add(ta);
+            //ta.Location = new Point(140,10);
+            //this.Controls.Add(ta);
 
-            HorizontalTableUserControl tab= new HorizontalTableUserControl("05", 10, "vacant");
+            //HorizontalTableUserControl tab= new HorizontalTableUserControl("05", 10, "vacant");
 
-            tab.Location = new Point(140, 200);
-            this.Controls.Add(tab);
+            //tab.Location = new Point(140, 200);
+            //this.Controls.Add(tab);
 
-            VerticalTableUserControl tabl = new VerticalTableUserControl("05", 8, "vacant");
-            tabl.Location = new Point(30, 300);
-            this.Controls.Add(tabl);
+            //VerticalTableUserControl tabl = new VerticalTableUserControl("05", 8, "vacant");
+            //tabl.Location = new Point(30, 300);
+            //this.Controls.Add(tabl);
 
 
         }

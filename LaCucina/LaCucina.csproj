@@ -114,7 +114,11 @@
       <DependentUpon>EditItemsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FloorPlanForm.cs">
-      <SubType>Form</SubType>
+  <SubType>Form</SubType>
+</Compile>
+<Compile Include="FloorPlanForm.Designer.cs">
+  <DependentUpon>FloorPlanForm.cs</DependentUpon>
+</Compile>
     <Compile Include="FloorplanEditorUS.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -233,6 +237,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FloorPlanForm.resx">
       <DependentUpon>FloorPlanForm.cs</DependentUpon>
+      </EmbeddedResource>
     <EmbeddedResource Include="FloorplanEditorUS.resx">
       <DependentUpon>FloorplanEditorUS.cs</DependentUpon>
     </EmbeddedResource>
