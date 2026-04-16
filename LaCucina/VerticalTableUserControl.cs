@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CustomControls.RJControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,27 +11,21 @@ using System.Windows.Forms;
 
 namespace LaCucina
 {
-    public partial class VerticalTableUserControl : UserControl
+    public partial class VerticalTableUserControl : UCtable
     {
-        public string tableNum;
-        public int chairCount;
-        public string tableStatus;
-        public VerticalTableUserControl(string tableNum, int chairCount, string tableStatus)
+        public override Label TargetlblTableNum => this.lblTableNum;
+        public override Label TargetlblTableStatus => this.lblTableStatus;
+        public VerticalTableUserControl(string tableNum, int chairCount, string tableStatus, bool isInEditingMode) :base(tableNum, chairCount, tableStatus,isInEditingMode)
         {
             InitializeComponent();
-            this.tableNum = tableNum;
-            this.chairCount = chairCount;
-            this.tableStatus = tableStatus;
+
             BuildTable();
         }
-        public void BuildTable()
+        public override void BuildTable()
         {
-            lblTableNum.Text = tableNum;
-            lblTableStatus.Text = tableStatus;
-            AdjustTableSize();
-            adjustStatusColor();
+            base.BuildTable();
             createChairs();
-
+            AdjustTableSize();
 
         }
 
@@ -42,24 +37,14 @@ namespace LaCucina
                 int hight = chairCount * 22;
                 pnlTable.Size = new System.Drawing.Size(80, hight);
             }
-            this.Size = new System.Drawing.Size(this.Width, pnlTable.Size.Height+44);
+            this.Size = new System.Drawing.Size(this.Width, pnlTable.Size.Height+34);
+            
         }
 
 
-        public void adjustStatusColor()
-        {
-            if (tableStatus == "occupied")
-            {
-                pnlStatusColor.GradientBottomColor = Color.FromArgb(255, 249, 115, 22);
-                pnlStatusColor.GradientTopColor = Color.FromArgb(255, 249, 115, 22);
-            }
-            else if (tableStatus == "vacant")
-            {
-                pnlStatusColor.GradientBottomColor = Color.FromArgb(255, 249, 115, 22);
-                pnlStatusColor.GradientTopColor = Color.FromArgb(255, 249, 115, 22);
-            }
+        
 
-        }
+        
 
         public void createChairs()
         {
@@ -84,8 +69,12 @@ namespace LaCucina
             }
 
             lblTableStatus.Location = new System.Drawing.Point(lblTableStatus.Location.X, pnlBottomSeat.Location.Y - 50);
-            lblTableNum.Location = new System.Drawing.Point(lblTableNum.Location.X,lblTableStatus.Location.Y - 40);
-            pnlStatusColor.Size = new System.Drawing.Size(pnlStatusColor.Size.Width,pnlTable.Size.Height);
+            lblTableNum.Location = new System.Drawing.Point(lblTableNum.Location.X,lblTableStatus.Location.Y - 30);
+          }
+
+        private void VerticalTableUserControl_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

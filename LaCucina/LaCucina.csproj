@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CircularTableUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CircularTableUserControl.Designer.cs">
+      <DependentUpon>CircularTableUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="controls\MenuColorTable.cs" />
     <Compile Include="controls\MenuRenderer.cs" />
     <Compile Include="controls\RJButton.cs">
@@ -86,11 +92,11 @@
     <Compile Include="controls\RJToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="FloorPlanForm.cs">
-      <SubType>Form</SubType>
+    <Compile Include="FloorplanEditorUS.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FloorPlanForm.Designer.cs">
-      <DependentUpon>FloorPlanForm.cs</DependentUpon>
+    <Compile Include="FloorplanEditorUS.Designer.cs">
+      <DependentUpon>FloorplanEditorUS.cs</DependentUpon>
     </Compile>
     <Compile Include="controls\SmoothFlowPanel.cs">
       <SubType>Component</SubType>
@@ -119,6 +125,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerForm.Designer.cs">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoundButton.cs">
@@ -136,6 +148,12 @@
     <Compile Include="UCInvoiceCard.Designer.cs">
       <DependentUpon>UCInvoiceCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCtable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCtable.Designer.cs">
+      <DependentUpon>UCtable.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_InvoiceItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -148,18 +166,26 @@
     <Compile Include="UC_ProductCard.Designer.cs">
       <DependentUpon>UC_ProductCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="UIHelper.cs" />
+    <Compile Include="USuserManegment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="USuserManegment.Designer.cs">
+      <DependentUpon>USuserManegment.cs</DependentUpon>
+    </Compile>
     <Compile Include="VerticalTableUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="VerticalTableUserControl.Designer.cs">
       <DependentUpon>VerticalTableUserControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CircularTableUserControl.resx">
+      <DependentUpon>CircularTableUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="controls\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FloorPlanForm.resx">
-      <DependentUpon>FloorPlanForm.cs</DependentUpon>
+    <EmbeddedResource Include="FloorplanEditorUS.resx">
+      <DependentUpon>FloorplanEditorUS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -173,6 +199,9 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerForm.resx">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -183,6 +212,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UCtable.resx">
+      <DependentUpon>UCtable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USuserManegment.resx">
+      <DependentUpon>USuserManegment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VerticalTableUserControl.resx">
       <DependentUpon>VerticalTableUserControl.cs</DependentUpon>
     </EmbeddedResource>

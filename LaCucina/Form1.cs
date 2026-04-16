@@ -29,7 +29,11 @@ namespace LaCucina
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            MainForm form = new MainForm();
+            //MainForm form = new MainForm();
+            //Test form=new Test();
+            //FloorPlanForm form = new FloorPlanForm();
+            //FloorPlanManagerForm form = new FloorPlanManagerForm();
+            ManagerForm form = new ManagerForm();
             form.ShowDialog();
             this.Hide();
         }
