@@ -28,5 +28,32 @@ namespace LaCucina
             smoothFlowPanel1.Controls.Add(c);
 
         }
+        public void InvoicesLoad()
+        {
+            for(int i = 0; i < 15; i++)
+            {
+                UCInvoiceCard c = new UCInvoiceCard();
+                c.OrderNum = "Order: #"+i + 1;
+                c.TableNum = "Table :" + i + 1;
+                smoothFlowPanel1.Controls.Add(c);
+            }
+                }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            EditItemsForm editItemsForm = new EditItemsForm();
+            editItemsForm.ShowDialog();
+            this.Hide();
+        }
+
+        private void KDS_Load(object sender, EventArgs e)
+        {
+            InvoicesLoad();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

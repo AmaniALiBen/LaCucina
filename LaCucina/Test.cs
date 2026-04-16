@@ -20,42 +20,21 @@ namespace LaCucina
 
         private void Test_Load(object sender, EventArgs e)
         {
-            lblDate.Text = DateTime.Now.ToString("MMMM dd, yyyy"); 
+            lblDate.Text = DateTime.Now.ToString("dd /MM /yyyy"); 
         }
 
-        private void rjPanel5_Paint(object sender, PaintEventArgs e)
-        {
+       
 
-        }
-
-        private void lblTime_Click(object sender, EventArgs e)
-        {
-           
-        }
+     
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblTime.Text = DateTime.Now.ToString("hh:mm:ss tt");
+            lblTime.Text = DateTime.Now.ToString("hh:mm:ss ");
 
         }
 
-        private void smoothFlowPanel1_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
-
-        private void rjButton17_Click(object sender, EventArgs e)
-        {
-            
-                UC_InvoiceItem newItem = new UC_InvoiceItem("cheese burger", 1, 15.00);
-
-                newItem.Width = smoothFlowPanel2.Width - 25;
-
-                smoothFlowPanel2.Controls.Add(newItem);
-
-                smoothFlowPanel2.ScrollControlIntoView(newItem);
-            
-        }
+       
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -77,19 +56,51 @@ namespace LaCucina
 
                 card.Click += (s, e) =>
                 {
-                    UC_InvoiceItem newItem = new UC_InvoiceItem(card.ItemName, 1,15.50);
+
+                    IngredientsSelector ing = new IngredientsSelector();
+                    ing.ShowDialog();
+                    if (ing.DialogResult == DialogResult.OK)
+                    {
+                        UC_InvoiceItem newItem = new UC_InvoiceItem(card.ItemName, 1, 15.50);
+                        newItem.DataChanged += Item_DataChanged;
+                        smoothFlowPanel2.Controls.Add(newItem);
+                        ing.Close();
+                        CalTotal();
+
+                    }
+                    else if (ing.DialogResult == DialogResult.Cancel)
+                        ing.Close();
 
 
-                    smoothFlowPanel2.Controls.Add(newItem);
-
-                    smoothFlowPanel2.ScrollControlIntoView(newItem);
 
                 };
 
                 smoothFlowPanel3.Controls.Add(card);
             }
         }
+        private void Item_DataChanged(object sender, EventArgs e)
+        {
+            CalTotal();
+        }
+        public void CalTotal()
+        {
+            double finalTotal = 0;
 
+            foreach (Control ctrl in smoothFlowPanel2.Controls)
+            {
+                if (ctrl is UC_InvoiceItem item)
+                {
+                    finalTotal += item.Subtotal;
+                }
+               
+            }
+            if (smoothFlowPanel2.Controls.Count == 0)
+            {
+                finalTotal = 0.00;
+            }
+
+            lblTotalPrice.Text = finalTotal.ToString("N2") + " LYD";
+        }
         private void CategoryButton_Click(object sender, EventArgs e)
         {
             PopulateProducts();
@@ -98,19 +109,34 @@ namespace LaCucina
             {
                 if (c is Button b)
                 {
-                    b.ForeColor = Color.FromArgb(242,242, 242); // لون النص للأزرار غير النشطة
+                    b.ForeColor = Color.FromArgb(242,242, 242);
+                    b.BackColor = Color.FromArgb(30, 31, 32);
+                    b.Font = new Font(b.Font, FontStyle.Regular);
                 }
             }
-            btn.ForeColor = Color.FromArgb(230, 126, 34); 
-            rjPanel4.Visible = true;
-            rjPanel4.Left = btn.Left + 35;            
-            rjPanel4.Top = btn.Top +108;             
-            rjPanel4.BringToFront();
+            btn.ForeColor = Color.FromArgb(230, 126, 34);
+            btn.BackColor = Color.FromArgb(19, 19, 20);
+            btn.Font = new Font(btn.Font, FontStyle.Bold);
+            // rjPanel4.Visible = true;
+           
 
 
            
         }
 
-       
+        private void lblDate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void smoothFlowPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblTime_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -59,6 +59,15 @@
     </Compile>
     <Compile Include="controls\MenuColorTable.cs" />
     <Compile Include="controls\MenuRenderer.cs" />
+    <Compile Include="controls\ModernCategoryBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\ModernSwitch.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\ProfessionalNavPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="controls\RJButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -92,6 +101,20 @@
     <Compile Include="controls\RJToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="controls\smoothHorizontalFlowPanal.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="controls\UltraSmoothNavPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EditItemsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditItemsForm.Designer.cs">
+      <DependentUpon>EditItemsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FloorPlanForm.cs">
+      <SubType>Form</SubType>
     <Compile Include="FloorplanEditorUS.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -113,6 +136,12 @@
     <Compile Include="HorizontalTableUserControl.Designer.cs">
       <DependentUpon>HorizontalTableUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="IngredientsSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IngredientsSelector.Designer.cs">
+      <DependentUpon>IngredientsSelector.cs</DependentUpon>
+    </Compile>
     <Compile Include="KDS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +160,9 @@
     <Compile Include="ManagerForm.Designer.cs">
       <DependentUpon>ManagerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="controls\ModernCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoundButton.cs">
@@ -141,6 +173,12 @@
     </Compile>
     <Compile Include="Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCIngriedentsSelectorRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCIngriedentsSelectorRow.Designer.cs">
+      <DependentUpon>UCIngriedentsSelectorRow.cs</DependentUpon>
     </Compile>
     <Compile Include="UCInvoiceCard.cs">
       <SubType>UserControl</SubType>
@@ -153,6 +191,12 @@
     </Compile>
     <Compile Include="UCtable.Designer.cs">
       <DependentUpon>UCtable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCMenuEditorItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCMenuEditorItem.Designer.cs">
+      <DependentUpon>UCMenuEditorItem.cs</DependentUpon>
     </Compile>
     <Compile Include="UC_InvoiceItem.cs">
       <SubType>UserControl</SubType>
@@ -184,6 +228,11 @@
     <EmbeddedResource Include="controls\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditItemsForm.resx">
+      <DependentUpon>EditItemsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FloorPlanForm.resx">
+      <DependentUpon>FloorPlanForm.cs</DependentUpon>
     <EmbeddedResource Include="FloorplanEditorUS.resx">
       <DependentUpon>FloorplanEditorUS.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HorizontalTableUserControl.resx">
       <DependentUpon>HorizontalTableUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IngredientsSelector.resx">
+      <DependentUpon>IngredientsSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KDS.resx">
       <DependentUpon>KDS.cs</DependentUpon>
@@ -217,6 +269,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="USuserManegment.resx">
       <DependentUpon>USuserManegment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCIngriedentsSelectorRow.resx">
+      <DependentUpon>UCIngriedentsSelectorRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCMenuEditorItem.resx">
+      <DependentUpon>UCMenuEditorItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VerticalTableUserControl.resx">
       <DependentUpon>VerticalTableUserControl.cs</DependentUpon>
@@ -276,6 +334,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\تنزيل-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout %283%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

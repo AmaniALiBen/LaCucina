@@ -12,10 +12,10 @@ namespace LaCucina
 {
     public partial class UC_InvoiceItem : UserControl
     {
-        private double _unitPrice;
-        private int _qty;
+        private double total;
+        private int qty;
+        public event EventHandler DataChanged;
 
-      
         public string ItemName
         {
             get => lblItemName.Text;
@@ -24,32 +24,35 @@ namespace LaCucina
 
         public int Quantity
         {
-            get => _qty;
+            get => qty;
             set
             {
-                _qty = value;
-                lblQty.Text =  _qty.ToString();
+                qty = value;
+                lblQty.Text =  qty.ToString();
                 UpdateSubtotal(); 
             }
         }
 
-        public double UnitPrice
+        public double Price
         {
-            get => _unitPrice;
-            set { _unitPrice = value; UpdateSubtotal(); }
+            get => total;
+            set { total = value; UpdateSubtotal(); }
         }
         public UC_InvoiceItem(string name, int qty, double price)
         {
            
                 InitializeComponent();
             this.ItemName = name;
-            this._unitPrice = price;
+            this.total = price;
             this.Quantity = qty;
+            this.Price = total;
 
         }
+        public double Subtotal => qty * total;
         private void UpdateSubtotal()
         {
-            lblPrice.Text = (_qty * _unitPrice).ToString("N2") + " LYD";
+            lblTotal.Text = (qty * total).ToString("N2") ;
+
         }
 
 
@@ -67,6 +70,7 @@ namespace LaCucina
             if (Quantity > 1)
             {
                 Quantity--;
+                DataChanged?.Invoke(this, EventArgs.Empty);
             }
             else
             {
@@ -83,12 +87,16 @@ namespace LaCucina
         private void btnPlus_Click_1(object sender, EventArgs e)
         {
             Quantity++;
+            DataChanged?.Invoke(this, EventArgs.Empty);
+
 
         }
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
             RemoveItem();
+            DataChanged?.Invoke(this, EventArgs.Empty);
+
         }
 
         private void UC_InvoiceItem_Load(object sender, EventArgs e)
