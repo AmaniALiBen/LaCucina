@@ -50,5 +50,14 @@ namespace LaCucina
             uS.Dock = DockStyle.Fill;
             panel2.Controls.Add(uS);
         }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+            UCManagerMenu uS = new UCManagerMenu();
+            uS.Dock = DockStyle.Fill;
+            panel2.Controls.Add(uS);
+
+        }
     }
 }
