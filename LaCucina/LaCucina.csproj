@@ -104,6 +104,9 @@
     <Compile Include="controls\smoothHorizontalFlowPanal.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="controls\TablePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="controls\UltraSmoothNavPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -196,6 +199,12 @@
     <Compile Include="UCManagerMenu.Designer.cs">
       <DependentUpon>UCManagerMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCrow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCrow.Designer.cs">
+      <DependentUpon>UCrow.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCtable.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -277,6 +286,9 @@
     </Compile>
     <EmbeddedResource Include="UCManagerMenu.resx">
       <DependentUpon>UCManagerMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCrow.resx">
+      <DependentUpon>UCrow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCtable.resx">
       <DependentUpon>UCtable.cs</DependentUpon>
@@ -375,6 +387,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brush.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
