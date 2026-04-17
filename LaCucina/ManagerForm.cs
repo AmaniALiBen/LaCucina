@@ -46,7 +46,7 @@ namespace LaCucina
         private void btnUsers_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
-            USuserManegment uS = new USuserManegment();
+            USUserManegment uS = new USUserManegment();
             uS.Dock = DockStyle.Fill;
             panel2.Controls.Add(uS);
         }
@@ -58,6 +58,14 @@ namespace LaCucina
             uS.Dock = DockStyle.Fill;
             panel2.Controls.Add(uS);
 
+        }
+
+        private void btnOrdersHistory_Click(object sender, EventArgs e)
+        {
+            panel2.Controls.Clear();
+            USOrders uS = new USOrders();
+            uS.Dock = DockStyle.Fill;
+            panel2.Controls.Add(uS);
         }
     }
 }

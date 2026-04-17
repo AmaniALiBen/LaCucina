@@ -34,6 +34,7 @@ namespace LaCucina
             //FloorPlanForm form = new FloorPlanForm();
             //FloorPlanManagerForm form = new FloorPlanManagerForm();
             ManagerForm form = new ManagerForm();
+            //Test form = new Test();
             form.ShowDialog();
             this.Hide();
         }
