@@ -110,25 +110,36 @@ namespace LaCucina
 
 
         public void SelectTable() 
-        {   if(lastSelectedTable != null&&lastSelectedTable !=this)
+        {
+            if (isInEditingMode)
             {
-                foreach (RJgradiantPanal item in lastSelectedTable.Controls)
+                if (lastSelectedTable != null && lastSelectedTable != this)
                 {
-                  
-                    item.BorderSize = 0;
+                    foreach (RJgradiantPanal item in lastSelectedTable.Controls)
+                    {
+
+                        item.BorderSize = 0;
+
+                    }
+
 
                 }
+                foreach (RJgradiantPanal item in this.Controls)
+                {
 
+                    item.BorderSize = 1;
 
-            }
-            foreach (RJgradiantPanal item in this.Controls)
-            {
-
-                item.BorderSize = 1;
-
+                }
             }
 
-            lastSelectedTable = this;
+            else { 
+                Test test = new Test();
+                test.Show();
+                
+
+            
+            }
+                lastSelectedTable = this;
 
 
         }

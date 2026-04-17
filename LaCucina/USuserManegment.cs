@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace LaCucina
 {
-    public partial class USuserManegment : UserControl
+    public partial class USUserManegment : UserControl
     {
-        public USuserManegment()
+        public USUserManegment()
         {
             InitializeComponent();
         }
@@ -31,14 +31,15 @@ namespace LaCucina
 
         private void USuserManegment_Load(object sender, EventArgs e)
         {
-            for (int i = 1; i < 10; i++)
+            for (int i = 1; i < 20; i++)
             {
-                UCrow r = new UCrow();
-                if (i % 2 == 0) {
+                UCuserRow r = new UCuserRow();
+                if (i % 2 == 0)
+                {
                     foreach (Control item in r.Controls)
                     {
-                        item.BackColor= Color.FromArgb(18, 18, 18);
-                       
+                        item.BackColor = Color.FromArgb(10, 10, 10);
+
 
                     }
                 }
@@ -49,6 +50,11 @@ namespace LaCucina
         }
 
         private void rjButton6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rjPanel4_Paint(object sender, PaintEventArgs e)
         {
 
         }

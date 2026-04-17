@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LaCucina
 {
-    public partial class UCrow : UserControl
+    public partial class UCuserRow : UserControl
     {
-        public UCrow()
+        public UCuserRow()
         {
             InitializeComponent();
         }

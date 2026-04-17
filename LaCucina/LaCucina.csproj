@@ -193,17 +193,29 @@
     <Compile Include="UCInvoiceCard.Designer.cs">
       <DependentUpon>UCInvoiceCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCInvoiceItemHistory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCInvoiceItemHistory.Designer.cs">
+      <DependentUpon>UCInvoiceItemHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCInvoiceRowHeader.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCInvoiceRowHeader.Designer.cs">
+      <DependentUpon>UCInvoiceRowHeader.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCManagerMenu.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCManagerMenu.Designer.cs">
       <DependentUpon>UCManagerMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCrow.cs">
+    <Compile Include="UCuserRow.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCrow.Designer.cs">
-      <DependentUpon>UCrow.cs</DependentUpon>
+    <Compile Include="UCuserRow.Designer.cs">
+      <DependentUpon>UCuserRow.cs</DependentUpon>
     </Compile>
     <Compile Include="UCtable.cs">
       <SubType>UserControl</SubType>
@@ -229,11 +241,17 @@
     <Compile Include="UC_ProductCard.Designer.cs">
       <DependentUpon>UC_ProductCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="USuserManegment.cs">
+    <Compile Include="USOrders.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="USuserManegment.Designer.cs">
-      <DependentUpon>USuserManegment.cs</DependentUpon>
+    <Compile Include="USOrders.Designer.cs">
+      <DependentUpon>USOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USUserManegment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="USUserManegment.Designer.cs">
+      <DependentUpon>USUserManegment.cs</DependentUpon>
     </Compile>
     <Compile Include="VerticalTableUserControl.cs">
       <SubType>UserControl</SubType>
@@ -284,17 +302,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UCInvoiceItemHistory.resx">
+      <DependentUpon>UCInvoiceItemHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCInvoiceRowHeader.resx">
+      <DependentUpon>UCInvoiceRowHeader.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCManagerMenu.resx">
       <DependentUpon>UCManagerMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCrow.resx">
-      <DependentUpon>UCrow.cs</DependentUpon>
+    <EmbeddedResource Include="UCuserRow.resx">
+      <DependentUpon>UCuserRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCtable.resx">
       <DependentUpon>UCtable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USuserManegment.resx">
-      <DependentUpon>USuserManegment.cs</DependentUpon>
+    <EmbeddedResource Include="USOrders.resx">
+      <DependentUpon>USOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USUserManegment.resx">
+      <DependentUpon>USUserManegment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCIngriedentsSelectorRow.resx">
       <DependentUpon>UCIngriedentsSelectorRow.cs</DependentUpon>
