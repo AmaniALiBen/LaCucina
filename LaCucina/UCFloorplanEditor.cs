@@ -161,5 +161,11 @@ namespace LaCucina
             
             
         }
+
+        private void rjButton1_Click(object sender, EventArgs e)
+        {
+            ManageSpacesForm form = new ManageSpacesForm();
+            form.ShowDialog();
+        }
     }
 }

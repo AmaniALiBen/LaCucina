@@ -11,9 +11,11 @@ using LaCucina;
 
 namespace LaCucina
 {
-    public partial class Form1 : Form
+    public partial class LoginForm : Form
     {
-        public Form1()
+        
+
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -37,6 +39,16 @@ namespace LaCucina
             //Test form = new Test();
             form.ShowDialog();
             this.Hide();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ucLogin1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

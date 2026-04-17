@@ -1,6 +1,6 @@
 ﻿namespace LaCucina
 {
-    partial class USUserManegment
+    partial class UCUserManegment
     {
         /// <summary> 
         /// Required designer variable.
@@ -46,6 +46,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.rjPanel2 = new CustomControls.RJControls.RJPanel();
             this.tablePanel1 = new LaCucina.controls.TablePanel();
             this.rjButton2 = new CustomControls.RJControls.RJButton();
@@ -53,7 +54,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.rjPanel1.SuspendLayout();
             this.rJgradiantPanal1.SuspendLayout();
@@ -359,6 +359,18 @@
             this.panel2.TabIndex = 6;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Yu Gothic", 10F);
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.label12.Location = new System.Drawing.Point(4, 29);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(202, 26);
+            this.label12.TabIndex = 29;
+            this.label12.Text = "👤 User managment";
+            // 
             // rjPanel2
             // 
             this.rjPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
@@ -384,6 +396,7 @@
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Size = new System.Drawing.Size(1181, 866);
             this.tablePanel1.TabIndex = 2;
+            this.tablePanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tablePanel1_Paint);
             // 
             // rjButton2
             // 
@@ -420,7 +433,7 @@
             this.rjPanel3.Location = new System.Drawing.Point(0, 0);
             this.rjPanel3.Name = "rjPanel3";
             this.rjPanel3.Size = new System.Drawing.Size(1181, 69);
-            this.rjPanel3.TabIndex = 3;
+            this.rjPanel3.TabIndex = 4;
             // 
             // label6
             // 
@@ -455,19 +468,7 @@
             this.label11.TabIndex = 11;
             this.label11.Text = "User Name";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Yu Gothic", 10F);
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            this.label12.Location = new System.Drawing.Point(4, 29);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(202, 26);
-            this.label12.TabIndex = 29;
-            this.label12.Text = "👤 User managment";
-            // 
-            // USUserManegment
+            // UCUserManegment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -475,7 +476,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "USUserManegment";
+            this.Name = "UCUserManegment";
             this.Size = new System.Drawing.Size(1887, 1070);
             this.Load += new System.EventHandler(this.USuserManegment_Load);
             this.panel1.ResumeLayout(false);
@@ -516,10 +517,10 @@
         private CustomControls.RJControls.RJButton rjButton2;
         private CustomControls.RJControls.RJButton rjButton1;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
         private CustomControls.RJControls.RJPanel rjPanel3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
     }
 }

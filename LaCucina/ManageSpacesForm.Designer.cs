@@ -1,6 +1,6 @@
 ﻿namespace LaCucina
 {
-    partial class EditCategory
+    partial class ManageSpacesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -90,7 +90,7 @@
             this.rjPanel1.Name = "rjPanel1";
             this.rjPanel1.Padding = new System.Windows.Forms.Padding(2);
             this.rjPanel1.Size = new System.Drawing.Size(397, 447);
-            this.rjPanel1.TabIndex = 0;
+            this.rjPanel1.TabIndex = 1;
             // 
             // btnDiscard
             // 
@@ -136,9 +136,9 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.label7.Location = new System.Drawing.Point(12, 7);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 18);
+            this.label7.Size = new System.Drawing.Size(54, 18);
             this.label7.TabIndex = 5;
-            this.label7.Text = "Burger";
+            this.label7.Text = "Floor 5";
             // 
             // rjPanel4
             // 
@@ -162,9 +162,9 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.label6.Location = new System.Drawing.Point(12, 7);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 18);
+            this.label6.Size = new System.Drawing.Size(54, 18);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Burger";
+            this.label6.Text = "Floor 4";
             // 
             // rJgradiantPanal1
             // 
@@ -205,7 +205,6 @@
             this.btnUpdateToppings.Text = "Done";
             this.btnUpdateToppings.TextColor = System.Drawing.Color.Black;
             this.btnUpdateToppings.UseVisualStyleBackColor = false;
-            this.btnUpdateToppings.Click += new System.EventHandler(this.btnUpdateToppings_Click);
             // 
             // rjPanel3
             // 
@@ -229,9 +228,9 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.label5.Location = new System.Drawing.Point(12, 7);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 18);
+            this.label5.Size = new System.Drawing.Size(54, 18);
             this.label5.TabIndex = 5;
-            this.label5.Text = "Burger";
+            this.label5.Text = "Floor 3";
             // 
             // rjPanel2
             // 
@@ -255,9 +254,9 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.label4.Location = new System.Drawing.Point(12, 7);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 18);
+            this.label4.Size = new System.Drawing.Size(54, 18);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Burger";
+            this.label4.Text = "Floor 2";
             // 
             // rjPanel6
             // 
@@ -281,9 +280,9 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.label3.Location = new System.Drawing.Point(12, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 18);
+            this.label3.Size = new System.Drawing.Size(54, 18);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Burger";
+            this.label3.Text = "Floor 1";
             // 
             // txtAddCategory
             // 
@@ -315,9 +314,9 @@
             this.label2.ForeColor = System.Drawing.Color.Silver;
             this.label2.Location = new System.Drawing.Point(43, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 18);
+            this.label2.Size = new System.Drawing.Size(108, 18);
             this.label2.TabIndex = 25;
-            this.label2.Text = "Add new Category";
+            this.label2.Text = "Add new Space";
             // 
             // materialDivider1
             // 
@@ -340,9 +339,9 @@
             this.label1.Location = new System.Drawing.Point(11, 11);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(1, 4, 0, 10);
-            this.label1.Size = new System.Drawing.Size(159, 35);
+            this.label1.Size = new System.Drawing.Size(134, 35);
             this.label1.TabIndex = 23;
-            this.label1.Text = "Manage Categories";
+            this.label1.Text = "Manage Spaces";
             // 
             // rjButton9
             // 
@@ -565,17 +564,17 @@
             this.rjButton1.TextColor = System.Drawing.Color.White;
             this.rjButton1.UseVisualStyleBackColor = false;
             // 
-            // EditCategory
+            // ManageSpacesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(397, 447);
+            this.ControlBox = false;
             this.Controls.Add(this.rjPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "EditCategory";
+            this.Name = "ManageSpacesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "EditCategory";
             this.rjPanel1.ResumeLayout(false);
             this.rjPanel1.PerformLayout();
             this.rjPanel5.ResumeLayout(false);

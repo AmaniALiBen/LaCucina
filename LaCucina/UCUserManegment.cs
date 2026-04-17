@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace LaCucina
 {
-    public partial class USUserManegment : UserControl
+    public partial class UCUserManegment : UserControl
     {
-        public USUserManegment()
+        public UCUserManegment()
         {
             InitializeComponent();
         }
@@ -55,6 +55,11 @@ namespace LaCucina
         }
 
         private void rjPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tablePanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

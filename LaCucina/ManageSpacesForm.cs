@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace LaCucina
 {
-    public partial class EditCategory : Form
+    public partial class ManageSpacesForm : Form
     {
-        public EditCategory()
+        public ManageSpacesForm()
         {
             InitializeComponent();
-        }
-
-        private void btnUpdateToppings_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

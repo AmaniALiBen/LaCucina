@@ -1,6 +1,6 @@
 ﻿namespace LaCucina
 {
-    partial class USOrders
+    partial class UCOrders
     {
         /// <summary> 
         /// Required designer variable.

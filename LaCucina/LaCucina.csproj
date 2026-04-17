@@ -77,6 +77,9 @@
     <Compile Include="controls\RJComboBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="controls\RJDatePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="controls\RJDropdownMenu.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -137,20 +140,26 @@
     <Compile Include="FloorPlanForm.Designer.cs">
       <DependentUpon>FloorPlanForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FloorplanEditorUS.cs">
+    <Compile Include="UCDiscountManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FloorplanEditorUS.Designer.cs">
-      <DependentUpon>FloorplanEditorUS.cs</DependentUpon>
+    <Compile Include="UCDiscountManager.Designer.cs">
+      <DependentUpon>UCDiscountManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCFloorplanEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCFloorplanEditor.Designer.cs">
+      <DependentUpon>UCFloorplanEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="controls\SmoothFlowPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HorizontalTableUserControl.cs">
       <SubType>UserControl</SubType>
@@ -170,12 +179,6 @@
     <Compile Include="KDS.Designer.cs">
       <DependentUpon>KDS.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="ManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +187,12 @@
     </Compile>
     <Compile Include="controls\ModernCheckBox.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ManageSpacesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageSpacesForm.Designer.cs">
+      <DependentUpon>ManageSpacesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -250,6 +259,12 @@
     <Compile Include="UCManagerMenu.Designer.cs">
       <DependentUpon>UCManagerMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCRowDiscount.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCRowDiscount.Designer.cs">
+      <DependentUpon>UCRowDiscount.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCuserRow.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -280,17 +295,17 @@
     <Compile Include="UC_ProductCard.Designer.cs">
       <DependentUpon>UC_ProductCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="USOrders.cs">
+    <Compile Include="UCOrders.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="USOrders.Designer.cs">
-      <DependentUpon>USOrders.cs</DependentUpon>
+    <Compile Include="UCOrders.Designer.cs">
+      <DependentUpon>UCOrders.cs</DependentUpon>
     </Compile>
-    <Compile Include="USUserManegment.cs">
+    <Compile Include="UCUserManegment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="USUserManegment.Designer.cs">
-      <DependentUpon>USUserManegment.cs</DependentUpon>
+    <Compile Include="UCUserManegment.Designer.cs">
+      <DependentUpon>UCUserManegment.cs</DependentUpon>
     </Compile>
     <Compile Include="VerticalTableUserControl.cs">
       <SubType>UserControl</SubType>
@@ -316,11 +331,14 @@
     <EmbeddedResource Include="FloorPlanForm.resx">
       <DependentUpon>FloorPlanForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FloorplanEditorUS.resx">
-      <DependentUpon>FloorplanEditorUS.cs</DependentUpon>
+    <EmbeddedResource Include="UCDiscountManager.resx">
+      <DependentUpon>UCDiscountManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="UCFloorplanEditor.resx">
+      <DependentUpon>UCFloorplanEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HorizontalTableUserControl.resx">
       <DependentUpon>HorizontalTableUserControl.cs</DependentUpon>
@@ -331,11 +349,11 @@
     <EmbeddedResource Include="KDS.resx">
       <DependentUpon>KDS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ManagerForm.resx">
       <DependentUpon>ManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageSpacesForm.resx">
+      <DependentUpon>ManageSpacesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -368,17 +386,20 @@
     <EmbeddedResource Include="UCManagerMenu.resx">
       <DependentUpon>UCManagerMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCRowDiscount.resx">
+      <DependentUpon>UCRowDiscount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCuserRow.resx">
       <DependentUpon>UCuserRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCtable.resx">
       <DependentUpon>UCtable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USOrders.resx">
-      <DependentUpon>USOrders.cs</DependentUpon>
+    <EmbeddedResource Include="UCOrders.resx">
+      <DependentUpon>UCOrders.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="USUserManegment.resx">
-      <DependentUpon>USUserManegment.cs</DependentUpon>
+    <EmbeddedResource Include="UCUserManegment.resx">
+      <DependentUpon>UCUserManegment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCIngriedentsSelectorRow.resx">
       <DependentUpon>UCIngriedentsSelectorRow.cs</DependentUpon>
@@ -528,6 +549,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\brush.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\calendar_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

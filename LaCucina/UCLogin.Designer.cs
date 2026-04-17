@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtAddCategory = new CustomControls.RJControls.RJTextBox();
+            this.txtUserName = new CustomControls.RJControls.RJTextBox();
             this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
             this.rJgradiantPanal1 = new CustomControls.RJControls.RJgradiantPanal();
-            this.btnUpdateToppings = new CustomControls.RJControls.RJButton();
+            this.btnAccessSystem = new CustomControls.RJControls.RJButton();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -50,28 +50,28 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // txtAddCategory
+            // txtUserName
             // 
-            this.txtAddCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.txtAddCategory.BorderColor = System.Drawing.Color.Transparent;
-            this.txtAddCategory.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
-            this.txtAddCategory.BorderRadius = 10;
-            this.txtAddCategory.BorderSize = 2;
-            this.txtAddCategory.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.txtAddCategory.Location = new System.Drawing.Point(300, 177);
-            this.txtAddCategory.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAddCategory.Multiline = false;
-            this.txtAddCategory.Name = "txtAddCategory";
-            this.txtAddCategory.Padding = new System.Windows.Forms.Padding(10, 7, 7, 0);
-            this.txtAddCategory.PasswordChar = false;
-            this.txtAddCategory.PlaceholderColor = System.Drawing.Color.Silver;
-            this.txtAddCategory.PlaceholderText = "Username";
-            this.txtAddCategory.Size = new System.Drawing.Size(324, 33);
-            this.txtAddCategory.TabIndex = 27;
-            this.txtAddCategory.TabStop = false;
-            this.txtAddCategory.Texts = "";
-            this.txtAddCategory.UnderlinedStyle = false;
+            this.txtUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.txtUserName.BorderColor = System.Drawing.Color.Transparent;
+            this.txtUserName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
+            this.txtUserName.BorderRadius = 10;
+            this.txtUserName.BorderSize = 2;
+            this.txtUserName.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.txtUserName.Location = new System.Drawing.Point(279, 176);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUserName.Multiline = false;
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Padding = new System.Windows.Forms.Padding(10, 7, 7, 0);
+            this.txtUserName.PasswordChar = false;
+            this.txtUserName.PlaceholderColor = System.Drawing.Color.Silver;
+            this.txtUserName.PlaceholderText = "Username";
+            this.txtUserName.Size = new System.Drawing.Size(324, 33);
+            this.txtUserName.TabIndex = 27;
+            this.txtUserName.TabStop = false;
+            this.txtUserName.Texts = "";
+            this.txtUserName.UnderlinedStyle = false;
             // 
             // rjTextBox1
             // 
@@ -82,8 +82,8 @@
             this.rjTextBox1.BorderSize = 2;
             this.rjTextBox1.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.rjTextBox1.Location = new System.Drawing.Point(300, 242);
-            this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.rjTextBox1.Location = new System.Drawing.Point(279, 242);
+            this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rjTextBox1.Multiline = false;
             this.rjTextBox1.Name = "rjTextBox1";
             this.rjTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 7, 0);
@@ -102,46 +102,47 @@
             this.rJgradiantPanal1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.rJgradiantPanal1.BorderRadius = 7;
             this.rJgradiantPanal1.BorderSize = 2;
-            this.rJgradiantPanal1.Controls.Add(this.btnUpdateToppings);
+            this.rJgradiantPanal1.Controls.Add(this.btnAccessSystem);
             this.rJgradiantPanal1.ForeColor = System.Drawing.Color.Black;
             this.rJgradiantPanal1.GradientAngle = 0F;
             this.rJgradiantPanal1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(81)))), ((int)(((byte)(0)))));
             this.rJgradiantPanal1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
-            this.rJgradiantPanal1.Location = new System.Drawing.Point(342, 341);
-            this.rJgradiantPanal1.Margin = new System.Windows.Forms.Padding(2);
+            this.rJgradiantPanal1.Location = new System.Drawing.Point(333, 341);
+            this.rJgradiantPanal1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rJgradiantPanal1.Name = "rJgradiantPanal1";
             this.rJgradiantPanal1.Size = new System.Drawing.Size(220, 40);
             this.rJgradiantPanal1.TabIndex = 35;
             // 
-            // btnUpdateToppings
+            // btnAccessSystem
             // 
-            this.btnUpdateToppings.BackColor = System.Drawing.Color.Transparent;
-            this.btnUpdateToppings.BackgroundColor = System.Drawing.Color.Transparent;
-            this.btnUpdateToppings.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnUpdateToppings.BorderRadius = 7;
-            this.btnUpdateToppings.BorderSize = 0;
-            this.btnUpdateToppings.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnUpdateToppings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnUpdateToppings.FlatAppearance.BorderSize = 0;
-            this.btnUpdateToppings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnUpdateToppings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnUpdateToppings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateToppings.Font = new System.Drawing.Font("Yu Gothic Medium", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateToppings.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdateToppings.Location = new System.Drawing.Point(0, 0);
-            this.btnUpdateToppings.Name = "btnUpdateToppings";
-            this.btnUpdateToppings.Size = new System.Drawing.Size(220, 40);
-            this.btnUpdateToppings.TabIndex = 1;
-            this.btnUpdateToppings.Text = "ACCESS SYSTEM";
-            this.btnUpdateToppings.TextColor = System.Drawing.Color.Black;
-            this.btnUpdateToppings.UseVisualStyleBackColor = false;
+            this.btnAccessSystem.BackColor = System.Drawing.Color.Transparent;
+            this.btnAccessSystem.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btnAccessSystem.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAccessSystem.BorderRadius = 7;
+            this.btnAccessSystem.BorderSize = 0;
+            this.btnAccessSystem.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnAccessSystem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAccessSystem.FlatAppearance.BorderSize = 0;
+            this.btnAccessSystem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAccessSystem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnAccessSystem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccessSystem.Font = new System.Drawing.Font("Yu Gothic Medium", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAccessSystem.ForeColor = System.Drawing.Color.Black;
+            this.btnAccessSystem.Location = new System.Drawing.Point(0, 0);
+            this.btnAccessSystem.Name = "btnAccessSystem";
+            this.btnAccessSystem.Size = new System.Drawing.Size(220, 40);
+            this.btnAccessSystem.TabIndex = 1;
+            this.btnAccessSystem.Text = "ACCESS SYSTEM";
+            this.btnAccessSystem.TextColor = System.Drawing.Color.Black;
+            this.btnAccessSystem.UseVisualStyleBackColor = false;
+            this.btnAccessSystem.Click += new System.EventHandler(this.btnUpdateToppings_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe Print", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(347, 39);
+            this.label3.Location = new System.Drawing.Point(337, 40);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(0, 4, 0, 10);
             this.label3.Size = new System.Drawing.Size(76, 76);
@@ -153,7 +154,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe Print", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(407, 39);
+            this.label4.Location = new System.Drawing.Point(397, 40);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(0, 4, 0, 10);
             this.label4.Size = new System.Drawing.Size(168, 76);
@@ -169,7 +170,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.rJgradiantPanal1);
             this.Controls.Add(this.rjTextBox1);
-            this.Controls.Add(this.txtAddCategory);
+            this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.pictureBox1);
             this.Name = "UCLogin";
             this.Size = new System.Drawing.Size(641, 457);
@@ -184,10 +185,10 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private CustomControls.RJControls.RJTextBox txtAddCategory;
+        private CustomControls.RJControls.RJTextBox txtUserName;
         private CustomControls.RJControls.RJTextBox rjTextBox1;
         private CustomControls.RJControls.RJgradiantPanal rJgradiantPanal1;
-        private CustomControls.RJControls.RJButton btnUpdateToppings;
+        private CustomControls.RJControls.RJButton btnAccessSystem;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
     }

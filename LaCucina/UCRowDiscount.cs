@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace LaCucina
 {
-    public partial class EditCategory : Form
+    public partial class UCRowDiscount : UserControl
     {
-        public EditCategory()
+        public UCRowDiscount()
         {
             InitializeComponent();
         }
 
-        private void btnUpdateToppings_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

@@ -52,12 +52,12 @@
             this.rjButton5 = new CustomControls.RJControls.RJButton();
             this.rjButton6 = new CustomControls.RJControls.RJButton();
             this.rjButton7 = new CustomControls.RJControls.RJButton();
+            this.btnAddSpace = new CustomControls.RJControls.RJButton();
             this.rjButton8 = new CustomControls.RJControls.RJButton();
             this.rjPanel4 = new CustomControls.RJControls.RJPanel();
             this.materialDivider2 = new MaterialSkin.Controls.MaterialDivider();
             this.btnNewTable = new CustomControls.RJControls.RJButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.pnlNewTaple.SuspendLayout();
             this.pnlFormat.SuspendLayout();
             this.pnlChairCount.SuspendLayout();
@@ -378,7 +378,7 @@
             this.rjPanel1.Location = new System.Drawing.Point(334, 22);
             this.rjPanel1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 39);
             this.rjPanel1.Name = "rjPanel1";
-            this.rjPanel1.Size = new System.Drawing.Size(579, 44);
+            this.rjPanel1.Size = new System.Drawing.Size(607, 44);
             this.rjPanel1.TabIndex = 1;
             // 
             // smoothFlowPanel1
@@ -388,12 +388,12 @@
             this.smoothFlowPanel1.Controls.Add(this.rjButton5);
             this.smoothFlowPanel1.Controls.Add(this.rjButton6);
             this.smoothFlowPanel1.Controls.Add(this.rjButton7);
-            this.smoothFlowPanel1.Controls.Add(this.rjButton1);
+            this.smoothFlowPanel1.Controls.Add(this.btnAddSpace);
             this.smoothFlowPanel1.Controls.Add(this.rjButton8);
             this.smoothFlowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.smoothFlowPanel1.Location = new System.Drawing.Point(0, 0);
             this.smoothFlowPanel1.Name = "smoothFlowPanel1";
-            this.smoothFlowPanel1.Size = new System.Drawing.Size(579, 44);
+            this.smoothFlowPanel1.Size = new System.Drawing.Size(607, 44);
             this.smoothFlowPanel1.TabIndex = 0;
             // 
             // rjButton5
@@ -455,6 +455,29 @@
             this.rjButton7.Text = "Floor 3";
             this.rjButton7.TextColor = System.Drawing.Color.White;
             this.rjButton7.UseVisualStyleBackColor = false;
+            // 
+            // btnAddSpace
+            // 
+            this.btnAddSpace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.btnAddSpace.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.btnAddSpace.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAddSpace.BorderRadius = 10;
+            this.btnAddSpace.BorderSize = 0;
+            this.btnAddSpace.FlatAppearance.BorderSize = 0;
+            this.btnAddSpace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddSpace.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
+            this.btnAddSpace.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
+            this.btnAddSpace.Image = global::LaCucina.Properties.Resources.plus1;
+            this.btnAddSpace.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddSpace.Location = new System.Drawing.Point(426, 0);
+            this.btnAddSpace.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAddSpace.Name = "btnAddSpace";
+            this.btnAddSpace.Size = new System.Drawing.Size(166, 44);
+            this.btnAddSpace.TabIndex = 4;
+            this.btnAddSpace.Text = "Add Space ";
+            this.btnAddSpace.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
+            this.btnAddSpace.UseVisualStyleBackColor = false;
+            this.btnAddSpace.Click += new System.EventHandler(this.rjButton1_Click);
             // 
             // rjButton8
             // 
@@ -541,26 +564,6 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "🗺️ Floorplan editor";
             // 
-            // rjButton1
-            // 
-            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton1.BorderRadius = 10;
-            this.rjButton1.BorderSize = 0;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
-            this.rjButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.rjButton1.Location = new System.Drawing.Point(426, 0);
-            this.rjButton1.Margin = new System.Windows.Forms.Padding(0);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(142, 44);
-            this.rjButton1.TabIndex = 4;
-            this.rjButton1.Text = "Add Space +";
-            this.rjButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.rjButton1.UseVisualStyleBackColor = false;
-            // 
             // USFloorplanEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -619,6 +622,6 @@
         private System.Windows.Forms.Panel pnlTables;
         private System.Windows.Forms.Panel pnlFormat;
         private System.Windows.Forms.Panel pnlChairCount;
-        private CustomControls.RJControls.RJButton rjButton1;
+        private CustomControls.RJControls.RJButton btnAddSpace;
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LaCucina
 {
-    public partial class USOrders : UserControl
+    public partial class UCOrders : UserControl
     {
-        public USOrders()
+        public UCOrders()
         {
             InitializeComponent();
         }

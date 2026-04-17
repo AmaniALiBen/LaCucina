@@ -14,12 +14,21 @@ namespace LaCucina
 {
     public partial class ManagerForm : Form
     {
+        Form loginForm;
+       
         Button selectedButton;
         public ManagerForm()
         {
             InitializeComponent();
            
         }
+        public ManagerForm(Form loginForm)
+        {
+            this.loginForm = loginForm;
+            InitializeComponent();
+
+        }
+
 
         private void ManagerForm_Load(object sender, EventArgs e)
         {
@@ -46,7 +55,7 @@ namespace LaCucina
         private void btnUsers_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
-            USUserManegment uS = new USUserManegment();
+            UCUserManegment uS = new UCUserManegment();
             uS.Dock = DockStyle.Fill;
             panel2.Controls.Add(uS);
         }
@@ -63,9 +72,25 @@ namespace LaCucina
         private void btnOrdersHistory_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
-            USOrders uS = new USOrders();
+            UCOrders uS = new UCOrders();
             uS.Dock = DockStyle.Fill;
             panel2.Controls.Add(uS);
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            loginForm.Show();
+            this.Close();
+            
+        }
+
+        private void btnDiscounts_Click(object sender, EventArgs e)
+        {
+
+            panel2.Controls.Clear();
+            UCDiscountManager uc = new UCDiscountManager();
+            uc.Dock = DockStyle.Fill;
+            panel2.Controls.Add(uc);
         }
     }
 }
