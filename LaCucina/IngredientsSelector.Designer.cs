@@ -62,10 +62,10 @@
             this.rjPanel5.Controls.Add(this.label5);
             this.rjPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rjPanel5.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel5.Location = new System.Drawing.Point(2, 90);
-            this.rjPanel5.Margin = new System.Windows.Forms.Padding(13);
+            this.rjPanel5.Location = new System.Drawing.Point(3, 138);
+            this.rjPanel5.Margin = new System.Windows.Forms.Padding(20, 20, 20, 20);
             this.rjPanel5.Name = "rjPanel5";
-            this.rjPanel5.Size = new System.Drawing.Size(441, 246);
+            this.rjPanel5.Size = new System.Drawing.Size(662, 379);
             this.rjPanel5.TabIndex = 0;
             // 
             // FpnlIngredients
@@ -73,9 +73,10 @@
             this.FpnlIngredients.AutoScroll = true;
             this.FpnlIngredients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.FpnlIngredients.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FpnlIngredients.Location = new System.Drawing.Point(0, 26);
+            this.FpnlIngredients.Location = new System.Drawing.Point(0, 39);
+            this.FpnlIngredients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FpnlIngredients.Name = "FpnlIngredients";
-            this.FpnlIngredients.Size = new System.Drawing.Size(441, 220);
+            this.FpnlIngredients.Size = new System.Drawing.Size(662, 340);
             this.FpnlIngredients.TabIndex = 9;
             // 
             // label5
@@ -85,10 +86,10 @@
             this.label5.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 8, 4, 8);
             this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(3, 0, 0, 5);
-            this.label5.Size = new System.Drawing.Size(84, 26);
+            this.label5.Padding = new System.Windows.Forms.Padding(4, 0, 0, 8);
+            this.label5.Size = new System.Drawing.Size(124, 39);
             this.label5.TabIndex = 17;
             this.label5.Text = "Toppings";
             // 
@@ -104,9 +105,10 @@
             this.rjPanel1.Controls.Add(this.materialDivider1);
             this.rjPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.rjPanel1.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel1.Location = new System.Drawing.Point(2, 2);
+            this.rjPanel1.Location = new System.Drawing.Point(3, 3);
+            this.rjPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rjPanel1.Name = "rjPanel1";
-            this.rjPanel1.Size = new System.Drawing.Size(441, 88);
+            this.rjPanel1.Size = new System.Drawing.Size(662, 135);
             this.rjPanel1.TabIndex = 0;
             // 
             // label3
@@ -115,9 +117,10 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.label3.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(3, 69);
+            this.label3.Location = new System.Drawing.Point(4, 106);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 18);
+            this.label3.Size = new System.Drawing.Size(149, 26);
             this.label3.TabIndex = 19;
             this.label3.Text = "Cheese Burger";
             // 
@@ -132,9 +135,10 @@
             this.rjPanel2.Controls.Add(this.materialDivider3);
             this.rjPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rjPanel2.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel2.Location = new System.Drawing.Point(146, 0);
+            this.rjPanel2.Location = new System.Drawing.Point(219, 0);
+            this.rjPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rjPanel2.Name = "rjPanel2";
-            this.rjPanel2.Size = new System.Drawing.Size(295, 87);
+            this.rjPanel2.Size = new System.Drawing.Size(443, 133);
             this.rjPanel2.TabIndex = 2;
             this.rjPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.rjPanel2_Paint);
             // 
@@ -143,9 +147,10 @@
             this.FpnlRequiredIngredients.AutoScroll = true;
             this.FpnlRequiredIngredients.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.FpnlRequiredIngredients.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FpnlRequiredIngredients.Location = new System.Drawing.Point(0, 27);
+            this.FpnlRequiredIngredients.Location = new System.Drawing.Point(0, 41);
+            this.FpnlRequiredIngredients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.FpnlRequiredIngredients.Name = "FpnlRequiredIngredients";
-            this.FpnlRequiredIngredients.Size = new System.Drawing.Size(295, 60);
+            this.FpnlRequiredIngredients.Size = new System.Drawing.Size(443, 92);
             this.FpnlRequiredIngredients.TabIndex = 1;
             // 
             // label6
@@ -154,10 +159,11 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Top;
             this.label6.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label6.Location = new System.Drawing.Point(0, 1);
+            this.label6.Location = new System.Drawing.Point(0, 2);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Padding = new System.Windows.Forms.Padding(3, 0, 0, 5);
-            this.label6.Size = new System.Drawing.Size(145, 26);
+            this.label6.Padding = new System.Windows.Forms.Padding(4, 0, 0, 8);
+            this.label6.Size = new System.Drawing.Size(217, 39);
             this.label6.TabIndex = 17;
             this.label6.Text = "Main Ingredients";
             // 
@@ -168,10 +174,9 @@
             this.materialDivider3.Dock = System.Windows.Forms.DockStyle.Top;
             this.materialDivider3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.materialDivider3.Location = new System.Drawing.Point(0, 0);
-            this.materialDivider3.Margin = new System.Windows.Forms.Padding(2);
             this.materialDivider3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider3.Name = "materialDivider3";
-            this.materialDivider3.Size = new System.Drawing.Size(295, 1);
+            this.materialDivider3.Size = new System.Drawing.Size(443, 2);
             this.materialDivider3.TabIndex = 18;
             this.materialDivider3.Text = "materialDivider3";
             // 
@@ -180,9 +185,8 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox1.Image = global::LaCucina.Properties.Resources.برجر1;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(146, 87);
+            this.pictureBox1.Size = new System.Drawing.Size(219, 133);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
@@ -193,11 +197,10 @@
             this.materialDivider1.Depth = 0;
             this.materialDivider1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.materialDivider1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.materialDivider1.Location = new System.Drawing.Point(0, 87);
-            this.materialDivider1.Margin = new System.Windows.Forms.Padding(2);
+            this.materialDivider1.Location = new System.Drawing.Point(0, 133);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(441, 1);
+            this.materialDivider1.Size = new System.Drawing.Size(662, 2);
             this.materialDivider1.TabIndex = 3;
             this.materialDivider1.Text = "materialDivider1";
             // 
@@ -212,9 +215,10 @@
             this.rjPanel4.Controls.Add(this.materialDivider2);
             this.rjPanel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.rjPanel4.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel4.Location = new System.Drawing.Point(2, 336);
+            this.rjPanel4.Location = new System.Drawing.Point(3, 517);
+            this.rjPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rjPanel4.Name = "rjPanel4";
-            this.rjPanel4.Size = new System.Drawing.Size(441, 44);
+            this.rjPanel4.Size = new System.Drawing.Size(662, 68);
             this.rjPanel4.TabIndex = 2;
             // 
             // btnDiscard
@@ -231,9 +235,10 @@
             this.btnDiscard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDiscard.Font = new System.Drawing.Font("Yu Gothic", 10F);
             this.btnDiscard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnDiscard.Location = new System.Drawing.Point(82, 3);
+            this.btnDiscard.Location = new System.Drawing.Point(123, 5);
+            this.btnDiscard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDiscard.Name = "btnDiscard";
-            this.btnDiscard.Size = new System.Drawing.Size(86, 33);
+            this.btnDiscard.Size = new System.Drawing.Size(129, 51);
             this.btnDiscard.TabIndex = 0;
             this.btnDiscard.Text = "Discard";
             this.btnDiscard.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -250,10 +255,9 @@
             this.rJgradiantPanal1.GradientAngle = 0F;
             this.rJgradiantPanal1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(81)))), ((int)(((byte)(0)))));
             this.rJgradiantPanal1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
-            this.rJgradiantPanal1.Location = new System.Drawing.Point(227, 5);
-            this.rJgradiantPanal1.Margin = new System.Windows.Forms.Padding(2);
+            this.rJgradiantPanal1.Location = new System.Drawing.Point(340, 8);
             this.rJgradiantPanal1.Name = "rJgradiantPanal1";
-            this.rJgradiantPanal1.Size = new System.Drawing.Size(133, 33);
+            this.rJgradiantPanal1.Size = new System.Drawing.Size(200, 51);
             this.rJgradiantPanal1.TabIndex = 4;
             // 
             // btnUpdateToppings
@@ -272,8 +276,9 @@
             this.btnUpdateToppings.Font = new System.Drawing.Font("Yu Gothic Medium", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateToppings.ForeColor = System.Drawing.Color.Black;
             this.btnUpdateToppings.Location = new System.Drawing.Point(0, 0);
+            this.btnUpdateToppings.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnUpdateToppings.Name = "btnUpdateToppings";
-            this.btnUpdateToppings.Size = new System.Drawing.Size(133, 33);
+            this.btnUpdateToppings.Size = new System.Drawing.Size(200, 51);
             this.btnUpdateToppings.TabIndex = 1;
             this.btnUpdateToppings.Text = "Update Toppings";
             this.btnUpdateToppings.TextColor = System.Drawing.Color.Black;
@@ -286,27 +291,27 @@
             this.materialDivider2.Depth = 0;
             this.materialDivider2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.materialDivider2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.materialDivider2.Location = new System.Drawing.Point(0, 43);
-            this.materialDivider2.Margin = new System.Windows.Forms.Padding(2);
+            this.materialDivider2.Location = new System.Drawing.Point(0, 66);
             this.materialDivider2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider2.Name = "materialDivider2";
-            this.materialDivider2.Size = new System.Drawing.Size(441, 1);
+            this.materialDivider2.Size = new System.Drawing.Size(662, 2);
             this.materialDivider2.TabIndex = 3;
             this.materialDivider2.Text = "materialDivider2";
             // 
             // IngredientsSelector
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(445, 382);
+            this.ClientSize = new System.Drawing.Size(668, 588);
             this.Controls.Add(this.rjPanel5);
             this.Controls.Add(this.rjPanel1);
             this.Controls.Add(this.rjPanel4);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "IngredientsSelector";
-            this.Padding = new System.Windows.Forms.Padding(2);
+            this.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "IngredientsSelector";
             this.Load += new System.EventHandler(this.IngredientsSelector_Load);

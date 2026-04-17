@@ -139,24 +139,24 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Yu Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.label3.Font = new System.Drawing.Font("Segoe Print", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label3.Location = new System.Drawing.Point(347, 39);
             this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(1, 4, 0, 10);
-            this.label3.Size = new System.Drawing.Size(67, 59);
+            this.label3.Padding = new System.Windows.Forms.Padding(0, 4, 0, 10);
+            this.label3.Size = new System.Drawing.Size(76, 76);
             this.label3.TabIndex = 36;
             this.label3.Text = "LA";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Yu Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("Segoe Print", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(401, 39);
+            this.label4.Location = new System.Drawing.Point(407, 39);
             this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(1, 4, 0, 10);
-            this.label4.Size = new System.Drawing.Size(160, 59);
+            this.label4.Padding = new System.Windows.Forms.Padding(0, 4, 0, 10);
+            this.label4.Size = new System.Drawing.Size(168, 76);
             this.label4.TabIndex = 37;
             this.label4.Text = "CUCINA";
             // 
