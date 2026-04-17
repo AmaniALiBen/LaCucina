@@ -104,8 +104,23 @@
     <Compile Include="controls\smoothHorizontalFlowPanal.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="controls\TransparentPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="controls\UltraSmoothNavPanel.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EditCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditCategory.Designer.cs">
+      <DependentUpon>EditCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditItem.Designer.cs">
+      <DependentUpon>EditItem.cs</DependentUpon>
     </Compile>
     <Compile Include="EditItemsForm.cs">
       <SubType>Form</SubType>
@@ -178,6 +193,18 @@
     <Compile Include="Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCCategoryItems.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCategoryItems.Designer.cs">
+      <DependentUpon>UCCategoryItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCEditItemRow .cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCEditItemRow .Designer.cs">
+      <DependentUpon>UCEditItemRow .cs</DependentUpon>
+    </Compile>
     <Compile Include="UCIngriedentsSelectorRow.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -189,6 +216,18 @@
     </Compile>
     <Compile Include="UCInvoiceCard.Designer.cs">
       <DependentUpon>UCInvoiceCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCLogin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCLogin.Designer.cs">
+      <DependentUpon>UCLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCManagerItemCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCManagerItemCard.Designer.cs">
+      <DependentUpon>UCManagerItemCard.cs</DependentUpon>
     </Compile>
     <Compile Include="UCManagerMenu.cs">
       <SubType>UserControl</SubType>
@@ -238,6 +277,12 @@
     <EmbeddedResource Include="controls\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditCategory.resx">
+      <DependentUpon>EditCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditItem.resx">
+      <DependentUpon>EditItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditItemsForm.resx">
       <DependentUpon>EditItemsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,6 +320,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UCCategoryItems.resx">
+      <DependentUpon>UCCategoryItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCEditItemRow .resx">
+      <DependentUpon>UCEditItemRow .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCLogin.resx">
+      <DependentUpon>UCLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCManagerItemCard.resx">
+      <DependentUpon>UCManagerItemCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCManagerMenu.resx">
       <DependentUpon>UCManagerMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -375,6 +432,60 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\برجر.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\برجر1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\برجر3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\برجر.4png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\people1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %282%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-image %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\لوج.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\لوج3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -38,7 +38,7 @@
             // 
             // rjPanel1
             // 
-            this.rjPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.rjPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.rjPanel1.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel1.BorderRadius = 15;
             this.rjPanel1.BorderSize = 0;
@@ -49,15 +49,15 @@
             this.rjPanel1.ForeColor = System.Drawing.Color.Black;
             this.rjPanel1.Location = new System.Drawing.Point(0, 0);
             this.rjPanel1.Name = "rjPanel1";
-            this.rjPanel1.Size = new System.Drawing.Size(180, 220);
+            this.rjPanel1.Size = new System.Drawing.Size(185, 220);
             this.rjPanel1.TabIndex = 3;
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Yu Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.lblPrice.Location = new System.Drawing.Point(63, 179);
+            this.lblPrice.ForeColor = System.Drawing.Color.Silver;
+            this.lblPrice.Location = new System.Drawing.Point(58, 177);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(57, 20);
             this.lblPrice.TabIndex = 5;
@@ -66,22 +66,22 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Yu Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.lblName.Location = new System.Drawing.Point(28, 159);
+            this.lblName.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.Silver;
+            this.lblName.Location = new System.Drawing.Point(24, 153);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(131, 20);
+            this.lblName.Size = new System.Drawing.Size(130, 18);
             this.lblName.TabIndex = 4;
             this.lblName.Text = "CHEESE BURGER";
             // 
             // picBox
             // 
-            this.picBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.picBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.picBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.picBox.Image = global::LaCucina.Properties.Resources.تنزيل_removebg_preview;
+            this.picBox.Image = global::LaCucina.Properties.Resources.برجر3;
             this.picBox.Location = new System.Drawing.Point(0, 0);
             this.picBox.Name = "picBox";
-            this.picBox.Size = new System.Drawing.Size(180, 156);
+            this.picBox.Size = new System.Drawing.Size(185, 139);
             this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBox.TabIndex = 3;
             this.picBox.TabStop = false;
@@ -94,7 +94,7 @@
             this.Controls.Add(this.rjPanel1);
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "UC_ProductCard";
-            this.Size = new System.Drawing.Size(180, 220);
+            this.Size = new System.Drawing.Size(185, 220);
             this.Load += new System.EventHandler(this.UC_ProductCard_Load);
             this.rjPanel1.ResumeLayout(false);
             this.rjPanel1.PerformLayout();

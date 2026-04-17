@@ -42,11 +42,11 @@ public class UltraSmoothNavPanel : SmoothDraggablePanel
             btn.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btn.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btn.Cursor = Cursors.Hand;
-            btn.ForeColor = Color.FromArgb(60, 60, 60);
+            btn.ForeColor = Color.Gray;
 
             btn.MouseEnter += (s, _) => {
                 targetRect = new RectangleF(btn.Left, btn.Top, btn.Width, btn.Height);
-                btn.ForeColor = Color.White;
+                btn.ForeColor = Color.Black;
                 animTimer.Start();
             };
 
@@ -55,7 +55,7 @@ public class UltraSmoothNavPanel : SmoothDraggablePanel
                 {
                     // إذا فيه زر مضغوط، ارجع لمكانه وثبت الخط الأبيض عليه
                     targetRect = new RectangleF(selectedButton.Left, selectedButton.Top, selectedButton.Width, selectedButton.Height);
-                    selectedButton.ForeColor = Color.White;
+                    selectedButton.ForeColor = Color.Black;
                 }
                 else
                 {
@@ -66,7 +66,7 @@ public class UltraSmoothNavPanel : SmoothDraggablePanel
                 // رجّع لون الزر الحالي للرمادي لو مش هو المختار
                 if (btn != selectedButton)
                 {
-                    btn.ForeColor = Color.FromArgb(60, 60, 60);
+                    btn.ForeColor = Color.Gray;
                 }
                 animTimer.Start();
             };
@@ -76,7 +76,7 @@ public class UltraSmoothNavPanel : SmoothDraggablePanel
                     selectedButton.ForeColor = Color.FromArgb(60, 60, 60);
 
                 selectedButton = btn;
-                btn.ForeColor = Color.White;
+                btn.ForeColor = Color.Black;
                 targetRect = new RectangleF(btn.Left, btn.Top, btn.Width, btn.Height);
                 animTimer.Start();
             };
@@ -90,7 +90,7 @@ public class UltraSmoothNavPanel : SmoothDraggablePanel
         // لا ترسم شيئاً إذا كان العرض صغيراً جداً (حالة الاختفاء)
         if (currentRect.Width > 1)
         {
-            Color highlightColor = Color.FromArgb(210, 239, 128, 16);
+            Color highlightColor = Color.FromArgb(190, 255, 160, 0);
             using (SolidBrush brush = new SolidBrush(highlightColor))
             {
                 FillRoundedRectangle(e.Graphics, brush, currentRect, 10);

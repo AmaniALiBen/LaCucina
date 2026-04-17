@@ -39,7 +39,7 @@
             // 
             // rjPanel1
             // 
-            this.rjPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.rjPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.rjPanel1.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel1.BorderRadius = 15;
             this.rjPanel1.BorderSize = 0;
@@ -51,17 +51,17 @@
             this.rjPanel1.ForeColor = System.Drawing.Color.Black;
             this.rjPanel1.Location = new System.Drawing.Point(0, 0);
             this.rjPanel1.Name = "rjPanel1";
-            this.rjPanel1.Size = new System.Drawing.Size(308, 143);
+            this.rjPanel1.Size = new System.Drawing.Size(327, 95);
             this.rjPanel1.TabIndex = 4;
             // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Yu Gothic", 11F);
-            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.lblStatus.Location = new System.Drawing.Point(184, 87);
+            this.lblStatus.Font = new System.Drawing.Font("Yu Gothic", 9F);
+            this.lblStatus.ForeColor = System.Drawing.Color.Silver;
+            this.lblStatus.Location = new System.Drawing.Point(239, 59);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(71, 20);
+            this.lblStatus.Size = new System.Drawing.Size(58, 16);
             this.lblStatus.TabIndex = 6;
             this.lblStatus.Text = "Available";
             // 
@@ -72,7 +72,7 @@
             this.rjToggleButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(128)))), ((int)(((byte)(16)))));
             this.rjToggleButton1.Checked = true;
             this.rjToggleButton1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.rjToggleButton1.Location = new System.Drawing.Point(133, 85);
+            this.rjToggleButton1.Location = new System.Drawing.Point(188, 55);
             this.rjToggleButton1.MinimumSize = new System.Drawing.Size(45, 22);
             this.rjToggleButton1.Name = "rjToggleButton1";
             this.rjToggleButton1.OffBackColor = System.Drawing.Color.LightCoral;
@@ -87,11 +87,11 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Yu Gothic", 11F);
+            this.lblName.Font = new System.Drawing.Font("Yu Gothic", 10F);
             this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.lblName.Location = new System.Drawing.Point(119, 38);
+            this.lblName.Location = new System.Drawing.Point(185, 19);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(131, 20);
+            this.lblName.Size = new System.Drawing.Size(125, 18);
             this.lblName.TabIndex = 4;
             this.lblName.Text = "CHEESE BURGER";
             this.lblName.Click += new System.EventHandler(this.lblName_Click);
@@ -100,10 +100,10 @@
             // 
             this.picBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.picBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picBox.Image = global::LaCucina.Properties.Resources.تنزيل_removebg_preview;
+            this.picBox.Image = global::LaCucina.Properties.Resources.برجر_4png;
             this.picBox.Location = new System.Drawing.Point(0, 0);
             this.picBox.Name = "picBox";
-            this.picBox.Size = new System.Drawing.Size(113, 143);
+            this.picBox.Size = new System.Drawing.Size(164, 95);
             this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picBox.TabIndex = 3;
             this.picBox.TabStop = false;
@@ -115,7 +115,7 @@
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.rjPanel1);
             this.Name = "UCMenuEditorItem";
-            this.Size = new System.Drawing.Size(308, 143);
+            this.Size = new System.Drawing.Size(327, 95);
             this.rjPanel1.ResumeLayout(false);
             this.rjPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();

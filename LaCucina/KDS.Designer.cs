@@ -40,6 +40,7 @@
             this.rjPanel1 = new CustomControls.RJControls.RJPanel();
             this.rJgradiantPanal1 = new CustomControls.RJControls.RJgradiantPanal();
             this.rjButton1 = new CustomControls.RJControls.RJButton();
+            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.rjPanel4.SuspendLayout();
             this.rjPanel2.SuspendLayout();
             this.rjPanel6.SuspendLayout();
@@ -57,29 +58,30 @@
             this.rjPanel4.Controls.Add(this.smoothFlowPanel1);
             this.rjPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rjPanel4.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel4.Location = new System.Drawing.Point(162, 50);
+            this.rjPanel4.Location = new System.Drawing.Point(162, 48);
             this.rjPanel4.Margin = new System.Windows.Forms.Padding(30);
             this.rjPanel4.Name = "rjPanel4";
             this.rjPanel4.Padding = new System.Windows.Forms.Padding(7);
-            this.rjPanel4.Size = new System.Drawing.Size(700, 435);
+            this.rjPanel4.Size = new System.Drawing.Size(700, 437);
             this.rjPanel4.TabIndex = 3;
             // 
             // smoothFlowPanel1
             // 
             this.smoothFlowPanel1.AutoScroll = true;
-            this.smoothFlowPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(20)))));
+            this.smoothFlowPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.smoothFlowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.smoothFlowPanel1.Location = new System.Drawing.Point(7, 7);
             this.smoothFlowPanel1.Name = "smoothFlowPanel1";
-            this.smoothFlowPanel1.Size = new System.Drawing.Size(686, 421);
+            this.smoothFlowPanel1.Size = new System.Drawing.Size(686, 423);
             this.smoothFlowPanel1.TabIndex = 0;
             // 
             // rjPanel2
             // 
-            this.rjPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.rjPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.rjPanel2.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel2.BorderRadius = 15;
             this.rjPanel2.BorderSize = 0;
+            this.rjPanel2.Controls.Add(this.materialDivider1);
             this.rjPanel2.Controls.Add(this.btnClose);
             this.rjPanel2.Controls.Add(this.rjPanel6);
             this.rjPanel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -87,7 +89,7 @@
             this.rjPanel2.Location = new System.Drawing.Point(162, 10);
             this.rjPanel2.Margin = new System.Windows.Forms.Padding(30, 3, 3, 30);
             this.rjPanel2.Name = "rjPanel2";
-            this.rjPanel2.Size = new System.Drawing.Size(700, 40);
+            this.rjPanel2.Size = new System.Drawing.Size(700, 38);
             this.rjPanel2.TabIndex = 2;
             this.rjPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.rjPanel2_Paint);
             // 
@@ -129,7 +131,7 @@
             this.rjPanel6.Location = new System.Drawing.Point(552, 0);
             this.rjPanel6.Name = "rjPanel6";
             this.rjPanel6.Padding = new System.Windows.Forms.Padding(2);
-            this.rjPanel6.Size = new System.Drawing.Size(148, 40);
+            this.rjPanel6.Size = new System.Drawing.Size(148, 38);
             this.rjPanel6.TabIndex = 13;
             // 
             // btnLogout
@@ -161,7 +163,7 @@
             this.materialDivider3.Depth = 0;
             this.materialDivider3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.materialDivider3.ForeColor = System.Drawing.Color.Gray;
-            this.materialDivider3.Location = new System.Drawing.Point(2, 37);
+            this.materialDivider3.Location = new System.Drawing.Point(2, 35);
             this.materialDivider3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider3.Name = "materialDivider3";
             this.materialDivider3.Size = new System.Drawing.Size(144, 1);
@@ -194,7 +196,7 @@
             // 
             // rjPanel1
             // 
-            this.rjPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.rjPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.rjPanel1.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel1.BorderRadius = 15;
             this.rjPanel1.BorderSize = 0;
@@ -218,10 +220,10 @@
             this.rJgradiantPanal1.GradientAngle = 0F;
             this.rJgradiantPanal1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(81)))), ((int)(((byte)(0)))));
             this.rJgradiantPanal1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
-            this.rJgradiantPanal1.Location = new System.Drawing.Point(15, 414);
+            this.rJgradiantPanal1.Location = new System.Drawing.Point(2, 423);
             this.rJgradiantPanal1.Margin = new System.Windows.Forms.Padding(2);
             this.rJgradiantPanal1.Name = "rJgradiantPanal1";
-            this.rJgradiantPanal1.Size = new System.Drawing.Size(124, 54);
+            this.rJgradiantPanal1.Size = new System.Drawing.Size(148, 45);
             this.rJgradiantPanal1.TabIndex = 2;
             // 
             // rjButton1
@@ -237,21 +239,35 @@
             this.rjButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton1.Font = new System.Drawing.Font("Yu Gothic Medium", 10F, System.Drawing.FontStyle.Bold);
-            this.rjButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.rjButton1.ForeColor = System.Drawing.Color.Black;
             this.rjButton1.Location = new System.Drawing.Point(0, 0);
             this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(124, 54);
+            this.rjButton1.Size = new System.Drawing.Size(148, 45);
             this.rjButton1.TabIndex = 2;
             this.rjButton1.Text = "Edit Items";
-            this.rjButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.rjButton1.TextColor = System.Drawing.Color.Black;
             this.rjButton1.UseVisualStyleBackColor = false;
             this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
+            // 
+            // materialDivider1
+            // 
+            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.materialDivider1.Depth = 0;
+            this.materialDivider1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.materialDivider1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.materialDivider1.Location = new System.Drawing.Point(0, 0);
+            this.materialDivider1.Margin = new System.Windows.Forms.Padding(2);
+            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider1.Name = "materialDivider1";
+            this.materialDivider1.Size = new System.Drawing.Size(552, 1);
+            this.materialDivider1.TabIndex = 19;
+            this.materialDivider1.Text = "materialDivider1";
             // 
             // KDS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(20)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(872, 495);
             this.Controls.Add(this.rjPanel4);
             this.Controls.Add(this.rjPanel2);
@@ -287,5 +303,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label4;
         private CustomControls.RJControls.RJButton btnClose;
+        private MaterialSkin.Controls.MaterialDivider materialDivider1;
     }
 }

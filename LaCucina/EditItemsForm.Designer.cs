@@ -33,6 +33,9 @@
             this.rjPanel3 = new CustomControls.RJControls.RJPanel();
             this.professionalNavPanel1 = new ProfessionalNavPanel();
             this.rjButton6 = new CustomControls.RJControls.RJButton();
+            this.rjButton1 = new CustomControls.RJControls.RJButton();
+            this.rjButton2 = new CustomControls.RJControls.RJButton();
+            this.rjButton3 = new CustomControls.RJControls.RJButton();
             this.rjPanel1 = new CustomControls.RJControls.RJPanel();
             this.btnClose = new CustomControls.RJControls.RJButton();
             this.rjPanel6 = new CustomControls.RJControls.RJPanel();
@@ -41,9 +44,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
-            this.rjButton1 = new CustomControls.RJControls.RJButton();
-            this.rjButton2 = new CustomControls.RJControls.RJButton();
-            this.rjButton3 = new CustomControls.RJControls.RJButton();
+            this.materialDivider5 = new MaterialSkin.Controls.MaterialDivider();
             this.rjPanel3.SuspendLayout();
             this.professionalNavPanel1.SuspendLayout();
             this.rjPanel1.SuspendLayout();
@@ -57,7 +58,7 @@
             this.materialDivider2.Depth = 0;
             this.materialDivider2.Dock = System.Windows.Forms.DockStyle.Top;
             this.materialDivider2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.materialDivider2.Location = new System.Drawing.Point(10, 63);
+            this.materialDivider2.Location = new System.Drawing.Point(10, 66);
             this.materialDivider2.Margin = new System.Windows.Forms.Padding(2);
             this.materialDivider2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider2.Name = "materialDivider2";
@@ -69,22 +70,23 @@
             // smoothFlowPanel1
             // 
             this.smoothFlowPanel1.AutoScroll = true;
+            this.smoothFlowPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.smoothFlowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.smoothFlowPanel1.Location = new System.Drawing.Point(10, 108);
+            this.smoothFlowPanel1.Location = new System.Drawing.Point(10, 111);
             this.smoothFlowPanel1.Name = "smoothFlowPanel1";
-            this.smoothFlowPanel1.Size = new System.Drawing.Size(836, 338);
+            this.smoothFlowPanel1.Size = new System.Drawing.Size(836, 335);
             this.smoothFlowPanel1.TabIndex = 6;
             // 
             // rjPanel3
             // 
             this.rjPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(20)))));
             this.rjPanel3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjPanel3.BorderRadius = 12;
+            this.rjPanel3.BorderRadius = 0;
             this.rjPanel3.BorderSize = 0;
             this.rjPanel3.Controls.Add(this.professionalNavPanel1);
             this.rjPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.rjPanel3.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel3.Location = new System.Drawing.Point(10, 64);
+            this.rjPanel3.Location = new System.Drawing.Point(10, 67);
             this.rjPanel3.Margin = new System.Windows.Forms.Padding(5, 20, 5, 20);
             this.rjPanel3.Name = "rjPanel3";
             this.rjPanel3.Size = new System.Drawing.Size(836, 44);
@@ -93,6 +95,7 @@
             // professionalNavPanel1
             // 
             this.professionalNavPanel1.AutoScroll = true;
+            this.professionalNavPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.professionalNavPanel1.Controls.Add(this.rjButton6);
             this.professionalNavPanel1.Controls.Add(this.rjButton1);
             this.professionalNavPanel1.Controls.Add(this.rjButton2);
@@ -128,149 +131,6 @@
             this.rjButton6.TextColor = System.Drawing.Color.White;
             this.rjButton6.UseVisualStyleBackColor = false;
             this.rjButton6.Click += new System.EventHandler(this.rjButton6_Click);
-            // 
-            // rjPanel1
-            // 
-            this.rjPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.rjPanel1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjPanel1.BorderRadius = 12;
-            this.rjPanel1.BorderSize = 0;
-            this.rjPanel1.Controls.Add(this.btnClose);
-            this.rjPanel1.Controls.Add(this.rjPanel6);
-            this.rjPanel1.Controls.Add(this.rjTextBox1);
-            this.rjPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.rjPanel1.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel1.Location = new System.Drawing.Point(10, 10);
-            this.rjPanel1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 20);
-            this.rjPanel1.Name = "rjPanel1";
-            this.rjPanel1.Padding = new System.Windows.Forms.Padding(7);
-            this.rjPanel1.Size = new System.Drawing.Size(836, 53);
-            this.rjPanel1.TabIndex = 1;
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.BackgroundColor = System.Drawing.Color.Transparent;
-            this.btnClose.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.btnClose.BorderRadius = 0;
-            this.btnClose.BorderSize = 0;
-            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.ForeColor = System.Drawing.Color.Transparent;
-            this.btnClose.Image = global::LaCucina.Properties.Resources.close;
-            this.btnClose.Location = new System.Drawing.Point(7, 8);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(25, 39);
-            this.btnClose.TabIndex = 13;
-            this.btnClose.TextColor = System.Drawing.Color.Transparent;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // rjPanel6
-            // 
-            this.rjPanel6.BackColor = System.Drawing.Color.Transparent;
-            this.rjPanel6.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjPanel6.BorderRadius = 10;
-            this.rjPanel6.BorderSize = 0;
-            this.rjPanel6.Controls.Add(this.btnLogout);
-            this.rjPanel6.Controls.Add(this.materialDivider3);
-            this.rjPanel6.Controls.Add(this.pictureBox2);
-            this.rjPanel6.Controls.Add(this.label4);
-            this.rjPanel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.rjPanel6.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel6.Location = new System.Drawing.Point(685, 7);
-            this.rjPanel6.Name = "rjPanel6";
-            this.rjPanel6.Padding = new System.Windows.Forms.Padding(2);
-            this.rjPanel6.Size = new System.Drawing.Size(144, 39);
-            this.rjPanel6.TabIndex = 12;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.BackgroundColor = System.Drawing.Color.Transparent;
-            this.btnLogout.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.btnLogout.BorderRadius = 0;
-            this.btnLogout.BorderSize = 0;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI Symbol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.Silver;
-            this.btnLogout.Image = global::LaCucina.Properties.Resources.logout__3_;
-            this.btnLogout.Location = new System.Drawing.Point(112, 3);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(0);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(28, 29);
-            this.btnLogout.TabIndex = 14;
-            this.btnLogout.TextColor = System.Drawing.Color.Silver;
-            this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnLogout.UseVisualStyleBackColor = false;
-            // 
-            // materialDivider3
-            // 
-            this.materialDivider3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.materialDivider3.Depth = 0;
-            this.materialDivider3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.materialDivider3.ForeColor = System.Drawing.Color.Gray;
-            this.materialDivider3.Location = new System.Drawing.Point(2, 36);
-            this.materialDivider3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDivider3.Name = "materialDivider3";
-            this.materialDivider3.Size = new System.Drawing.Size(140, 1);
-            this.materialDivider3.TabIndex = 12;
-            this.materialDivider3.Text = "materialDivider3";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::LaCucina.Properties.Resources.user__4_;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 8);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(21, 21);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Yu Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(28, 10);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 20);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "maysem";
-            // 
-            // rjTextBox1
-            // 
-            this.rjTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.rjTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.rjTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.rjTextBox1.BorderRadius = 10;
-            this.rjTextBox1.BorderSize = 1;
-            this.rjTextBox1.Font = new System.Drawing.Font("Yu Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox1.ForeColor = System.Drawing.Color.White;
-            this.rjTextBox1.Location = new System.Drawing.Point(196, 8);
-            this.rjTextBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.rjTextBox1.Multiline = false;
-            this.rjTextBox1.Name = "rjTextBox1";
-            this.rjTextBox1.Padding = new System.Windows.Forms.Padding(7, 5, 7, 5);
-            this.rjTextBox1.PasswordChar = false;
-            this.rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox1.PlaceholderText = "⌕ search item...";
-            this.rjTextBox1.Size = new System.Drawing.Size(338, 34);
-            this.rjTextBox1.TabIndex = 10;
-            this.rjTextBox1.TabStop = false;
-            this.rjTextBox1.Texts = "";
-            this.rjTextBox1.UnderlinedStyle = false;
             // 
             // rjButton1
             // 
@@ -344,11 +204,169 @@
             this.rjButton3.UseVisualStyleBackColor = false;
             this.rjButton3.Click += new System.EventHandler(this.rjButton6_Click);
             // 
+            // rjPanel1
+            // 
+            this.rjPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.rjPanel1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjPanel1.BorderRadius = 0;
+            this.rjPanel1.BorderSize = 0;
+            this.rjPanel1.Controls.Add(this.materialDivider5);
+            this.rjPanel1.Controls.Add(this.btnClose);
+            this.rjPanel1.Controls.Add(this.rjPanel6);
+            this.rjPanel1.Controls.Add(this.rjTextBox1);
+            this.rjPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rjPanel1.ForeColor = System.Drawing.Color.Black;
+            this.rjPanel1.Location = new System.Drawing.Point(10, 10);
+            this.rjPanel1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 20);
+            this.rjPanel1.Name = "rjPanel1";
+            this.rjPanel1.Padding = new System.Windows.Forms.Padding(7, 7, 7, 3);
+            this.rjPanel1.Size = new System.Drawing.Size(836, 56);
+            this.rjPanel1.TabIndex = 1;
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btnClose.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.btnClose.BorderRadius = 0;
+            this.btnClose.BorderSize = 0;
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.Transparent;
+            this.btnClose.Image = global::LaCucina.Properties.Resources.close;
+            this.btnClose.Location = new System.Drawing.Point(7, 8);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(25, 39);
+            this.btnClose.TabIndex = 13;
+            this.btnClose.TextColor = System.Drawing.Color.Transparent;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // rjPanel6
+            // 
+            this.rjPanel6.BackColor = System.Drawing.Color.Transparent;
+            this.rjPanel6.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjPanel6.BorderRadius = 10;
+            this.rjPanel6.BorderSize = 0;
+            this.rjPanel6.Controls.Add(this.btnLogout);
+            this.rjPanel6.Controls.Add(this.materialDivider3);
+            this.rjPanel6.Controls.Add(this.pictureBox2);
+            this.rjPanel6.Controls.Add(this.label4);
+            this.rjPanel6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.rjPanel6.ForeColor = System.Drawing.Color.Black;
+            this.rjPanel6.Location = new System.Drawing.Point(685, 7);
+            this.rjPanel6.Name = "rjPanel6";
+            this.rjPanel6.Padding = new System.Windows.Forms.Padding(2);
+            this.rjPanel6.Size = new System.Drawing.Size(144, 46);
+            this.rjPanel6.TabIndex = 12;
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btnLogout.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.btnLogout.BorderRadius = 0;
+            this.btnLogout.BorderSize = 0;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI Symbol", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.Silver;
+            this.btnLogout.Image = global::LaCucina.Properties.Resources.logout__3_;
+            this.btnLogout.Location = new System.Drawing.Point(112, 3);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(28, 29);
+            this.btnLogout.TabIndex = 14;
+            this.btnLogout.TextColor = System.Drawing.Color.Silver;
+            this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnLogout.UseVisualStyleBackColor = false;
+            // 
+            // materialDivider3
+            // 
+            this.materialDivider3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.materialDivider3.Depth = 0;
+            this.materialDivider3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.materialDivider3.ForeColor = System.Drawing.Color.Gray;
+            this.materialDivider3.Location = new System.Drawing.Point(2, 43);
+            this.materialDivider3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider3.Name = "materialDivider3";
+            this.materialDivider3.Size = new System.Drawing.Size(140, 1);
+            this.materialDivider3.TabIndex = 12;
+            this.materialDivider3.Text = "materialDivider3";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::LaCucina.Properties.Resources.user__4_;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 8);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(21, 21);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Yu Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Gray;
+            this.label4.Location = new System.Drawing.Point(28, 10);
+            this.label4.Margin = new System.Windows.Forms.Padding(0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 20);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "maysem";
+            // 
+            // rjTextBox1
+            // 
+            this.rjTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rjTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.rjTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.rjTextBox1.BorderRadius = 10;
+            this.rjTextBox1.BorderSize = 1;
+            this.rjTextBox1.Font = new System.Drawing.Font("Yu Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rjTextBox1.ForeColor = System.Drawing.Color.White;
+            this.rjTextBox1.Location = new System.Drawing.Point(216, 8);
+            this.rjTextBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.rjTextBox1.Multiline = false;
+            this.rjTextBox1.Name = "rjTextBox1";
+            this.rjTextBox1.Padding = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.rjTextBox1.PasswordChar = false;
+            this.rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rjTextBox1.PlaceholderText = "⌕ search item...";
+            this.rjTextBox1.Size = new System.Drawing.Size(338, 34);
+            this.rjTextBox1.TabIndex = 10;
+            this.rjTextBox1.TabStop = false;
+            this.rjTextBox1.Texts = "";
+            this.rjTextBox1.UnderlinedStyle = false;
+            // 
+            // materialDivider5
+            // 
+            this.materialDivider5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.materialDivider5.Depth = 0;
+            this.materialDivider5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.materialDivider5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.materialDivider5.Location = new System.Drawing.Point(7, 52);
+            this.materialDivider5.Margin = new System.Windows.Forms.Padding(2);
+            this.materialDivider5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider5.Name = "materialDivider5";
+            this.materialDivider5.Size = new System.Drawing.Size(678, 1);
+            this.materialDivider5.TabIndex = 15;
+            this.materialDivider5.Text = "materialDivider5";
+            // 
             // EditItemsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(20)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(856, 456);
             this.Controls.Add(this.smoothFlowPanel1);
             this.Controls.Add(this.rjPanel3);
@@ -386,5 +404,6 @@
         private CustomControls.RJControls.RJButton rjButton1;
         private CustomControls.RJControls.RJButton rjButton2;
         private CustomControls.RJControls.RJButton rjButton3;
+        private MaterialSkin.Controls.MaterialDivider materialDivider5;
     }
 }

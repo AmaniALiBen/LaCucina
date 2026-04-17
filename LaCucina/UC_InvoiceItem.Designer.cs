@@ -43,7 +43,7 @@
             this.lblQty.AutoSize = true;
             this.lblQty.Font = new System.Drawing.Font("Yu Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblQty.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.lblQty.Location = new System.Drawing.Point(22, 10);
+            this.lblQty.Location = new System.Drawing.Point(34, 9);
             this.lblQty.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQty.Name = "lblQty";
             this.lblQty.Size = new System.Drawing.Size(19, 14);
@@ -59,10 +59,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblItemName.Font = new System.Drawing.Font("Yu Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblItemName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.lblItemName.Location = new System.Drawing.Point(52, -2);
+            this.lblItemName.Location = new System.Drawing.Point(74, -2);
             this.lblItemName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblItemName.Name = "lblItemName";
-            this.lblItemName.Size = new System.Drawing.Size(124, 34);
+            this.lblItemName.Size = new System.Drawing.Size(116, 34);
             this.lblItemName.TabIndex = 1;
             this.lblItemName.Text = "تتت";
             this.lblItemName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -82,14 +82,14 @@
             // 
             // materialDivider1
             // 
-            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
+            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
             this.materialDivider1.Depth = 0;
             this.materialDivider1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.materialDivider1.Location = new System.Drawing.Point(0, 31);
             this.materialDivider1.Margin = new System.Windows.Forms.Padding(2);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(321, 1);
+            this.materialDivider1.Size = new System.Drawing.Size(335, 1);
             this.materialDivider1.TabIndex = 3;
             this.materialDivider1.Text = "materialDivider1";
             // 
@@ -120,7 +120,7 @@
             this.rjButton1.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rjButton1.ForeColor = System.Drawing.Color.SpringGreen;
             this.rjButton1.Image = global::LaCucina.Properties.Resources.close;
-            this.rjButton1.Location = new System.Drawing.Point(303, 4);
+            this.rjButton1.Location = new System.Drawing.Point(307, 4);
             this.rjButton1.Margin = new System.Windows.Forms.Padding(0);
             this.rjButton1.Name = "rjButton1";
             this.rjButton1.Size = new System.Drawing.Size(18, 21);
@@ -145,10 +145,10 @@
             this.btnMinus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinus.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.btnMinus.Location = new System.Drawing.Point(4, 4);
+            this.btnMinus.Location = new System.Drawing.Point(0, 4);
             this.btnMinus.Margin = new System.Windows.Forms.Padding(0);
             this.btnMinus.Name = "btnMinus";
-            this.btnMinus.Size = new System.Drawing.Size(20, 20);
+            this.btnMinus.Size = new System.Drawing.Size(34, 20);
             this.btnMinus.TabIndex = 5;
             this.btnMinus.Text = "-";
             this.btnMinus.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -175,7 +175,7 @@
             this.btnPlus.Location = new System.Drawing.Point(38, 4);
             this.btnPlus.Margin = new System.Windows.Forms.Padding(0);
             this.btnPlus.Name = "btnPlus";
-            this.btnPlus.Size = new System.Drawing.Size(20, 20);
+            this.btnPlus.Size = new System.Drawing.Size(34, 20);
             this.btnPlus.TabIndex = 4;
             this.btnPlus.Text = "+";
             this.btnPlus.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -187,7 +187,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblUnitPrice);
             this.Controls.Add(this.lblQty);
@@ -198,7 +198,7 @@
             this.Controls.Add(this.lblItemName);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "UC_InvoiceItem";
-            this.Size = new System.Drawing.Size(321, 32);
+            this.Size = new System.Drawing.Size(335, 32);
             this.Load += new System.EventHandler(this.UC_InvoiceItem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
