@@ -138,5 +138,23 @@ namespace LaCucina
         {
 
         }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+           OrdersForm form = new OrdersForm();
+            form.ShowDialog();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            FloorPlanForm floor = new FloorPlanForm();
+            floor.Show();
+            this.Close();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

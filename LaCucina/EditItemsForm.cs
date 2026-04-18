@@ -12,7 +12,7 @@ namespace LaCucina
 {
     public partial class EditItemsForm : Form
     {
-
+        Form form;
         private void PopulateProducts()
         {
 
@@ -30,14 +30,16 @@ namespace LaCucina
                 smoothFlowPanel1.Controls.Add(card);
             }
         }
-        public EditItemsForm()
+        public EditItemsForm(Form form)
         {
+            this.form = form;
             InitializeComponent();
+          
         }
 
         private void EditItemsForm_Load(object sender, EventArgs e)
         {
-
+            rjButton6.PerformClick();
         }
 
         private void materialDivider2_Click(object sender, EventArgs e)
@@ -52,9 +54,23 @@ namespace LaCucina
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
-            KDS kDS = new KDS();
-            kDS.ShowDialog();
+           
+           
+           
+            form.Show();
+            this.Hide();
+
+
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

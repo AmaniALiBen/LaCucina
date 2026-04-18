@@ -12,8 +12,10 @@ namespace LaCucina
 {
     public partial class KDS : Form
     {
-        public KDS()
+        Form form;
+        public KDS(Form form)
         {
+            this.form = form;
             InitializeComponent();
         }
 
@@ -41,7 +43,7 @@ namespace LaCucina
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
-            EditItemsForm editItemsForm = new EditItemsForm();
+            EditItemsForm editItemsForm = new EditItemsForm(this);
             editItemsForm.ShowDialog();
             this.Hide();
         }
@@ -54,6 +56,14 @@ namespace LaCucina
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            form.Show();
+            this.Close();
+
         }
     }
 }

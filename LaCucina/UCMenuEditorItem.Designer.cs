@@ -51,7 +51,7 @@
             this.rjPanel1.ForeColor = System.Drawing.Color.Black;
             this.rjPanel1.Location = new System.Drawing.Point(0, 0);
             this.rjPanel1.Name = "rjPanel1";
-            this.rjPanel1.Size = new System.Drawing.Size(327, 95);
+            this.rjPanel1.Size = new System.Drawing.Size(294, 109);
             this.rjPanel1.TabIndex = 4;
             // 
             // lblStatus
@@ -59,7 +59,7 @@
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Yu Gothic", 9F);
             this.lblStatus.ForeColor = System.Drawing.Color.Silver;
-            this.lblStatus.Location = new System.Drawing.Point(239, 59);
+            this.lblStatus.Location = new System.Drawing.Point(198, 64);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(58, 16);
             this.lblStatus.TabIndex = 6;
@@ -72,7 +72,7 @@
             this.rjToggleButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(128)))), ((int)(((byte)(16)))));
             this.rjToggleButton1.Checked = true;
             this.rjToggleButton1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.rjToggleButton1.Location = new System.Drawing.Point(188, 55);
+            this.rjToggleButton1.Location = new System.Drawing.Point(147, 60);
             this.rjToggleButton1.MinimumSize = new System.Drawing.Size(45, 22);
             this.rjToggleButton1.Name = "rjToggleButton1";
             this.rjToggleButton1.OffBackColor = System.Drawing.Color.LightCoral;
@@ -89,7 +89,7 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Yu Gothic", 10F);
             this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.lblName.Location = new System.Drawing.Point(185, 19);
+            this.lblName.Location = new System.Drawing.Point(144, 23);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(125, 18);
             this.lblName.TabIndex = 4;
@@ -100,11 +100,11 @@
             // 
             this.picBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.picBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.picBox.Image = global::LaCucina.Properties.Resources.برجر_4png;
+            this.picBox.Image = global::LaCucina.Properties.Resources.برجر3;
             this.picBox.Location = new System.Drawing.Point(0, 0);
             this.picBox.Name = "picBox";
-            this.picBox.Size = new System.Drawing.Size(164, 95);
-            this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBox.Size = new System.Drawing.Size(138, 109);
+            this.picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBox.TabIndex = 3;
             this.picBox.TabStop = false;
             // 
@@ -114,8 +114,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.rjPanel1);
+            this.Margin = new System.Windows.Forms.Padding(9);
             this.Name = "UCMenuEditorItem";
-            this.Size = new System.Drawing.Size(327, 95);
+            this.Size = new System.Drawing.Size(294, 109);
             this.rjPanel1.ResumeLayout(false);
             this.rjPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();

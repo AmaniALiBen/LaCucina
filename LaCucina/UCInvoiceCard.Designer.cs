@@ -43,6 +43,7 @@
             this.rjPanel1 = new CustomControls.RJControls.RJPanel();
             this.lblTableNum = new System.Windows.Forms.Label();
             this.lblOrderNum = new System.Windows.Forms.Label();
+            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.rjPanel2.SuspendLayout();
             this.smoothFlowPanel1.SuspendLayout();
             this.rjPanel3.SuspendLayout();
@@ -174,6 +175,7 @@
             this.rjPanel3.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel3.BorderRadius = 5;
             this.rjPanel3.BorderSize = 0;
+            this.rjPanel3.Controls.Add(this.materialDivider1);
             this.rjPanel3.Controls.Add(this.lblTime);
             this.rjPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.rjPanel3.ForeColor = System.Drawing.Color.Black;
@@ -237,6 +239,19 @@
             this.lblOrderNum.TabIndex = 12;
             this.lblOrderNum.Text = "ORDER :#23";
             // 
+            // materialDivider1
+            // 
+            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.materialDivider1.Depth = 0;
+            this.materialDivider1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.materialDivider1.Location = new System.Drawing.Point(0, 0);
+            this.materialDivider1.Margin = new System.Windows.Forms.Padding(2);
+            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider1.Name = "materialDivider1";
+            this.materialDivider1.Size = new System.Drawing.Size(230, 1);
+            this.materialDivider1.TabIndex = 12;
+            this.materialDivider1.Text = "materialDivider1";
+            // 
             // UCInvoiceCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,7 +260,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.Controls.Add(this.rjPanel2);
-            this.Margin = new System.Windows.Forms.Padding(7);
+            this.Margin = new System.Windows.Forms.Padding(8);
             this.MaximumSize = new System.Drawing.Size(300, 500);
             this.MinimumSize = new System.Drawing.Size(250, 70);
             this.Name = "UCInvoiceCard";
@@ -278,5 +293,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private CustomControls.RJControls.RJPanel rjPanel3;
+        private MaterialSkin.Controls.MaterialDivider materialDivider1;
     }
 }

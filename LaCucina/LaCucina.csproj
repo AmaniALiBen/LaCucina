@@ -140,6 +140,12 @@
     <Compile Include="FloorPlanForm.Designer.cs">
       <DependentUpon>FloorPlanForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrdersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrdersForm.Designer.cs">
+      <DependentUpon>OrdersForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCDiscountManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -330,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FloorPlanForm.resx">
       <DependentUpon>FloorPlanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrdersForm.resx">
+      <DependentUpon>OrdersForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCDiscountManager.resx">
       <DependentUpon>UCDiscountManager.cs</DependentUpon>
@@ -554,6 +563,11 @@
     <None Include="Resources\close %281%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\history.png" />
+    <None Include="Resources\icons8-history-24.png" />
+    <None Include="Resources\back.png" />
+    <None Include="Resources\back %281%29.png" />
+    <None Include="Resources\back %282%29.png" />
     <Content Include="Resources\calendar_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -12,6 +12,11 @@ namespace LaCucina
 {
     public partial class FloorPlanForm : Form
     {
+        Form form;
+        public FloorPlanForm(Form form)
+        {this.form = form;
+            InitializeComponent();
+        }
         public FloorPlanForm()
         {
             InitializeComponent();
@@ -83,9 +88,15 @@ namespace LaCucina
         private void rjButton3_Click(object sender, EventArgs e)
         {
             Test t= new Test();
-            t.Show();
+            t.ShowDialog();
             this.Close();
             
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            form.Show();
+            this.Close();
         }
     }
 }
