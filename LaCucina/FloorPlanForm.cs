@@ -17,8 +17,15 @@ namespace LaCucina
         {this.form = form;
             InitializeComponent();
         }
+        Form loginForm;
         public FloorPlanForm()
         {
+            InitializeComponent();
+        }
+        public FloorPlanForm(Form loginForm)
+        {
+            this.loginForm = loginForm;
+            
             InitializeComponent();
         }
 
@@ -96,6 +103,13 @@ namespace LaCucina
         private void btnLogout_Click(object sender, EventArgs e)
         {
             form.Show();
+            this.Close();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+
+            loginForm.Show();
             this.Close();
         }
     }

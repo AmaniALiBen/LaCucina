@@ -55,9 +55,9 @@
             this.btnAddSpace = new CustomControls.RJControls.RJButton();
             this.rjButton8 = new CustomControls.RJControls.RJButton();
             this.rjPanel4 = new CustomControls.RJControls.RJPanel();
+            this.label4 = new System.Windows.Forms.Label();
             this.materialDivider2 = new MaterialSkin.Controls.MaterialDivider();
             this.btnNewTable = new CustomControls.RJControls.RJButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.pnlNewTaple.SuspendLayout();
             this.pnlFormat.SuspendLayout();
             this.pnlChairCount.SuspendLayout();
@@ -78,7 +78,7 @@
             this.pnlNewTaple.Controls.Add(this.pnlChairCount);
             this.pnlNewTaple.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnlNewTaple.Location = new System.Drawing.Point(780, 0);
-            this.pnlNewTaple.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlNewTaple.Margin = new System.Windows.Forms.Padding(4);
             this.pnlNewTaple.Name = "pnlNewTaple";
             this.pnlNewTaple.Size = new System.Drawing.Size(444, 547);
             this.pnlNewTaple.TabIndex = 0;
@@ -115,7 +115,7 @@
             this.txtTablenum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTablenum.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.txtTablenum.Location = new System.Drawing.Point(258, 300);
-            this.txtTablenum.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtTablenum.Margin = new System.Windows.Forms.Padding(6);
             this.txtTablenum.Multiline = false;
             this.txtTablenum.Name = "txtTablenum";
             this.txtTablenum.Padding = new System.Windows.Forms.Padding(15, 10, 15, 10);
@@ -146,7 +146,7 @@
             this.pnlFormat.Controls.Add(this.rbtnVertical);
             this.pnlFormat.Controls.Add(this.rbtnHorizantal);
             this.pnlFormat.Location = new System.Drawing.Point(4, 45);
-            this.pnlFormat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlFormat.Margin = new System.Windows.Forms.Padding(4);
             this.pnlFormat.Name = "pnlFormat";
             this.pnlFormat.Size = new System.Drawing.Size(417, 96);
             this.pnlFormat.TabIndex = 1;
@@ -169,7 +169,7 @@
             this.rbtnCircular.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.rbtnCircular.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.rbtnCircular.Location = new System.Drawing.Point(274, 42);
-            this.rbtnCircular.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnCircular.Margin = new System.Windows.Forms.Padding(4);
             this.rbtnCircular.MinimumSize = new System.Drawing.Size(0, 31);
             this.rbtnCircular.Name = "rbtnCircular";
             this.rbtnCircular.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
@@ -186,7 +186,7 @@
             this.rbtnVertical.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.rbtnVertical.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.rbtnVertical.Location = new System.Drawing.Point(156, 44);
-            this.rbtnVertical.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnVertical.Margin = new System.Windows.Forms.Padding(4);
             this.rbtnVertical.MinimumSize = new System.Drawing.Size(0, 31);
             this.rbtnVertical.Name = "rbtnVertical";
             this.rbtnVertical.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
@@ -203,7 +203,7 @@
             this.rbtnHorizantal.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.rbtnHorizantal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.rbtnHorizantal.Location = new System.Drawing.Point(22, 42);
-            this.rbtnHorizantal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtnHorizantal.Margin = new System.Windows.Forms.Padding(4);
             this.rbtnHorizantal.MinimumSize = new System.Drawing.Size(0, 31);
             this.rbtnHorizantal.Name = "rbtnHorizantal";
             this.rbtnHorizantal.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
@@ -224,7 +224,7 @@
             this.pnlChairCount.Controls.Add(this.rbtn10);
             this.pnlChairCount.Controls.Add(this.rbtn2);
             this.pnlChairCount.Location = new System.Drawing.Point(4, 151);
-            this.pnlChairCount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlChairCount.Margin = new System.Windows.Forms.Padding(4);
             this.pnlChairCount.Name = "pnlChairCount";
             this.pnlChairCount.Size = new System.Drawing.Size(417, 132);
             this.pnlChairCount.TabIndex = 2;
@@ -235,7 +235,7 @@
             this.rbtn4.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.rbtn4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.rbtn4.Location = new System.Drawing.Point(126, 35);
-            this.rbtn4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtn4.Margin = new System.Windows.Forms.Padding(4);
             this.rbtn4.MinimumSize = new System.Drawing.Size(0, 31);
             this.rbtn4.Name = "rbtn4";
             this.rbtn4.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
@@ -263,7 +263,7 @@
             this.rbtn8.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.rbtn8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.rbtn8.Location = new System.Drawing.Point(320, 35);
-            this.rbtn8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtn8.Margin = new System.Windows.Forms.Padding(4);
             this.rbtn8.MinimumSize = new System.Drawing.Size(0, 31);
             this.rbtn8.Name = "rbtn8";
             this.rbtn8.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
@@ -279,7 +279,7 @@
             this.rbtn12.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.rbtn12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.rbtn12.Location = new System.Drawing.Point(126, 83);
-            this.rbtn12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtn12.Margin = new System.Windows.Forms.Padding(4);
             this.rbtn12.MinimumSize = new System.Drawing.Size(0, 31);
             this.rbtn12.Name = "rbtn12";
             this.rbtn12.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
@@ -295,7 +295,7 @@
             this.rbtn6.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.rbtn6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.rbtn6.Location = new System.Drawing.Point(219, 35);
-            this.rbtn6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtn6.Margin = new System.Windows.Forms.Padding(4);
             this.rbtn6.MinimumSize = new System.Drawing.Size(0, 31);
             this.rbtn6.Name = "rbtn6";
             this.rbtn6.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
@@ -311,7 +311,7 @@
             this.rbtn10.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.rbtn10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.rbtn10.Location = new System.Drawing.Point(22, 83);
-            this.rbtn10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtn10.Margin = new System.Windows.Forms.Padding(4);
             this.rbtn10.MinimumSize = new System.Drawing.Size(0, 31);
             this.rbtn10.Name = "rbtn10";
             this.rbtn10.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
@@ -328,7 +328,7 @@
             this.rbtn2.CheckedColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.rbtn2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.rbtn2.Location = new System.Drawing.Point(22, 35);
-            this.rbtn2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rbtn2.Margin = new System.Windows.Forms.Padding(4);
             this.rbtn2.MinimumSize = new System.Drawing.Size(0, 31);
             this.rbtn2.Name = "rbtn2";
             this.rbtn2.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
@@ -345,7 +345,7 @@
             this.pnlTables.Controls.Add(this.pnlNewTaple);
             this.pnlTables.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTables.Location = new System.Drawing.Point(0, 48);
-            this.pnlTables.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlTables.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTables.Name = "pnlTables";
             this.pnlTables.Size = new System.Drawing.Size(1224, 547);
             this.pnlTables.TabIndex = 25;
@@ -378,7 +378,7 @@
             this.rjPanel1.Location = new System.Drawing.Point(334, 22);
             this.rjPanel1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 39);
             this.rjPanel1.Name = "rjPanel1";
-            this.rjPanel1.Size = new System.Drawing.Size(607, 44);
+            this.rjPanel1.Size = new System.Drawing.Size(615, 44);
             this.rjPanel1.TabIndex = 1;
             // 
             // smoothFlowPanel1
@@ -393,7 +393,7 @@
             this.smoothFlowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.smoothFlowPanel1.Location = new System.Drawing.Point(0, 0);
             this.smoothFlowPanel1.Name = "smoothFlowPanel1";
-            this.smoothFlowPanel1.Size = new System.Drawing.Size(607, 44);
+            this.smoothFlowPanel1.Size = new System.Drawing.Size(615, 44);
             this.smoothFlowPanel1.TabIndex = 0;
             // 
             // rjButton5
@@ -472,9 +472,9 @@
             this.btnAddSpace.Location = new System.Drawing.Point(426, 0);
             this.btnAddSpace.Margin = new System.Windows.Forms.Padding(0);
             this.btnAddSpace.Name = "btnAddSpace";
-            this.btnAddSpace.Size = new System.Drawing.Size(166, 44);
+            this.btnAddSpace.Size = new System.Drawing.Size(189, 44);
             this.btnAddSpace.TabIndex = 4;
-            this.btnAddSpace.Text = "Add Space ";
+            this.btnAddSpace.Text = "Add Space   ";
             this.btnAddSpace.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.btnAddSpace.UseVisualStyleBackColor = false;
             this.btnAddSpace.Click += new System.EventHandler(this.rjButton1_Click);
@@ -505,9 +505,9 @@
             this.rjPanel4.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.rjPanel4.BorderRadius = 0;
             this.rjPanel4.BorderSize = 0;
+            this.rjPanel4.Controls.Add(this.label4);
             this.rjPanel4.Controls.Add(this.materialDivider2);
             this.rjPanel4.Controls.Add(this.btnNewTable);
-            this.rjPanel4.Controls.Add(this.label1);
             this.rjPanel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.rjPanel4.ForeColor = System.Drawing.Color.Black;
             this.rjPanel4.Location = new System.Drawing.Point(0, 0);
@@ -516,6 +516,18 @@
             this.rjPanel4.Size = new System.Drawing.Size(1224, 48);
             this.rjPanel4.TabIndex = 24;
             this.rjPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.rjPanel4_Paint);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.label4.Location = new System.Drawing.Point(4, 9);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(226, 31);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "🗺️ Floorplan editor";
             // 
             // materialDivider2
             // 
@@ -552,18 +564,6 @@
             this.btnNewTable.UseVisualStyleBackColor = false;
             this.btnNewTable.Click += new System.EventHandler(this.btnNewTable_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label1.Location = new System.Drawing.Point(4, 15);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(179, 24);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "🗺️ Floorplan editor";
-            // 
             // USFloorplanEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -571,7 +571,7 @@
             this.Controls.Add(this.pnlTables);
             this.Controls.Add(this.rjPanel3);
             this.Controls.Add(this.rjPanel4);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "USFloorplanEditor";
             this.Size = new System.Drawing.Size(1224, 731);
             this.Load += new System.EventHandler(this.FloorplanEditorUS_Load);
@@ -600,7 +600,6 @@
         private CustomControls.RJControls.RJButton rjButton7;
         private CustomControls.RJControls.RJButton rjButton8;
         private CustomControls.RJControls.RJPanel rjPanel3;
-        private System.Windows.Forms.Label label1;
         private CustomControls.RJControls.RJButton btnNewTable;
         private MaterialSkin.Controls.MaterialDivider materialDivider2;
         private CustomControls.RJControls.RJPanel rjPanel4;
@@ -623,5 +622,6 @@
         private System.Windows.Forms.Panel pnlFormat;
         private System.Windows.Forms.Panel pnlChairCount;
         private CustomControls.RJControls.RJButton btnAddSpace;
+        private System.Windows.Forms.Label label4;
     }
 }

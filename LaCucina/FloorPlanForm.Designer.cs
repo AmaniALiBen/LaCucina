@@ -237,10 +237,9 @@
             // 
             this.panel1.Controls.Add(this.rJgradiantPanal1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(455, 5);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(681, 7);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(225, 47);
+            this.panel1.Size = new System.Drawing.Size(338, 70);
             this.panel1.TabIndex = 21;
             // 
             // rJgradiantPanal1
@@ -254,10 +253,9 @@
             this.rJgradiantPanal1.GradientAngle = 0F;
             this.rJgradiantPanal1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(128)))), ((int)(((byte)(16)))));
             this.rJgradiantPanal1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
-            this.rJgradiantPanal1.Location = new System.Drawing.Point(2, 8);
-            this.rJgradiantPanal1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rJgradiantPanal1.Location = new System.Drawing.Point(3, 12);
             this.rJgradiantPanal1.Name = "rJgradiantPanal1";
-            this.rJgradiantPanal1.Size = new System.Drawing.Size(190, 31);
+            this.rJgradiantPanal1.Size = new System.Drawing.Size(285, 45);
             this.rJgradiantPanal1.TabIndex = 11;
             // 
             // btnTakeAway
@@ -269,12 +267,15 @@
             this.btnTakeAway.BorderSize = 0;
             this.btnTakeAway.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnTakeAway.FlatAppearance.BorderSize = 0;
+            this.btnTakeAway.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnTakeAway.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnTakeAway.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTakeAway.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnTakeAway.ForeColor = System.Drawing.Color.Black;
             this.btnTakeAway.Location = new System.Drawing.Point(0, 0);
+            this.btnTakeAway.Margin = new System.Windows.Forms.Padding(4);
             this.btnTakeAway.Name = "btnTakeAway";
-            this.btnTakeAway.Size = new System.Drawing.Size(190, 31);
+            this.btnTakeAway.Size = new System.Drawing.Size(285, 45);
             this.btnTakeAway.TabIndex = 0;
             this.btnTakeAway.Text = "🛒  TAKEAWAY ORDER";
             this.btnTakeAway.TextColor = System.Drawing.Color.Black;

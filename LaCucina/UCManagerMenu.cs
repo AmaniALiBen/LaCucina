@@ -96,5 +96,10 @@ namespace LaCucina
             if(editCategory.DialogResult==DialogResult.OK|| editCategory.DialogResult ==DialogResult.Cancel)
                 editCategory.Close();
         }
+
+        private void UCManagerMenu_Load(object sender, EventArgs e)
+        {
+            btnSandwiches.PerformClick();
+        }
     }
 }

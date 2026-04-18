@@ -60,10 +60,9 @@
             this.rjPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.rjPanel2.ForeColor = System.Drawing.Color.Black;
             this.rjPanel2.Location = new System.Drawing.Point(0, 0);
-            this.rjPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.rjPanel2.Name = "rjPanel2";
-            this.rjPanel2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.rjPanel2.Size = new System.Drawing.Size(800, 53);
+            this.rjPanel2.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
+            this.rjPanel2.Size = new System.Drawing.Size(1200, 77);
             this.rjPanel2.TabIndex = 5;
             // 
             // ultraSmoothNavPanel1
@@ -79,11 +78,10 @@
             this.ultraSmoothNavPanel1.Controls.Add(this.btnSideDishes);
             this.ultraSmoothNavPanel1.Controls.Add(this.btnSoups);
             this.ultraSmoothNavPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ultraSmoothNavPanel1.Location = new System.Drawing.Point(0, 5);
-            this.ultraSmoothNavPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.ultraSmoothNavPanel1.Location = new System.Drawing.Point(0, 7);
             this.ultraSmoothNavPanel1.Name = "ultraSmoothNavPanel1";
-            this.ultraSmoothNavPanel1.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.ultraSmoothNavPanel1.Size = new System.Drawing.Size(767, 47);
+            this.ultraSmoothNavPanel1.Padding = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.ultraSmoothNavPanel1.Size = new System.Drawing.Size(1150, 69);
             this.ultraSmoothNavPanel1.TabIndex = 6;
             this.ultraSmoothNavPanel1.WrapContents = false;
             // 
@@ -101,9 +99,10 @@
             this.btnSandwiches.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSandwiches.Font = new System.Drawing.Font("Yu Gothic", 11F, System.Drawing.FontStyle.Bold);
             this.btnSandwiches.ForeColor = System.Drawing.Color.Gray;
-            this.btnSandwiches.Location = new System.Drawing.Point(10, 9);
+            this.btnSandwiches.Location = new System.Drawing.Point(14, 13);
+            this.btnSandwiches.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSandwiches.Name = "btnSandwiches";
-            this.btnSandwiches.Size = new System.Drawing.Size(147, 36);
+            this.btnSandwiches.Size = new System.Drawing.Size(220, 53);
             this.btnSandwiches.TabIndex = 9;
             this.btnSandwiches.Text = "Sandwiches";
             this.btnSandwiches.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -125,9 +124,10 @@
             this.btnPasta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPasta.Font = new System.Drawing.Font("Yu Gothic", 11F, System.Drawing.FontStyle.Bold);
             this.btnPasta.ForeColor = System.Drawing.Color.Gray;
-            this.btnPasta.Location = new System.Drawing.Point(163, 9);
+            this.btnPasta.Location = new System.Drawing.Point(242, 13);
+            this.btnPasta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPasta.Name = "btnPasta";
-            this.btnPasta.Size = new System.Drawing.Size(150, 36);
+            this.btnPasta.Size = new System.Drawing.Size(225, 53);
             this.btnPasta.TabIndex = 11;
             this.btnPasta.Text = "Pasta";
             this.btnPasta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -149,9 +149,10 @@
             this.btnSalads.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalads.Font = new System.Drawing.Font("Yu Gothic", 11F, System.Drawing.FontStyle.Bold);
             this.btnSalads.ForeColor = System.Drawing.Color.Gray;
-            this.btnSalads.Location = new System.Drawing.Point(319, 9);
+            this.btnSalads.Location = new System.Drawing.Point(475, 13);
+            this.btnSalads.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalads.Name = "btnSalads";
-            this.btnSalads.Size = new System.Drawing.Size(150, 36);
+            this.btnSalads.Size = new System.Drawing.Size(225, 53);
             this.btnSalads.TabIndex = 7;
             this.btnSalads.Text = "Salads";
             this.btnSalads.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -173,9 +174,10 @@
             this.btnDrinks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDrinks.Font = new System.Drawing.Font("Yu Gothic", 11F, System.Drawing.FontStyle.Bold);
             this.btnDrinks.ForeColor = System.Drawing.Color.Gray;
-            this.btnDrinks.Location = new System.Drawing.Point(475, 9);
+            this.btnDrinks.Location = new System.Drawing.Point(708, 13);
+            this.btnDrinks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDrinks.Name = "btnDrinks";
-            this.btnDrinks.Size = new System.Drawing.Size(147, 36);
+            this.btnDrinks.Size = new System.Drawing.Size(220, 53);
             this.btnDrinks.TabIndex = 13;
             this.btnDrinks.Text = "Drinks";
             this.btnDrinks.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -197,9 +199,10 @@
             this.btnGrills.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrills.Font = new System.Drawing.Font("Yu Gothic", 11F, System.Drawing.FontStyle.Bold);
             this.btnGrills.ForeColor = System.Drawing.Color.Gray;
-            this.btnGrills.Location = new System.Drawing.Point(628, 9);
+            this.btnGrills.Location = new System.Drawing.Point(936, 13);
+            this.btnGrills.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGrills.Name = "btnGrills";
-            this.btnGrills.Size = new System.Drawing.Size(150, 36);
+            this.btnGrills.Size = new System.Drawing.Size(225, 53);
             this.btnGrills.TabIndex = 12;
             this.btnGrills.Text = "Grills";
             this.btnGrills.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -221,9 +224,10 @@
             this.btnBurgers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBurgers.Font = new System.Drawing.Font("Yu Gothic", 11F, System.Drawing.FontStyle.Bold);
             this.btnBurgers.ForeColor = System.Drawing.Color.Gray;
-            this.btnBurgers.Location = new System.Drawing.Point(784, 9);
+            this.btnBurgers.Location = new System.Drawing.Point(1169, 13);
+            this.btnBurgers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBurgers.Name = "btnBurgers";
-            this.btnBurgers.Size = new System.Drawing.Size(147, 36);
+            this.btnBurgers.Size = new System.Drawing.Size(220, 53);
             this.btnBurgers.TabIndex = 14;
             this.btnBurgers.Text = "Burgers";
             this.btnBurgers.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -245,9 +249,10 @@
             this.btnDesserts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesserts.Font = new System.Drawing.Font("Yu Gothic", 11F, System.Drawing.FontStyle.Bold);
             this.btnDesserts.ForeColor = System.Drawing.Color.Gray;
-            this.btnDesserts.Location = new System.Drawing.Point(937, 9);
+            this.btnDesserts.Location = new System.Drawing.Point(1397, 13);
+            this.btnDesserts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDesserts.Name = "btnDesserts";
-            this.btnDesserts.Size = new System.Drawing.Size(147, 36);
+            this.btnDesserts.Size = new System.Drawing.Size(220, 53);
             this.btnDesserts.TabIndex = 14;
             this.btnDesserts.Text = "Desserts";
             this.btnDesserts.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -269,9 +274,10 @@
             this.btnSideDishes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSideDishes.Font = new System.Drawing.Font("Yu Gothic", 11F, System.Drawing.FontStyle.Bold);
             this.btnSideDishes.ForeColor = System.Drawing.Color.Gray;
-            this.btnSideDishes.Location = new System.Drawing.Point(1090, 9);
+            this.btnSideDishes.Location = new System.Drawing.Point(1625, 13);
+            this.btnSideDishes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSideDishes.Name = "btnSideDishes";
-            this.btnSideDishes.Size = new System.Drawing.Size(147, 36);
+            this.btnSideDishes.Size = new System.Drawing.Size(220, 53);
             this.btnSideDishes.TabIndex = 15;
             this.btnSideDishes.Text = "Side Dishes";
             this.btnSideDishes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -293,9 +299,10 @@
             this.btnSoups.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSoups.Font = new System.Drawing.Font("Yu Gothic", 11F, System.Drawing.FontStyle.Bold);
             this.btnSoups.ForeColor = System.Drawing.Color.Gray;
-            this.btnSoups.Location = new System.Drawing.Point(1243, 9);
+            this.btnSoups.Location = new System.Drawing.Point(1853, 13);
+            this.btnSoups.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSoups.Name = "btnSoups";
-            this.btnSoups.Size = new System.Drawing.Size(147, 36);
+            this.btnSoups.Size = new System.Drawing.Size(220, 53);
             this.btnSoups.TabIndex = 8;
             this.btnSoups.Text = "Soups";
             this.btnSoups.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -317,10 +324,9 @@
             this.btnAddCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddCategory.ForeColor = System.Drawing.Color.Transparent;
             this.btnAddCategory.Image = global::LaCucina.Properties.Resources.plus;
-            this.btnAddCategory.Location = new System.Drawing.Point(767, 5);
-            this.btnAddCategory.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddCategory.Location = new System.Drawing.Point(1150, 7);
             this.btnAddCategory.Name = "btnAddCategory";
-            this.btnAddCategory.Size = new System.Drawing.Size(33, 47);
+            this.btnAddCategory.Size = new System.Drawing.Size(50, 69);
             this.btnAddCategory.TabIndex = 13;
             this.btnAddCategory.TextColor = System.Drawing.Color.Transparent;
             this.btnAddCategory.UseVisualStyleBackColor = false;
@@ -332,11 +338,10 @@
             this.materialDivider1.Depth = 0;
             this.materialDivider1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.materialDivider1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.materialDivider1.Location = new System.Drawing.Point(0, 52);
-            this.materialDivider1.Margin = new System.Windows.Forms.Padding(2);
+            this.materialDivider1.Location = new System.Drawing.Point(0, 76);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(800, 1);
+            this.materialDivider1.Size = new System.Drawing.Size(1200, 1);
             this.materialDivider1.TabIndex = 0;
             this.materialDivider1.Text = "materialDivider1";
             // 
@@ -354,9 +359,10 @@
             this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsers.Font = new System.Drawing.Font("Yu Gothic", 11F);
             this.btnUsers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.btnUsers.Location = new System.Drawing.Point(9, 9);
+            this.btnUsers.Location = new System.Drawing.Point(14, 13);
+            this.btnUsers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Size = new System.Drawing.Size(150, 36);
+            this.btnUsers.Size = new System.Drawing.Size(225, 53);
             this.btnUsers.TabIndex = 6;
             this.btnUsers.Text = "Burgers";
             this.btnUsers.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -377,9 +383,10 @@
             this.rjButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton3.Font = new System.Drawing.Font("Yu Gothic", 11F);
             this.rjButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.rjButton3.Location = new System.Drawing.Point(165, 9);
+            this.rjButton3.Location = new System.Drawing.Point(248, 13);
+            this.rjButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rjButton3.Name = "rjButton3";
-            this.rjButton3.Size = new System.Drawing.Size(147, 36);
+            this.rjButton3.Size = new System.Drawing.Size(220, 53);
             this.rjButton3.TabIndex = 10;
             this.rjButton3.Text = "Pizza";
             this.rjButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -394,24 +401,23 @@
             this.pnlItems.BorderSize = 0;
             this.pnlItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlItems.ForeColor = System.Drawing.Color.Black;
-            this.pnlItems.Location = new System.Drawing.Point(0, 53);
-            this.pnlItems.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlItems.Location = new System.Drawing.Point(0, 77);
             this.pnlItems.Name = "pnlItems";
-            this.pnlItems.Size = new System.Drawing.Size(800, 384);
+            this.pnlItems.Size = new System.Drawing.Size(1200, 562);
             this.pnlItems.TabIndex = 11;
             // 
             // UCManagerMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.Controls.Add(this.pnlItems);
             this.Controls.Add(this.rjPanel2);
             this.Controls.Add(this.btnUsers);
             this.Controls.Add(this.rjButton3);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCManagerMenu";
-            this.Size = new System.Drawing.Size(800, 437);
+            this.Size = new System.Drawing.Size(1200, 639);
+            this.Load += new System.EventHandler(this.UCManagerMenu_Load);
             this.rjPanel2.ResumeLayout(false);
             this.ultraSmoothNavPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

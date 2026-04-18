@@ -24,8 +24,10 @@ namespace LaCucina
 
         private void UCDiscountManager_Load(object sender, EventArgs e)
         {
-            UCRowDiscount r = new UCRowDiscount();
-            tablePanel1.Controls.Add(r);
+            for (int i = 1; i < 7; i++) {
+                UCRowDiscount r = new UCRowDiscount();
+                tablePanel1.Controls.Add(r); 
+            }
         }
     }
 }

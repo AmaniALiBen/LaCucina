@@ -139,6 +139,7 @@ namespace CustomControls.RJControls
         }
         protected override void OnHandleCreated(EventArgs e)
         {
+            if (this.DesignMode) return;
             base.OnHandleCreated(e);
             this.Parent.BackColorChanged += new EventHandler(Container_BackColorChanged);
         }
