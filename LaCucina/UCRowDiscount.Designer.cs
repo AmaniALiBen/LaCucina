@@ -60,12 +60,12 @@
             this.rJgradiantPanal1.BackColor = System.Drawing.Color.Transparent;
             this.rJgradiantPanal1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.rJgradiantPanal1.BorderRadius = 10;
-            this.rJgradiantPanal1.BorderSize = 1;
+            this.rJgradiantPanal1.BorderSize = 0;
             this.rJgradiantPanal1.Controls.Add(this.label1);
             this.rJgradiantPanal1.ForeColor = System.Drawing.Color.Black;
             this.rJgradiantPanal1.GradientAngle = 0F;
-            this.rJgradiantPanal1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(128)))), ((int)(((byte)(16)))));
-            this.rJgradiantPanal1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
+            this.rJgradiantPanal1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
+            this.rJgradiantPanal1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
             this.rJgradiantPanal1.Location = new System.Drawing.Point(12, 16);
             this.rJgradiantPanal1.Name = "rJgradiantPanal1";
             this.rJgradiantPanal1.Size = new System.Drawing.Size(85, 85);
@@ -74,10 +74,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(10, 30);
+            this.label1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(128)))), ((int)(((byte)(16)))));
+            this.label1.Location = new System.Drawing.Point(13, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 27);
+            this.label1.Size = new System.Drawing.Size(58, 34);
             this.label1.TabIndex = 0;
             this.label1.Text = "15%";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -87,7 +88,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label10.Location = new System.Drawing.Point(157, 44);
+            this.label10.Location = new System.Drawing.Point(160, 42);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(240, 31);
             this.label10.TabIndex = 13;
@@ -98,7 +99,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label2.Location = new System.Drawing.Point(586, 42);
+            this.label2.Location = new System.Drawing.Point(589, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(145, 31);
             this.label2.TabIndex = 14;
@@ -115,7 +116,7 @@
             this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton1.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.rjButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(191)))), ((int)(((byte)(79)))));
-            this.rjButton1.Location = new System.Drawing.Point(1039, 42);
+            this.rjButton1.Location = new System.Drawing.Point(967, 42);
             this.rjButton1.Name = "rjButton1";
             this.rjButton1.Size = new System.Drawing.Size(150, 40);
             this.rjButton1.TabIndex = 15;

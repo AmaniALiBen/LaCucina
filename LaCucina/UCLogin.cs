@@ -41,7 +41,7 @@ namespace LaCucina
             else if (txtUserName.Texts == "waiter")
             {
                 this.Parent.Hide();
-                FloorPlanForm form = new FloorPlanForm();
+                FloorPlanForm form = new FloorPlanForm(this.FindForm());
                 form.ShowDialog();
             }
             else if(txtUserName.Texts == "chef")

@@ -12,8 +12,15 @@ namespace LaCucina
 {
     public partial class FloorPlanForm : Form
     {
+        Form loginForm;
         public FloorPlanForm()
         {
+            InitializeComponent();
+        }
+        public FloorPlanForm(Form loginForm)
+        {
+            this.loginForm = loginForm;
+            
             InitializeComponent();
         }
 
@@ -86,6 +93,13 @@ namespace LaCucina
             t.Show();
             this.Close();
             
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+
+            loginForm.Show();
+            this.Close();
         }
     }
 }

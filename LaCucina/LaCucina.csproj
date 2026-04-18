@@ -316,6 +316,9 @@
     <EmbeddedResource Include="CircularTableUserControl.resx">
       <DependentUpon>CircularTableUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="controls\ModernSwitch.resx">
+      <DependentUpon>ModernSwitch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="controls\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>

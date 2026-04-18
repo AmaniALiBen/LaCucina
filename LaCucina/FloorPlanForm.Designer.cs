@@ -38,6 +38,9 @@
             this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.rjButton8 = new CustomControls.RJControls.RJButton();
             this.rjPanel2 = new CustomControls.RJControls.RJPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.rJgradiantPanal1 = new CustomControls.RJControls.RJgradiantPanal();
+            this.btnTakeAway = new CustomControls.RJControls.RJButton();
             this.btnClose = new CustomControls.RJControls.RJButton();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.rjPanel1 = new CustomControls.RJControls.RJPanel();
@@ -45,17 +48,14 @@
             this.materialDivider3 = new MaterialSkin.Controls.MaterialDivider();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.rJgradiantPanal1 = new CustomControls.RJControls.RJgradiantPanal();
-            this.btnTakeAway = new CustomControls.RJControls.RJButton();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.rjPanel3.SuspendLayout();
             this.rjPanel4.SuspendLayout();
             this.smoothFlowPanel1.SuspendLayout();
             this.rjPanel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.rJgradiantPanal1.SuspendLayout();
             this.rjPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.rJgradiantPanal1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTables
@@ -231,6 +231,55 @@
             this.rjPanel2.Size = new System.Drawing.Size(1258, 78);
             this.rjPanel2.TabIndex = 5;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.rJgradiantPanal1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(681, 7);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(338, 70);
+            this.panel1.TabIndex = 21;
+            // 
+            // rJgradiantPanal1
+            // 
+            this.rJgradiantPanal1.BackColor = System.Drawing.Color.Transparent;
+            this.rJgradiantPanal1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.rJgradiantPanal1.BorderRadius = 10;
+            this.rJgradiantPanal1.BorderSize = 0;
+            this.rJgradiantPanal1.Controls.Add(this.btnTakeAway);
+            this.rJgradiantPanal1.ForeColor = System.Drawing.Color.Black;
+            this.rJgradiantPanal1.GradientAngle = 0F;
+            this.rJgradiantPanal1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(128)))), ((int)(((byte)(16)))));
+            this.rJgradiantPanal1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
+            this.rJgradiantPanal1.Location = new System.Drawing.Point(3, 12);
+            this.rJgradiantPanal1.Name = "rJgradiantPanal1";
+            this.rJgradiantPanal1.Size = new System.Drawing.Size(285, 45);
+            this.rJgradiantPanal1.TabIndex = 11;
+            // 
+            // btnTakeAway
+            // 
+            this.btnTakeAway.BackColor = System.Drawing.Color.Transparent;
+            this.btnTakeAway.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btnTakeAway.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnTakeAway.BorderRadius = 10;
+            this.btnTakeAway.BorderSize = 0;
+            this.btnTakeAway.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTakeAway.FlatAppearance.BorderSize = 0;
+            this.btnTakeAway.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnTakeAway.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnTakeAway.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTakeAway.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btnTakeAway.ForeColor = System.Drawing.Color.Black;
+            this.btnTakeAway.Location = new System.Drawing.Point(0, 0);
+            this.btnTakeAway.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTakeAway.Name = "btnTakeAway";
+            this.btnTakeAway.Size = new System.Drawing.Size(285, 45);
+            this.btnTakeAway.TabIndex = 0;
+            this.btnTakeAway.Text = "🛒  TAKEAWAY ORDER";
+            this.btnTakeAway.TextColor = System.Drawing.Color.Black;
+            this.btnTakeAway.UseVisualStyleBackColor = false;
+            this.btnTakeAway.Click += new System.EventHandler(this.rjButton3_Click);
+            // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
@@ -309,6 +358,7 @@
             this.btnLogout.TextColor = System.Drawing.Color.Silver;
             this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // materialDivider3
             // 
@@ -348,53 +398,6 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "maysem";
             // 
-            // rJgradiantPanal1
-            // 
-            this.rJgradiantPanal1.BackColor = System.Drawing.Color.Transparent;
-            this.rJgradiantPanal1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.rJgradiantPanal1.BorderRadius = 10;
-            this.rJgradiantPanal1.BorderSize = 0;
-            this.rJgradiantPanal1.Controls.Add(this.btnTakeAway);
-            this.rJgradiantPanal1.ForeColor = System.Drawing.Color.Black;
-            this.rJgradiantPanal1.GradientAngle = 0F;
-            this.rJgradiantPanal1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(128)))), ((int)(((byte)(16)))));
-            this.rJgradiantPanal1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
-            this.rJgradiantPanal1.Location = new System.Drawing.Point(3, 12);
-            this.rJgradiantPanal1.Name = "rJgradiantPanal1";
-            this.rJgradiantPanal1.Size = new System.Drawing.Size(285, 45);
-            this.rJgradiantPanal1.TabIndex = 11;
-            // 
-            // btnTakeAway
-            // 
-            this.btnTakeAway.BackColor = System.Drawing.Color.Transparent;
-            this.btnTakeAway.BackgroundColor = System.Drawing.Color.Transparent;
-            this.btnTakeAway.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnTakeAway.BorderRadius = 10;
-            this.btnTakeAway.BorderSize = 0;
-            this.btnTakeAway.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTakeAway.FlatAppearance.BorderSize = 0;
-            this.btnTakeAway.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTakeAway.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.btnTakeAway.ForeColor = System.Drawing.Color.Black;
-            this.btnTakeAway.Location = new System.Drawing.Point(0, 0);
-            this.btnTakeAway.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTakeAway.Name = "btnTakeAway";
-            this.btnTakeAway.Size = new System.Drawing.Size(285, 45);
-            this.btnTakeAway.TabIndex = 0;
-            this.btnTakeAway.Text = "🛒  TAKEAWAY ORDER";
-            this.btnTakeAway.TextColor = System.Drawing.Color.Black;
-            this.btnTakeAway.UseVisualStyleBackColor = false;
-            this.btnTakeAway.Click += new System.EventHandler(this.rjButton3_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.rJgradiantPanal1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(681, 7);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(338, 70);
-            this.panel1.TabIndex = 21;
-            // 
             // FloorPlanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -412,11 +415,11 @@
             this.rjPanel4.ResumeLayout(false);
             this.smoothFlowPanel1.ResumeLayout(false);
             this.rjPanel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.rJgradiantPanal1.ResumeLayout(false);
             this.rjPanel1.ResumeLayout(false);
             this.rjPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.rJgradiantPanal1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

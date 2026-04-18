@@ -46,7 +46,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
             this.rjPanel2 = new CustomControls.RJControls.RJPanel();
             this.tablePanel1 = new LaCucina.controls.TablePanel();
             this.rjButton2 = new CustomControls.RJControls.RJButton();
@@ -54,6 +53,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.rjPanel1.SuspendLayout();
             this.rJgradiantPanal1.SuspendLayout();
@@ -348,7 +348,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.rjPanel2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -358,18 +358,6 @@
             this.panel2.Size = new System.Drawing.Size(1249, 1070);
             this.panel2.TabIndex = 6;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Yu Gothic", 10F);
-            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            this.label12.Location = new System.Drawing.Point(4, 29);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(202, 26);
-            this.label12.TabIndex = 29;
-            this.label12.Text = "👤 User managment";
             // 
             // rjPanel2
             // 
@@ -391,7 +379,6 @@
             this.tablePanel1.AutoScroll = true;
             this.tablePanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.tablePanel1.Controls.Add(this.rjButton2);
-            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablePanel1.Location = new System.Drawing.Point(0, 69);
             this.tablePanel1.Name = "tablePanel1";
             this.tablePanel1.Size = new System.Drawing.Size(1181, 866);
@@ -468,6 +455,18 @@
             this.label11.TabIndex = 11;
             this.label11.Text = "User Name";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.label1.Location = new System.Drawing.Point(51, 50);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(242, 31);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "👤 User managment";
+            // 
             // UCUserManegment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -517,10 +516,10 @@
         private CustomControls.RJControls.RJButton rjButton2;
         private CustomControls.RJControls.RJButton rjButton1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label12;
         private CustomControls.RJControls.RJPanel rjPanel3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label1;
     }
 }

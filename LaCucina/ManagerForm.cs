@@ -32,7 +32,7 @@ namespace LaCucina
 
         private void ManagerForm_Load(object sender, EventArgs e)
         {
-
+            btnFloorplan.PerformClick();
         }
 
 
