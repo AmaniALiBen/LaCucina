@@ -763,12 +763,12 @@
             "Grand Opening Gift"});
             this.cmbDiscount.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.cmbDiscount.ListTextColor = System.Drawing.Color.Silver;
-            this.cmbDiscount.Location = new System.Drawing.Point(177, 28);
+            this.cmbDiscount.Location = new System.Drawing.Point(141, 28);
             this.cmbDiscount.Margin = new System.Windows.Forms.Padding(2);
             this.cmbDiscount.MinimumSize = new System.Drawing.Size(133, 20);
             this.cmbDiscount.Name = "cmbDiscount";
             this.cmbDiscount.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.cmbDiscount.Size = new System.Drawing.Size(133, 25);
+            this.cmbDiscount.Size = new System.Drawing.Size(169, 25);
             this.cmbDiscount.TabIndex = 7;
             this.cmbDiscount.Texts = "";
             // 
@@ -777,7 +777,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label11.Location = new System.Drawing.Point(174, 6);
+            this.label11.Location = new System.Drawing.Point(138, 8);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(76, 18);
