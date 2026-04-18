@@ -54,7 +54,7 @@
             // 
             // rjPanel5
             // 
-            this.rjPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.rjPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.rjPanel5.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel5.BorderRadius = 0;
             this.rjPanel5.BorderSize = 0;
@@ -63,7 +63,7 @@
             this.rjPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rjPanel5.ForeColor = System.Drawing.Color.Black;
             this.rjPanel5.Location = new System.Drawing.Point(2, 90);
-            this.rjPanel5.Margin = new System.Windows.Forms.Padding(13, 13, 13, 13);
+            this.rjPanel5.Margin = new System.Windows.Forms.Padding(13);
             this.rjPanel5.Name = "rjPanel5";
             this.rjPanel5.Size = new System.Drawing.Size(441, 246);
             this.rjPanel5.TabIndex = 0;
@@ -123,7 +123,7 @@
             // 
             // rjPanel2
             // 
-            this.rjPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.rjPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.rjPanel2.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel2.BorderRadius = 0;
             this.rjPanel2.BorderSize = 0;
@@ -168,7 +168,7 @@
             this.materialDivider3.Dock = System.Windows.Forms.DockStyle.Top;
             this.materialDivider3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.materialDivider3.Location = new System.Drawing.Point(0, 0);
-            this.materialDivider3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.materialDivider3.Margin = new System.Windows.Forms.Padding(2);
             this.materialDivider3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider3.Name = "materialDivider3";
             this.materialDivider3.Size = new System.Drawing.Size(295, 1);
@@ -180,7 +180,7 @@
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox1.Image = global::LaCucina.Properties.Resources.برجر1;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(146, 87);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -194,7 +194,7 @@
             this.materialDivider1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.materialDivider1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.materialDivider1.Location = new System.Drawing.Point(0, 87);
-            this.materialDivider1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.materialDivider1.Margin = new System.Windows.Forms.Padding(2);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
             this.materialDivider1.Size = new System.Drawing.Size(441, 1);
@@ -203,7 +203,7 @@
             // 
             // rjPanel4
             // 
-            this.rjPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.rjPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.rjPanel4.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel4.BorderRadius = 0;
             this.rjPanel4.BorderSize = 0;
@@ -251,7 +251,7 @@
             this.rJgradiantPanal1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(81)))), ((int)(((byte)(0)))));
             this.rJgradiantPanal1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
             this.rJgradiantPanal1.Location = new System.Drawing.Point(227, 5);
-            this.rJgradiantPanal1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rJgradiantPanal1.Margin = new System.Windows.Forms.Padding(2);
             this.rJgradiantPanal1.Name = "rJgradiantPanal1";
             this.rJgradiantPanal1.Size = new System.Drawing.Size(133, 33);
             this.rJgradiantPanal1.TabIndex = 4;
@@ -287,7 +287,7 @@
             this.materialDivider2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.materialDivider2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.materialDivider2.Location = new System.Drawing.Point(0, 43);
-            this.materialDivider2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.materialDivider2.Margin = new System.Windows.Forms.Padding(2);
             this.materialDivider2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider2.Name = "materialDivider2";
             this.materialDivider2.Size = new System.Drawing.Size(441, 1);
@@ -306,7 +306,7 @@
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "IngredientsSelector";
-            this.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Padding = new System.Windows.Forms.Padding(2);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "IngredientsSelector";
             this.Load += new System.EventHandler(this.IngredientsSelector_Load);

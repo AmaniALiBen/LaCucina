@@ -13,11 +13,12 @@ namespace LaCucina
     public partial class FloorPlanForm : Form
     {
         Form form;
-        public FloorPlanForm(Form form)
-        {this.form = form;
-            InitializeComponent();
-        }
         Form loginForm;
+        //public FloorPlanForm(Form form)
+        //{this.form = form;
+        //    InitializeComponent();
+        //}
+        
         public FloorPlanForm()
         {
             InitializeComponent();
@@ -100,16 +101,21 @@ namespace LaCucina
             
         }
 
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            form.Show();
-            this.Close();
-        }
+        //private void btnLogout_Click(object sender, EventArgs e)
+        //{
+        //    form.Show();
+        //    this.Close();
+        //}
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
 
             loginForm.Show();
+            this.Close();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

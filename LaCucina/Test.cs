@@ -110,12 +110,12 @@ namespace LaCucina
                 if (c is Button b)
                 {
                     b.ForeColor = Color.FromArgb(242,242, 242);
-                    b.BackColor = Color.FromArgb(30, 31, 32);
+                    b.BackColor = Color.FromArgb(28, 28, 28);
                     b.Font = new Font(b.Font, FontStyle.Regular);
                 }
             }
             btn.ForeColor = Color.FromArgb(230, 126, 34);
-            btn.BackColor = Color.FromArgb(19, 19, 20);
+            btn.BackColor = Color.FromArgb(17, 17, 17);
             btn.Font = new Font(btn.Font, FontStyle.Bold);
             // rjPanel4.Visible = true;
            
@@ -147,7 +147,7 @@ namespace LaCucina
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            FloorPlanForm floor = new FloorPlanForm();
+            FloorPlanForm floor = new FloorPlanForm(this);
             floor.Show();
             this.Close();
         }

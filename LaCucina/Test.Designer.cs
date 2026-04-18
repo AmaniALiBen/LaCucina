@@ -42,6 +42,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.rjPanel2 = new CustomControls.RJControls.RJPanel();
             this.rjPanel7 = new CustomControls.RJControls.RJPanel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cmbDiscount = new CustomControls.RJControls.RJComboBox();
             this.lblTotalPrice = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.rJgradiantPanal1 = new CustomControls.RJControls.RJgradiantPanal();
@@ -71,8 +73,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
-            this.cmbDiscount = new CustomControls.RJControls.RJComboBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.materialDivider5 = new MaterialSkin.Controls.MaterialDivider();
             this.rjPanel10.SuspendLayout();
             this.rjPanel3.SuspendLayout();
             this.rjPanel8.SuspendLayout();
@@ -103,38 +104,38 @@
             this.rjPanel10.Controls.Add(this.smoothFlowPanel3);
             this.rjPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rjPanel10.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel10.Location = new System.Drawing.Point(148, 54);
+            this.rjPanel10.Location = new System.Drawing.Point(148, 57);
             this.rjPanel10.Name = "rjPanel10";
-            this.rjPanel10.Size = new System.Drawing.Size(372, 401);
+            this.rjPanel10.Size = new System.Drawing.Size(372, 398);
             this.rjPanel10.TabIndex = 2;
             // 
             // smoothFlowPanel3
             // 
             this.smoothFlowPanel3.AutoScroll = true;
-            this.smoothFlowPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(20)))));
+            this.smoothFlowPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.smoothFlowPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.smoothFlowPanel3.Location = new System.Drawing.Point(0, 0);
             this.smoothFlowPanel3.Margin = new System.Windows.Forms.Padding(17, 5, 0, 5);
             this.smoothFlowPanel3.Name = "smoothFlowPanel3";
             this.smoothFlowPanel3.Padding = new System.Windows.Forms.Padding(8, 4, 0, 0);
-            this.smoothFlowPanel3.Size = new System.Drawing.Size(372, 401);
+            this.smoothFlowPanel3.Size = new System.Drawing.Size(372, 398);
             this.smoothFlowPanel3.TabIndex = 0;
             // 
             // rjPanel3
             // 
             this.rjPanel3.AutoScroll = true;
-            this.rjPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(20)))));
+            this.rjPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.rjPanel3.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel3.BorderRadius = 15;
             this.rjPanel3.BorderSize = 0;
             this.rjPanel3.Controls.Add(this.rjPanel8);
             this.rjPanel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.rjPanel3.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel3.Location = new System.Drawing.Point(1, 54);
+            this.rjPanel3.Location = new System.Drawing.Point(1, 57);
             this.rjPanel3.Margin = new System.Windows.Forms.Padding(7, 5, 5, 5);
             this.rjPanel3.Name = "rjPanel3";
             this.rjPanel3.Padding = new System.Windows.Forms.Padding(7);
-            this.rjPanel3.Size = new System.Drawing.Size(147, 401);
+            this.rjPanel3.Size = new System.Drawing.Size(147, 398);
             this.rjPanel3.TabIndex = 1;
             // 
             // rjPanel8
@@ -149,13 +150,13 @@
             this.rjPanel8.ForeColor = System.Drawing.Color.Black;
             this.rjPanel8.Location = new System.Drawing.Point(7, 7);
             this.rjPanel8.Name = "rjPanel8";
-            this.rjPanel8.Size = new System.Drawing.Size(133, 387);
+            this.rjPanel8.Size = new System.Drawing.Size(133, 384);
             this.rjPanel8.TabIndex = 0;
             // 
             // smoothFlowPanel1
             // 
             this.smoothFlowPanel1.AutoScroll = true;
-            this.smoothFlowPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.smoothFlowPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.smoothFlowPanel1.Controls.Add(this.rjButton4);
             this.smoothFlowPanel1.Controls.Add(this.rjButton16);
             this.smoothFlowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -164,15 +165,15 @@
             this.smoothFlowPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.smoothFlowPanel1.Name = "smoothFlowPanel1";
             this.smoothFlowPanel1.Padding = new System.Windows.Forms.Padding(20, 3, 0, 3);
-            this.smoothFlowPanel1.Size = new System.Drawing.Size(133, 332);
+            this.smoothFlowPanel1.Size = new System.Drawing.Size(133, 329);
             this.smoothFlowPanel1.TabIndex = 0;
             this.smoothFlowPanel1.WrapContents = false;
             // 
             // rjButton4
             // 
             this.rjButton4.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.rjButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.rjButton4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.rjButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.rjButton4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.rjButton4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.rjButton4.BorderRadius = 15;
             this.rjButton4.BorderSize = 0;
@@ -194,8 +195,8 @@
             // 
             // rjButton16
             // 
-            this.rjButton16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.rjButton16.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.rjButton16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.rjButton16.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.rjButton16.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
             this.rjButton16.BorderRadius = 15;
             this.rjButton16.BorderSize = 0;
@@ -217,7 +218,7 @@
             // 
             // rjPanel9
             // 
-            this.rjPanel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.rjPanel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.rjPanel9.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel9.BorderRadius = 0;
             this.rjPanel9.BorderSize = 0;
@@ -246,7 +247,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.label9.Font = new System.Drawing.Font("Yu Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.label9.Location = new System.Drawing.Point(14, 2);
@@ -259,7 +260,7 @@
             // 
             // rjPanel2
             // 
-            this.rjPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(20)))));
+            this.rjPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.rjPanel2.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel2.BorderRadius = 15;
             this.rjPanel2.BorderSize = 0;
@@ -268,16 +269,16 @@
             this.rjPanel2.Controls.Add(this.rjPanel5);
             this.rjPanel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.rjPanel2.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel2.Location = new System.Drawing.Point(520, 54);
+            this.rjPanel2.Location = new System.Drawing.Point(520, 57);
             this.rjPanel2.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
             this.rjPanel2.Name = "rjPanel2";
             this.rjPanel2.Padding = new System.Windows.Forms.Padding(7);
-            this.rjPanel2.Size = new System.Drawing.Size(335, 401);
+            this.rjPanel2.Size = new System.Drawing.Size(335, 398);
             this.rjPanel2.TabIndex = 1;
             // 
             // rjPanel7
             // 
-            this.rjPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.rjPanel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.rjPanel7.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel7.BorderRadius = 0;
             this.rjPanel7.BorderSize = 0;
@@ -289,10 +290,44 @@
             this.rjPanel7.Controls.Add(this.rJgradiantPanal2);
             this.rjPanel7.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.rjPanel7.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel7.Location = new System.Drawing.Point(7, 282);
+            this.rjPanel7.Location = new System.Drawing.Point(7, 279);
             this.rjPanel7.Name = "rjPanel7";
             this.rjPanel7.Size = new System.Drawing.Size(321, 112);
             this.rjPanel7.TabIndex = 0;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.label11.Location = new System.Drawing.Point(138, 8);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(76, 18);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "Discounts:";
+            // 
+            // cmbDiscount
+            // 
+            this.cmbDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.cmbDiscount.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
+            this.cmbDiscount.BorderSize = 0;
+            this.cmbDiscount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cmbDiscount.Font = new System.Drawing.Font("Yu Gothic", 7F);
+            this.cmbDiscount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.cmbDiscount.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
+            this.cmbDiscount.Items.AddRange(new object[] {
+            "Grand Opening Gift"});
+            this.cmbDiscount.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.cmbDiscount.ListTextColor = System.Drawing.Color.Silver;
+            this.cmbDiscount.Location = new System.Drawing.Point(141, 28);
+            this.cmbDiscount.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbDiscount.MinimumSize = new System.Drawing.Size(133, 20);
+            this.cmbDiscount.Name = "cmbDiscount";
+            this.cmbDiscount.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
+            this.cmbDiscount.Size = new System.Drawing.Size(169, 25);
+            this.cmbDiscount.TabIndex = 7;
+            this.cmbDiscount.Texts = "";
             // 
             // lblTotalPrice
             // 
@@ -399,18 +434,18 @@
             // smoothFlowPanel2
             // 
             this.smoothFlowPanel2.AutoScroll = true;
-            this.smoothFlowPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.smoothFlowPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.smoothFlowPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.smoothFlowPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.smoothFlowPanel2.Location = new System.Drawing.Point(7, 133);
             this.smoothFlowPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.smoothFlowPanel2.Name = "smoothFlowPanel2";
-            this.smoothFlowPanel2.Size = new System.Drawing.Size(321, 261);
+            this.smoothFlowPanel2.Size = new System.Drawing.Size(321, 258);
             this.smoothFlowPanel2.TabIndex = 2;
             // 
             // rjPanel5
             // 
-            this.rjPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.rjPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.rjPanel5.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel5.BorderRadius = 0;
             this.rjPanel5.BorderSize = 0;
@@ -583,10 +618,11 @@
             // 
             // rjPanel1
             // 
-            this.rjPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.rjPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.rjPanel1.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel1.BorderRadius = 0;
             this.rjPanel1.BorderSize = 0;
+            this.rjPanel1.Controls.Add(this.materialDivider5);
             this.rjPanel1.Controls.Add(this.btnBack);
             this.rjPanel1.Controls.Add(this.btnHistory);
             this.rjPanel1.Controls.Add(this.rjPanel6);
@@ -597,7 +633,7 @@
             this.rjPanel1.Margin = new System.Windows.Forms.Padding(5);
             this.rjPanel1.Name = "rjPanel1";
             this.rjPanel1.Padding = new System.Windows.Forms.Padding(7);
-            this.rjPanel1.Size = new System.Drawing.Size(854, 53);
+            this.rjPanel1.Size = new System.Drawing.Size(854, 56);
             this.rjPanel1.TabIndex = 0;
             // 
             // btnBack
@@ -662,7 +698,7 @@
             this.rjPanel6.Location = new System.Drawing.Point(703, 7);
             this.rjPanel6.Name = "rjPanel6";
             this.rjPanel6.Padding = new System.Windows.Forms.Padding(2);
-            this.rjPanel6.Size = new System.Drawing.Size(144, 39);
+            this.rjPanel6.Size = new System.Drawing.Size(144, 42);
             this.rjPanel6.TabIndex = 12;
             // 
             // btnLogout
@@ -695,7 +731,7 @@
             this.materialDivider3.Depth = 0;
             this.materialDivider3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.materialDivider3.ForeColor = System.Drawing.Color.Gray;
-            this.materialDivider3.Location = new System.Drawing.Point(2, 36);
+            this.materialDivider3.Location = new System.Drawing.Point(2, 39);
             this.materialDivider3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider3.Name = "materialDivider3";
             this.materialDivider3.Size = new System.Drawing.Size(140, 1);
@@ -729,7 +765,7 @@
             // rjTextBox1
             // 
             this.rjTextBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.rjTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.rjTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.rjTextBox1.BorderColor = System.Drawing.Color.Transparent;
             this.rjTextBox1.BorderFocusColor = System.Drawing.Color.Transparent;
             this.rjTextBox1.BorderRadius = 12;
@@ -750,39 +786,19 @@
             this.rjTextBox1.Texts = "";
             this.rjTextBox1.UnderlinedStyle = false;
             // 
-            // cmbDiscount
+            // materialDivider5
             // 
-            this.cmbDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
-            this.cmbDiscount.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
-            this.cmbDiscount.BorderSize = 0;
-            this.cmbDiscount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cmbDiscount.Font = new System.Drawing.Font("Yu Gothic", 7F);
-            this.cmbDiscount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.cmbDiscount.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
-            this.cmbDiscount.Items.AddRange(new object[] {
-            "Grand Opening Gift"});
-            this.cmbDiscount.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.cmbDiscount.ListTextColor = System.Drawing.Color.Silver;
-            this.cmbDiscount.Location = new System.Drawing.Point(141, 28);
-            this.cmbDiscount.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbDiscount.MinimumSize = new System.Drawing.Size(133, 20);
-            this.cmbDiscount.Name = "cmbDiscount";
-            this.cmbDiscount.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.cmbDiscount.Size = new System.Drawing.Size(169, 25);
-            this.cmbDiscount.TabIndex = 7;
-            this.cmbDiscount.Texts = "";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label11.Location = new System.Drawing.Point(138, 8);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 18);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "Discounts:";
+            this.materialDivider5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.materialDivider5.Depth = 0;
+            this.materialDivider5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.materialDivider5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.materialDivider5.Location = new System.Drawing.Point(7, 48);
+            this.materialDivider5.Margin = new System.Windows.Forms.Padding(2);
+            this.materialDivider5.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider5.Name = "materialDivider5";
+            this.materialDivider5.Size = new System.Drawing.Size(696, 1);
+            this.materialDivider5.TabIndex = 25;
+            this.materialDivider5.Text = "materialDivider5";
             // 
             // Test
             // 
@@ -869,5 +885,6 @@
         private CustomControls.RJControls.RJButton btnBack;
         private CustomControls.RJControls.RJComboBox cmbDiscount;
         public System.Windows.Forms.Label label11;
+        private MaterialSkin.Controls.MaterialDivider materialDivider5;
     }
 }

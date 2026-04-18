@@ -31,32 +31,32 @@
             this.rjPanel1 = new CustomControls.RJControls.RJPanel();
             this.btnDiscard = new CustomControls.RJControls.RJButton();
             this.rjPanel5 = new CustomControls.RJControls.RJPanel();
+            this.rjButton9 = new CustomControls.RJControls.RJButton();
             this.label7 = new System.Windows.Forms.Label();
+            this.rjButton10 = new CustomControls.RJControls.RJButton();
             this.rjPanel4 = new CustomControls.RJControls.RJPanel();
+            this.rjButton7 = new CustomControls.RJControls.RJButton();
             this.label6 = new System.Windows.Forms.Label();
+            this.rjButton8 = new CustomControls.RJControls.RJButton();
             this.rJgradiantPanal1 = new CustomControls.RJControls.RJgradiantPanal();
             this.btnUpdateToppings = new CustomControls.RJControls.RJButton();
             this.rjPanel3 = new CustomControls.RJControls.RJPanel();
+            this.rjButton5 = new CustomControls.RJControls.RJButton();
             this.label5 = new System.Windows.Forms.Label();
+            this.rjButton6 = new CustomControls.RJControls.RJButton();
             this.rjPanel2 = new CustomControls.RJControls.RJPanel();
+            this.rjButton3 = new CustomControls.RJControls.RJButton();
             this.label4 = new System.Windows.Forms.Label();
+            this.rjButton4 = new CustomControls.RJControls.RJButton();
+            this.btnAddCategory = new CustomControls.RJControls.RJButton();
             this.rjPanel6 = new CustomControls.RJControls.RJPanel();
+            this.rjButton2 = new CustomControls.RJControls.RJButton();
             this.label3 = new System.Windows.Forms.Label();
+            this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.txtAddCategory = new CustomControls.RJControls.RJTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.label1 = new System.Windows.Forms.Label();
-            this.rjButton9 = new CustomControls.RJControls.RJButton();
-            this.rjButton10 = new CustomControls.RJControls.RJButton();
-            this.rjButton7 = new CustomControls.RJControls.RJButton();
-            this.rjButton8 = new CustomControls.RJControls.RJButton();
-            this.rjButton5 = new CustomControls.RJControls.RJButton();
-            this.rjButton6 = new CustomControls.RJControls.RJButton();
-            this.rjButton3 = new CustomControls.RJControls.RJButton();
-            this.rjButton4 = new CustomControls.RJControls.RJButton();
-            this.btnAddCategory = new CustomControls.RJControls.RJButton();
-            this.rjButton2 = new CustomControls.RJControls.RJButton();
-            this.rjButton1 = new CustomControls.RJControls.RJButton();
             this.rjPanel1.SuspendLayout();
             this.rjPanel5.SuspendLayout();
             this.rjPanel4.SuspendLayout();
@@ -116,7 +116,7 @@
             // 
             // rjPanel5
             // 
-            this.rjPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.rjPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.rjPanel5.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel5.BorderRadius = 10;
             this.rjPanel5.BorderSize = 0;
@@ -129,6 +129,26 @@
             this.rjPanel5.Size = new System.Drawing.Size(304, 32);
             this.rjPanel5.TabIndex = 32;
             // 
+            // rjButton9
+            // 
+            this.rjButton9.BackColor = System.Drawing.Color.Transparent;
+            this.rjButton9.BackgroundColor = System.Drawing.Color.Transparent;
+            this.rjButton9.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton9.BorderRadius = 0;
+            this.rjButton9.BorderSize = 0;
+            this.rjButton9.FlatAppearance.BorderSize = 0;
+            this.rjButton9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.rjButton9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.rjButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton9.ForeColor = System.Drawing.Color.White;
+            this.rjButton9.Image = global::LaCucina.Properties.Resources.edit__1_;
+            this.rjButton9.Location = new System.Drawing.Point(247, 4);
+            this.rjButton9.Name = "rjButton9";
+            this.rjButton9.Size = new System.Drawing.Size(22, 22);
+            this.rjButton9.TabIndex = 17;
+            this.rjButton9.TextColor = System.Drawing.Color.White;
+            this.rjButton9.UseVisualStyleBackColor = false;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -140,9 +160,29 @@
             this.label7.TabIndex = 5;
             this.label7.Text = "Floor 5";
             // 
+            // rjButton10
+            // 
+            this.rjButton10.BackColor = System.Drawing.Color.Transparent;
+            this.rjButton10.BackgroundColor = System.Drawing.Color.Transparent;
+            this.rjButton10.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton10.BorderRadius = 0;
+            this.rjButton10.BorderSize = 0;
+            this.rjButton10.FlatAppearance.BorderSize = 0;
+            this.rjButton10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.rjButton10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.rjButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton10.ForeColor = System.Drawing.Color.White;
+            this.rjButton10.Image = global::LaCucina.Properties.Resources.delete__2_;
+            this.rjButton10.Location = new System.Drawing.Point(222, 4);
+            this.rjButton10.Name = "rjButton10";
+            this.rjButton10.Size = new System.Drawing.Size(22, 22);
+            this.rjButton10.TabIndex = 16;
+            this.rjButton10.TextColor = System.Drawing.Color.White;
+            this.rjButton10.UseVisualStyleBackColor = false;
+            // 
             // rjPanel4
             // 
-            this.rjPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.rjPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.rjPanel4.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel4.BorderRadius = 10;
             this.rjPanel4.BorderSize = 0;
@@ -155,6 +195,26 @@
             this.rjPanel4.Size = new System.Drawing.Size(304, 32);
             this.rjPanel4.TabIndex = 29;
             // 
+            // rjButton7
+            // 
+            this.rjButton7.BackColor = System.Drawing.Color.Transparent;
+            this.rjButton7.BackgroundColor = System.Drawing.Color.Transparent;
+            this.rjButton7.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton7.BorderRadius = 0;
+            this.rjButton7.BorderSize = 0;
+            this.rjButton7.FlatAppearance.BorderSize = 0;
+            this.rjButton7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.rjButton7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.rjButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton7.ForeColor = System.Drawing.Color.White;
+            this.rjButton7.Image = global::LaCucina.Properties.Resources.edit__1_;
+            this.rjButton7.Location = new System.Drawing.Point(247, 4);
+            this.rjButton7.Name = "rjButton7";
+            this.rjButton7.Size = new System.Drawing.Size(22, 22);
+            this.rjButton7.TabIndex = 17;
+            this.rjButton7.TextColor = System.Drawing.Color.White;
+            this.rjButton7.UseVisualStyleBackColor = false;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -165,6 +225,26 @@
             this.label6.Size = new System.Drawing.Size(54, 18);
             this.label6.TabIndex = 5;
             this.label6.Text = "Floor 4";
+            // 
+            // rjButton8
+            // 
+            this.rjButton8.BackColor = System.Drawing.Color.Transparent;
+            this.rjButton8.BackgroundColor = System.Drawing.Color.Transparent;
+            this.rjButton8.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton8.BorderRadius = 0;
+            this.rjButton8.BorderSize = 0;
+            this.rjButton8.FlatAppearance.BorderSize = 0;
+            this.rjButton8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.rjButton8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.rjButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton8.ForeColor = System.Drawing.Color.White;
+            this.rjButton8.Image = global::LaCucina.Properties.Resources.delete__2_;
+            this.rjButton8.Location = new System.Drawing.Point(222, 4);
+            this.rjButton8.Name = "rjButton8";
+            this.rjButton8.Size = new System.Drawing.Size(22, 22);
+            this.rjButton8.TabIndex = 16;
+            this.rjButton8.TextColor = System.Drawing.Color.White;
+            this.rjButton8.UseVisualStyleBackColor = false;
             // 
             // rJgradiantPanal1
             // 
@@ -208,7 +288,7 @@
             // 
             // rjPanel3
             // 
-            this.rjPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.rjPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.rjPanel3.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel3.BorderRadius = 10;
             this.rjPanel3.BorderSize = 0;
@@ -221,6 +301,26 @@
             this.rjPanel3.Size = new System.Drawing.Size(304, 32);
             this.rjPanel3.TabIndex = 31;
             // 
+            // rjButton5
+            // 
+            this.rjButton5.BackColor = System.Drawing.Color.Transparent;
+            this.rjButton5.BackgroundColor = System.Drawing.Color.Transparent;
+            this.rjButton5.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton5.BorderRadius = 0;
+            this.rjButton5.BorderSize = 0;
+            this.rjButton5.FlatAppearance.BorderSize = 0;
+            this.rjButton5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.rjButton5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.rjButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton5.ForeColor = System.Drawing.Color.White;
+            this.rjButton5.Image = global::LaCucina.Properties.Resources.edit__1_;
+            this.rjButton5.Location = new System.Drawing.Point(247, 4);
+            this.rjButton5.Name = "rjButton5";
+            this.rjButton5.Size = new System.Drawing.Size(22, 22);
+            this.rjButton5.TabIndex = 17;
+            this.rjButton5.TextColor = System.Drawing.Color.White;
+            this.rjButton5.UseVisualStyleBackColor = false;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -232,9 +332,29 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Floor 3";
             // 
+            // rjButton6
+            // 
+            this.rjButton6.BackColor = System.Drawing.Color.Transparent;
+            this.rjButton6.BackgroundColor = System.Drawing.Color.Transparent;
+            this.rjButton6.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton6.BorderRadius = 0;
+            this.rjButton6.BorderSize = 0;
+            this.rjButton6.FlatAppearance.BorderSize = 0;
+            this.rjButton6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.rjButton6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.rjButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton6.ForeColor = System.Drawing.Color.White;
+            this.rjButton6.Image = global::LaCucina.Properties.Resources.delete__2_;
+            this.rjButton6.Location = new System.Drawing.Point(222, 4);
+            this.rjButton6.Name = "rjButton6";
+            this.rjButton6.Size = new System.Drawing.Size(22, 22);
+            this.rjButton6.TabIndex = 16;
+            this.rjButton6.TextColor = System.Drawing.Color.White;
+            this.rjButton6.UseVisualStyleBackColor = false;
+            // 
             // rjPanel2
             // 
-            this.rjPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.rjPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.rjPanel2.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel2.BorderRadius = 10;
             this.rjPanel2.BorderSize = 0;
@@ -247,6 +367,26 @@
             this.rjPanel2.Size = new System.Drawing.Size(304, 32);
             this.rjPanel2.TabIndex = 30;
             // 
+            // rjButton3
+            // 
+            this.rjButton3.BackColor = System.Drawing.Color.Transparent;
+            this.rjButton3.BackgroundColor = System.Drawing.Color.Transparent;
+            this.rjButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton3.BorderRadius = 0;
+            this.rjButton3.BorderSize = 0;
+            this.rjButton3.FlatAppearance.BorderSize = 0;
+            this.rjButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.rjButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.rjButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton3.ForeColor = System.Drawing.Color.White;
+            this.rjButton3.Image = global::LaCucina.Properties.Resources.edit__1_;
+            this.rjButton3.Location = new System.Drawing.Point(247, 4);
+            this.rjButton3.Name = "rjButton3";
+            this.rjButton3.Size = new System.Drawing.Size(22, 22);
+            this.rjButton3.TabIndex = 17;
+            this.rjButton3.TextColor = System.Drawing.Color.White;
+            this.rjButton3.UseVisualStyleBackColor = false;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -258,9 +398,50 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Floor 2";
             // 
+            // rjButton4
+            // 
+            this.rjButton4.BackColor = System.Drawing.Color.Transparent;
+            this.rjButton4.BackgroundColor = System.Drawing.Color.Transparent;
+            this.rjButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton4.BorderRadius = 0;
+            this.rjButton4.BorderSize = 0;
+            this.rjButton4.FlatAppearance.BorderSize = 0;
+            this.rjButton4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.rjButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.rjButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton4.ForeColor = System.Drawing.Color.White;
+            this.rjButton4.Image = global::LaCucina.Properties.Resources.delete__2_;
+            this.rjButton4.Location = new System.Drawing.Point(222, 4);
+            this.rjButton4.Name = "rjButton4";
+            this.rjButton4.Size = new System.Drawing.Size(22, 22);
+            this.rjButton4.TabIndex = 16;
+            this.rjButton4.TextColor = System.Drawing.Color.White;
+            this.rjButton4.UseVisualStyleBackColor = false;
+            // 
+            // btnAddCategory
+            // 
+            this.btnAddCategory.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddCategory.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btnAddCategory.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAddCategory.BorderRadius = 0;
+            this.btnAddCategory.BorderSize = 0;
+            this.btnAddCategory.FlatAppearance.BorderSize = 0;
+            this.btnAddCategory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAddCategory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnAddCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddCategory.ForeColor = System.Drawing.Color.Transparent;
+            this.btnAddCategory.Image = global::LaCucina.Properties.Resources.plus;
+            this.btnAddCategory.Location = new System.Drawing.Point(351, 89);
+            this.btnAddCategory.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddCategory.Name = "btnAddCategory";
+            this.btnAddCategory.Size = new System.Drawing.Size(35, 32);
+            this.btnAddCategory.TabIndex = 27;
+            this.btnAddCategory.TextColor = System.Drawing.Color.Transparent;
+            this.btnAddCategory.UseVisualStyleBackColor = false;
+            // 
             // rjPanel6
             // 
-            this.rjPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.rjPanel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.rjPanel6.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel6.BorderRadius = 10;
             this.rjPanel6.BorderSize = 0;
@@ -273,6 +454,26 @@
             this.rjPanel6.Size = new System.Drawing.Size(304, 32);
             this.rjPanel6.TabIndex = 28;
             // 
+            // rjButton2
+            // 
+            this.rjButton2.BackColor = System.Drawing.Color.Transparent;
+            this.rjButton2.BackgroundColor = System.Drawing.Color.Transparent;
+            this.rjButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton2.BorderRadius = 0;
+            this.rjButton2.BorderSize = 0;
+            this.rjButton2.FlatAppearance.BorderSize = 0;
+            this.rjButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.rjButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton2.ForeColor = System.Drawing.Color.White;
+            this.rjButton2.Image = global::LaCucina.Properties.Resources.edit__1_;
+            this.rjButton2.Location = new System.Drawing.Point(247, 4);
+            this.rjButton2.Name = "rjButton2";
+            this.rjButton2.Size = new System.Drawing.Size(22, 22);
+            this.rjButton2.TabIndex = 17;
+            this.rjButton2.TextColor = System.Drawing.Color.White;
+            this.rjButton2.UseVisualStyleBackColor = false;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -284,9 +485,29 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Floor 1";
             // 
+            // rjButton1
+            // 
+            this.rjButton1.BackColor = System.Drawing.Color.Transparent;
+            this.rjButton1.BackgroundColor = System.Drawing.Color.Transparent;
+            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rjButton1.BorderRadius = 0;
+            this.rjButton1.BorderSize = 0;
+            this.rjButton1.FlatAppearance.BorderSize = 0;
+            this.rjButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.rjButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rjButton1.ForeColor = System.Drawing.Color.White;
+            this.rjButton1.Image = global::LaCucina.Properties.Resources.delete__2_;
+            this.rjButton1.Location = new System.Drawing.Point(222, 4);
+            this.rjButton1.Name = "rjButton1";
+            this.rjButton1.Size = new System.Drawing.Size(22, 22);
+            this.rjButton1.TabIndex = 16;
+            this.rjButton1.TextColor = System.Drawing.Color.White;
+            this.rjButton1.UseVisualStyleBackColor = false;
+            // 
             // txtAddCategory
             // 
-            this.txtAddCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.txtAddCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.txtAddCategory.BorderColor = System.Drawing.Color.Transparent;
             this.txtAddCategory.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
             this.txtAddCategory.BorderRadius = 10;
@@ -342,227 +563,6 @@
             this.label1.Size = new System.Drawing.Size(134, 35);
             this.label1.TabIndex = 23;
             this.label1.Text = "Manage Spaces";
-            // 
-            // rjButton9
-            // 
-            this.rjButton9.BackColor = System.Drawing.Color.Transparent;
-            this.rjButton9.BackgroundColor = System.Drawing.Color.Transparent;
-            this.rjButton9.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton9.BorderRadius = 0;
-            this.rjButton9.BorderSize = 0;
-            this.rjButton9.FlatAppearance.BorderSize = 0;
-            this.rjButton9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.rjButton9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.rjButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton9.ForeColor = System.Drawing.Color.White;
-            this.rjButton9.Image = global::LaCucina.Properties.Resources.edit__1_;
-            this.rjButton9.Location = new System.Drawing.Point(247, 4);
-            this.rjButton9.Name = "rjButton9";
-            this.rjButton9.Size = new System.Drawing.Size(22, 22);
-            this.rjButton9.TabIndex = 17;
-            this.rjButton9.TextColor = System.Drawing.Color.White;
-            this.rjButton9.UseVisualStyleBackColor = false;
-            // 
-            // rjButton10
-            // 
-            this.rjButton10.BackColor = System.Drawing.Color.Transparent;
-            this.rjButton10.BackgroundColor = System.Drawing.Color.Transparent;
-            this.rjButton10.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton10.BorderRadius = 0;
-            this.rjButton10.BorderSize = 0;
-            this.rjButton10.FlatAppearance.BorderSize = 0;
-            this.rjButton10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.rjButton10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.rjButton10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton10.ForeColor = System.Drawing.Color.White;
-            this.rjButton10.Image = global::LaCucina.Properties.Resources.delete__2_;
-            this.rjButton10.Location = new System.Drawing.Point(222, 4);
-            this.rjButton10.Name = "rjButton10";
-            this.rjButton10.Size = new System.Drawing.Size(22, 22);
-            this.rjButton10.TabIndex = 16;
-            this.rjButton10.TextColor = System.Drawing.Color.White;
-            this.rjButton10.UseVisualStyleBackColor = false;
-            // 
-            // rjButton7
-            // 
-            this.rjButton7.BackColor = System.Drawing.Color.Transparent;
-            this.rjButton7.BackgroundColor = System.Drawing.Color.Transparent;
-            this.rjButton7.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton7.BorderRadius = 0;
-            this.rjButton7.BorderSize = 0;
-            this.rjButton7.FlatAppearance.BorderSize = 0;
-            this.rjButton7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.rjButton7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.rjButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton7.ForeColor = System.Drawing.Color.White;
-            this.rjButton7.Image = global::LaCucina.Properties.Resources.edit__1_;
-            this.rjButton7.Location = new System.Drawing.Point(247, 4);
-            this.rjButton7.Name = "rjButton7";
-            this.rjButton7.Size = new System.Drawing.Size(22, 22);
-            this.rjButton7.TabIndex = 17;
-            this.rjButton7.TextColor = System.Drawing.Color.White;
-            this.rjButton7.UseVisualStyleBackColor = false;
-            // 
-            // rjButton8
-            // 
-            this.rjButton8.BackColor = System.Drawing.Color.Transparent;
-            this.rjButton8.BackgroundColor = System.Drawing.Color.Transparent;
-            this.rjButton8.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton8.BorderRadius = 0;
-            this.rjButton8.BorderSize = 0;
-            this.rjButton8.FlatAppearance.BorderSize = 0;
-            this.rjButton8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.rjButton8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.rjButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton8.ForeColor = System.Drawing.Color.White;
-            this.rjButton8.Image = global::LaCucina.Properties.Resources.delete__2_;
-            this.rjButton8.Location = new System.Drawing.Point(222, 4);
-            this.rjButton8.Name = "rjButton8";
-            this.rjButton8.Size = new System.Drawing.Size(22, 22);
-            this.rjButton8.TabIndex = 16;
-            this.rjButton8.TextColor = System.Drawing.Color.White;
-            this.rjButton8.UseVisualStyleBackColor = false;
-            // 
-            // rjButton5
-            // 
-            this.rjButton5.BackColor = System.Drawing.Color.Transparent;
-            this.rjButton5.BackgroundColor = System.Drawing.Color.Transparent;
-            this.rjButton5.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton5.BorderRadius = 0;
-            this.rjButton5.BorderSize = 0;
-            this.rjButton5.FlatAppearance.BorderSize = 0;
-            this.rjButton5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.rjButton5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.rjButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton5.ForeColor = System.Drawing.Color.White;
-            this.rjButton5.Image = global::LaCucina.Properties.Resources.edit__1_;
-            this.rjButton5.Location = new System.Drawing.Point(247, 4);
-            this.rjButton5.Name = "rjButton5";
-            this.rjButton5.Size = new System.Drawing.Size(22, 22);
-            this.rjButton5.TabIndex = 17;
-            this.rjButton5.TextColor = System.Drawing.Color.White;
-            this.rjButton5.UseVisualStyleBackColor = false;
-            // 
-            // rjButton6
-            // 
-            this.rjButton6.BackColor = System.Drawing.Color.Transparent;
-            this.rjButton6.BackgroundColor = System.Drawing.Color.Transparent;
-            this.rjButton6.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton6.BorderRadius = 0;
-            this.rjButton6.BorderSize = 0;
-            this.rjButton6.FlatAppearance.BorderSize = 0;
-            this.rjButton6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.rjButton6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.rjButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton6.ForeColor = System.Drawing.Color.White;
-            this.rjButton6.Image = global::LaCucina.Properties.Resources.delete__2_;
-            this.rjButton6.Location = new System.Drawing.Point(222, 4);
-            this.rjButton6.Name = "rjButton6";
-            this.rjButton6.Size = new System.Drawing.Size(22, 22);
-            this.rjButton6.TabIndex = 16;
-            this.rjButton6.TextColor = System.Drawing.Color.White;
-            this.rjButton6.UseVisualStyleBackColor = false;
-            // 
-            // rjButton3
-            // 
-            this.rjButton3.BackColor = System.Drawing.Color.Transparent;
-            this.rjButton3.BackgroundColor = System.Drawing.Color.Transparent;
-            this.rjButton3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton3.BorderRadius = 0;
-            this.rjButton3.BorderSize = 0;
-            this.rjButton3.FlatAppearance.BorderSize = 0;
-            this.rjButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.rjButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.rjButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton3.ForeColor = System.Drawing.Color.White;
-            this.rjButton3.Image = global::LaCucina.Properties.Resources.edit__1_;
-            this.rjButton3.Location = new System.Drawing.Point(247, 4);
-            this.rjButton3.Name = "rjButton3";
-            this.rjButton3.Size = new System.Drawing.Size(22, 22);
-            this.rjButton3.TabIndex = 17;
-            this.rjButton3.TextColor = System.Drawing.Color.White;
-            this.rjButton3.UseVisualStyleBackColor = false;
-            // 
-            // rjButton4
-            // 
-            this.rjButton4.BackColor = System.Drawing.Color.Transparent;
-            this.rjButton4.BackgroundColor = System.Drawing.Color.Transparent;
-            this.rjButton4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton4.BorderRadius = 0;
-            this.rjButton4.BorderSize = 0;
-            this.rjButton4.FlatAppearance.BorderSize = 0;
-            this.rjButton4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.rjButton4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.rjButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton4.ForeColor = System.Drawing.Color.White;
-            this.rjButton4.Image = global::LaCucina.Properties.Resources.delete__2_;
-            this.rjButton4.Location = new System.Drawing.Point(222, 4);
-            this.rjButton4.Name = "rjButton4";
-            this.rjButton4.Size = new System.Drawing.Size(22, 22);
-            this.rjButton4.TabIndex = 16;
-            this.rjButton4.TextColor = System.Drawing.Color.White;
-            this.rjButton4.UseVisualStyleBackColor = false;
-            // 
-            // btnAddCategory
-            // 
-            this.btnAddCategory.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddCategory.BackgroundColor = System.Drawing.Color.Transparent;
-            this.btnAddCategory.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnAddCategory.BorderRadius = 0;
-            this.btnAddCategory.BorderSize = 0;
-            this.btnAddCategory.FlatAppearance.BorderSize = 0;
-            this.btnAddCategory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnAddCategory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnAddCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddCategory.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAddCategory.Image = global::LaCucina.Properties.Resources.plus;
-            this.btnAddCategory.Location = new System.Drawing.Point(351, 89);
-            this.btnAddCategory.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAddCategory.Name = "btnAddCategory";
-            this.btnAddCategory.Size = new System.Drawing.Size(35, 32);
-            this.btnAddCategory.TabIndex = 27;
-            this.btnAddCategory.TextColor = System.Drawing.Color.Transparent;
-            this.btnAddCategory.UseVisualStyleBackColor = false;
-            // 
-            // rjButton2
-            // 
-            this.rjButton2.BackColor = System.Drawing.Color.Transparent;
-            this.rjButton2.BackgroundColor = System.Drawing.Color.Transparent;
-            this.rjButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton2.BorderRadius = 0;
-            this.rjButton2.BorderSize = 0;
-            this.rjButton2.FlatAppearance.BorderSize = 0;
-            this.rjButton2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.rjButton2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton2.ForeColor = System.Drawing.Color.White;
-            this.rjButton2.Image = global::LaCucina.Properties.Resources.edit__1_;
-            this.rjButton2.Location = new System.Drawing.Point(247, 4);
-            this.rjButton2.Name = "rjButton2";
-            this.rjButton2.Size = new System.Drawing.Size(22, 22);
-            this.rjButton2.TabIndex = 17;
-            this.rjButton2.TextColor = System.Drawing.Color.White;
-            this.rjButton2.UseVisualStyleBackColor = false;
-            // 
-            // rjButton1
-            // 
-            this.rjButton1.BackColor = System.Drawing.Color.Transparent;
-            this.rjButton1.BackgroundColor = System.Drawing.Color.Transparent;
-            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton1.BorderRadius = 0;
-            this.rjButton1.BorderSize = 0;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.rjButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Image = global::LaCucina.Properties.Resources.delete__2_;
-            this.rjButton1.Location = new System.Drawing.Point(222, 4);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(22, 22);
-            this.rjButton1.TabIndex = 16;
-            this.rjButton1.TextColor = System.Drawing.Color.White;
-            this.rjButton1.UseVisualStyleBackColor = false;
             // 
             // ManageSpacesForm
             // 

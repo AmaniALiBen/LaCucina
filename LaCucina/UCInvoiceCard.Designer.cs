@@ -39,11 +39,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.rjPanel3 = new CustomControls.RJControls.RJPanel();
+            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.lblTime = new System.Windows.Forms.Label();
             this.rjPanel1 = new CustomControls.RJControls.RJPanel();
             this.lblTableNum = new System.Windows.Forms.Label();
             this.lblOrderNum = new System.Windows.Forms.Label();
-            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.rjPanel2.SuspendLayout();
             this.smoothFlowPanel1.SuspendLayout();
             this.rjPanel3.SuspendLayout();
@@ -60,7 +60,7 @@
             // 
             this.rjPanel2.AutoSize = true;
             this.rjPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.rjPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.rjPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.rjPanel2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.rjPanel2.BorderRadius = 15;
             this.rjPanel2.BorderSize = 2;
@@ -81,7 +81,7 @@
             this.smoothFlowPanel1.AutoScroll = true;
             this.smoothFlowPanel1.AutoSize = true;
             this.smoothFlowPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.smoothFlowPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.smoothFlowPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.smoothFlowPanel1.Controls.Add(this.label1);
             this.smoothFlowPanel1.Controls.Add(this.label2);
             this.smoothFlowPanel1.Controls.Add(this.label4);
@@ -171,7 +171,7 @@
             // 
             this.rjPanel3.AutoSize = true;
             this.rjPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.rjPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.rjPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.rjPanel3.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel3.BorderRadius = 5;
             this.rjPanel3.BorderSize = 0;
@@ -184,6 +184,19 @@
             this.rjPanel3.Name = "rjPanel3";
             this.rjPanel3.Size = new System.Drawing.Size(230, 30);
             this.rjPanel3.TabIndex = 3;
+            // 
+            // materialDivider1
+            // 
+            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.materialDivider1.Depth = 0;
+            this.materialDivider1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.materialDivider1.Location = new System.Drawing.Point(0, 0);
+            this.materialDivider1.Margin = new System.Windows.Forms.Padding(2);
+            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider1.Name = "materialDivider1";
+            this.materialDivider1.Size = new System.Drawing.Size(230, 1);
+            this.materialDivider1.TabIndex = 12;
+            this.materialDivider1.Text = "materialDivider1";
             // 
             // lblTime
             // 
@@ -239,26 +252,13 @@
             this.lblOrderNum.TabIndex = 12;
             this.lblOrderNum.Text = "ORDER :#23";
             // 
-            // materialDivider1
-            // 
-            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.materialDivider1.Depth = 0;
-            this.materialDivider1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.materialDivider1.Location = new System.Drawing.Point(0, 0);
-            this.materialDivider1.Margin = new System.Windows.Forms.Padding(2);
-            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(230, 1);
-            this.materialDivider1.TabIndex = 12;
-            this.materialDivider1.Text = "materialDivider1";
-            // 
             // UCInvoiceCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.Controls.Add(this.rjPanel2);
             this.Margin = new System.Windows.Forms.Padding(8);
             this.MaximumSize = new System.Drawing.Size(300, 500);
