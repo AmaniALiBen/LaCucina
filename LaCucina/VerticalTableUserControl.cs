@@ -15,7 +15,7 @@ namespace LaCucina
     {
         public override Label TargetlblTableNum => this.lblTableNum;
         public override Label TargetlblTableStatus => this.lblTableStatus;
-        public VerticalTableUserControl(string tableNum, int chairCount, string tableStatus, bool isInEditingMode) :base(tableNum, chairCount, tableStatus,isInEditingMode)
+        public VerticalTableUserControl(string tableNum, int chairCount, TableStatus tableStatus, bool isInEditingMode) :base(tableNum, chairCount, tableStatus,isInEditingMode)
         {
             InitializeComponent();
 

@@ -16,7 +16,7 @@ namespace LaCucina
         public override Label TargetlblTableNum => this.lblTableNum;
         public override Label TargetlblTableStatus => this.lblTableStatus;
 
-        public CircularTableUserControl(string tableNum, int chairCount, string tableStatus, bool isInEditingMode) : base(tableNum, chairCount, tableStatus, isInEditingMode)
+        public CircularTableUserControl(string tableNum, int chairCount, TableStatus tableStatus, bool isInEditingMode) : base(tableNum, chairCount, tableStatus, isInEditingMode)
         {
             InitializeComponent();
           

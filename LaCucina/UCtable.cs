@@ -17,8 +17,9 @@ namespace LaCucina
     {
         public string tableNum;
         public int chairCount;
-        public string tableStatus;
+        public TableStatus tableStatus;
         public bool isInEditingMode;
+        int offsetx, offsety;
 
         private bool isDragging = false;
         private Point dragCursorPoint;
@@ -32,7 +33,7 @@ namespace LaCucina
 
         public UCtable() { }
 
-        public UCtable(string tableNum, int chairCount, string tableStatus,bool isInEditingMode)
+        public UCtable(string tableNum, int chairCount, TableStatus tableStatus,bool isInEditingMode)
         {
             InitializeComponent();
             this.tableNum = tableNum;
@@ -47,10 +48,10 @@ namespace LaCucina
             TargetlblTableNum.Text = tableNum;
             if (!isInEditingMode)
             {
-                TargetlblTableStatus.Text = tableStatus;
+                TargetlblTableStatus.Text =  tableStatus.ToString();
                 adjustStatusColor();
             }
-
+            if(isInEditingMode)
             foreach (Control ctrl in this.Controls)
             {
                 ctrl.Click += (s, e) => SelectTable();
@@ -78,7 +79,7 @@ namespace LaCucina
 
         public void adjustStatusColor()
         {
-            if (tableStatus == "occupied")
+            if (tableStatus ==TableStatus.preparing)
             {
 
 
@@ -92,7 +93,7 @@ namespace LaCucina
 
             }
 
-            else if (tableStatus == "vacant")
+            else if (tableStatus == TableStatus.vacant)
             {
 
                 foreach (RJgradiantPanal item in this.Controls)
@@ -132,8 +133,8 @@ namespace LaCucina
                 }
             }
 
-            else { 
-                Test test = new Test();
+            else {
+                Test test = new Test(this.FindForm());
                 test.Show();
                 
 
@@ -150,8 +151,9 @@ namespace LaCucina
             {
                 SelectTable();
                 isDragging = true;
-                dragCursorPoint = Cursor.Position;
-                dragFormPoint = this.Location;
+                //الفرق بين المكان اللي ضغطنا فيه على الماوس ومكان الطاولة باش مايشدهاش من الحاشية
+                offsetx = Cursor.Position.X - this.Location.X;
+                offsety = Cursor.Position.Y - this.Location.Y;
                 this.Cursor = Cursors.SizeAll;
                 this.BringToFront();
             }
@@ -161,9 +163,20 @@ namespace LaCucina
         {
             if (isDragging)
             {
-                int difX = Cursor.Position.X - dragCursorPoint.X;
-                int difY = Cursor.Position.Y - dragCursorPoint.Y;
-                this.Location = new Point(dragFormPoint.X + difX, dragFormPoint.Y + difY);
+              
+                int newX = Cursor.Position.X - offsetx;
+                int newY = Cursor.Position.Y - offsety;
+                //حدود البانل اللي الطاولة فيها باش ماتطلعش منها
+                int minX = 0;
+                int minY = 0;
+                int maxX = this.Parent.Width-this.Width;
+                int maxY = this.Parent.Height-this.Height;
+                newX = Math.Max(minX, Math.Min(newX, maxX));
+                newY=Math.Max(minY, Math.Min(newY, maxY));
+
+                this.Location= new Point(newX, newY);
+
+                
             }
         }
 

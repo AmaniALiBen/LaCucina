@@ -8,70 +8,57 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LaCucina
-{
+{ 
     public partial class USFloorplanEditor : UserControl
     {
-        int chaircount=2;
+        
         public USFloorplanEditor()
         {
             InitializeComponent();
            
+            fillPanel(false);
+            
 
-            HorizontalTableUserControl t = new HorizontalTableUserControl("01", 4, "occupied", true);
-            t.Location = new Point(40, 20);
-            pnlTables.Controls.Add(t);
-
-
-            HorizontalTableUserControl ta = new HorizontalTableUserControl("05", 12, "vacant", true);
-
-            ta.Location = new Point(500, 20);
-            pnlTables.Controls.Add(ta);
-
-            HorizontalTableUserControl tab = new HorizontalTableUserControl("05", 10, "occupied", true);
-
-            tab.Location = new Point(140, 200);
-            pnlTables.Controls.Add(tab);
-
-            VerticalTableUserControl tabl = new VerticalTableUserControl("05", 8, "vacant",true);
-            tabl.Location = new Point(30, 300);
-            pnlTables.Controls.Add(tabl);
-
-            HorizontalTableUserControl tab2 = new HorizontalTableUserControl("10", 4, "vacant", true);
-
-            tab2.Location = new Point(500, 200);
-            pnlTables.Controls.Add(tab2);
-
-            VerticalTableUserControl tabl3 = new VerticalTableUserControl("05", 6, "vacant", true);
-            tabl3.Location = new Point(400, 350);
-            pnlTables.Controls.Add(tabl3);
-
-            VerticalTableUserControl tabl4 = new VerticalTableUserControl("07", 6, "empty", true);
-            tabl4.Location = new Point(1000, 350);
-            pnlTables.Controls.Add(tabl4);
-
-            HorizontalTableUserControl tab5 = new HorizontalTableUserControl("10", 4, "empty",true);
-
-            tab5.Location = new Point(650, 200);
-            pnlTables.Controls.Add(tab5);
-
-            CircularTableUserControl tab6 = new CircularTableUserControl("16", 2, "occupied", true);
-            tab6.Location = new Point(600, 400);
-            pnlTables.Controls.Add(tab6);
-
-            CircularTableUserControl tab7 = new CircularTableUserControl("04", 4, "vacant", true);
-            tab7.Location = new Point(800, 100);
-            pnlTables.Controls.Add(tab7);
-
-            CircularTableUserControl tab8 = new CircularTableUserControl("02", 4, "empty", true);
-            tab8.Location = new Point(800, 300);
-            pnlTables.Controls.Add(tab8);
-
-            int l = (rjPanel3.Size.Width / 2 - (rjPanel1.Width / 2));
-            rjPanel1.Location = new Point(l);
+            
 
            
+        }
+        public void fillPanel(bool isEditing) {
+            foreach (var item in DataBase.tables)
+            {
+
+                addTableToPanel(item.Value, isEditing);
+
+            }
+        }
+       public void addTableToPanel(Table table, bool isEditing)
+        {
+            UCtable t = null;
+
+            if (table.tableFormat == TableFormat.circular)
+            {
+                t = new CircularTableUserControl(table.tableNum, table.chairCount, table.tableStatus, isEditing);
+
+            }
+            if (table.tableFormat == TableFormat.vertical)
+            {
+                t = new VerticalTableUserControl(table.tableNum, table.chairCount, table.tableStatus, isEditing);
+
+            }
+            if (table.tableFormat == TableFormat.horizontal)
+            {
+                t = new HorizontalTableUserControl(table.tableNum, table.chairCount, table.tableStatus, isEditing);
+
+
+            }
+            if (t != null)
+            {
+                t.Location = table.location;
+                pnlTables.Controls.Add(t);
+            }
         }
 
         private void rjPanel4_Paint(object sender, PaintEventArgs e)
@@ -99,7 +86,6 @@ namespace LaCucina
             {
                 try
                 {
-                    // سيحاول الوصول للخاصية مهما كان نوع الكلاس
                     dynamic table = ctrl;
                     table.isInEditingMode = true;
                     ctrl.Invalidate();
@@ -108,7 +94,6 @@ namespace LaCucina
                 }
                 catch
                 {
-                    // إذا لم تكن الخاصية موجودة في الأداة (مثل Label) سيتجاهلها
                 }
             }
             pnlTables.Invalidate();
@@ -117,36 +102,40 @@ namespace LaCucina
         
         private void pnlTables_Click(object sender, EventArgs e)
         {
-            foreach (RJgradiantPanal item in UCtable.lastSelectedTable.Controls)
+            if (UCtable.lastSelectedTable != null)
             {
+                foreach (RJgradiantPanal item in UCtable.lastSelectedTable.Controls)
+                {
 
-                item.BorderSize = 0;
+                    item.BorderSize = 0;
 
+                }
             }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (rbtnCircular.Checked)
-            {
-                CircularTableUserControl t = new CircularTableUserControl(txtTablenum.Texts, chaircount, "vacant", true);
-                t.Location = new Point(800, 100);
-                pnlTables.Controls.Add(t);
+            //if (rbtnCircular.Checked)
+            //{
+            //    CircularTableUserControl t = new CircularTableUserControl(txtTablenum.Texts, chaircount, "vacant", true);
+            //    t.Location = new Point(800, 100);
+            //    pnlTables.Controls.Add(t);
 
-            }
-            else if (rbtnHorizantal.Checked)
-            {
-                HorizontalTableUserControl t = new HorizontalTableUserControl(txtTablenum.Texts, chaircount, "occupied", true);
-                t.Location = new Point(100, 300);
-                pnlTables.Controls.Add(t);
-            }
-            else if (rbtnVertical.Checked)
-            {
-                VerticalTableUserControl t = new VerticalTableUserControl(txtTablenum.Texts, chaircount, "empty", true);
-                t.Location = new Point(1000, 350);
-                pnlTables.Controls.Add(t);
+            //}
+            //else if (rbtnHorizantal.Checked)
+            //{
+            //    HorizontalTableUserControl t = new HorizontalTableUserControl(txtTablenum.Texts, chaircount, "occupied", true);
+            //    t.Location = new Point(100, 300);
+            //    pnlTables.Controls.Add(t);
+            //}
+            //else if (rbtnVertical.Checked)
+            //{
+            //    VerticalTableUserControl t = new VerticalTableUserControl(txtTablenum.Texts, chaircount, "empty", true);
+            //    t.Location = new Point(1000, 350);
+            //    pnlTables.Controls.Add(t);
 
-            }
+            //}
+
             
         }
 

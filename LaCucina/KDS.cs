@@ -44,8 +44,8 @@ namespace LaCucina
         private void rjButton1_Click(object sender, EventArgs e)
         {
             EditItemsForm editItemsForm = new EditItemsForm(this);
-            editItemsForm.ShowDialog();
-            this.Hide();
+            editItemsForm.Show();
+            //this.Hide();
         }
 
         private void KDS_Load(object sender, EventArgs e)
@@ -64,6 +64,12 @@ namespace LaCucina
             form.Show();
             this.Close();
 
+        }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            OrdersForm form = new OrdersForm();
+            form.ShowDialog();
         }
     }
 }

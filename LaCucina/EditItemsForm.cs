@@ -54,11 +54,10 @@ namespace LaCucina
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-           
-           
-           
-            form.Show();
-            this.Hide();
+
+
+
+            this.Close();
 
 
         }

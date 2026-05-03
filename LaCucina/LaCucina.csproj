@@ -116,6 +116,7 @@
     <Compile Include="controls\UltraSmoothNavPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DataBase.cs" />
     <Compile Include="EditCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +147,7 @@
     <Compile Include="OrdersForm.Designer.cs">
       <DependentUpon>OrdersForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Table.cs" />
     <Compile Include="UCDiscountManager.cs">
       <SubType>UserControl</SubType>
     </Compile>

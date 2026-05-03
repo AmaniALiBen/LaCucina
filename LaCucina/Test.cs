@@ -12,10 +12,17 @@ namespace LaCucina
 {
     public partial class Test : Form
     {
+        Form form;
         public Test()
         {
             InitializeComponent();
            
+        }
+        public Test(Form form)
+        {
+            this.form = form;
+            InitializeComponent();
+
         }
 
         private void Test_Load(object sender, EventArgs e)
@@ -147,8 +154,8 @@ namespace LaCucina
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            FloorPlanForm floor = new FloorPlanForm(this);
-            floor.Show();
+           form.Show();
+           
             this.Close();
         }
 
