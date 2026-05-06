@@ -68,12 +68,7 @@ namespace LaCucina
 
 
         };
-        public static Dictionary<int, Item> items = new Dictionary<int, Item>()
-        {
-            [1] = new Item("Pizza",20,"",2),
-            [2]=new Item("Burger",18,"",1),
-
-        };
+       
 
 
         public static Dictionary<int, Discounts> discounts = new Dictionary<int, Discounts>()
@@ -84,11 +79,7 @@ namespace LaCucina
             [4] = new Discounts("deleted ", Discounts.Type.Fixed, 10, "2026/11/20", "2026/11/30", true, true),
         };
         public static Dictionary<int, Categories> category = new Dictionary<int, Categories>()
-
-
-
-        }
-        {
+        { 
             [1] = new Categories("Burger"),
             [2] = new Categories("Pizza"),
             [3] = new Categories("Pasta"),
