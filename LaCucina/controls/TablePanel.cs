@@ -1,62 +1,81 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LaCucina.controls
 {
     internal class TablePanel : FlowLayoutPanel
     {
-        // لإخفاء شريط التمرير
         [DllImport("user32.dll")]
         private static extern bool ShowScrollBar(IntPtr hWnd, int wBar, bool bShow);
         private const int SB_BOTH = 3;
 
+        // 1. تعريف حدث مخصص يظهر في الفورم الرئيسي
+        public event EventHandler RowDoubleClicked;
+
         public TablePanel()
         {
-            // 1. تفعيل التخزين المؤقت المزدوج لمنع الوميض (Flickering)
             this.DoubleBuffered = true;
             this.SetStyle(ControlStyles.OptimizedDoubleBuffer |
                           ControlStyles.AllPaintingInWmPaint |
                           ControlStyles.UserPaint, true);
-
             this.AutoScroll = true;
-        }
-
-        // 2. تحسين استجابة عجلة الماوس لجعلها "أنعم" وأسرع
-        protected override void OnMouseWheel(MouseEventArgs e)
-        {
-            // بدلاً من التمرير الافتراضي البطيء، سنقوم بحساب المسافة يدوياً
-            int scrollStep = 50; // يمكنك زيادة هذا الرقم لزيادة السرعة
-            int delta = e.Delta > 0 ? -scrollStep : scrollStep;
-
-            this.AutoScrollPosition = new Point(0, Math.Abs(this.AutoScrollPosition.Y) + delta);
-
-            // نمنع الحدث الأصلي من التأثير لكي لا يحدث تضارب
-            ((HandledMouseEventArgs)e).Handled = true;
-        }
-
-        // 3. ضمان إخفاء شريط التمرير في كل الحالات
-        protected override void WndProc(ref Message m)
-        {
-            base.WndProc(ref m);
-            if (this.Handle != IntPtr.Zero)
-            {
-                ShowScrollBar(this.Handle, SB_BOTH, false);
-            }
         }
 
         protected override void OnControlAdded(ControlEventArgs e)
         {
             base.OnControlAdded(e);
             e.Control.Width = this.ClientSize.Width - e.Control.Margin.Left - e.Control.Margin.Right;
-            // تفعيل الـ DoubleBuffered للعناصر المضافة أيضاً لضمان سلاسة حركتها
             SetDoubleBuffered(e.Control);
-           
+
+            // 2. السحر هنا: أي عنصر يضاف، نربط حدث الدبل كليك بتاعه وبتاع أولاده بالحدث الموحد
+            BindControlEvents(e.Control);
+        }
+
+        private void BindControlEvents(Control ctrl)
+        {
+            // نربط العنصر نفسه
+            ctrl.DoubleClick += (s, ev) => OnRowDoubleClicked(ctrl);
+
+            // نربط كل العناصر اللي داخله (Labels, Pictures, etc.)
+            foreach (Control child in ctrl.Controls)
+            {
+                child.DoubleClick += (s, ev) => OnRowDoubleClicked(ctrl);
+
+                // لو فيه حاويات داخلية (Panel داخل الـ UC)
+                if (child.HasChildren) BindControlEventsRecursive(child, ctrl);
+            }
+        }
+
+        private void BindControlEventsRecursive(Control parent, Control rootUC)
+        {
+            foreach (Control child in parent.Controls)
+            {
+                child.DoubleClick += (s, ev) => OnRowDoubleClicked(rootUC);
+                if (child.HasChildren) BindControlEventsRecursive(child, rootUC);
+            }
+        }
+
+        protected virtual void OnRowDoubleClicked(Control row)
+        {
+            // نرسل الصف بالكامل (الـ UC) في الـ sender
+            RowDoubleClicked?.Invoke(row, EventArgs.Empty);
+        }
+
+        // --- باقي الكود الأصلي الخاص بك (WndProc, OnResize, etc.) ---
+        protected override void OnMouseWheel(MouseEventArgs e)
+        {
+            int scrollStep = 50;
+            int delta = e.Delta > 0 ? -scrollStep : scrollStep;
+            this.AutoScrollPosition = new Point(0, Math.Abs(this.AutoScrollPosition.Y) + delta);
+            ((HandledMouseEventArgs)e).Handled = true;
+        }
+
+        protected override void WndProc(ref Message m)
+        {
+            base.WndProc(ref m);
+            if (this.Handle != IntPtr.Zero) ShowScrollBar(this.Handle, SB_BOTH, false);
         }
 
         private void SetDoubleBuffered(Control control)
@@ -68,15 +87,10 @@ namespace LaCucina.controls
         protected override void OnResize(EventArgs eventargs)
         {
             base.OnResize(eventargs);
-            // هذا الكود يضمن أن جميع الصفوف ستتمدد فوراً عند تغيير حجم الشاشة
             foreach (Control ctrl in this.Controls)
             {
                 ctrl.Width = this.ClientSize.Width - ctrl.Margin.Left - ctrl.Margin.Right;
             }
         }
     }
-   
-
-        
-    }
-
+}

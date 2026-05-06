@@ -15,41 +15,40 @@ namespace CustomControls.RJControls
     public partial class RJTextBox : UserControl
     {
         #region -> Fields
-        //Fields
         private Color borderColor = Color.MediumSlateBlue;
         private Color borderFocusColor = Color.HotPink;
         private int borderSize = 2;
         private bool underlinedStyle = false;
         private bool isFocused = false;
-
         private int borderRadius = 0;
+
         private Color placeholderColor = Color.DarkGray;
         private string placeholderText = "";
         private bool isPlaceholder = false;
         private bool isPasswordChar = false;
 
-        //Events
-        public event EventHandler _TextChanged;
+        // الحقل الخاص بالشار المخصص
+        private char customPasswordChar = '●';
 
+        private Font placeholderFont = new Font("Segoe UI", 9.5F);
+        private Font mainFont = new Font("Segoe UI", 9.5F);
+
+        public event EventHandler _TextChanged;
         #endregion
 
-        //-> Constructor
         public RJTextBox()
         {
-            //Created by designer
             InitializeComponent();
+            mainFont = this.Font;
         }
 
         #region -> Properties
+
         [Category("RJ Code Advance")]
         public Color BorderColor
         {
             get { return borderColor; }
-            set
-            {
-                borderColor = value;
-                this.Invalidate();
-            }
+            set { borderColor = value; this.Invalidate(); }
         }
 
         [Category("RJ Code Advance")]
@@ -63,25 +62,14 @@ namespace CustomControls.RJControls
         public int BorderSize
         {
             get { return borderSize; }
-            set
-            {
-                if (value >= 1)
-                {
-                    borderSize = value;
-                    this.Invalidate();
-                }
-            }
+            set { if (value >= 1) { borderSize = value; this.Invalidate(); } }
         }
 
         [Category("RJ Code Advance")]
         public bool UnderlinedStyle
         {
             get { return underlinedStyle; }
-            set
-            {
-                underlinedStyle = value;
-                this.Invalidate();
-            }
+            set { underlinedStyle = value; this.Invalidate(); }
         }
 
         [Category("RJ Code Advance")]
@@ -92,7 +80,25 @@ namespace CustomControls.RJControls
             {
                 isPasswordChar = value;
                 if (!isPlaceholder)
-                    textBox1.UseSystemPasswordChar = value;
+                {
+                    textBox1.UseSystemPasswordChar = false;
+                    textBox1.PasswordChar = value ? customPasswordChar : '\0';
+                }
+            }
+        }
+
+        // هذه هي الخاصية التي تتيح لك اختيار الرمز
+        [Category("RJ Code Advance")]
+        [Description("اختيار رمز تشفير كلمة المرور")]
+        [Browsable(true)]
+        public char CustomPasswordChar
+        {
+            get { return customPasswordChar; }
+            set
+            {
+                customPasswordChar = value;
+                if (isPasswordChar && !isPlaceholder)
+                    textBox1.PasswordChar = value;
             }
         }
 
@@ -107,22 +113,14 @@ namespace CustomControls.RJControls
         public override Color BackColor
         {
             get { return base.BackColor; }
-            set
-            {
-                base.BackColor = value;
-                textBox1.BackColor = value;
-            }
+            set { base.BackColor = value; textBox1.BackColor = value; }
         }
 
         [Category("RJ Code Advance")]
         public override Color ForeColor
         {
             get { return base.ForeColor; }
-            set
-            {
-                base.ForeColor = value;
-                textBox1.ForeColor = value;
-            }
+            set { base.ForeColor = value; textBox1.ForeColor = value; }
         }
 
         [Category("RJ Code Advance")]
@@ -132,25 +130,35 @@ namespace CustomControls.RJControls
             set
             {
                 base.Font = value;
-                textBox1.Font = value;
+                mainFont = value;
+                if (!isPlaceholder)
+                    textBox1.Font = value;
+
                 if (this.DesignMode)
                     UpdateControlHeight();
             }
         }
 
         [Category("RJ Code Advance")]
-        public string Texts
+        public Font PlaceholderFont
         {
-            get
-            {
-                if (isPlaceholder) return "";
-                else return textBox1.Text;
-            }
+            get { return placeholderFont; }
             set
             {
-                RemovePlaceholder();//If it is the case.
+                placeholderFont = value;
+                if (isPlaceholder) textBox1.Font = value;
+            }
+        }
+
+        [Category("RJ Code Advance")]
+        public string Texts
+        {
+            get { return isPlaceholder ? "" : textBox1.Text; }
+            set
+            {
+                RemovePlaceholder();
                 textBox1.Text = value;
-                SetPlaceholder();//If it is the case.
+                SetPlaceholder();
             }
         }
 
@@ -158,61 +166,93 @@ namespace CustomControls.RJControls
         public int BorderRadius
         {
             get { return borderRadius; }
-            set
-            {
-                if (value >= 0)
-                {
-                    borderRadius = value;
-                    this.Invalidate();//Redraw control
-                }
-            }
+            set { if (value >= 0) { borderRadius = value; this.Invalidate(); } }
         }
 
         [Category("RJ Code Advance")]
         public Color PlaceholderColor
         {
             get { return placeholderColor; }
-            set
-            {
-                placeholderColor = value;
-                if (isPlaceholder)
-                    textBox1.ForeColor = value;
-            }
+            set { placeholderColor = value; if (isPlaceholder) textBox1.ForeColor = value; }
         }
 
         [Category("RJ Code Advance")]
         public string PlaceholderText
         {
             get { return placeholderText; }
-            set
+            set { placeholderText = value; textBox1.Text = ""; SetPlaceholder(); }
+        }
+        #endregion
+
+        #region -> Logic Methods
+
+        private void SetPlaceholder()
+        {
+            if (string.IsNullOrWhiteSpace(textBox1.Text) && placeholderText != "")
             {
-                placeholderText = value;
+                isPlaceholder = true;
+                textBox1.Text = placeholderText;
+                textBox1.ForeColor = placeholderColor;
+                textBox1.Font = placeholderFont;
+                textBox1.PasswordChar = '\0';
+                textBox1.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void RemovePlaceholder()
+        {
+            if (isPlaceholder && placeholderText != "")
+            {
+                isPlaceholder = false;
                 textBox1.Text = "";
-                SetPlaceholder();
+                textBox1.ForeColor = this.ForeColor;
+                textBox1.Font = mainFont;
+
+                if (isPasswordChar)
+                {
+                    textBox1.UseSystemPasswordChar = false;
+                    textBox1.PasswordChar = customPasswordChar;
+                }
+            }
+        }
+
+        private void UpdateControlHeight()
+        {
+            if (textBox1.Multiline == false)
+            {
+                Font currentFont = mainFont.Size > placeholderFont.Size ? mainFont : placeholderFont;
+                int txtHeight = TextRenderer.MeasureText("Text", currentFont).Height + 1;
+
+                textBox1.Multiline = true;
+                textBox1.MinimumSize = new Size(0, txtHeight);
+                textBox1.Multiline = false;
+
+                this.Height = textBox1.Height + this.Padding.Top + this.Padding.Bottom;
             }
         }
         #endregion
 
-        #region -> Overridden methods
+        #region -> Drawing & Events
+        // (نفس كود الرسم والأحداث في مشاركتك السابقة دون تغيير)
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
-            if (this.DesignMode)
-                UpdateControlHeight();
+            if (this.DesignMode) UpdateControlHeight();
         }
+
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
             UpdateControlHeight();
         }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
             Graphics graph = e.Graphics;
 
-            if (borderRadius > 1)//Rounded TextBox
+            if (borderRadius > 1)
             {
-                //-Fields
                 var rectBorderSmooth = this.ClientRectangle;
                 var rectBorder = Rectangle.Inflate(rectBorderSmooth, -borderSize, -borderSize);
                 int smoothSize = borderSize > 0 ? borderSize : 1;
@@ -222,76 +262,45 @@ namespace CustomControls.RJControls
                 using (Pen penBorderSmooth = new Pen(this.Parent.BackColor, smoothSize))
                 using (Pen penBorder = new Pen(borderColor, borderSize))
                 {
-                    //-Drawing
-                    this.Region = new Region(pathBorderSmooth);//Set the rounded region of UserControl
-                    if (borderRadius > 15) SetTextBoxRoundedRegion();//Set the rounded region of TextBox component
+                    this.Region = new Region(pathBorderSmooth);
+                    if (borderRadius > 15) SetTextBoxRoundedRegion();
                     graph.SmoothingMode = SmoothingMode.AntiAlias;
-                    penBorder.Alignment = System.Drawing.Drawing2D.PenAlignment.Center;
+                    penBorder.Alignment = PenAlignment.Center;
                     if (isFocused) penBorder.Color = borderFocusColor;
 
-                    if (underlinedStyle) //Line Style
+                    if (underlinedStyle)
                     {
-                        //Draw border smoothing
                         graph.DrawPath(penBorderSmooth, pathBorderSmooth);
-                        //Draw border
                         graph.SmoothingMode = SmoothingMode.None;
                         graph.DrawLine(penBorder, 0, this.Height - 1, this.Width, this.Height - 1);
                     }
-                    else //Normal Style
+                    else
                     {
-                        //Draw border smoothing
                         graph.DrawPath(penBorderSmooth, pathBorderSmooth);
-                        //Draw border
                         graph.DrawPath(penBorder, pathBorder);
                     }
                 }
             }
-            else //Square/Normal TextBox
+            else
             {
-                //Draw border
                 using (Pen penBorder = new Pen(borderColor, borderSize))
                 {
                     this.Region = new Region(this.ClientRectangle);
-                    penBorder.Alignment = System.Drawing.Drawing2D.PenAlignment.Inset;
+                    penBorder.Alignment = PenAlignment.Inset;
                     if (isFocused) penBorder.Color = borderFocusColor;
 
-                    if (underlinedStyle) //Line Style
+                    if (underlinedStyle)
                         graph.DrawLine(penBorder, 0, this.Height - 1, this.Width, this.Height - 1);
-                    else //Normal Style
+                    else
                         graph.DrawRectangle(penBorder, 0, 0, this.Width - 0.5F, this.Height - 0.5F);
                 }
             }
         }
-        #endregion
 
-        #region -> Private methods
-        private void SetPlaceholder()
-        {
-            if (string.IsNullOrWhiteSpace(textBox1.Text) && placeholderText != "")
-            {
-                isPlaceholder = true;
-                textBox1.Text = placeholderText;
-                textBox1.ForeColor = placeholderColor;
-                if (isPasswordChar)
-                    textBox1.UseSystemPasswordChar = false;
-            }
-        }
-        private void RemovePlaceholder()
-        {
-            if (isPlaceholder && placeholderText != "")
-            {
-                isPlaceholder = false;
-                textBox1.Text = "";
-                textBox1.ForeColor = this.ForeColor;
-                if (isPasswordChar)
-                    textBox1.UseSystemPasswordChar = true;
-            }
-        }
         private GraphicsPath GetFigurePath(Rectangle rect, int radius)
         {
             GraphicsPath path = new GraphicsPath();
             float curveSize = radius * 2F;
-
             path.StartFigure();
             path.AddArc(rect.X, rect.Y, curveSize, curveSize, 180, 90);
             path.AddArc(rect.Right - curveSize, rect.Y, curveSize, curveSize, 270, 90);
@@ -300,6 +309,7 @@ namespace CustomControls.RJControls
             path.CloseFigure();
             return path;
         }
+
         private void SetTextBoxRoundedRegion()
         {
             GraphicsPath pathTxt;
@@ -315,56 +325,14 @@ namespace CustomControls.RJControls
             }
             pathTxt.Dispose();
         }
-        private void UpdateControlHeight()
-        {
-            if (textBox1.Multiline == false)
-            {
-                int txtHeight = TextRenderer.MeasureText("Text", this.Font).Height + 1;
-                textBox1.Multiline = true;
-                textBox1.MinimumSize = new Size(0, txtHeight);
-                textBox1.Multiline = false;
 
-                this.Height = textBox1.Height + this.Padding.Top + this.Padding.Bottom;
-            }
-        }
-        #endregion
-
-        #region -> TextBox events
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            if (_TextChanged != null)
-                _TextChanged.Invoke(sender, e);
-        }
-        private void textBox1_Click(object sender, EventArgs e)
-        {
-            this.OnClick(e);
-        }
-        private void textBox1_MouseEnter(object sender, EventArgs e)
-        {
-            this.OnMouseEnter(e);
-        }
-        private void textBox1_MouseLeave(object sender, EventArgs e)
-        {
-            this.OnMouseLeave(e);
-        }
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            this.OnKeyPress(e);
-        }
-
-        private void textBox1_Enter(object sender, EventArgs e)
-        {
-            isFocused = true;
-            this.Invalidate();
-            RemovePlaceholder();
-        }
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            isFocused = false;
-            this.Invalidate();
-            SetPlaceholder();
-        }
-        ///::::+
+        private void textBox1_TextChanged(object sender, EventArgs e) { if (_TextChanged != null) _TextChanged.Invoke(sender, e); }
+        private void textBox1_Click(object sender, EventArgs e) { this.OnClick(e); }
+        private void textBox1_MouseEnter(object sender, EventArgs e) { this.OnMouseEnter(e); }
+        private void textBox1_MouseLeave(object sender, EventArgs e) { this.OnMouseLeave(e); }
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e) { this.OnKeyPress(e); }
+        private void textBox1_Enter(object sender, EventArgs e) { isFocused = true; this.Invalidate(); RemovePlaceholder(); }
+        private void textBox1_Leave(object sender, EventArgs e) { isFocused = false; this.Invalidate(); SetPlaceholder(); }
         #endregion
     }
 }

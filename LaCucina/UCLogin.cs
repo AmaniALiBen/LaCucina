@@ -14,10 +14,7 @@ namespace LaCucina
     public partial class UCLogin : UserControl
     {
 
-        
-
-
-        string[] username = { "admin", "waiter", "chef" };
+       
         public UCLogin()
         {
             InitializeComponent();
@@ -28,39 +25,13 @@ namespace LaCucina
 
         }
 
-        private void btnUpdateToppings_Click(object sender, EventArgs e)
+        private void btnAccessSystem_Click(object sender, EventArgs e)
         {
-            
-           
-
-            if (txtUserName.Texts == "admin")
-            { this.Parent.Hide();
-                ManagerForm form = new ManagerForm(this.FindForm());
-                form.ShowDialog();
-            }
-            else if (txtUserName.Texts == "waiter")
-            {
-                this.Parent.Hide();
-                FloorPlanForm form = new FloorPlanForm(this.FindForm());
-                form.ShowDialog();
-            }
-            else if(txtUserName.Texts == "chef")
-            {
-                this.Parent.Hide();
-                KDS form = new KDS(this.FindForm());
-                form.ShowDialog();
-
-            }
-            else
-            {
-                txtUserName.PlaceholderText = "wrong user name";
-            }
-
-
-
-               
-
-
+            LoginLogic loginlogic = new LoginLogic();
+           bool confirm= loginlogic.ConfirmLogin(txtUserName.Texts, txtPassword.Texts);
+            if (confirm) loginlogic.ShowDialog(this.FindForm());
+            else MessageBox.Show("not found", "");
         }
     }
 }
+
