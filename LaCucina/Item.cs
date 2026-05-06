@@ -19,7 +19,7 @@ namespace LaCucina
         public Item(int id, string name, int categoryId, double price, bool isActive, string imagePath)
         {
             this.id = id;
-            this.name = name;
+        this.name = name;
             this.categoryId = categoryId;
             this.price = price;
             this.isActive = isActive;

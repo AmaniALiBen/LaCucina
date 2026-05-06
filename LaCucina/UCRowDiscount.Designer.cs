@@ -29,76 +29,113 @@
         private void InitializeComponent()
         {
             this.rjPanel1 = new CustomControls.RJControls.RJPanel();
-            this.rjButton1 = new CustomControls.RJControls.RJButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblStartDate = new System.Windows.Forms.Label();
+            this.lblEndDate = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.btnStatus = new CustomControls.RJControls.RJButton();
+            this.lblType = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.rJgradiantPanal1 = new CustomControls.RJControls.RJgradiantPanal();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblValue = new System.Windows.Forms.Label();
             this.rjPanel1.SuspendLayout();
             this.rJgradiantPanal1.SuspendLayout();
             this.SuspendLayout();
             // 
             // rjPanel1
             // 
-            this.rjPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.rjPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
             this.rjPanel1.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel1.BorderRadius = 10;
             this.rjPanel1.BorderSize = 0;
-            this.rjPanel1.Controls.Add(this.rjButton1);
-            this.rjPanel1.Controls.Add(this.label2);
-            this.rjPanel1.Controls.Add(this.label10);
+            this.rjPanel1.Controls.Add(this.lblStartDate);
+            this.rjPanel1.Controls.Add(this.lblEndDate);
+            this.rjPanel1.Controls.Add(this.lblStatus);
+            this.rjPanel1.Controls.Add(this.btnStatus);
+            this.rjPanel1.Controls.Add(this.lblType);
+            this.rjPanel1.Controls.Add(this.lblName);
             this.rjPanel1.Controls.Add(this.rJgradiantPanal1);
             this.rjPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rjPanel1.ForeColor = System.Drawing.Color.Black;
             this.rjPanel1.Location = new System.Drawing.Point(0, 0);
-            this.rjPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rjPanel1.Name = "rjPanel1";
-            this.rjPanel1.Size = new System.Drawing.Size(846, 79);
+            this.rjPanel1.Size = new System.Drawing.Size(1269, 122);
             this.rjPanel1.TabIndex = 0;
             // 
-            // rjButton1
+            // lblStartDate
             // 
-            this.rjButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(36)))), ((int)(((byte)(30)))));
-            this.rjButton1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(36)))), ((int)(((byte)(30)))));
-            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton1.BorderRadius = 15;
-            this.rjButton1.BorderSize = 0;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.rjButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(191)))), ((int)(((byte)(79)))));
-            this.rjButton1.Location = new System.Drawing.Point(645, 29);
-            this.rjButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(100, 27);
-            this.rjButton1.TabIndex = 15;
-            this.rjButton1.Text = "Active";
-            this.rjButton1.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(191)))), ((int)(((byte)(79)))));
-            this.rjButton1.UseVisualStyleBackColor = false;
+            this.lblStartDate.AutoSize = true;
+            this.lblStartDate.Font = new System.Drawing.Font("Yu Gothic", 11F);
+            this.lblStartDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.lblStartDate.Location = new System.Drawing.Point(636, 48);
+            this.lblStartDate.Name = "lblStartDate";
+            this.lblStartDate.Size = new System.Drawing.Size(126, 29);
+            this.lblStartDate.TabIndex = 18;
+            this.lblStartDate.Text = "percentage";
             // 
-            // label2
+            // lblEndDate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label2.Location = new System.Drawing.Point(393, 30);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 21);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "percentage";
+            this.lblEndDate.AutoSize = true;
+            this.lblEndDate.Font = new System.Drawing.Font("Yu Gothic", 11F);
+            this.lblEndDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.lblEndDate.Location = new System.Drawing.Point(847, 48);
+            this.lblEndDate.Name = "lblEndDate";
+            this.lblEndDate.Size = new System.Drawing.Size(126, 29);
+            this.lblEndDate.TabIndex = 17;
+            this.lblEndDate.Text = "percentage";
             // 
-            // label10
+            // lblStatus
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label10.Location = new System.Drawing.Point(107, 29);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(161, 21);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "Grand Opening Gift";
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Yu Gothic", 11F);
+            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.lblStatus.Location = new System.Drawing.Point(1049, 48);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(126, 29);
+            this.lblStatus.TabIndex = 16;
+            this.lblStatus.Text = "percentage";
+            // 
+            // btnStatus
+            // 
+            this.btnStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(36)))), ((int)(((byte)(30)))));
+            this.btnStatus.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(36)))), ((int)(((byte)(30)))));
+            this.btnStatus.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnStatus.BorderRadius = 15;
+            this.btnStatus.BorderSize = 0;
+            this.btnStatus.FlatAppearance.BorderSize = 0;
+            this.btnStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStatus.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btnStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(191)))), ((int)(((byte)(79)))));
+            this.btnStatus.Location = new System.Drawing.Point(514, 3);
+            this.btnStatus.Name = "btnStatus";
+            this.btnStatus.Size = new System.Drawing.Size(150, 42);
+            this.btnStatus.TabIndex = 15;
+            this.btnStatus.Text = "Active";
+            this.btnStatus.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(191)))), ((int)(((byte)(79)))));
+            this.btnStatus.UseVisualStyleBackColor = false;
+            this.btnStatus.Visible = false;
+            this.btnStatus.Click += new System.EventHandler(this.rjButton1_Click);
+            // 
+            // lblType
+            // 
+            this.lblType.AutoSize = true;
+            this.lblType.Font = new System.Drawing.Font("Yu Gothic", 11F);
+            this.lblType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.lblType.Location = new System.Drawing.Point(401, 48);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(126, 29);
+            this.lblType.TabIndex = 14;
+            this.lblType.Text = "percentage";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Yu Gothic", 11F);
+            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.lblName.Location = new System.Drawing.Point(114, 48);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(210, 29);
+            this.lblName.TabIndex = 13;
+            this.lblName.Text = "Grand Opening Gift";
             // 
             // rJgradiantPanal1
             // 
@@ -106,39 +143,37 @@
             this.rJgradiantPanal1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.rJgradiantPanal1.BorderRadius = 10;
             this.rJgradiantPanal1.BorderSize = 0;
-            this.rJgradiantPanal1.Controls.Add(this.label1);
+            this.rJgradiantPanal1.Controls.Add(this.lblValue);
             this.rJgradiantPanal1.ForeColor = System.Drawing.Color.Black;
             this.rJgradiantPanal1.GradientAngle = 0F;
             this.rJgradiantPanal1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
             this.rJgradiantPanal1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(29)))));
-            this.rJgradiantPanal1.Location = new System.Drawing.Point(8, 11);
-            this.rJgradiantPanal1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rJgradiantPanal1.Location = new System.Drawing.Point(12, 17);
             this.rJgradiantPanal1.Name = "rJgradiantPanal1";
-            this.rJgradiantPanal1.Size = new System.Drawing.Size(57, 58);
+            this.rJgradiantPanal1.Size = new System.Drawing.Size(86, 89);
             this.rJgradiantPanal1.TabIndex = 11;
             // 
-            // label1
+            // lblValue
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(128)))), ((int)(((byte)(16)))));
-            this.label1.Location = new System.Drawing.Point(9, 16);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "15%";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblValue.AutoSize = true;
+            this.lblValue.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(128)))), ((int)(((byte)(16)))));
+            this.lblValue.Location = new System.Drawing.Point(3, 29);
+            this.lblValue.Name = "lblValue";
+            this.lblValue.Size = new System.Drawing.Size(50, 29);
+            this.lblValue.TabIndex = 0;
+            this.lblValue.Text = "15%";
+            this.lblValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblValue.Click += new System.EventHandler(this.label1_Click);
             // 
             // UCRowDiscount
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.rjPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UCRowDiscount";
-            this.Size = new System.Drawing.Size(846, 79);
+            this.Size = new System.Drawing.Size(1269, 122);
             this.rjPanel1.ResumeLayout(false);
             this.rjPanel1.PerformLayout();
             this.rJgradiantPanal1.ResumeLayout(false);
@@ -151,9 +186,12 @@
 
         private CustomControls.RJControls.RJPanel rjPanel1;
         private CustomControls.RJControls.RJgradiantPanal rJgradiantPanal1;
-        private System.Windows.Forms.Label label1;
-        private CustomControls.RJControls.RJButton rjButton1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblValue;
+        private CustomControls.RJControls.RJButton btnStatus;
+        private System.Windows.Forms.Label lblType;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Label lblStartDate;
+        private System.Windows.Forms.Label lblEndDate;
     }
 }

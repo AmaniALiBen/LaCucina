@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Categories.cs" />
     <Compile Include="CircularTableUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -116,10 +117,15 @@
     <Compile Include="controls\TablePanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="controls\CustomPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="controls\UltraSmoothNavPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataBase.cs" />
+    <Compile Include="Discounts.cs" />
+    <Compile Include="DiscountsManager.cs" />
     <Compile Include="EditCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,16 +151,33 @@
       <DependentUpon>FloorPlanForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Item.cs" />
+    <Compile Include="LoginLogic.cs" />
+    <Compile Include="ManagerMenu.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="OrdersForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OrdersForm.Designer.cs">
       <DependentUpon>OrdersForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PermissionService.cs" />
+    <Compile Include="Session.cs" />
     <Compile Include="Space.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Table.cs" />
+    <Compile Include="UCbtnCategory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCbtnCategory.Designer.cs">
+      <DependentUpon>UCbtnCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCcategoryRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCcategoryRow.Designer.cs">
+      <DependentUpon>UCcategoryRow.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCDiscountManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -346,6 +369,8 @@
     <Compile Include="UCUserManegment.Designer.cs">
       <DependentUpon>UCUserManegment.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
+    <Compile Include="UserManagement.cs" />
     <Compile Include="VerticalTableUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -375,6 +400,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrdersForm.resx">
       <DependentUpon>OrdersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCbtnCategory.resx">
+      <DependentUpon>UCbtnCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCcategoryRow.resx">
+      <DependentUpon>UCcategoryRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCDiscountManager.resx">
       <DependentUpon>UCDiscountManager.cs</DependentUpon>
@@ -611,6 +642,8 @@
     <None Include="Resources\close %281%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\checked %281%29.png" />
+    <None Include="Resources\checked.png" />
     <None Include="Resources\icons8-cancel-16 %282%29.png" />
     <None Include="Resources\icons8-cancel-24.png" />
     <None Include="Resources\icons8-cancel-16.png" />
