@@ -15,7 +15,7 @@ namespace LaCucina
     {
         public override Label TargetlblTableNum => this.lblTableNum;
         public override Label TargetlblTableStatus => this.lblTableStatus;
-        public HorizontalTableUserControl(string tableNum,int chairCount,TableStatus tableStatus, bool isInEditingMode) : base(tableNum, chairCount, tableStatus, isInEditingMode)
+        public HorizontalTableUserControl(int id,string tableNum,int chairCount,TableStatus tableStatus, bool isInEditingMode) : base(id,tableNum, chairCount, tableStatus, isInEditingMode)
         {
             InitializeComponent();
            

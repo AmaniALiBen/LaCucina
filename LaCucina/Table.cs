@@ -6,8 +6,11 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace LaCucina
 {
+    
+
     public enum TableFormat
     {
        circular,
@@ -26,6 +29,7 @@ namespace LaCucina
     }
     public class Table
     {
+       
         public int id;
         public string tableNum;
         public int chairCount;
@@ -43,6 +47,7 @@ namespace LaCucina
             this.location = location;
             this.spaceId = spaceId;
             this.tableStatus = tableStatus;
+            
            
 
         }

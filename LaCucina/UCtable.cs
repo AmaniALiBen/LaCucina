@@ -4,8 +4,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.Design;
 using System.Windows.Forms;
 using CustomControls.RJControls;
 
@@ -13,8 +15,9 @@ using CustomControls.RJControls;
 namespace LaCucina
 {
 
-    public   partial class UCtable : UserControl
+    public partial class UCtable : UserControl
     {
+        public int id;
         public string tableNum;
         public int chairCount;
         public TableStatus tableStatus;
@@ -24,27 +27,36 @@ namespace LaCucina
         private bool isDragging = false;
         private Point dragCursorPoint;
         private Point dragFormPoint;
+        public Panel pnlTableButtons;
+
+
+
 
 
 
         public static UCtable lastSelectedTable=null;
+
         public virtual Label TargetlblTableNum { get; }
         public virtual Label TargetlblTableStatus { get; }
 
         public UCtable() { }
 
-        public UCtable(string tableNum, int chairCount, TableStatus tableStatus,bool isInEditingMode)
+        public UCtable(int id,string tableNum, int chairCount, TableStatus tableStatus,bool isInEditingMode)
         {
             InitializeComponent();
+            this.id = id;
             this.tableNum = tableNum;
             this.chairCount = chairCount;
             this.tableStatus = tableStatus;
             this.isInEditingMode = isInEditingMode;
-           
+            
+
         }
 
         public virtual void BuildTable()
         {
+           
+
             TargetlblTableNum.Text = tableNum;
             if (!isInEditingMode)
             {
@@ -112,6 +124,8 @@ namespace LaCucina
 
         public void SelectTable() 
         {
+            pnlTableButtons = this.Parent.Controls.Find("pnlTableButtons", true).FirstOrDefault() as Panel;
+           
             if (isInEditingMode)
             {
                 if (lastSelectedTable != null && lastSelectedTable != this)
@@ -149,12 +163,19 @@ namespace LaCucina
         {
             if (isInEditingMode && e.Button == MouseButtons.Left)
             {
+                
+                
                 SelectTable();
+                pnlTableButtons.Location = new Point(this.Location.X + this.Width - pnlTableButtons.Width, this.Location.Y - pnlTableButtons.Height - 10);
+               
+                pnlTableButtons.Visible = true;
+
                 isDragging = true;
                 //الفرق بين المكان اللي ضغطنا فيه على الماوس ومكان الطاولة باش مايشدهاش من الحاشية
                 offsetx = Cursor.Position.X - this.Location.X;
                 offsety = Cursor.Position.Y - this.Location.Y;
                 this.Cursor = Cursors.SizeAll;
+                
                 this.BringToFront();
             }
         }
@@ -163,7 +184,8 @@ namespace LaCucina
         {
             if (isDragging)
             {
-              
+                pnlTableButtons.Visible = false;
+
                 int newX = Cursor.Position.X - offsetx;
                 int newY = Cursor.Position.Y - offsety;
                 //حدود البانل اللي الطاولة فيها باش ماتطلعش منها
@@ -182,8 +204,13 @@ namespace LaCucina
 
         private void HandleMouseUp(object sender, MouseEventArgs e)
         {
+            pnlTableButtons.Location = new Point(this.Location.X + this.Width - pnlTableButtons.Width, this.Location.Y - pnlTableButtons.Height - 10);
+
+
+            pnlTableButtons.Visible = true;
             isDragging = false;
             this.Cursor = Cursors.Default;
+            DataBase.tables[id].location=this.Location;
         }
 
         private void UCtable_Load(object sender, EventArgs e)

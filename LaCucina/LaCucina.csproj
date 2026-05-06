@@ -57,6 +57,9 @@
     <Compile Include="CircularTableUserControl.Designer.cs">
       <DependentUpon>CircularTableUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="controls\HorizontalFlowPanal.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="controls\MenuColorTable.cs" />
     <Compile Include="controls\MenuRenderer.cs" />
     <Compile Include="controls\ModernCategoryBar.cs">
@@ -141,11 +144,15 @@
     <Compile Include="FloorPlanForm.Designer.cs">
       <DependentUpon>FloorPlanForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Item.cs" />
     <Compile Include="OrdersForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OrdersForm.Designer.cs">
       <DependentUpon>OrdersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Space.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Table.cs" />
     <Compile Include="UCDiscountManager.cs">
@@ -225,6 +232,18 @@
     <Compile Include="UCEditItemRow .Designer.cs">
       <DependentUpon>UCEditItemRow .cs</DependentUpon>
     </Compile>
+    <Compile Include="UCingredient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCingredient.Designer.cs">
+      <DependentUpon>UCingredient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCIngredientInItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCIngredientInItem.Designer.cs">
+      <DependentUpon>UCIngredientInItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCIngriedentsSelectorRow.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -236,6 +255,12 @@
     </Compile>
     <Compile Include="UCInvoiceCard.Designer.cs">
       <DependentUpon>UCInvoiceCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCItem.Designer.cs">
+      <DependentUpon>UCItem.cs</DependentUpon>
     </Compile>
     <Compile Include="UCLogin.cs">
       <SubType>UserControl</SubType>
@@ -272,6 +297,12 @@
     </Compile>
     <Compile Include="UCRowDiscount.Designer.cs">
       <DependentUpon>UCRowDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCSpaceRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCSpaceRow.Designer.cs">
+      <DependentUpon>UCSpaceRow.cs</DependentUpon>
     </Compile>
     <Compile Include="UCuserRow.cs">
       <SubType>UserControl</SubType>
@@ -385,6 +416,15 @@
     <EmbeddedResource Include="UCEditItemRow .resx">
       <DependentUpon>UCEditItemRow .cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCingredient.resx">
+      <DependentUpon>UCingredient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCIngredientInItem.resx">
+      <DependentUpon>UCIngredientInItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCItem.resx">
+      <DependentUpon>UCItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCLogin.resx">
       <DependentUpon>UCLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -402,6 +442,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCRowDiscount.resx">
       <DependentUpon>UCRowDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCSpaceRow.resx">
+      <DependentUpon>UCSpaceRow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCuserRow.resx">
       <DependentUpon>UCuserRow.cs</DependentUpon>
@@ -568,6 +611,17 @@
     <None Include="Resources\close %281%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-cancel-16 %282%29.png" />
+    <None Include="Resources\icons8-cancel-24.png" />
+    <None Include="Resources\icons8-cancel-16.png" />
+    <None Include="Resources\icons8-save-16 %282%29.png" />
+    <None Include="Resources\icons8-image-96.png" />
+    <None Include="Resources\icons8-cancel-32.png" />
+    <None Include="Resources\icons8-save-16.png" />
+    <None Include="Resources\icons8-save-32.png" />
+    <None Include="Resources\icons8-save-30.png" />
+    <None Include="Resources\icons8-checkmark-yes-32.png" />
+    <None Include="Resources\icons8-check-48.png" />
     <None Include="Resources\history.png" />
     <None Include="Resources\icons8-history-24.png" />
     <None Include="Resources\back.png" />
