@@ -51,5 +51,11 @@ namespace LaCucina
             MessageBox.Show("Added Successfully");
 
         }
+        public static void DeleteItem(int key) {
+            if (!DataBase.items.ContainsKey(key))
+                return;
+        DataBase.items.Remove(key);
+            MessageBox.Show("Deleted Successfully");
+        }
     }
 }

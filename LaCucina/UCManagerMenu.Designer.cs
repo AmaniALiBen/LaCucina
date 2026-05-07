@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.pnlItems = new CustomControls.RJControls.RJPanel();
+            this.FlowpnlItems = new SmoothFlowPanel();
             this.rjPanel2 = new CustomControls.RJControls.RJPanel();
             this.pnlCategories = new LaCucina.controls.HorizontalFlowPanel();
             this.btnEditCategories = new CustomControls.RJControls.RJButton();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.btnUsers = new CustomControls.RJControls.RJButton();
             this.rjButton3 = new CustomControls.RJControls.RJButton();
+            this.pnlItems.SuspendLayout();
             this.rjPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,6 +46,7 @@
             this.pnlItems.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.pnlItems.BorderRadius = 0;
             this.pnlItems.BorderSize = 0;
+            this.pnlItems.Controls.Add(this.FlowpnlItems);
             this.pnlItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlItems.ForeColor = System.Drawing.Color.Black;
             this.pnlItems.Location = new System.Drawing.Point(0, 53);
@@ -51,6 +54,17 @@
             this.pnlItems.Name = "pnlItems";
             this.pnlItems.Size = new System.Drawing.Size(800, 384);
             this.pnlItems.TabIndex = 11;
+            // 
+            // FlowpnlItems
+            // 
+            this.FlowpnlItems.AutoScroll = true;
+            this.FlowpnlItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FlowpnlItems.Location = new System.Drawing.Point(0, 0);
+            this.FlowpnlItems.Margin = new System.Windows.Forms.Padding(2);
+            this.FlowpnlItems.Name = "FlowpnlItems";
+            this.FlowpnlItems.Padding = new System.Windows.Forms.Padding(3, 6, 3, 0);
+            this.FlowpnlItems.Size = new System.Drawing.Size(800, 384);
+            this.FlowpnlItems.TabIndex = 1;
             // 
             // rjPanel2
             // 
@@ -179,6 +193,7 @@
             this.Name = "UCManagerMenu";
             this.Size = new System.Drawing.Size(800, 437);
             this.Load += new System.EventHandler(this.UCManagerMenu_Load);
+            this.pnlItems.ResumeLayout(false);
             this.rjPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -193,5 +208,6 @@
         private CustomControls.RJControls.RJButton rjButton3;
         private CustomControls.RJControls.RJPanel pnlItems;
         private controls.HorizontalFlowPanel pnlCategories;
+        private SmoothFlowPanel FlowpnlItems;
     }
 }

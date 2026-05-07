@@ -165,6 +165,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Table.cs" />
+    <Compile Include="UCbtnAddItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCbtnAddItem.Designer.cs">
+      <DependentUpon>UCbtnAddItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCbtnCategory.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -399,6 +405,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OrdersForm.resx">
       <DependentUpon>OrdersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCbtnAddItem.resx">
+      <DependentUpon>UCbtnAddItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCbtnCategory.resx">
       <DependentUpon>UCbtnCategory.cs</DependentUpon>
@@ -641,6 +650,7 @@
     <None Include="Resources\close %281%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\file.png" />
     <None Include="Resources\icons8-delete-16.png" />
     <None Include="Resources\checked %281%29.png" />
     <None Include="Resources\checked.png" />
@@ -660,6 +670,10 @@
     <None Include="Resources\back.png" />
     <None Include="Resources\back %281%29.png" />
     <None Include="Resources\back %282%29.png" />
+    <None Include="Resources\add %282%29.png" />
+    <None Include="Resources\add %283%29.png" />
+    <None Include="Resources\add %284%29.png" />
+    <None Include="Resources\add-folder.png" />
     <Content Include="Resources\calendar_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

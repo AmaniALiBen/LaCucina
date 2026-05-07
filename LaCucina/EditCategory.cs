@@ -41,7 +41,9 @@ namespace LaCucina
                 };
                 row.Delete = () => { 
                     ManagerMenu.DeleteCategory(key);
-                    loadCategories() ;
+                    tblCategories.Controls.Remove(row);
+
+                    //loadCategories() ;
                 };
                 tblCategories.Controls.Add(row);
                 
@@ -52,10 +54,10 @@ namespace LaCucina
             InitializeComponent();
             loadCategories();
         }
-
+        public Action Done;
         private void btnUpdateToppings_Click(object sender, EventArgs e)
         {
-
+            Done?.Invoke();
         }
         
         private void btnSave_Click(object sender, EventArgs e)

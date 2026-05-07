@@ -9,12 +9,45 @@ namespace LaCucina
 {
     internal class Item
     {
-        public int id;
-        public string name;
-        public int categoryId;
-        public double price;
-        public bool isActive;
-        
+        private int id;
+        private string name;
+        private int categoryId;
+        private double price;
+        private bool isActive;
+        private string imagePath;
+
+        public int Id{
+            get { return id; }
+            set { id = value; }
+
+          }
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+        public int CategoryId
+        {
+            get { return categoryId; }
+            set { categoryId = value; }
+        }
+
+        public double Price
+        {
+            get { return price; }
+            set { price = value; }
+        }
+        public bool IsActive
+        {
+            get { return isActive; }
+            set { isActive = value; }
+
+        }
+        public string ImagePath
+        {
+            get { return ImagePath; }
+            set { ImagePath = value; }
+        }
 
         public Item(int id, string name, int categoryId, double price, bool isActive)
         {
@@ -23,7 +56,7 @@ namespace LaCucina
             this.categoryId = categoryId;
             this.price = price;
             this.isActive = isActive;
-           
+            this.imagePath = imagePath;
         }
     }
 }

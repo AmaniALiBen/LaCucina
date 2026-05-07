@@ -32,7 +32,7 @@
             this.btnSave = new CustomControls.RJControls.RJButton();
             this.btnDiscard = new CustomControls.RJControls.RJButton();
             this.rJgradiantPanal1 = new CustomControls.RJControls.RJgradiantPanal();
-            this.btnUpdateToppings = new CustomControls.RJControls.RJButton();
+            this.btnDone = new CustomControls.RJControls.RJButton();
             this.btnAddCategory = new CustomControls.RJControls.RJButton();
             this.txtAddCategory = new CustomControls.RJControls.RJTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -118,7 +118,7 @@
             this.rJgradiantPanal1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.rJgradiantPanal1.BorderRadius = 15;
             this.rJgradiantPanal1.BorderSize = 2;
-            this.rJgradiantPanal1.Controls.Add(this.btnUpdateToppings);
+            this.rJgradiantPanal1.Controls.Add(this.btnDone);
             this.rJgradiantPanal1.ForeColor = System.Drawing.Color.Black;
             this.rJgradiantPanal1.GradientAngle = 0F;
             this.rJgradiantPanal1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(81)))), ((int)(((byte)(0)))));
@@ -129,29 +129,29 @@
             this.rJgradiantPanal1.Size = new System.Drawing.Size(85, 32);
             this.rJgradiantPanal1.TabIndex = 34;
             // 
-            // btnUpdateToppings
+            // btnDone
             // 
-            this.btnUpdateToppings.BackColor = System.Drawing.Color.Transparent;
-            this.btnUpdateToppings.BackgroundColor = System.Drawing.Color.Transparent;
-            this.btnUpdateToppings.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnUpdateToppings.BorderRadius = 13;
-            this.btnUpdateToppings.BorderSize = 0;
-            this.btnUpdateToppings.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnUpdateToppings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnUpdateToppings.FlatAppearance.BorderSize = 0;
-            this.btnUpdateToppings.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnUpdateToppings.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnUpdateToppings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateToppings.Font = new System.Drawing.Font("Yu Gothic Medium", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateToppings.ForeColor = System.Drawing.Color.Black;
-            this.btnUpdateToppings.Location = new System.Drawing.Point(0, 0);
-            this.btnUpdateToppings.Name = "btnUpdateToppings";
-            this.btnUpdateToppings.Size = new System.Drawing.Size(85, 32);
-            this.btnUpdateToppings.TabIndex = 1;
-            this.btnUpdateToppings.Text = "Done";
-            this.btnUpdateToppings.TextColor = System.Drawing.Color.Black;
-            this.btnUpdateToppings.UseVisualStyleBackColor = false;
-            this.btnUpdateToppings.Click += new System.EventHandler(this.btnUpdateToppings_Click);
+            this.btnDone.BackColor = System.Drawing.Color.Transparent;
+            this.btnDone.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btnDone.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDone.BorderRadius = 13;
+            this.btnDone.BorderSize = 0;
+            this.btnDone.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnDone.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDone.FlatAppearance.BorderSize = 0;
+            this.btnDone.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnDone.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDone.Font = new System.Drawing.Font("Yu Gothic Medium", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDone.ForeColor = System.Drawing.Color.Black;
+            this.btnDone.Location = new System.Drawing.Point(0, 0);
+            this.btnDone.Name = "btnDone";
+            this.btnDone.Size = new System.Drawing.Size(85, 32);
+            this.btnDone.TabIndex = 1;
+            this.btnDone.Text = "Done";
+            this.btnDone.TextColor = System.Drawing.Color.Black;
+            this.btnDone.UseVisualStyleBackColor = false;
+            this.btnDone.Click += new System.EventHandler(this.btnUpdateToppings_Click);
             // 
             // btnAddCategory
             // 
@@ -268,7 +268,7 @@
         private CustomControls.RJControls.RJPanel pnlMain;
         private CustomControls.RJControls.RJButton btnDiscard;
         private CustomControls.RJControls.RJgradiantPanal rJgradiantPanal1;
-        private CustomControls.RJControls.RJButton btnUpdateToppings;
+        private CustomControls.RJControls.RJButton btnDone;
         private CustomControls.RJControls.RJButton btnAddCategory;
         private CustomControls.RJControls.RJTextBox txtAddCategory;
         private System.Windows.Forms.Label label2;

@@ -13,8 +13,9 @@ namespace LaCucina
     public partial class UCManagerMenu : UserControl
     {
         UCbtnCategory _selectedCategory;
-        public void loadCategories()
+        public void loadMenu()
         {
+            FlowpnlItems.Controls.Clear();
             pnlCategories.Controls.Clear();
             foreach(var entry in DataBase.category)
             {
@@ -37,8 +38,31 @@ namespace LaCucina
                         }
                         
                     }
+                    FlowpnlItems.Controls.Clear();
+                    UCbtnAddItem u = new UCbtnAddItem();
+                    FlowpnlItems.Controls.Add(u);
+                    foreach (Item i in DataBase.items.Values)
+                    {
+                        UCManagerItemCard card = new UCManagerItemCard();
+                        if (i.CategoryId == value.id)
+                        {
+                            
+                            card.Name = i.Name;
+                            card.Price = i.Price;
+                            card.Id = i.Id;
+                            FlowpnlItems.Controls.Add(card);
+                        }
+                        card.Delete = () => {
+                            ManagerMenu.DeleteItem(i.Id);
+                            FlowpnlItems.Controls.Remove(card);
+
+                        };
+                    }
+
                     
                 };
+               
+               
                 pnlCategories.Controls.Add(category);
 
             }
@@ -49,90 +73,28 @@ namespace LaCucina
             InitializeComponent();
         }
 
-        //private void btnBurgers_Click(object sender, EventArgs e)
-        //{
-        //    pnlItems.Controls.Clear();
-        //    UCCategoryItems cat = new UCCategoryItems();
-        //    cat.Dock = DockStyle.Fill;
-        //    pnlItems.Controls.Add(cat);
-        //}
-
-        //private void btnPasta_Click(object sender, EventArgs e)
-        //{
-        //    pnlItems.Controls.Clear();
-        //    UCCategoryItems cat = new UCCategoryItems();
-        //    cat.Dock = DockStyle.Fill;
-        //    pnlItems.Controls.Add(cat);
-        //}
-
-        //private void btnSalads_Click(object sender, EventArgs e)
-        //{
-        //    pnlItems.Controls.Clear();
-        //    UCCategoryItems cat = new UCCategoryItems();
-        //    cat.Dock = DockStyle.Fill;
-        //    pnlItems.Controls.Add(cat);
-        //}
-
-        //private void btnSoups_Click(object sender, EventArgs e)
-        //{
-        //    pnlItems.Controls.Clear();
-        //    UCCategoryItems cat = new UCCategoryItems();
-        //    cat.Dock = DockStyle.Fill;
-        //    pnlItems.Controls.Add(cat);
-        //}
-
-        //private void btnDesserts_Click(object sender, EventArgs e)
-        //{
-        //    pnlItems.Controls.Clear();
-        //    UCCategoryItems cat = new UCCategoryItems();
-        //    cat.Dock = DockStyle.Fill;
-        //    pnlItems.Controls.Add(cat);
-        //}
-
-        //private void btnSideDishes_Click(object sender, EventArgs e)
-        //{
-        //    pnlItems.Controls.Clear();
-        //    UCCategoryItems cat = new UCCategoryItems();
-        //    cat.Dock = DockStyle.Fill;
-        //    pnlItems.Controls.Add(cat);
-        //}
-
-        //private void btnGrills_Click(object sender, EventArgs e)
-        //{
-        //    pnlItems.Controls.Clear();
-        //    UCCategoryItems cat = new UCCategoryItems();
-        //    cat.Dock = DockStyle.Fill;
-        //    pnlItems.Controls.Add(cat);
-        //}
-
-        //private void btnSandwiches_Click(object sender, EventArgs e)
-        //{
-        //    pnlItems.Controls.Clear();
-        //    UCCategoryItems cat = new UCCategoryItems();
-        //    cat.Dock = DockStyle.Fill;
-        //    pnlItems.Controls.Add(cat);
-        //}
-
-        //private void btnDrinks_Click(object sender, EventArgs e)
-        //{
-        //    pnlItems.Controls.Clear();
-        //    UCCategoryItems cat = new UCCategoryItems();
-        //    cat.Dock = DockStyle.Fill;
-        //    pnlItems.Controls.Add(cat);
-        //}
+       
 
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
             EditCategory editCategory = new EditCategory();
             editCategory.ShowDialog();
-            if(editCategory.DialogResult==DialogResult.OK|| editCategory.DialogResult ==DialogResult.Cancel)
+           
+            if( editCategory.DialogResult ==DialogResult.Cancel)
                 editCategory.Close();
+            else
+            {
+                loadMenu();
+               
+                editCategory.Close();
+            }
+
         }
 
         private void UCManagerMenu_Load(object sender, EventArgs e)
         {
-            //btnSandwiches.PerformClick();
-            loadCategories();
+            
+            loadMenu();
         }
     }
 }
