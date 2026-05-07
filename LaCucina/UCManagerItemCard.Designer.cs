@@ -33,10 +33,9 @@
             this.btnDelete = new CustomControls.RJControls.RJButton();
             this.btnEdit = new CustomControls.RJControls.RJButton();
             this.lblName = new System.Windows.Forms.Label();
-            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picboxImage = new System.Windows.Forms.PictureBox();
             this.rjPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).BeginInit();
             this.SuspendLayout();
             // 
             // rjPanel1
@@ -49,27 +48,26 @@
             this.rjPanel1.Controls.Add(this.btnDelete);
             this.rjPanel1.Controls.Add(this.btnEdit);
             this.rjPanel1.Controls.Add(this.lblName);
-            this.rjPanel1.Controls.Add(this.materialDivider1);
-            this.rjPanel1.Controls.Add(this.pictureBox1);
+            this.rjPanel1.Controls.Add(this.picboxImage);
             this.rjPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rjPanel1.ForeColor = System.Drawing.Color.Black;
             this.rjPanel1.Location = new System.Drawing.Point(0, 0);
             this.rjPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.rjPanel1.Name = "rjPanel1";
-            this.rjPanel1.Size = new System.Drawing.Size(171, 206);
+            this.rjPanel1.Size = new System.Drawing.Size(230, 250);
             this.rjPanel1.TabIndex = 0;
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
-            this.lblPrice.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.lblPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
-            this.lblPrice.Location = new System.Drawing.Point(107, 85);
+            this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(171)))), ((int)(((byte)(68)))));
+            this.lblPrice.Location = new System.Drawing.Point(28, 181);
             this.lblPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(62, 16);
+            this.lblPrice.Size = new System.Drawing.Size(44, 19);
             this.lblPrice.TabIndex = 1;
-            this.lblPrice.Text = "15.50LYD";
+            this.lblPrice.Text = "15.50";
             // 
             // btnDelete
             // 
@@ -84,7 +82,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.ForeColor = System.Drawing.Color.Transparent;
             this.btnDelete.Image = global::LaCucina.Properties.Resources.delete__1_;
-            this.btnDelete.Location = new System.Drawing.Point(136, 153);
+            this.btnDelete.Location = new System.Drawing.Point(191, 206);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(33, 34);
@@ -106,7 +104,7 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.ForeColor = System.Drawing.Color.Transparent;
             this.btnEdit.Image = global::LaCucina.Properties.Resources.edit;
-            this.btnEdit.Location = new System.Drawing.Point(99, 153);
+            this.btnEdit.Location = new System.Drawing.Point(154, 206);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(33, 34);
@@ -118,40 +116,26 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Bold);
-            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.lblName.Location = new System.Drawing.Point(5, 119);
+            this.lblName.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.lblName.ForeColor = System.Drawing.Color.White;
+            this.lblName.Location = new System.Drawing.Point(26, 156);
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(107, 18);
+            this.lblName.Size = new System.Drawing.Size(183, 21);
             this.lblName.TabIndex = 3;
-            this.lblName.Text = "Cheese Burger";
+            this.lblName.Text = "Double Cheese Burger";
             // 
-            // materialDivider1
+            // picboxImage
             // 
-            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.materialDivider1.Depth = 0;
-            this.materialDivider1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.materialDivider1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.materialDivider1.Location = new System.Drawing.Point(0, 99);
-            this.materialDivider1.Margin = new System.Windows.Forms.Padding(2);
-            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(171, 1);
-            this.materialDivider1.TabIndex = 2;
-            this.materialDivider1.Text = "materialDivider1";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = global::LaCucina.Properties.Resources.برجر_4png;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(171, 99);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.picboxImage.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picboxImage.Image = global::LaCucina.Properties.Resources.برجر_4png;
+            this.picboxImage.Location = new System.Drawing.Point(0, 0);
+            this.picboxImage.Margin = new System.Windows.Forms.Padding(2);
+            this.picboxImage.Name = "picboxImage";
+            this.picboxImage.Size = new System.Drawing.Size(230, 128);
+            this.picboxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picboxImage.TabIndex = 0;
+            this.picboxImage.TabStop = false;
             // 
             // UCManagerItemCard
             // 
@@ -159,12 +143,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.Controls.Add(this.rjPanel1);
-            this.Margin = new System.Windows.Forms.Padding(5);
+            this.Margin = new System.Windows.Forms.Padding(11);
             this.Name = "UCManagerItemCard";
-            this.Size = new System.Drawing.Size(171, 206);
+            this.Size = new System.Drawing.Size(230, 250);
             this.rjPanel1.ResumeLayout(false);
             this.rjPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -173,9 +157,8 @@
 
         private CustomControls.RJControls.RJPanel rjPanel1;
         private System.Windows.Forms.Label lblPrice;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picboxImage;
         private System.Windows.Forms.Label lblName;
-        private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private CustomControls.RJControls.RJButton btnDelete;
         private CustomControls.RJControls.RJButton btnEdit;
     }

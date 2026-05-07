@@ -19,11 +19,11 @@ namespace LaCucina
 
         private void UCCategoryItems_Load(object sender, EventArgs e)
         {
-            for(int i = 0; i < 15; i++)
+            /*for(int i = 0; i < 15; i++)
             {
                UCManagerItemCard Card = new UCManagerItemCard();
                 pnlItems.Controls.Add(Card);
-            }
+            }*/
         }
     }
 }

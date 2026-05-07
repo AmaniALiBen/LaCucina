@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.pnlItems = new CustomControls.RJControls.RJPanel();
+            this.FlowpnlItems = new SmoothFlowPanel();
             this.rjPanel2 = new CustomControls.RJControls.RJPanel();
             this.pnlCategories = new LaCucina.controls.HorizontalFlowPanel();
             this.btnEditCategories = new CustomControls.RJControls.RJButton();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.btnUsers = new CustomControls.RJControls.RJButton();
             this.rjButton3 = new CustomControls.RJControls.RJButton();
-            this.FlowpnlItems = new SmoothFlowPanel();
             this.pnlItems.SuspendLayout();
             this.rjPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +54,17 @@
             this.pnlItems.Name = "pnlItems";
             this.pnlItems.Size = new System.Drawing.Size(800, 384);
             this.pnlItems.TabIndex = 11;
+            // 
+            // FlowpnlItems
+            // 
+            this.FlowpnlItems.AutoScroll = true;
+            this.FlowpnlItems.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FlowpnlItems.Location = new System.Drawing.Point(0, 0);
+            this.FlowpnlItems.Margin = new System.Windows.Forms.Padding(2);
+            this.FlowpnlItems.Name = "FlowpnlItems";
+            this.FlowpnlItems.Padding = new System.Windows.Forms.Padding(3, 6, 3, 0);
+            this.FlowpnlItems.Size = new System.Drawing.Size(800, 384);
+            this.FlowpnlItems.TabIndex = 1;
             // 
             // rjPanel2
             // 
@@ -168,17 +179,6 @@
             this.rjButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.rjButton3.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.rjButton3.UseVisualStyleBackColor = false;
-            // 
-            // FlowpnlItems
-            // 
-            this.FlowpnlItems.AutoScroll = true;
-            this.FlowpnlItems.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FlowpnlItems.Location = new System.Drawing.Point(0, 0);
-            this.FlowpnlItems.Margin = new System.Windows.Forms.Padding(2);
-            this.FlowpnlItems.Name = "FlowpnlItems";
-            this.FlowpnlItems.Padding = new System.Windows.Forms.Padding(3, 6, 3, 0);
-            this.FlowpnlItems.Size = new System.Drawing.Size(800, 384);
-            this.FlowpnlItems.TabIndex = 1;
             // 
             // UCManagerMenu
             // 

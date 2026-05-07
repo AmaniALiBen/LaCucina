@@ -63,8 +63,8 @@ namespace LaCucina
         private void btnMenu_Click(object sender, EventArgs e)
         {
             panel2.Controls.Clear();
-            //UCManagerMenu uS = new UCManagerMenu();
-            UCItem uS=new UCItem(1,true);
+            UCManagerMenu uS = new UCManagerMenu();
+            //UCItem uS=new UCItem(1,true);
             uS.Dock = DockStyle.Fill;
             panel2.Controls.Add(uS);
 

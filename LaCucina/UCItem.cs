@@ -37,15 +37,16 @@ namespace LaCucina
             if (isEditing)
             {
                 Item item = DataBase.items[id];
-                txtName.Texts = item.name;
-                txtPrice.Texts=item.price.ToString();
-                btnActive.Checked = item.isActive;
+                txtName.Texts = item.Name;
+                txtPrice.Texts=item.Price.ToString();
+                btnActive.Checked = item.IsActive;
                 string imagesFolder = Path.Combine(Application.StartupPath, "Images");
-                string imagePath = Path.Combine(imagesFolder, $"{item.id}.png");
+                string imagePath = Path.Combine(imagesFolder, $"{item.Id}.png");
+                if(File.Exists(imagePath))
                 picItem.Image = Image.FromFile(imagePath);
                 foreach (Categories category in cmbCatagory.Items)
                 {
-                    if (item.categoryId == category.id)
+                    if (item.CategoryId == category.id)
                     { cmbCatagory.SelectedItem = category; break; }
                 }
                 foreach(var ingredientInItem in DataBase.ingredientInItem)
