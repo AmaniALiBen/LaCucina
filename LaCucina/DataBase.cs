@@ -14,7 +14,7 @@ namespace LaCucina
         public static int tableCounter=3;
         public static int SpaceCounter=5;
         public static int ingredientCounter = 6;
-        public static int ingredientInItemCounter = 0;
+        public static int ingredientInItemCounter = 2;
         public static int itemCounter = 2;
         public static int categoryCounter = 16;
 

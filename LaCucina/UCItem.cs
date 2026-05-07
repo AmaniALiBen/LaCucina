@@ -1,92 +1,116 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace LaCucina
 {
-
     public partial class UCItem : UserControl
     {
-       
-
         int id;
-       
         bool isEditing;
 
-        public UCItem(int id,bool isEditing)
+        public UCItem(int id, bool isEditing)
         {
             this.id = id;
-            this.isEditing=isEditing;
-            InitializeComponent();
+            this.isEditing = isEditing;
 
+            InitializeComponent();
+            fillSearchResultPanel();
+            fillCmbCategory();
+            LoadInfo();
+
+
+        }
+       
+        public void fillCmbCategory()
+        {
             cmbCatagory.ValueMember = "id";
+
             foreach (var category in DataBase.category)
             {
                 cmbCatagory.Items.Add(category.Value);
             }
+        }
+
+        
+        public void LoadInfo()
+        {
             if (isEditing)
             {
-                Item item = DataBase.items[id];
+                Item item = DataBase.items[this.id];
+
                 txtName.Texts = item.name;
-                txtPrice.Texts=item.price.ToString();
+                txtPrice.Texts = item.price.ToString();
                 btnActive.Checked = item.isActive;
+
                 string imagesFolder = Path.Combine(Application.StartupPath, "Images");
                 string imagePath = Path.Combine(imagesFolder, $"{item.id}.png");
-                picItem.Image = Image.FromFile(imagePath);
+
+                if (File.Exists(imagePath))
+                {
+                    Image temp = Image.FromFile(imagePath);
+                    picItem.Image = new Bitmap(temp);
+                    temp.Dispose();
+                }
+
                 foreach (Categories category in cmbCatagory.Items)
                 {
                     if (item.categoryId == category.id)
-                    { cmbCatagory.SelectedItem = category; break; }
-                }
-                foreach(var ingredientInItem in DataBase.ingredientInItem)
-                {
-                    if(ingredientInItem.Value.itemId==this.id)
                     {
-                        UCIngredientInItem ing = ingredientInItem.Value;
-                        if (ingredientInItem.Value.isMain)
-                        {
-                            pnlMainIngredients.Controls.Add(ing);
-                        }
-                        else { pnlSideIngredients.Controls.Add(ing); }
+                        cmbCatagory.SelectedItem = category;
+                        break;
+                    }
+                }
+
+                
+                fillIngredintsPanels();
+
+            }
+        }
+        public void fillIngredintsPanels() 
+        {
+
+            foreach (var ingredientInItem in DataBase.ingredientInItem)
+            {
+                if (ingredientInItem.Value.itemId == this.id)
+                {
+                    UCIngredientInItem ing = ingredientInItem.Value;
+
+                    if (ingredientInItem.Value.isMain)
+                    {
+                        pnlMainIngredients.Controls.Add(ing);
+                    }
+                    else
+                    {
+                        pnlSideIngredients.Controls.Add(ing);
                     }
                 }
             }
-
-
         }
-
         private void picItem_Click(object sender, EventArgs e)
+        {
+            choosePic();
+        }
+        public void choosePic() 
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                picItem.Image = Image.FromFile(ofd.FileName);
+
+
+                Image temp = Image.FromFile(ofd.FileName);
+                picItem.Image = new Bitmap(temp);
+                temp.Dispose();
+
                 picItem.SizeMode = PictureBoxSizeMode.Zoom;
             }
         }
-
-        private void UCItem_Load(object sender, EventArgs e)
-        {
-            foreach (var ingredient in DataBase.ingredients)
-            {
-                pnlSearchResults.Controls.Add(ingredient.Value);
-            }
-            
-
-
-        }
+        
         public void fillSearchResultPanel()
         {
             pnlSearchResults.Controls.Clear();
@@ -97,16 +121,14 @@ namespace LaCucina
             {
                 if (ingredient.Value.name.ToLower().Contains(query))
                 {
-
-
                     pnlSearchResults.Controls.Add(ingredient.Value);
-
                 }
             }
 
-            if (pnlSearchResults.Controls.Count == 0) { btnAddAsNew.Visible = true; }
-            else { btnAddAsNew.Visible = false; } 
-
+            if (pnlSearchResults.Controls.Count == 0)
+                btnAddAsNew.Visible = true;
+            else
+                btnAddAsNew.Visible = false;
         }
 
         private void txtSearch__TextChanged(object sender, EventArgs e)
@@ -116,37 +138,51 @@ namespace LaCucina
 
         private void btnAddAsNew_Click(object sender, EventArgs e)
         {
-
             addNewIngredient();
         }
-        private void addNewIngredient() 
+
+        private void addNewIngredient()
         {
-            UCIngredient ing = new UCIngredient(++DataBase.ingredientCounter, txtSearch.Texts);
+            UCIngredient ing = new UCIngredient(
+                ++DataBase.ingredientCounter,
+                txtSearch.Texts
+            );
+
             DataBase.ingredients.Add(DataBase.ingredientCounter, ing);
 
             btnAddAsNew.Visible = false;
             txtSearch.Texts = "";
-            addIngrediantToPannel(DataBase.ingredientCounter);
 
+            addIngrediantToPannel(DataBase.ingredientCounter);
         }
 
-        private void addIngrediantToPannel(int ingredientId) 
+        private void addIngrediantToPannel(int ingredientId)
         {
-            foreach(var item in DataBase.ingredientInItem)
+            foreach (var item in DataBase.ingredientInItem)
             {
-                if(item.Value.ingredientId==ingredientId&&item.Value.itemId==this.id)return;
+                if (item.Value.ingredientId == ingredientId &&
+                    item.Value.itemId == this.id)
+                    return;
             }
-            UCIngredientInItem ing = new UCIngredientInItem(++DataBase.ingredientInItemCounter,this.id, ingredientId, rbtnAddToMain.Checked);
 
+            UCIngredientInItem ing = new UCIngredientInItem(
+                ++DataBase.ingredientInItemCounter,
+                this.id,
+                ingredientId,
+                rbtnAddToMain.Checked
+            );
 
-            if (rbtnAddToMain.Checked) { pnlMainIngredients.Controls.Add(ing); }
-            else { pnlSideIngredients.Controls.Add(ing); }
-
+            if (rbtnAddToMain.Checked)
+                pnlMainIngredients.Controls.Add(ing);
+            else
+                pnlSideIngredients.Controls.Add(ing);
         }
 
         private void btnAddSelected_Click(object sender, EventArgs e)
         {
-            addIngrediantToPannel(UCIngredient.lastSelectedIngredient.id);
+            addIngrediantToPannel(
+                UCIngredient.lastSelectedIngredient.id
+            );
         }
 
         private void UCItem_Load_1(object sender, EventArgs e)
@@ -154,39 +190,78 @@ namespace LaCucina
             fillSearchResultPanel();
         }
 
-        private void btnSaveItem_Click(object sender, EventArgs e)
+        public void savePic()
         {
             if (picItem.Image != null)
             {
                 string imagesFolder = Path.Combine(Application.StartupPath, "Images");
-                Directory.CreateDirectory(imagesFolder);
-                string destination = Path.Combine(imagesFolder, $"{++DataBase.itemCounter}.png");
+
+                string destination = Path.Combine(imagesFolder, $"{this.id}.png");
+
+
+                if (File.Exists(destination))
+                {
+                    File.Delete(destination);
+                }
+
                 picItem.Image.Save(destination, System.Drawing.Imaging.ImageFormat.Png);
-               
-                
-            }
-            else { ++DataBase.itemCounter; }
-
-            Categories selectedCategory = (Categories)cmbCatagory.SelectedItem;
-            Item item = new Item(DataBase.itemCounter,txtName.Texts, selectedCategory.id, Convert.ToDouble( txtPrice.Texts), btnActive.Checked);
-            DataBase.items.Add(DataBase.itemCounter, item);
-            foreach (UCIngredientInItem control in pnlMainIngredients.Controls.OfType<UCIngredientInItem>()) 
-            {
-                DataBase.ingredientInItem.Add(control.id, control);
 
             }
-            foreach (UCIngredientInItem control in pnlSideIngredients.Controls.OfType<UCIngredientInItem>())
-            {
-                DataBase.ingredientInItem.Add(control.id, control);
-
-            }
-
-
         }
-
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void btnSaveItem_Click(object sender, EventArgs e)
         {
-            
+            saveItem();
         }
+
+        public void saveItem()
+        {
+            savePic();
+            Categories selectedCategory = (Categories)cmbCatagory.SelectedItem;
+
+
+            Item item = new Item(
+                this.id,
+                txtName.Texts,
+                selectedCategory.id,
+                Convert.ToDouble(txtPrice.Texts),
+                btnActive.Checked
+            );
+
+            if (this.isEditing)
+                DataBase.items[this.id] = item;
+            else
+                DataBase.items.Add(this.id, item);
+
+            if (isEditing)
+            {
+                List<int> remove = new List<int>();
+
+                foreach (var ingredientInItem in DataBase.ingredientInItem)
+                {
+                    if (ingredientInItem.Value.itemId == this.id)
+                    {
+                        remove.Add(ingredientInItem.Key);
+                    }
+                }
+
+                foreach (int id in remove)
+                {
+                    DataBase.ingredientInItem.Remove(id);
+                }
+            }
+
+            foreach (UCIngredientInItem control
+                in pnlMainIngredients.Controls.OfType<UCIngredientInItem>())
+            {
+                DataBase.ingredientInItem.Add(control.id, control);
+            }
+
+            foreach (UCIngredientInItem control
+                in pnlSideIngredients.Controls.OfType<UCIngredientInItem>())
+            {
+                DataBase.ingredientInItem.Add(control.id, control);
+            }
+        }
+
     }
 }

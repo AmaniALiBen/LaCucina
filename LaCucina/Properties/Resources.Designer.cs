@@ -333,6 +333,16 @@ namespace LaCucina.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_delete_16 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-delete-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_history_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-history-24", resourceCulture);

@@ -37,5 +37,27 @@ namespace LaCucina
 
 
         }
+
+        private void btnRemoveIngredient_Click(object sender, EventArgs e)
+        {
+            DataBase.ingredients.Remove(this.id);
+            List<int> remove = new List<int>();
+
+            foreach (var ingredientInItem in DataBase.ingredientInItem)
+            {
+                if (ingredientInItem.Value.ingredientId == this.id)
+                {
+                    remove.Add(ingredientInItem.Key);
+                }
+            }
+
+            foreach (int id in remove)
+            {
+                DataBase.ingredientInItem.Remove(id);
+            }
+            this.Dispose();
+            
+
+        }
     }
 }
