@@ -9,21 +9,21 @@ namespace LaCucina
 {
     internal class Item
     {
-        int id;
-        string name;
-        int categoryId;
-        double price;
-        bool isActive;
-        string ImagePath;
+        public int id;
+        public string name;
+        public int categoryId;
+        public double price;
+        public bool isActive;
+        
 
-        public Item(int id, string name, int categoryId, double price, bool isActive, string imagePath)
+        public Item(int id, string name, int categoryId, double price, bool isActive)
         {
             this.id = id;
             this.name = name;
             this.categoryId = categoryId;
             this.price = price;
             this.isActive = isActive;
-            this.ImagePath = imagePath;
+           
         }
     }
 }

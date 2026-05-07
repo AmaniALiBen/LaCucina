@@ -285,6 +285,7 @@
             this.txtSearch.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.txtSearch.BorderRadius = 6;
             this.txtSearch.BorderSize = 1;
+            this.txtSearch.CustomPasswordChar = '●';
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.txtSearch.Location = new System.Drawing.Point(41, 74);
@@ -294,8 +295,9 @@
             this.txtSearch.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtSearch.PasswordChar = false;
             this.txtSearch.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtSearch.PlaceholderFont = new System.Drawing.Font("Segoe UI", 9.5F);
             this.txtSearch.PlaceholderText = "";
-            this.txtSearch.Size = new System.Drawing.Size(453, 39);
+            this.txtSearch.Size = new System.Drawing.Size(453, 40);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.Texts = "";
             this.txtSearch.UnderlinedStyle = false;
@@ -475,10 +477,10 @@
             this.cmbCatagory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbCatagory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cmbCatagory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
-            this.cmbCatagory.ForeColor = System.Drawing.Color.DimGray;
+            this.cmbCatagory.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.cmbCatagory.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.cmbCatagory.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
-            this.cmbCatagory.ListTextColor = System.Drawing.Color.DimGray;
+            this.cmbCatagory.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(23)))), ((int)(((byte)(23)))));
+            this.cmbCatagory.ListTextColor = System.Drawing.SystemColors.AppWorkspace;
             this.cmbCatagory.Location = new System.Drawing.Point(0, 0);
             this.cmbCatagory.MinimumSize = new System.Drawing.Size(200, 30);
             this.cmbCatagory.Name = "cmbCatagory";
@@ -494,8 +496,9 @@
             this.txtPrice.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.txtPrice.BorderRadius = 6;
             this.txtPrice.BorderSize = 1;
+            this.txtPrice.CustomPasswordChar = '●';
             this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtPrice.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.txtPrice.Location = new System.Drawing.Point(41, 180);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrice.Multiline = false;
@@ -503,8 +506,9 @@
             this.txtPrice.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtPrice.PasswordChar = false;
             this.txtPrice.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtPrice.PlaceholderFont = new System.Drawing.Font("Segoe UI", 9.5F);
             this.txtPrice.PlaceholderText = "";
-            this.txtPrice.Size = new System.Drawing.Size(453, 39);
+            this.txtPrice.Size = new System.Drawing.Size(453, 40);
             this.txtPrice.TabIndex = 1;
             this.txtPrice.Texts = "";
             this.txtPrice.UnderlinedStyle = false;
@@ -516,8 +520,9 @@
             this.txtName.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.txtName.BorderRadius = 6;
             this.txtName.BorderSize = 1;
+            this.txtName.CustomPasswordChar = '●';
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtName.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.txtName.Location = new System.Drawing.Point(41, 70);
             this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Multiline = false;
@@ -525,8 +530,9 @@
             this.txtName.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtName.PasswordChar = false;
             this.txtName.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtName.PlaceholderFont = new System.Drawing.Font("Segoe UI", 9.5F);
             this.txtName.PlaceholderText = "";
-            this.txtName.Size = new System.Drawing.Size(453, 39);
+            this.txtName.Size = new System.Drawing.Size(453, 40);
             this.txtName.TabIndex = 0;
             this.txtName.Texts = "";
             this.txtName.UnderlinedStyle = false;
@@ -609,6 +615,7 @@
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancel.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSaveItem
             // 
@@ -687,7 +694,7 @@
         private System.Windows.Forms.PictureBox picItem;
         private System.Windows.Forms.Label label6;
         private CustomControls.RJControls.RJTextBox txtSearch;
-        private CustomControls.RJControls.RJButton btnAddSelected;
+        public CustomControls.RJControls.RJButton btnAddSelected;
         private SmoothFlowPanel pnlMainIngredients;
         private CustomControls.RJControls.RJButton btnAddAsNew;
         private System.Windows.Forms.Label label7;
