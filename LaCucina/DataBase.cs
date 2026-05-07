@@ -15,7 +15,7 @@ namespace LaCucina
         public static int SpaceCounter=5;
         public static int ingredientCounter = 6;
         public static int ingredientInItemCounter = 2;
-        public static int itemCounter = 2;
+        public static int itemCounter = 50;
         public static int categoryCounter = 16;
 
         public static Dictionary<int, Table> tables = new Dictionary<int, Table>()

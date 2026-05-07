@@ -45,8 +45,8 @@
             this.rjPanel1.Location = new System.Drawing.Point(0, 0);
             this.rjPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.rjPanel1.Name = "rjPanel1";
-            this.rjPanel1.Padding = new System.Windows.Forms.Padding(2);
-            this.rjPanel1.Size = new System.Drawing.Size(230, 250);
+            this.rjPanel1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.rjPanel1.Size = new System.Drawing.Size(345, 365);
             this.rjPanel1.TabIndex = 1;
             // 
             // btnAdd
@@ -64,25 +64,27 @@
             this.btnAdd.Font = new System.Drawing.Font("Yu Gothic", 12F);
             this.btnAdd.ForeColor = System.Drawing.Color.Gray;
             this.btnAdd.Image = global::LaCucina.Properties.Resources.file;
-            this.btnAdd.Location = new System.Drawing.Point(2, 2);
+            this.btnAdd.Location = new System.Drawing.Point(3, 3);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(226, 246);
+            this.btnAdd.Size = new System.Drawing.Size(339, 359);
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Add New Item";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAdd.TextColor = System.Drawing.Color.Gray;
             this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // UCbtnAddItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.rjPanel1);
-            this.Margin = new System.Windows.Forms.Padding(11);
+            this.Margin = new System.Windows.Forms.Padding(16, 16, 16, 16);
             this.Name = "UCbtnAddItem";
-            this.Size = new System.Drawing.Size(230, 250);
+            this.Size = new System.Drawing.Size(345, 365);
             this.rjPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

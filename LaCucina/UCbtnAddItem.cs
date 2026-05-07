@@ -12,14 +12,18 @@ namespace LaCucina
 {
     public partial class UCbtnAddItem : UserControl
     {
+        public Action Add;
+       
         public UCbtnAddItem()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Add?.Invoke();
         }
     }
 }

@@ -11,6 +11,8 @@ namespace LaCucina
     {
         int id;
         bool isEditing;
+        public Action OnClose;
+        bool picChanged = false;
 
         public UCItem(int id, bool isEditing)
         {
@@ -21,10 +23,18 @@ namespace LaCucina
             fillSearchResultPanel();
             fillCmbCategory();
             LoadInfo();
-
-
         }
+
        
+        private void SetPicImage(Image newImage)
+        {
+            if (picItem.Image != null)
+            {
+                picItem.Image.Dispose();
+                picItem.Image = null;
+            }
+            picItem.Image = newImage;
+        }
         public void fillCmbCategory()
         {
             cmbCatagory.ValueMember = "id";
@@ -35,44 +45,39 @@ namespace LaCucina
             }
         }
 
-        
         public void LoadInfo()
         {
             if (isEditing)
             {
                 Item item = DataBase.items[this.id];
 
-                txtName.Texts = item.name;
-                txtPrice.Texts = item.price.ToString();
-                btnActive.Checked = item.isActive;
+                txtName.Texts = item.Name;
+                txtPrice.Texts = item.Price.ToString();
+                btnActive.Checked = item.IsActive;
 
                 string imagesFolder = Path.Combine(Application.StartupPath, "Images");
-                string imagePath = Path.Combine(imagesFolder, $"{item.id}.png");
+                string imagePath = Path.Combine(imagesFolder, $"{item.Id}.png");
 
                 if (File.Exists(imagePath))
                 {
-                    Image temp = Image.FromFile(imagePath);
-                    picItem.Image = new Bitmap(temp);
-                    temp.Dispose();
+                    SetPicImage(new Bitmap(imagePath));
                 }
 
                 foreach (Categories category in cmbCatagory.Items)
                 {
-                    if (item.categoryId == category.id)
+                    if (item.CategoryId == category.id)
                     {
                         cmbCatagory.SelectedItem = category;
                         break;
                     }
                 }
 
-                
                 fillIngredintsPanels();
-
             }
         }
-        public void fillIngredintsPanels() 
-        {
 
+        public void fillIngredintsPanels()
+        {
             foreach (var ingredientInItem in DataBase.ingredientInItem)
             {
                 if (ingredientInItem.Value.itemId == this.id)
@@ -80,37 +85,32 @@ namespace LaCucina
                     UCIngredientInItem ing = ingredientInItem.Value;
 
                     if (ingredientInItem.Value.isMain)
-                    {
                         pnlMainIngredients.Controls.Add(ing);
-                    }
                     else
-                    {
                         pnlSideIngredients.Controls.Add(ing);
-                    }
                 }
             }
         }
+
         private void picItem_Click(object sender, EventArgs e)
         {
+           
             choosePic();
         }
-        public void choosePic() 
+
+        public void choosePic()
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
 
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-
-
-                Image temp = Image.FromFile(ofd.FileName);
-                picItem.Image = new Bitmap(temp);
-                temp.Dispose();
-
+                picChanged = true;
+                SetPicImage(new Bitmap(ofd.FileName));
                 picItem.SizeMode = PictureBoxSizeMode.Zoom;
             }
         }
-        
+
         public void fillSearchResultPanel()
         {
             pnlSearchResults.Controls.Clear();
@@ -180,9 +180,14 @@ namespace LaCucina
 
         private void btnAddSelected_Click(object sender, EventArgs e)
         {
-            addIngrediantToPannel(
-                UCIngredient.lastSelectedIngredient.id
-            );
+            if (UCIngredient.lastSelectedIngredient == null)
+            {
+                MessageBox.Show("Please select an ingredient first.", "Validation",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            addIngrediantToPannel(UCIngredient.lastSelectedIngredient.id);
         }
 
         private void UCItem_Load_1(object sender, EventArgs e)
@@ -195,35 +200,55 @@ namespace LaCucina
             if (picItem.Image != null)
             {
                 string imagesFolder = Path.Combine(Application.StartupPath, "Images");
+                if (!Directory.Exists(imagesFolder))
+                    Directory.CreateDirectory(imagesFolder);
 
                 string destination = Path.Combine(imagesFolder, $"{this.id}.png");
 
+                Image img = picItem.Image;
+                picItem.Image = null;
 
                 if (File.Exists(destination))
-                {
                     File.Delete(destination);
-                }
 
-                picItem.Image.Save(destination, System.Drawing.Imaging.ImageFormat.Png);
+                img.Save(destination, System.Drawing.Imaging.ImageFormat.Png);
 
+                SetPicImage(new Bitmap(destination));
             }
-        }
-        private void btnSaveItem_Click(object sender, EventArgs e)
-        {
-            saveItem();
         }
 
         public void saveItem()
         {
-            savePic();
-            Categories selectedCategory = (Categories)cmbCatagory.SelectedItem;
+            if (string.IsNullOrWhiteSpace(txtName.Texts))
+            {
+                MessageBox.Show("Please enter item name.", "Validation",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            if (cmbCatagory.SelectedItem == null)
+            {
+                MessageBox.Show("Please select a category.", "Validation",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!double.TryParse(txtPrice.Texts, out double price))
+            {
+                MessageBox.Show("Please enter a valid price.", "Validation",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (picChanged)
+            { savePic(); }
+
+            Categories selectedCategory = (Categories)cmbCatagory.SelectedItem;
 
             Item item = new Item(
                 this.id,
                 txtName.Texts,
                 selectedCategory.id,
-                Convert.ToDouble(txtPrice.Texts),
+                price,
                 btnActive.Checked
             );
 
@@ -239,29 +264,50 @@ namespace LaCucina
                 foreach (var ingredientInItem in DataBase.ingredientInItem)
                 {
                     if (ingredientInItem.Value.itemId == this.id)
-                    {
                         remove.Add(ingredientInItem.Key);
-                    }
                 }
 
-                foreach (int id in remove)
-                {
-                    DataBase.ingredientInItem.Remove(id);
-                }
+                foreach (int key in remove)
+                    DataBase.ingredientInItem.Remove(key);
             }
 
-            foreach (UCIngredientInItem control
-                in pnlMainIngredients.Controls.OfType<UCIngredientInItem>())
+            foreach (UCIngredientInItem control in pnlMainIngredients.Controls.OfType<UCIngredientInItem>())
             {
                 DataBase.ingredientInItem.Add(control.id, control);
             }
 
-            foreach (UCIngredientInItem control
-                in pnlSideIngredients.Controls.OfType<UCIngredientInItem>())
+            foreach (UCIngredientInItem control in pnlSideIngredients.Controls.OfType<UCIngredientInItem>())
             {
                 DataBase.ingredientInItem.Add(control.id, control);
+            }
+
+            MessageBox.Show("Item saved successfully!", "Success",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            CleanupImages();
+            OnClose?.Invoke();
+        }
+        private void CleanupImages()
+        {
+            // Dispose the image to release file lock
+            if (picItem.Image != null)
+            {
+                picItem.Image.Dispose();
+                picItem.Image = null;
             }
         }
+        private void btnSaveItem_Click(object sender, EventArgs e)
+        {
+            saveItem();
+        }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to cancel?\nAny unsaved changes will be lost.",
+                "Confirm Cancel", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            { CleanupImages(); OnClose?.Invoke(); }
+        }
     }
 }

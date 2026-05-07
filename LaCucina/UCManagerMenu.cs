@@ -24,7 +24,8 @@ namespace LaCucina
                 UCbtnCategory category= new UCbtnCategory();
                 category._Name = value.name;
                 category.Tag = key;
-                
+
+               
                 category.clickCategory = () =>
                 {
                     category.btnName.ForeColor = Color.DarkOrange;
@@ -40,6 +41,22 @@ namespace LaCucina
                     }
                     FlowpnlItems.Controls.Clear();
                     UCbtnAddItem u = new UCbtnAddItem();
+                    u.Add = () => {
+
+                        Control parent = this.Parent;
+                        parent.Controls.Remove(this);
+
+                        // Create and add the Edit Item control
+                        UCItem editItem = new UCItem(++DataBase.itemCounter, false);
+                        editItem.Dock = DockStyle.Fill;
+                        editItem.OnClose = () => {
+                            parent.Controls.Remove(editItem);
+                            UCManagerMenu menu = new UCManagerMenu();
+                            menu.Dock = DockStyle.Fill;
+                            parent.Controls.Add(menu);
+                        };
+                        parent.Controls.Add(editItem);
+                    };
                     FlowpnlItems.Controls.Add(u);
                     foreach (Item i in DataBase.items.Values)
                     {
@@ -50,12 +67,31 @@ namespace LaCucina
                             card.Name = i.Name;
                             card.Price = i.Price;
                             card.Id = i.Id;
+                            
                             FlowpnlItems.Controls.Add(card);
+                            
                         }
                         card.Delete = () => {
                             ManagerMenu.DeleteItem(i.Id);
                             FlowpnlItems.Controls.Remove(card);
 
+                        };
+                        // Add this Edit action
+                        card.Edit = () => {
+                           
+                            Control parent = this.Parent;
+                            parent.Controls.Remove(this);
+                            
+                            // Create and add the Edit Item control
+                            UCItem editItem = new UCItem(i.Id, true);
+                            editItem.Dock = DockStyle.Fill;
+                            editItem.OnClose = () => {
+                                parent.Controls.Remove(editItem);
+                                UCManagerMenu menu = new UCManagerMenu();
+                                menu.Dock = DockStyle.Fill;
+                                parent.Controls.Add(menu);
+                            };
+                            parent.Controls.Add(editItem);
                         };
                     }
 
@@ -95,6 +131,11 @@ namespace LaCucina
         {
             
             loadMenu();
+        }
+
+        private void FlowpnlItems_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

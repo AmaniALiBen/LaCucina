@@ -17,38 +17,73 @@ namespace LaCucina
         private string name;
         private int id;
         public Action Delete;
+        public Action Edit;
 
         public double Price
         {
-            get { return price; }   
-            set { price = value; 
-            lblPrice.Text = price.ToString()+" LYD";
-
+            get { return price; }
+            set
+            {
+                price = value;
+                lblPrice.Text = price.ToString() + " LYD";
             }
         }
+
         public int Id
         {
             get { return id; }
-            set { id = value;
+            set
+            {
+                id = value;
+                LoadItemImage();
+            }
+        }
+
+        private void LoadItemImage()
+        {
+            try
+            {
                 string imagesFolder = Path.Combine(Application.StartupPath, "Images");
                 string imagePath = Path.Combine(imagesFolder, $"{id}.png");
-                if (File.Exists(imagePath))
-                    picboxImage.Image = Image.FromFile(imagePath);
 
+                if (File.Exists(imagePath))
+                {
+                    // Method 1: Read as bytes first (most reliable)
+                    byte[] imageData = File.ReadAllBytes(imagePath);
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        picboxImage.Image = new Bitmap(ms);
+                    }
+                }
+                else
+                {
+                    // Set a default placeholder image
+                    picboxImage.Image = null;
+                }
+            }
+            catch (OutOfMemoryException)
+            {
+                // Image file is corrupted or invalid format
+                picboxImage.Image = null;
+                Console.WriteLine($"Invalid image file for item {id}");
+            }
+            catch (Exception ex)
+            {
+                picboxImage.Image = null;
+                Console.WriteLine($"Error loading image: {ex.Message}");
             }
         }
+
         public string Name
         {
-            get
+            get { return name; }
+            set
             {
-                return name;
+                name = value;
+                lblName.Text = name;
             }
-            set { name = value;
-            
-            lblName.Text = name;}
         }
 
-       
         public UCManagerItemCard()
         {
             InitializeComponent();
@@ -57,21 +92,11 @@ namespace LaCucina
         private void btnDelete_Click(object sender, EventArgs e)
         {
             Delete?.Invoke();
-            //this.Parent.Controls.Remove(this);
-
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-           
-            EditItem editItem = new EditItem();
-            editItem.ShowDialog();
-            if (editItem.DialogResult == DialogResult.Cancel || editItem.DialogResult == DialogResult.OK)
-            {
-                editItem.Close();
-            }
-
-
+            Edit?.Invoke();
         }
     }
 }

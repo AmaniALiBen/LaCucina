@@ -49,10 +49,9 @@
             this.pnlItems.Controls.Add(this.FlowpnlItems);
             this.pnlItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlItems.ForeColor = System.Drawing.Color.Black;
-            this.pnlItems.Location = new System.Drawing.Point(0, 53);
-            this.pnlItems.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlItems.Location = new System.Drawing.Point(0, 77);
             this.pnlItems.Name = "pnlItems";
-            this.pnlItems.Size = new System.Drawing.Size(800, 384);
+            this.pnlItems.Size = new System.Drawing.Size(1200, 562);
             this.pnlItems.TabIndex = 11;
             // 
             // FlowpnlItems
@@ -60,11 +59,11 @@
             this.FlowpnlItems.AutoScroll = true;
             this.FlowpnlItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FlowpnlItems.Location = new System.Drawing.Point(0, 0);
-            this.FlowpnlItems.Margin = new System.Windows.Forms.Padding(2);
             this.FlowpnlItems.Name = "FlowpnlItems";
-            this.FlowpnlItems.Padding = new System.Windows.Forms.Padding(3, 6, 3, 0);
-            this.FlowpnlItems.Size = new System.Drawing.Size(800, 384);
+            this.FlowpnlItems.Padding = new System.Windows.Forms.Padding(4, 9, 4, 0);
+            this.FlowpnlItems.Size = new System.Drawing.Size(1200, 562);
             this.FlowpnlItems.TabIndex = 1;
+            this.FlowpnlItems.Paint += new System.Windows.Forms.PaintEventHandler(this.FlowpnlItems_Paint);
             // 
             // rjPanel2
             // 
@@ -78,21 +77,20 @@
             this.rjPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.rjPanel2.ForeColor = System.Drawing.Color.Black;
             this.rjPanel2.Location = new System.Drawing.Point(0, 0);
-            this.rjPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.rjPanel2.Name = "rjPanel2";
-            this.rjPanel2.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.rjPanel2.Size = new System.Drawing.Size(800, 53);
+            this.rjPanel2.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
+            this.rjPanel2.Size = new System.Drawing.Size(1200, 77);
             this.rjPanel2.TabIndex = 5;
             // 
             // pnlCategories
             // 
             this.pnlCategories.AutoScroll = true;
-            this.pnlCategories.AutoScrollMinSize = new System.Drawing.Size(752, 0);
+            this.pnlCategories.AutoScrollMinSize = new System.Drawing.Size(1128, 0);
             this.pnlCategories.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCategories.Location = new System.Drawing.Point(0, 5);
+            this.pnlCategories.Location = new System.Drawing.Point(0, 7);
             this.pnlCategories.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCategories.Name = "pnlCategories";
-            this.pnlCategories.Size = new System.Drawing.Size(752, 47);
+            this.pnlCategories.Size = new System.Drawing.Size(1128, 69);
             this.pnlCategories.TabIndex = 14;
             this.pnlCategories.WrapContents = false;
             // 
@@ -110,11 +108,10 @@
             this.btnEditCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditCategories.ForeColor = System.Drawing.Color.Transparent;
             this.btnEditCategories.Image = global::LaCucina.Properties.Resources.edit;
-            this.btnEditCategories.Location = new System.Drawing.Point(752, 5);
-            this.btnEditCategories.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditCategories.Location = new System.Drawing.Point(1128, 7);
             this.btnEditCategories.Name = "btnEditCategories";
-            this.btnEditCategories.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnEditCategories.Size = new System.Drawing.Size(48, 47);
+            this.btnEditCategories.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnEditCategories.Size = new System.Drawing.Size(72, 69);
             this.btnEditCategories.TabIndex = 13;
             this.btnEditCategories.TextColor = System.Drawing.Color.Transparent;
             this.btnEditCategories.UseVisualStyleBackColor = false;
@@ -126,11 +123,10 @@
             this.materialDivider1.Depth = 0;
             this.materialDivider1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.materialDivider1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.materialDivider1.Location = new System.Drawing.Point(0, 52);
-            this.materialDivider1.Margin = new System.Windows.Forms.Padding(2);
+            this.materialDivider1.Location = new System.Drawing.Point(0, 76);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(800, 1);
+            this.materialDivider1.Size = new System.Drawing.Size(1200, 1);
             this.materialDivider1.TabIndex = 0;
             this.materialDivider1.Text = "materialDivider1";
             // 
@@ -148,9 +144,10 @@
             this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsers.Font = new System.Drawing.Font("Yu Gothic", 11F);
             this.btnUsers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.btnUsers.Location = new System.Drawing.Point(9, 9);
+            this.btnUsers.Location = new System.Drawing.Point(14, 13);
+            this.btnUsers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Size = new System.Drawing.Size(150, 36);
+            this.btnUsers.Size = new System.Drawing.Size(225, 53);
             this.btnUsers.TabIndex = 6;
             this.btnUsers.Text = "Burgers";
             this.btnUsers.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -171,9 +168,10 @@
             this.rjButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rjButton3.Font = new System.Drawing.Font("Yu Gothic", 11F);
             this.rjButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.rjButton3.Location = new System.Drawing.Point(165, 9);
+            this.rjButton3.Location = new System.Drawing.Point(248, 13);
+            this.rjButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rjButton3.Name = "rjButton3";
-            this.rjButton3.Size = new System.Drawing.Size(147, 36);
+            this.rjButton3.Size = new System.Drawing.Size(220, 53);
             this.rjButton3.TabIndex = 10;
             this.rjButton3.Text = "Pizza";
             this.rjButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -182,16 +180,15 @@
             // 
             // UCManagerMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.Controls.Add(this.pnlItems);
             this.Controls.Add(this.rjPanel2);
             this.Controls.Add(this.btnUsers);
             this.Controls.Add(this.rjButton3);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UCManagerMenu";
-            this.Size = new System.Drawing.Size(800, 437);
+            this.Size = new System.Drawing.Size(1200, 639);
             this.Load += new System.EventHandler(this.UCManagerMenu_Load);
             this.pnlItems.ResumeLayout(false);
             this.rjPanel2.ResumeLayout(false);
