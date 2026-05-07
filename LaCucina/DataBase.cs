@@ -16,6 +16,7 @@ namespace LaCucina
         public static int ingredientCounter = 6;
         public static int ingredientInItemCounter = 0;
         public static int itemCounter = 2;
+        public static int categoryCounter = 16;
 
         public static Dictionary<int, Table> tables = new Dictionary<int, Table>()
         {
@@ -49,13 +50,17 @@ namespace LaCucina
 
         public static Dictionary<int, UCIngredientInItem> ingredientInItem = new Dictionary<int, UCIngredientInItem>()
         {
-            
+            [1] = new UCIngredientInItem(1, 1, 1, true),
+            [2] = new UCIngredientInItem(2, 1, 2, false)
+
+
         };
+
 
         public static Dictionary<int, Item> items = new Dictionary<int, Item>()
         {
-            [1] = new Item(1,"burger",1,15,true,""),
-            [2] = new Item(2,"pizza",1,20,true,"")
+            [1] = new Item(1,"burger",1,15,true),
+            [2] = new Item(2,"pizza",1,20,true)
 
         };
         public static Dictionary<int, User> users = new Dictionary<int, User>()
@@ -80,22 +85,22 @@ namespace LaCucina
         };
         public static Dictionary<int, Categories> category = new Dictionary<int, Categories>()
         { 
-            [1] = new Categories("Burger"),
-            [2] = new Categories("Pizza"),
-            [3] = new Categories("Pasta"),
-            [4] = new Categories("Salads"),
-            [5] = new Categories("Steaks"),
-            [6] = new Categories("Seafood"),
-            [7] = new Categories("Drinks"),
-            [8] = new Categories("Desserts"),
-            [9] = new Categories("Burger"),
-            [10] = new Categories("Pizza"),
-            [11] = new Categories("fghjk"),
-            [12] = new Categories("Salads"),
-            [13] = new Categories("Steaks"),
-            [14] = new Categories("Seafood"),
-            [15] = new Categories("ijbi"),
-            [16] = new Categories("biubi"),
+            [1] = new Categories(1,"Burger"),
+            [2] = new Categories(2,"Pizza"),
+            [3] = new Categories(3,"Pasta"),
+            [4] = new Categories(4,"Salads"),
+            [5] = new Categories(5,"Steaks"),
+            [6] = new Categories(6,"Seafood"),
+            [7] = new Categories(7,"Drinks"),
+            [8] = new Categories(8,"Desserts"),
+            [9] = new Categories(9,"Burger"),
+            [10] = new Categories(10,"Pizza"),
+            [11] = new Categories(11,"fghjk"),
+            [12] = new Categories(12,"Salads"),
+            [13] = new Categories(13,"Steaks"),
+            [14] = new Categories(14,"Seafood"),
+            [15] = new Categories(15,"ijbi"),
+            [16] = new Categories(16,"biubi"),
 
 
         };

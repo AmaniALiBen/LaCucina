@@ -6,6 +6,7 @@ using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,15 +14,55 @@ using System.Xml.Linq;
 
 namespace LaCucina
 {
+
     public partial class UCItem : UserControl
     {
+       
 
-        int id = 1;
-        public string ImagePath;
-        public UCItem()
+        int id;
+       
+        bool isEditing;
+
+        public UCItem(int id,bool isEditing)
         {
+            this.id = id;
+            this.isEditing=isEditing;
             InitializeComponent();
-           
+
+            cmbCatagory.ValueMember = "id";
+            foreach (var category in DataBase.category)
+            {
+                cmbCatagory.Items.Add(category.Value);
+            }
+            if (isEditing)
+            {
+                Item item = DataBase.items[id];
+                txtName.Texts = item.name;
+                txtPrice.Texts=item.price.ToString();
+                btnActive.Checked = item.isActive;
+                string imagesFolder = Path.Combine(Application.StartupPath, "Images");
+                string imagePath = Path.Combine(imagesFolder, $"{item.id}.png");
+                picItem.Image = Image.FromFile(imagePath);
+                foreach (Categories category in cmbCatagory.Items)
+                {
+                    if (item.categoryId == category.id)
+                    { cmbCatagory.SelectedItem = category; break; }
+                }
+                foreach(var ingredientInItem in DataBase.ingredientInItem)
+                {
+                    if(ingredientInItem.Value.itemId==this.id)
+                    {
+                        UCIngredientInItem ing = ingredientInItem.Value;
+                        if (ingredientInItem.Value.isMain)
+                        {
+                            pnlMainIngredients.Controls.Add(ing);
+                        }
+                        else { pnlSideIngredients.Controls.Add(ing); }
+                    }
+                }
+            }
+
+
         }
 
         private void picItem_Click(object sender, EventArgs e)
@@ -42,6 +83,9 @@ namespace LaCucina
             {
                 pnlSearchResults.Controls.Add(ingredient.Value);
             }
+            
+
+
         }
         public void fillSearchResultPanel()
         {
@@ -79,6 +123,7 @@ namespace LaCucina
         {
             UCIngredient ing = new UCIngredient(++DataBase.ingredientCounter, txtSearch.Texts);
             DataBase.ingredients.Add(DataBase.ingredientCounter, ing);
+
             btnAddAsNew.Visible = false;
             txtSearch.Texts = "";
             addIngrediantToPannel(DataBase.ingredientCounter);
@@ -87,8 +132,11 @@ namespace LaCucina
 
         private void addIngrediantToPannel(int ingredientId) 
         {
+            foreach(var item in DataBase.ingredientInItem)
+            {
+                if(item.Value.ingredientId==ingredientId&&item.Value.itemId==this.id)return;
+            }
             UCIngredientInItem ing = new UCIngredientInItem(++DataBase.ingredientInItemCounter,this.id, ingredientId, rbtnAddToMain.Checked);
-            DataBase.ingredientInItem.Add(DataBase.ingredientInItemCounter, ing);
 
 
             if (rbtnAddToMain.Checked) { pnlMainIngredients.Controls.Add(ing); }
@@ -108,7 +156,37 @@ namespace LaCucina
 
         private void btnSaveItem_Click(object sender, EventArgs e)
         {
-            //Item item = new Item(++DataBase.itemCounter,txtName.Texts,Convert.ToBoolean( txtPrice.Texts), btnActive.Checked,"lll");
+            if (picItem.Image != null)
+            {
+                string imagesFolder = Path.Combine(Application.StartupPath, "Images");
+                Directory.CreateDirectory(imagesFolder);
+                string destination = Path.Combine(imagesFolder, $"{++DataBase.itemCounter}.png");
+                picItem.Image.Save(destination, System.Drawing.Imaging.ImageFormat.Png);
+               
+                
+            }
+            else { ++DataBase.itemCounter; }
+
+            Categories selectedCategory = (Categories)cmbCatagory.SelectedItem;
+            Item item = new Item(DataBase.itemCounter,txtName.Texts, selectedCategory.id, Convert.ToDouble( txtPrice.Texts), btnActive.Checked);
+            DataBase.items.Add(DataBase.itemCounter, item);
+            foreach (UCIngredientInItem control in pnlMainIngredients.Controls.OfType<UCIngredientInItem>()) 
+            {
+                DataBase.ingredientInItem.Add(control.id, control);
+
+            }
+            foreach (UCIngredientInItem control in pnlSideIngredients.Controls.OfType<UCIngredientInItem>())
+            {
+                DataBase.ingredientInItem.Add(control.id, control);
+
+            }
+
+
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

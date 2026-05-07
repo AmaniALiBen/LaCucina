@@ -49,7 +49,7 @@ namespace LaCucina
             set { ImagePath = value; }
         }
 
-        public Item(int id, string name, int categoryId, double price, bool isActive, string imagePath)
+        public Item(int id, string name, int categoryId, double price, bool isActive)
         {
             this.id = id;
             this.name = name;

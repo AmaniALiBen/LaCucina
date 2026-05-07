@@ -37,7 +37,7 @@ namespace LaCucina
         }
         public static void AddCategory(string name)
         {
-            Categories c = new Categories(name);
+            Categories c = new Categories(++DataBase.categoryCounter,name);
             foreach(var entry in DataBase.category)
             {
                 if(entry.Value.name==name)

@@ -30,7 +30,7 @@ namespace LaCucina
 
         private void btnRemoveIngredient_Click(object sender, EventArgs e)
         {
-             DataBase.ingredientInItem.Remove(id);
+            
             this.Dispose();
            
 
