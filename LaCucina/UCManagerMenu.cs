@@ -38,9 +38,9 @@ namespace LaCucina
                         
                     }
                     FlowpnlItems.Controls.Clear();
-                    foreach(var i in DataBase.items.Values)
+                    foreach(Item i in DataBase.items.Values)
                     {
-                       //  if()
+                         
                     }
                     
                 };
