@@ -37,6 +37,11 @@ namespace LaCucina
                         }
                         
                     }
+                    FlowpnlItems.Controls.Clear();
+                    foreach(var i in DataBase.items.Values)
+                    {
+                       //  if()
+                    }
                     
                 };
                 pnlCategories.Controls.Add(category);
