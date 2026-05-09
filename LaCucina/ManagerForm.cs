@@ -33,6 +33,7 @@ namespace LaCucina
         private void ManagerForm_Load(object sender, EventArgs e)
         {
             btnFloorplan.PerformClick();
+            lblUser.Text = Session.CurrentUser.username;
         }
 
 
@@ -81,6 +82,7 @@ namespace LaCucina
         private void btnLogout_Click(object sender, EventArgs e)
         {
             loginForm.Show();
+            Session.Logout();
             this.Close();
             
         }

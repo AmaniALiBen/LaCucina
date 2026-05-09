@@ -248,12 +248,6 @@
     <Compile Include="Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCCategoryItems.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCCategoryItems.Designer.cs">
-      <DependentUpon>UCCategoryItems.cs</DependentUpon>
-    </Compile>
     <Compile Include="UCEditItemRow .cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -449,9 +443,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UCCategoryItems.resx">
-      <DependentUpon>UCCategoryItems.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UCEditItemRow .resx">
       <DependentUpon>UCEditItemRow .cs</DependentUpon>
     </EmbeddedResource>

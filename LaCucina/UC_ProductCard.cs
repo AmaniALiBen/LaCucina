@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,16 +13,84 @@ namespace LaCucina
 {
     public partial class UC_ProductCard : UserControl
     {
-        public string ItemName { get => lblName.Text; set => lblName.Text = value; }
-        public string ItemPrice { get => lblPrice.Text; set => lblPrice.Text = value; }
-        public Image imgItem { get => picBox.Image; set => picBox.Image = value; }
+        //public string ItemName { get => lblName.Text; set => lblName.Text = value; }
+        //public string ItemPrice { get => lblPrice.Text; set => lblPrice.Text = value; }
+        //public Image imgItem { get => picBox.Image; set => picBox.Image = value; }
         public UC_ProductCard()
         {
             InitializeComponent();
             BindClickEvent(this);
         }
-    
-    private void BindClickEvent(Control parent)
+        private double price;
+        private string name;
+        private int id;
+      
+
+        public double Price
+        {
+            get { return price; }
+            set
+            {
+                price = value;
+                lblPrice.Text = price.ToString() + " LYD";
+            }
+        }
+
+        public int Id
+        {
+            get { return id; }
+            set
+            {
+                id = value;
+                LoadItemImage();
+            }
+        }
+
+        private void LoadItemImage()
+        {
+            try
+            {
+                string imagesFolder = Path.Combine(Application.StartupPath, "Images");
+                string imagePath = Path.Combine(imagesFolder, $"{id}.png");
+
+                if (File.Exists(imagePath))
+                {
+                    // Method 1: Read as bytes first (most reliable)
+                    byte[] imageData = File.ReadAllBytes(imagePath);
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        picBox.Image = new Bitmap(ms);
+                    }
+                }
+                else
+                {
+                    // Set a default placeholder image
+                    picBox.Image = null;
+                }
+            }
+            catch (OutOfMemoryException)
+            {
+                // Image file is corrupted or invalid format
+                picBox.Image = null;
+                Console.WriteLine($"Invalid image file for item {id}");
+            }
+            catch (Exception ex)
+            {
+                picBox.Image = null;
+                Console.WriteLine($"Error loading image: {ex.Message}");
+            }
+        }
+
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                name = value;
+                lblName.Text = name;
+            }
+        }
+        private void BindClickEvent(Control parent)
     {
         foreach (Control c in parent.Controls)
         {
@@ -29,13 +98,7 @@ namespace LaCucina
             {
                 c.Click += (s, e) => this.OnClick(e);
             }
-           /* else if (c is Label)
-            {
-             
-                c.Enabled = false;
-
-                // c.Click += (s, e) => this.OnClick(e);
-            }*/
+          
             else if (c.HasChildren)
             {
                 BindClickEvent(c);

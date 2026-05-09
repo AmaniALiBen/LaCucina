@@ -12,6 +12,63 @@ namespace LaCucina
 {
     public partial class Test : Form
     {
+        UCbtnCategory _selectedCategory;
+        public void loadMenu()
+        {
+
+            pnlCAtegories.Controls.Clear();
+            foreach (var entry in DataBase.category)
+            {
+                var key = entry.Key;
+                var value = entry.Value;
+                UCbtnCategory category = new UCbtnCategory();
+                category._Name = value.name;
+                category.Tag = key;
+
+
+                category.clickCategory = () =>
+                {
+                    category.btnName.ForeColor = Color.DarkOrange;
+                    
+                    _selectedCategory = category;
+                    foreach (UCbtnCategory c in pnlCAtegories.Controls)
+                    {
+
+                        if (c != _selectedCategory)
+                        {
+                             c.btnName.ForeColor = Color.FromArgb(242, 242, 242);
+                           
+                        }
+
+                    }
+                    pnlItems.Controls.Clear();
+                    foreach (Item i in DataBase.items.Values)
+                    {
+                        UC_ProductCard card = new UC_ProductCard();
+                        if (i.CategoryId == value.id)
+                        {
+
+                            card.Name = i.Name;
+                            card.Price = i.Price;
+                            card.Id = i.Id;
+
+                            pnlItems.Controls.Add(card);
+
+                        }
+                       
+                    }
+
+                };
+               
+
+
+
+
+                pnlCAtegories.Controls.Add(category);
+        
+            }
+
+        }
         Form form;
         public Test()
         {
@@ -27,7 +84,9 @@ namespace LaCucina
 
         private void Test_Load(object sender, EventArgs e)
         {
-            lblDate.Text = DateTime.Now.ToString("dd /MM /yyyy"); 
+            lblDate.Text = DateTime.Now.ToString("dd /MM /yyyy");
+            loadMenu();
+            lblUser.Text = Session.CurrentUser.username;
         }
 
        
@@ -47,44 +106,44 @@ namespace LaCucina
         {
             this.Close();
         }
-        private void PopulateProducts()
-        {
+        //private void PopulateProducts()
+        //{
             
-            smoothFlowPanel3.Controls.Clear();
+        //    pnlItems.Controls.Clear();
 
           
-            for (int i = 0; i < 15; i++)
-            {
-                UC_ProductCard card = new UC_ProductCard();
+        //    for (int i = 0; i < 15; i++)
+        //    {
+        //        UC_ProductCard card = new UC_ProductCard();
 
-                card.ItemName = "CHEESE BURGER " + i;
-                card.ItemPrice = (15.50 + i).ToString() + " LYD";
-                // card.ItemImage = Image.FromFile("path_to_image"); 
+        //        card.ItemName = "CHEESE BURGER " + i;
+        //        card.ItemPrice = (15.50 + i).ToString() + " LYD";
+        //        // card.ItemImage = Image.FromFile("path_to_image"); 
 
-                card.Click += (s, e) =>
-                {
+        //        card.Click += (s, e) =>
+        //        {
 
-                    IngredientsSelector ing = new IngredientsSelector();
-                    ing.ShowDialog();
-                    if (ing.DialogResult == DialogResult.OK)
-                    {
-                        UC_InvoiceItem newItem = new UC_InvoiceItem(card.ItemName, 1, 15.50);
-                        newItem.DataChanged += Item_DataChanged;
-                        smoothFlowPanel2.Controls.Add(newItem);
-                        ing.Close();
-                        CalTotal();
+        //            IngredientsSelector ing = new IngredientsSelector();
+        //            ing.ShowDialog();
+        //            if (ing.DialogResult == DialogResult.OK)
+        //            {
+        //                UC_InvoiceItem newItem = new UC_InvoiceItem(card.ItemName, 1, 15.50);
+        //                newItem.DataChanged += Item_DataChanged;
+        //                smoothFlowPanel2.Controls.Add(newItem);
+        //                ing.Close();
+        //                CalTotal();
 
-                    }
-                    else if (ing.DialogResult == DialogResult.Cancel)
-                        ing.Close();
+        //            }
+        //            else if (ing.DialogResult == DialogResult.Cancel)
+        //                ing.Close();
 
 
 
-                };
+        //        };
 
-                smoothFlowPanel3.Controls.Add(card);
-            }
-        }
+        //        pnlItems.Controls.Add(card);
+        //    }
+        //}
         private void Item_DataChanged(object sender, EventArgs e)
         {
             CalTotal();
@@ -110,21 +169,20 @@ namespace LaCucina
         }
         private void CategoryButton_Click(object sender, EventArgs e)
         {
-            PopulateProducts();
-            Button btn = (Button)sender;
-            foreach (Control c in btn.Parent.Controls)
-            {
-                if (c is Button b)
-                {
-                    b.ForeColor = Color.FromArgb(242,242, 242);
-                    b.BackColor = Color.FromArgb(28, 28, 28);
-                    b.Font = new Font(b.Font, FontStyle.Regular);
-                }
-            }
-            btn.ForeColor = Color.FromArgb(230, 126, 34);
-            btn.BackColor = Color.FromArgb(17, 17, 17);
-            btn.Font = new Font(btn.Font, FontStyle.Bold);
-            // rjPanel4.Visible = true;
+          //  PopulateProducts();
+            //Button btn = (Button)sender;
+            //foreach (Control c in btn.Parent.Controls)
+            //{
+            //    if (c is Button b)
+            //    {
+            //        b.ForeColor = Color.FromArgb(242,242, 242);
+            //        b.BackColor = Color.FromArgb(28, 28, 28);
+            //        b.Font = new Font(b.Font, FontStyle.Regular);
+            //    }
+            //}
+            //btn.ForeColor = Color.FromArgb(230, 126, 34);
+            //btn.BackColor = Color.FromArgb(17, 17, 17);
+            //btn.Font = new Font(btn.Font, FontStyle.Bold);
            
 
 

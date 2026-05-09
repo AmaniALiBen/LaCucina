@@ -54,7 +54,7 @@
             this.rjPanel1.Location = new System.Drawing.Point(0, 0);
             this.rjPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.rjPanel1.Name = "rjPanel1";
-            this.rjPanel1.Size = new System.Drawing.Size(230, 250);
+            this.rjPanel1.Size = new System.Drawing.Size(345, 385);
             this.rjPanel1.TabIndex = 0;
             // 
             // lblPrice
@@ -62,10 +62,9 @@
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(171)))), ((int)(((byte)(68)))));
-            this.lblPrice.Location = new System.Drawing.Point(28, 181);
-            this.lblPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPrice.Location = new System.Drawing.Point(42, 278);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(44, 19);
+            this.lblPrice.Size = new System.Drawing.Size(60, 28);
             this.lblPrice.TabIndex = 1;
             this.lblPrice.Text = "15.50";
             // 
@@ -82,10 +81,9 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.ForeColor = System.Drawing.Color.Transparent;
             this.btnDelete.Image = global::LaCucina.Properties.Resources.delete__1_;
-            this.btnDelete.Location = new System.Drawing.Point(191, 206);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDelete.Location = new System.Drawing.Point(286, 317);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(33, 34);
+            this.btnDelete.Size = new System.Drawing.Size(50, 52);
             this.btnDelete.TabIndex = 5;
             this.btnDelete.TextColor = System.Drawing.Color.Transparent;
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -104,10 +102,9 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.ForeColor = System.Drawing.Color.Transparent;
             this.btnEdit.Image = global::LaCucina.Properties.Resources.edit;
-            this.btnEdit.Location = new System.Drawing.Point(154, 206);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEdit.Location = new System.Drawing.Point(231, 317);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(33, 34);
+            this.btnEdit.Size = new System.Drawing.Size(50, 52);
             this.btnEdit.TabIndex = 4;
             this.btnEdit.TextColor = System.Drawing.Color.Transparent;
             this.btnEdit.UseVisualStyleBackColor = false;
@@ -118,10 +115,9 @@
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(26, 156);
-            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblName.Location = new System.Drawing.Point(39, 240);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(183, 21);
+            this.lblName.Size = new System.Drawing.Size(277, 31);
             this.lblName.TabIndex = 3;
             this.lblName.Text = "Double Cheese Burger";
             // 
@@ -130,22 +126,21 @@
             this.picboxImage.Dock = System.Windows.Forms.DockStyle.Top;
             this.picboxImage.Image = global::LaCucina.Properties.Resources.برجر_4png;
             this.picboxImage.Location = new System.Drawing.Point(0, 0);
-            this.picboxImage.Margin = new System.Windows.Forms.Padding(2);
             this.picboxImage.Name = "picboxImage";
-            this.picboxImage.Size = new System.Drawing.Size(230, 128);
+            this.picboxImage.Size = new System.Drawing.Size(345, 197);
             this.picboxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picboxImage.TabIndex = 0;
             this.picboxImage.TabStop = false;
             // 
             // UCManagerItemCard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.Controls.Add(this.rjPanel1);
-            this.Margin = new System.Windows.Forms.Padding(11);
+            this.Margin = new System.Windows.Forms.Padding(16, 17, 16, 17);
             this.Name = "UCManagerItemCard";
-            this.Size = new System.Drawing.Size(230, 250);
+            this.Size = new System.Drawing.Size(345, 385);
             this.rjPanel1.ResumeLayout(false);
             this.rjPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxImage)).EndInit();

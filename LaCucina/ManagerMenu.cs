@@ -31,8 +31,19 @@ namespace LaCucina
         }
         public static void DeleteCategory(int key)
         {
-           if(DataBase.category.ContainsKey(key))
-                DataBase.category.Remove(key);
+            if (DataBase.category.ContainsKey(key))
+            {
+                
+                for(int i=DataBase.items.Count;i>0;i--)
+                {
+                    var entry = DataBase.items[i];
+                    
+                    if (entry.CategoryId == key)
+                        DataBase.items.Remove(entry.Id);
+                }
+                               
+            }
+            DataBase.category.Remove(key);
             MessageBox.Show("Deleted Successfully");
         }
         public static void AddCategory(string name)
@@ -46,8 +57,8 @@ namespace LaCucina
                     return;
                 }
             }
-            int nextKey =DataBase.category.Count==0?1:DataBase.category.Count+1;
-            DataBase.category[nextKey] = c;
+            
+            DataBase.category[DataBase.categoryCounter] = c;
             MessageBox.Show("Added Successfully");
 
         }
