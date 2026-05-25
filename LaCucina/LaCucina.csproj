@@ -51,11 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Categories.cs" />
-    <Compile Include="CircularTableUserControl.cs">
+    <Compile Include="Models\Categories.cs" />
+    <Compile Include="DataLink\CategoryRepository.cs" />
+    <Compile Include="UI\CircularTableUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CircularTableUserControl.Designer.cs">
+    <Compile Include="UI\CircularTableUserControl.Designer.cs">
       <DependentUpon>CircularTableUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="controls\HorizontalFlowPanal.cs">
@@ -124,259 +125,258 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataBase.cs" />
-    <Compile Include="Discounts.cs" />
-    <Compile Include="DiscountsManager.cs" />
-    <Compile Include="EditCategory.cs">
+    <Compile Include="DataLink\DatabaseHelper.cs" />
+    <Compile Include="Models\Discounts.cs" />
+    <Compile Include="Services\DiscountsManager.cs" />
+    <Compile Include="UI\EditCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditCategory.Designer.cs">
+    <Compile Include="UI\EditCategory.Designer.cs">
       <DependentUpon>EditCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditItem.cs">
+    <Compile Include="UI\EditItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditItem.Designer.cs">
+    <Compile Include="UI\EditItem.Designer.cs">
       <DependentUpon>EditItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditItemsForm.cs">
+    <Compile Include="UI\EditItemsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditItemsForm.Designer.cs">
+    <Compile Include="UI\EditItemsForm.Designer.cs">
       <DependentUpon>EditItemsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FloorPlanForm.cs">
+    <Compile Include="UI\FloorPlanForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FloorPlanForm.Designer.cs">
+    <Compile Include="UI\FloorPlanForm.Designer.cs">
       <DependentUpon>FloorPlanForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Item.cs" />
-    <Compile Include="LoginLogic.cs" />
-    <Compile Include="ManagerMenu.cs" />
-    <Compile Include="OrdersForm.cs">
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="DataLink\ItemRepository.cs" />
+    <Compile Include="Services\LoginLogic.cs" />
+    <Compile Include="Services\ManagerMenu.cs" />
+    <Compile Include="UI\OrdersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrdersForm.Designer.cs">
+    <Compile Include="UI\OrdersForm.Designer.cs">
       <DependentUpon>OrdersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PermissionService.cs" />
-    <Compile Include="Session.cs" />
-    <Compile Include="Space.cs">
+    <Compile Include="Services\PermissionService.cs" />
+    <Compile Include="Services\Session.cs" />
+    <Compile Include="UI\Space.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Table.cs" />
-    <Compile Include="UCbtnAddItem.cs">
+    <Compile Include="Models\Table.cs" />
+    <Compile Include="UI\UCbtnAddItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCbtnAddItem.Designer.cs">
+    <Compile Include="UI\UCbtnAddItem.Designer.cs">
       <DependentUpon>UCbtnAddItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCbtnCategory.cs">
+    <Compile Include="UI\UCbtnCategory.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCbtnCategory.Designer.cs">
+    <Compile Include="UI\UCbtnCategory.Designer.cs">
       <DependentUpon>UCbtnCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCcategoryRow.cs">
+    <Compile Include="UI\UCcategoryRow.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCcategoryRow.Designer.cs">
+    <Compile Include="UI\UCcategoryRow.Designer.cs">
       <DependentUpon>UCcategoryRow.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCDiscountManager.cs">
+    <Compile Include="UI\UCDiscountManager.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCDiscountManager.Designer.cs">
+    <Compile Include="UI\UCDiscountManager.Designer.cs">
       <DependentUpon>UCDiscountManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCFloorplanEditor.cs">
+    <Compile Include="UI\UCFloorplanEditor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCFloorplanEditor.Designer.cs">
+    <Compile Include="UI\UCFloorplanEditor.Designer.cs">
       <DependentUpon>UCFloorplanEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="controls\SmoothFlowPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="UI\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="UI\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HorizontalTableUserControl.cs">
+    <Compile Include="UI\HorizontalTableUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="HorizontalTableUserControl.Designer.cs">
+    <Compile Include="UI\HorizontalTableUserControl.Designer.cs">
       <DependentUpon>HorizontalTableUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="IngredientsSelector.cs">
+    <Compile Include="UI\IngredientsSelector.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IngredientsSelector.Designer.cs">
+    <Compile Include="UI\IngredientsSelector.Designer.cs">
       <DependentUpon>IngredientsSelector.cs</DependentUpon>
     </Compile>
-    <Compile Include="KDS.cs">
+    <Compile Include="UI\KDS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KDS.Designer.cs">
+    <Compile Include="UI\KDS.Designer.cs">
       <DependentUpon>KDS.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerForm.cs">
+    <Compile Include="UI\ManagerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerForm.Designer.cs">
+    <Compile Include="UI\ManagerForm.Designer.cs">
       <DependentUpon>ManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="controls\ModernCheckBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ManageSpacesForm.cs">
+    <Compile Include="UI\ManageSpacesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManageSpacesForm.Designer.cs">
+    <Compile Include="UI\ManageSpacesForm.Designer.cs">
       <DependentUpon>ManageSpacesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RoundButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Test.cs">
+    <Compile Include="UI\Test.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Test.Designer.cs">
+    <Compile Include="UI\Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCEditItemRow .cs">
+    <Compile Include="UI\UCEditItemRow .cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCEditItemRow .Designer.cs">
+    <Compile Include="UI\UCEditItemRow .Designer.cs">
       <DependentUpon>UCEditItemRow .cs</DependentUpon>
     </Compile>
-    <Compile Include="UCingredient.cs">
+    <Compile Include="UI\UCingredient.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCingredient.Designer.cs">
+    <Compile Include="UI\UCingredient.Designer.cs">
       <DependentUpon>UCingredient.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCIngredientInItem.cs">
+    <Compile Include="UI\UCIngredientInItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCIngredientInItem.Designer.cs">
+    <Compile Include="UI\UCIngredientInItem.Designer.cs">
       <DependentUpon>UCIngredientInItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCIngriedentsSelectorRow.cs">
+    <Compile Include="UI\UCIngriedentsSelectorRow.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCIngriedentsSelectorRow.Designer.cs">
+    <Compile Include="UI\UCIngriedentsSelectorRow.Designer.cs">
       <DependentUpon>UCIngriedentsSelectorRow.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCInvoiceCard.cs">
+    <Compile Include="UI\UCInvoiceCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCInvoiceCard.Designer.cs">
+    <Compile Include="UI\UCInvoiceCard.Designer.cs">
       <DependentUpon>UCInvoiceCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCItem.cs">
+    <Compile Include="UI\UCInvoiceItemHistory.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCItem.Designer.cs">
-      <DependentUpon>UCItem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCLogin.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCLogin.Designer.cs">
-      <DependentUpon>UCLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCManagerItemCard.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCManagerItemCard.Designer.cs">
-      <DependentUpon>UCManagerItemCard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCInvoiceItemHistory.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCInvoiceItemHistory.Designer.cs">
+    <Compile Include="UI\UCInvoiceItemHistory.Designer.cs">
       <DependentUpon>UCInvoiceItemHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCInvoiceRowHeader.cs">
+    <Compile Include="UI\UCInvoiceRowHeader.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCInvoiceRowHeader.Designer.cs">
+    <Compile Include="UI\UCInvoiceRowHeader.Designer.cs">
       <DependentUpon>UCInvoiceRowHeader.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCManagerMenu.cs">
+    <Compile Include="UI\UCItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCManagerMenu.Designer.cs">
+    <Compile Include="UI\UCItem.Designer.cs">
+      <DependentUpon>UCItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UCLogin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCLogin.Designer.cs">
+      <DependentUpon>UCLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UCManagerItemCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCManagerItemCard.Designer.cs">
+      <DependentUpon>UCManagerItemCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UCManagerMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCManagerMenu.Designer.cs">
       <DependentUpon>UCManagerMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCRowDiscount.cs">
+    <Compile Include="UI\UCMenuEditorItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCRowDiscount.Designer.cs">
-      <DependentUpon>UCRowDiscount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCSpaceRow.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCSpaceRow.Designer.cs">
-      <DependentUpon>UCSpaceRow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCuserRow.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCuserRow.Designer.cs">
-      <DependentUpon>UCuserRow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCtable.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCtable.Designer.cs">
-      <DependentUpon>UCtable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCMenuEditorItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCMenuEditorItem.Designer.cs">
+    <Compile Include="UI\UCMenuEditorItem.Designer.cs">
       <DependentUpon>UCMenuEditorItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_InvoiceItem.cs">
+    <Compile Include="UI\UCOrders.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UC_InvoiceItem.Designer.cs">
-      <DependentUpon>UC_InvoiceItem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UC_ProductCard.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_ProductCard.Designer.cs">
-      <DependentUpon>UC_ProductCard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UCOrders.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UCOrders.Designer.cs">
+    <Compile Include="UI\UCOrders.Designer.cs">
       <DependentUpon>UCOrders.cs</DependentUpon>
     </Compile>
-    <Compile Include="UCUserManegment.cs">
+    <Compile Include="UI\UCRowDiscount.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UCUserManegment.Designer.cs">
+    <Compile Include="UI\UCRowDiscount.Designer.cs">
+      <DependentUpon>UCRowDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UCSpaceRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCSpaceRow.Designer.cs">
+      <DependentUpon>UCSpaceRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UCtable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCtable.Designer.cs">
+      <DependentUpon>UCtable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UCUserManegment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCUserManegment.Designer.cs">
       <DependentUpon>UCUserManegment.cs</DependentUpon>
     </Compile>
-    <Compile Include="User.cs" />
-    <Compile Include="UserManagement.cs" />
-    <Compile Include="VerticalTableUserControl.cs">
+    <Compile Include="UI\UCuserRow.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="VerticalTableUserControl.Designer.cs">
+    <Compile Include="UI\UCuserRow.Designer.cs">
+      <DependentUpon>UCuserRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\VerticalTableUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\VerticalTableUserControl.Designer.cs">
       <DependentUpon>VerticalTableUserControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CircularTableUserControl.resx">
+    <Compile Include="UI\UC_InvoiceItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UC_InvoiceItem.Designer.cs">
+      <DependentUpon>UC_InvoiceItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UC_ProductCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UC_ProductCard.Designer.cs">
+      <DependentUpon>UC_ProductCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Services\UserManagement.cs" />
+    <EmbeddedResource Include="UI\CircularTableUserControl.resx">
       <DependentUpon>CircularTableUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="controls\ModernSwitch.resx">
@@ -385,52 +385,52 @@
     <EmbeddedResource Include="controls\RJTextBox.resx">
       <DependentUpon>RJTextBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditCategory.resx">
+    <EmbeddedResource Include="UI\EditCategory.resx">
       <DependentUpon>EditCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditItem.resx">
+    <EmbeddedResource Include="UI\EditItem.resx">
       <DependentUpon>EditItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditItemsForm.resx">
+    <EmbeddedResource Include="UI\EditItemsForm.resx">
       <DependentUpon>EditItemsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FloorPlanForm.resx">
+    <EmbeddedResource Include="UI\FloorPlanForm.resx">
       <DependentUpon>FloorPlanForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrdersForm.resx">
+    <EmbeddedResource Include="UI\OrdersForm.resx">
       <DependentUpon>OrdersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCbtnAddItem.resx">
+    <EmbeddedResource Include="UI\UCbtnAddItem.resx">
       <DependentUpon>UCbtnAddItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCbtnCategory.resx">
+    <EmbeddedResource Include="UI\UCbtnCategory.resx">
       <DependentUpon>UCbtnCategory.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCcategoryRow.resx">
+    <EmbeddedResource Include="UI\UCcategoryRow.resx">
       <DependentUpon>UCcategoryRow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCDiscountManager.resx">
+    <EmbeddedResource Include="UI\UCDiscountManager.resx">
       <DependentUpon>UCDiscountManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCFloorplanEditor.resx">
+    <EmbeddedResource Include="UI\UCFloorplanEditor.resx">
       <DependentUpon>UCFloorplanEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="UI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HorizontalTableUserControl.resx">
+    <EmbeddedResource Include="UI\HorizontalTableUserControl.resx">
       <DependentUpon>HorizontalTableUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IngredientsSelector.resx">
+    <EmbeddedResource Include="UI\IngredientsSelector.resx">
       <DependentUpon>IngredientsSelector.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KDS.resx">
+    <EmbeddedResource Include="UI\KDS.resx">
       <DependentUpon>KDS.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerForm.resx">
+    <EmbeddedResource Include="UI\ManagerForm.resx">
       <DependentUpon>ManagerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageSpacesForm.resx">
+    <EmbeddedResource Include="UI\ManageSpacesForm.resx">
       <DependentUpon>ManageSpacesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -443,70 +443,70 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UCEditItemRow .resx">
+    <EmbeddedResource Include="UI\UCEditItemRow .resx">
       <DependentUpon>UCEditItemRow .cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCingredient.resx">
+    <EmbeddedResource Include="UI\UCingredient.resx">
       <DependentUpon>UCingredient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCIngredientInItem.resx">
+    <EmbeddedResource Include="UI\UCIngredientInItem.resx">
       <DependentUpon>UCIngredientInItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UCItem.resx">
-      <DependentUpon>UCItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCLogin.resx">
-      <DependentUpon>UCLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCManagerItemCard.resx">
-      <DependentUpon>UCManagerItemCard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCInvoiceItemHistory.resx">
-      <DependentUpon>UCInvoiceItemHistory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCInvoiceRowHeader.resx">
-      <DependentUpon>UCInvoiceRowHeader.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCManagerMenu.resx">
-      <DependentUpon>UCManagerMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCRowDiscount.resx">
-      <DependentUpon>UCRowDiscount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCSpaceRow.resx">
-      <DependentUpon>UCSpaceRow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCuserRow.resx">
-      <DependentUpon>UCuserRow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCtable.resx">
-      <DependentUpon>UCtable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCOrders.resx">
-      <DependentUpon>UCOrders.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCUserManegment.resx">
-      <DependentUpon>UCUserManegment.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCIngriedentsSelectorRow.resx">
-      <DependentUpon>UCIngriedentsSelectorRow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCMenuEditorItem.resx">
-      <DependentUpon>UCMenuEditorItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VerticalTableUserControl.resx">
-      <DependentUpon>VerticalTableUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Test.resx">
-      <DependentUpon>Test.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UCInvoiceCard.resx">
+    <EmbeddedResource Include="UI\UCInvoiceCard.resx">
       <DependentUpon>UCInvoiceCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_InvoiceItem.resx">
+    <EmbeddedResource Include="UI\UCInvoiceItemHistory.resx">
+      <DependentUpon>UCInvoiceItemHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCInvoiceRowHeader.resx">
+      <DependentUpon>UCInvoiceRowHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCItem.resx">
+      <DependentUpon>UCItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCLogin.resx">
+      <DependentUpon>UCLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCManagerItemCard.resx">
+      <DependentUpon>UCManagerItemCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCManagerMenu.resx">
+      <DependentUpon>UCManagerMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCMenuEditorItem.resx">
+      <DependentUpon>UCMenuEditorItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCOrders.resx">
+      <DependentUpon>UCOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCRowDiscount.resx">
+      <DependentUpon>UCRowDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCSpaceRow.resx">
+      <DependentUpon>UCSpaceRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCtable.resx">
+      <DependentUpon>UCtable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCUserManegment.resx">
+      <DependentUpon>UCUserManegment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCuserRow.resx">
+      <DependentUpon>UCuserRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\VerticalTableUserControl.resx">
+      <DependentUpon>VerticalTableUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCIngriedentsSelectorRow.resx">
+      <DependentUpon>UCIngriedentsSelectorRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UC_InvoiceItem.resx">
       <DependentUpon>UC_InvoiceItem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_ProductCard.resx">
+    <EmbeddedResource Include="UI\UC_ProductCard.resx">
       <DependentUpon>UC_ProductCard.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -667,5 +667,6 @@
     <None Include="Resources\add-folder.png" />
     <Content Include="Resources\calendar_icon.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

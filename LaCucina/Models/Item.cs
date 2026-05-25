@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LaCucina
 {
-    internal class Item
+    public class Item
     {
         private int id;
         private string name;

@@ -15,6 +15,8 @@ namespace LaCucina
         
         public Action clickCategory;
         public string name;
+       
+        
         public string _Name
         {
             get { return name; }
@@ -22,6 +24,8 @@ namespace LaCucina
             btnName.Text = value;
             }
         }
+
+        
         public UCbtnCategory()
         {
             InitializeComponent();
