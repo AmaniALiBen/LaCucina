@@ -32,6 +32,8 @@ namespace CustomControls.RJControls
         //Events
         public event EventHandler OnSelectedIndexChanged;//Default event
         #endregion
+        
+
 
         #region -> Constructor
         public RJComboBox()
@@ -40,7 +42,7 @@ namespace CustomControls.RJControls
             lblText = new Label();
             btnIcon = new Button();
             this.SuspendLayout();
-
+            cmbList.KeyDown += cmbList_KeyDown;
             //ComboBox: Dropdown list
             cmbList.BackColor = listBackColor;
             cmbList.Font = new Font(this.Font.Name, 10F);
@@ -385,6 +387,34 @@ namespace CustomControls.RJControls
         private void RJComboBox_Load(object sender, EventArgs e)
         {
             AdjustComboBoxDimensions();
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // RJComboBox
+            // 
+            this.Name = "RJComboBox";
+            this.Load += new System.EventHandler(this.RJComboBox_Load_1);
+            this.ResumeLayout(false);
+
+        }
+
+        private void RJComboBox_Load_1(object sender, EventArgs e)
+        {
+
+        }
+        private void cmbList_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+                this.OnKeyDown(e); // Ì„——Â ··‹ UI «·Œ«—ÃÌ
+            
+        }
+        public void Open()
+        {
+            cmbList.Focus();
+            cmbList.DroppedDown = true;
         }
     }
 }

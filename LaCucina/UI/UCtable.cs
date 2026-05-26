@@ -10,13 +10,15 @@ using System.Threading.Tasks;
 using System.Web.UI.Design;
 using System.Windows.Forms;
 using CustomControls.RJControls;
+using LaCucina.Services;
 
 
 namespace LaCucina
 {
 
     public partial class UCtable : UserControl
-    {
+    {FloorPlanService service =new FloorPlanService();
+
         public int id;
         public string tableNum;
         public int chairCount;
@@ -60,8 +62,26 @@ namespace LaCucina
             TargetlblTableNum.Text = tableNum;
             if (!isInEditingMode)
             {
+                
                 TargetlblTableStatus.Text =  tableStatus.ToString();
                 adjustStatusColor();
+                foreach (Control ctrl in this.Controls)
+                {
+                    ctrl.Click += (s, e) =>
+                    {
+                        Test f = new Test();
+                        f.Show(this);
+                    };
+                    foreach (Control sub in ctrl.Controls)
+                    {
+                        sub.Click += (s, e) => 
+                        {
+                            Test f = new Test();
+                            f.Show(this);
+                        };
+                    }
+
+                }
             }
             if(isInEditingMode)
             foreach (Control ctrl in this.Controls)
@@ -210,7 +230,9 @@ namespace LaCucina
             pnlTableButtons.Visible = true;
             isDragging = false;
             this.Cursor = Cursors.Default;
-            DataBase.tables[id].location=this.Location;
+            service.editLocation(this.id, this.Location);
+
+
         }
 
         private void UCtable_Load(object sender, EventArgs e)

@@ -116,16 +116,16 @@ namespace LaCucina
             [50] = new Item(50, "Vegetarian Pasta", 5, 18, true)
 
         };
-        public static Dictionary<int, User> users = new Dictionary<int, User>()
-        {
-            [1] = new User( "Owner", "1111",  true, User.Role.Owner,false),
-            [2] = new User("Admin", "2222", true, User.Role.Admin,false),
-            [3] = new User("Waiter", "3333", true, User.Role.Waiter,false),
-            [4] = new User("Chef", "4444", true, User.Role.Chef,false),
-            [5] = new User("someone", "5555", true, User.Role.Chef, true),
+        //public static Dictionary<int, User> users = new Dictionary<int, User>()
+        //{
+        //    [1] = new User( "Owner", "1111",  true, User.Role.Owner,false),
+        //    [2] = new User("Admin", "2222", true, User.Role.Admin,false),
+        //    [3] = new User("Waiter", "3333", true, User.Role.Waiter,false),
+        //    [4] = new User("Chef", "4444", true, User.Role.Chef,false),
+        //    [5] = new User("someone", "5555", true, User.Role.Chef, true),
 
 
-        };
+        //};
        
 
 

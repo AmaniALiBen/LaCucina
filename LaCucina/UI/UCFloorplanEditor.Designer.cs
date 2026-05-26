@@ -29,32 +29,31 @@
         private void InitializeComponent()
         {
             this.pnlNewTable = new System.Windows.Forms.Panel();
-            this.btnEdit = new CustomControls.RJControls.RJButton();
             this.lblError = new System.Windows.Forms.Label();
-            this.btnAdd = new CustomControls.RJControls.RJButton();
-            this.txtTablenum = new CustomControls.RJControls.RJTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.pnlFormat = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.pnlChairCount = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pnlTableButtons = new System.Windows.Forms.Panel();
+            this.pnlTables = new System.Windows.Forms.Panel();
+            this.btnDeleteTable = new CustomControls.RJControls.RJButton();
+            this.btnEditTable = new CustomControls.RJControls.RJButton();
+            this.btnEdit = new CustomControls.RJControls.RJButton();
+            this.btnAdd = new CustomControls.RJControls.RJButton();
+            this.txtTablenum = new CustomControls.RJControls.RJTextBox();
             this.rbtnCircular = new CustomControls.RJControls.RJRadioButton();
             this.rbtnVertical = new CustomControls.RJControls.RJRadioButton();
             this.rbtnHorizantal = new CustomControls.RJControls.RJRadioButton();
-            this.pnlChairCount = new System.Windows.Forms.Panel();
             this.rbtn4 = new CustomControls.RJControls.RJRadioButton();
-            this.label3 = new System.Windows.Forms.Label();
             this.rbtn8 = new CustomControls.RJControls.RJRadioButton();
             this.rbtn12 = new CustomControls.RJControls.RJRadioButton();
             this.rbtn6 = new CustomControls.RJControls.RJRadioButton();
             this.rbtn10 = new CustomControls.RJControls.RJRadioButton();
             this.rbtn2 = new CustomControls.RJControls.RJRadioButton();
-            this.pnlTables = new System.Windows.Forms.Panel();
-            this.pnlTableButtons = new System.Windows.Forms.Panel();
-            this.btnDeleteTable = new CustomControls.RJControls.RJButton();
-            this.btnEditTable = new CustomControls.RJControls.RJButton();
             this.rjPanel3 = new CustomControls.RJControls.RJPanel();
             this.pnlSpases = new CustomControls.RJControls.RJPanel();
             this.hfpnlSpaces = new LaCucina.controls.HorizontalFlowPanel();
-            this.btnEditSpaces = new CustomControls.RJControls.RJButton();
             this.rjPanel4 = new CustomControls.RJControls.RJPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.materialDivider2 = new MaterialSkin.Controls.MaterialDivider();
@@ -66,8 +65,8 @@
             this.pnlNewTable.SuspendLayout();
             this.pnlFormat.SuspendLayout();
             this.pnlChairCount.SuspendLayout();
-            this.pnlTables.SuspendLayout();
             this.pnlTableButtons.SuspendLayout();
+            this.pnlTables.SuspendLayout();
             this.rjPanel3.SuspendLayout();
             this.pnlSpases.SuspendLayout();
             this.rjPanel4.SuspendLayout();
@@ -90,28 +89,7 @@
             this.pnlNewTable.Size = new System.Drawing.Size(444, 547);
             this.pnlNewTable.TabIndex = 0;
             this.pnlNewTable.Visible = false;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.btnEdit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.btnEdit.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnEdit.BorderRadius = 10;
-            this.btnEdit.BorderSize = 0;
-            this.btnEdit.FlatAppearance.BorderSize = 0;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.Black;
-            this.btnEdit.Location = new System.Drawing.Point(130, 417);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(172, 39);
-            this.btnEdit.TabIndex = 20;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.TextColor = System.Drawing.Color.Black;
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Visible = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.pnlNewTable.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlNewTable_Paint);
             // 
             // lblError
             // 
@@ -125,49 +103,6 @@
             this.lblError.TabIndex = 19;
             this.lblError.Text = "table number alredy Exists in this space";
             this.lblError.Visible = false;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.btnAdd.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.btnAdd.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnAdd.BorderRadius = 10;
-            this.btnAdd.BorderSize = 0;
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.Black;
-            this.btnAdd.Location = new System.Drawing.Point(130, 417);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(172, 39);
-            this.btnAdd.TabIndex = 8;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.TextColor = System.Drawing.Color.Black;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // txtTablenum
-            // 
-            this.txtTablenum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.txtTablenum.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.txtTablenum.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.txtTablenum.BorderRadius = 10;
-            this.txtTablenum.BorderSize = 1;
-            this.txtTablenum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTablenum.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.txtTablenum.Location = new System.Drawing.Point(258, 300);
-            this.txtTablenum.Margin = new System.Windows.Forms.Padding(6);
-            this.txtTablenum.Multiline = false;
-            this.txtTablenum.Name = "txtTablenum";
-            this.txtTablenum.Padding = new System.Windows.Forms.Padding(15, 10, 15, 10);
-            this.txtTablenum.PasswordChar = false;
-            this.txtTablenum.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.txtTablenum.PlaceholderText = "";
-            this.txtTablenum.Size = new System.Drawing.Size(128, 45);
-            this.txtTablenum.TabIndex = 18;
-            this.txtTablenum.Texts = "";
-            this.txtTablenum.UnderlinedStyle = false;
             // 
             // label5
             // 
@@ -204,6 +139,168 @@
             this.label2.Size = new System.Drawing.Size(73, 24);
             this.label2.TabIndex = 6;
             this.label2.Text = "Format";
+            // 
+            // pnlChairCount
+            // 
+            this.pnlChairCount.Controls.Add(this.rbtn4);
+            this.pnlChairCount.Controls.Add(this.label3);
+            this.pnlChairCount.Controls.Add(this.rbtn8);
+            this.pnlChairCount.Controls.Add(this.rbtn12);
+            this.pnlChairCount.Controls.Add(this.rbtn6);
+            this.pnlChairCount.Controls.Add(this.rbtn10);
+            this.pnlChairCount.Controls.Add(this.rbtn2);
+            this.pnlChairCount.Location = new System.Drawing.Point(4, 151);
+            this.pnlChairCount.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlChairCount.Name = "pnlChairCount";
+            this.pnlChairCount.Size = new System.Drawing.Size(417, 132);
+            this.pnlChairCount.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.label3.Location = new System.Drawing.Point(18, 7);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(111, 24);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Chair count";
+            // 
+            // pnlTableButtons
+            // 
+            this.pnlTableButtons.Controls.Add(this.btnDeleteTable);
+            this.pnlTableButtons.Controls.Add(this.btnEditTable);
+            this.pnlTableButtons.Location = new System.Drawing.Point(679, 6);
+            this.pnlTableButtons.Name = "pnlTableButtons";
+            this.pnlTableButtons.Size = new System.Drawing.Size(94, 46);
+            this.pnlTableButtons.TabIndex = 20;
+            this.pnlTableButtons.Visible = false;
+            // 
+            // pnlTables
+            // 
+            this.pnlTables.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.pnlTables.Controls.Add(this.pnlTableButtons);
+            this.pnlTables.Controls.Add(this.pnlNewTable);
+            this.pnlTables.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTables.Location = new System.Drawing.Point(0, 48);
+            this.pnlTables.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlTables.Name = "pnlTables";
+            this.pnlTables.Size = new System.Drawing.Size(1224, 547);
+            this.pnlTables.TabIndex = 25;
+            this.pnlTables.Click += new System.EventHandler(this.pnlTables_Click);
+            // 
+            // btnDeleteTable
+            // 
+            this.btnDeleteTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.btnDeleteTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.btnDeleteTable.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnDeleteTable.BorderRadius = 10;
+            this.btnDeleteTable.BorderSize = 0;
+            this.btnDeleteTable.FlatAppearance.BorderSize = 0;
+            this.btnDeleteTable.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnDeleteTable.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnDeleteTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteTable.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteTable.Image = global::LaCucina.Properties.Resources.delete__2_;
+            this.btnDeleteTable.Location = new System.Drawing.Point(1, 1);
+            this.btnDeleteTable.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteTable.Name = "btnDeleteTable";
+            this.btnDeleteTable.Size = new System.Drawing.Size(40, 40);
+            this.btnDeleteTable.TabIndex = 18;
+            this.btnDeleteTable.TextColor = System.Drawing.Color.White;
+            this.btnDeleteTable.UseVisualStyleBackColor = false;
+            this.btnDeleteTable.Click += new System.EventHandler(this.btnDeleteTable_Click);
+            // 
+            // btnEditTable
+            // 
+            this.btnEditTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.btnEditTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.btnEditTable.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnEditTable.BorderRadius = 10;
+            this.btnEditTable.BorderSize = 0;
+            this.btnEditTable.FlatAppearance.BorderSize = 0;
+            this.btnEditTable.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnEditTable.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnEditTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditTable.ForeColor = System.Drawing.Color.White;
+            this.btnEditTable.Image = global::LaCucina.Properties.Resources.edit__1_;
+            this.btnEditTable.Location = new System.Drawing.Point(49, 1);
+            this.btnEditTable.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditTable.Name = "btnEditTable";
+            this.btnEditTable.Size = new System.Drawing.Size(40, 40);
+            this.btnEditTable.TabIndex = 19;
+            this.btnEditTable.TextColor = System.Drawing.Color.White;
+            this.btnEditTable.UseVisualStyleBackColor = false;
+            this.btnEditTable.Click += new System.EventHandler(this.btnEditTable_Click);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
+            this.btnEdit.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
+            this.btnEdit.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnEdit.BorderRadius = 10;
+            this.btnEdit.BorderSize = 0;
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.ForeColor = System.Drawing.Color.Black;
+            this.btnEdit.Location = new System.Drawing.Point(130, 417);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(172, 39);
+            this.btnEdit.TabIndex = 20;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.TextColor = System.Drawing.Color.Black;
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Visible = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
+            this.btnAdd.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
+            this.btnAdd.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.btnAdd.BorderRadius = 10;
+            this.btnAdd.BorderSize = 0;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.Black;
+            this.btnAdd.Location = new System.Drawing.Point(130, 417);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(172, 39);
+            this.btnAdd.TabIndex = 8;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.TextColor = System.Drawing.Color.Black;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // txtTablenum
+            // 
+            this.txtTablenum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.txtTablenum.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
+            this.txtTablenum.BorderFocusColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
+            this.txtTablenum.BorderRadius = 10;
+            this.txtTablenum.BorderSize = 1;
+            this.txtTablenum.CustomPasswordChar = '●';
+            this.txtTablenum.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTablenum.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.txtTablenum.Location = new System.Drawing.Point(258, 300);
+            this.txtTablenum.Margin = new System.Windows.Forms.Padding(6);
+            this.txtTablenum.Multiline = false;
+            this.txtTablenum.Name = "txtTablenum";
+            this.txtTablenum.Padding = new System.Windows.Forms.Padding(15, 10, 15, 10);
+            this.txtTablenum.PasswordChar = false;
+            this.txtTablenum.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtTablenum.PlaceholderFont = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.txtTablenum.PlaceholderText = "";
+            this.txtTablenum.Size = new System.Drawing.Size(128, 46);
+            this.txtTablenum.TabIndex = 18;
+            this.txtTablenum.Texts = "";
+            this.txtTablenum.UnderlinedStyle = false;
+            this.txtTablenum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTablenum_KeyPress);
             // 
             // rbtnCircular
             // 
@@ -259,21 +356,6 @@
             this.rbtnHorizantal.UnCheckedColor = System.Drawing.Color.Gray;
             this.rbtnHorizantal.UseVisualStyleBackColor = true;
             // 
-            // pnlChairCount
-            // 
-            this.pnlChairCount.Controls.Add(this.rbtn4);
-            this.pnlChairCount.Controls.Add(this.label3);
-            this.pnlChairCount.Controls.Add(this.rbtn8);
-            this.pnlChairCount.Controls.Add(this.rbtn12);
-            this.pnlChairCount.Controls.Add(this.rbtn6);
-            this.pnlChairCount.Controls.Add(this.rbtn10);
-            this.pnlChairCount.Controls.Add(this.rbtn2);
-            this.pnlChairCount.Location = new System.Drawing.Point(4, 151);
-            this.pnlChairCount.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlChairCount.Name = "pnlChairCount";
-            this.pnlChairCount.Size = new System.Drawing.Size(417, 132);
-            this.pnlChairCount.TabIndex = 2;
-            // 
             // rbtn4
             // 
             this.rbtn4.AutoSize = true;
@@ -290,18 +372,6 @@
             this.rbtn4.Text = "4";
             this.rbtn4.UnCheckedColor = System.Drawing.Color.Gray;
             this.rbtn4.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label3.Location = new System.Drawing.Point(18, 7);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 24);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Chair count";
             // 
             // rbtn8
             // 
@@ -390,74 +460,6 @@
             this.rbtn2.UnCheckedColor = System.Drawing.Color.Gray;
             this.rbtn2.UseVisualStyleBackColor = true;
             // 
-            // pnlTables
-            // 
-            this.pnlTables.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.pnlTables.Controls.Add(this.pnlTableButtons);
-            this.pnlTables.Controls.Add(this.pnlNewTable);
-            this.pnlTables.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTables.Location = new System.Drawing.Point(0, 48);
-            this.pnlTables.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlTables.Name = "pnlTables";
-            this.pnlTables.Size = new System.Drawing.Size(1224, 547);
-            this.pnlTables.TabIndex = 25;
-            this.pnlTables.Click += new System.EventHandler(this.pnlTables_Click);
-            this.pnlTables.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // pnlTableButtons
-            // 
-            this.pnlTableButtons.Controls.Add(this.btnDeleteTable);
-            this.pnlTableButtons.Controls.Add(this.btnEditTable);
-            this.pnlTableButtons.Location = new System.Drawing.Point(679, 6);
-            this.pnlTableButtons.Name = "pnlTableButtons";
-            this.pnlTableButtons.Size = new System.Drawing.Size(94, 46);
-            this.pnlTableButtons.TabIndex = 20;
-            this.pnlTableButtons.Visible = false;
-            // 
-            // btnDeleteTable
-            // 
-            this.btnDeleteTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.btnDeleteTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.btnDeleteTable.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnDeleteTable.BorderRadius = 10;
-            this.btnDeleteTable.BorderSize = 0;
-            this.btnDeleteTable.FlatAppearance.BorderSize = 0;
-            this.btnDeleteTable.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnDeleteTable.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnDeleteTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteTable.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteTable.Image = global::LaCucina.Properties.Resources.delete__2_;
-            this.btnDeleteTable.Location = new System.Drawing.Point(1, 1);
-            this.btnDeleteTable.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDeleteTable.Name = "btnDeleteTable";
-            this.btnDeleteTable.Size = new System.Drawing.Size(40, 40);
-            this.btnDeleteTable.TabIndex = 18;
-            this.btnDeleteTable.TextColor = System.Drawing.Color.White;
-            this.btnDeleteTable.UseVisualStyleBackColor = false;
-            this.btnDeleteTable.Click += new System.EventHandler(this.btnDeleteTable_Click);
-            // 
-            // btnEditTable
-            // 
-            this.btnEditTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.btnEditTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.btnEditTable.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnEditTable.BorderRadius = 10;
-            this.btnEditTable.BorderSize = 0;
-            this.btnEditTable.FlatAppearance.BorderSize = 0;
-            this.btnEditTable.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnEditTable.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnEditTable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditTable.ForeColor = System.Drawing.Color.White;
-            this.btnEditTable.Image = global::LaCucina.Properties.Resources.edit__1_;
-            this.btnEditTable.Location = new System.Drawing.Point(49, 1);
-            this.btnEditTable.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEditTable.Name = "btnEditTable";
-            this.btnEditTable.Size = new System.Drawing.Size(40, 40);
-            this.btnEditTable.TabIndex = 19;
-            this.btnEditTable.TextColor = System.Drawing.Color.White;
-            this.btnEditTable.UseVisualStyleBackColor = false;
-            this.btnEditTable.Click += new System.EventHandler(this.btnEditTable_Click);
-            // 
             // rjPanel3
             // 
             this.rjPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
@@ -480,7 +482,6 @@
             this.pnlSpases.BorderRadius = 10;
             this.pnlSpases.BorderSize = 0;
             this.pnlSpases.Controls.Add(this.hfpnlSpaces);
-            this.pnlSpases.Controls.Add(this.btnEditSpaces);
             this.pnlSpases.ForeColor = System.Drawing.Color.Black;
             this.pnlSpases.Location = new System.Drawing.Point(209, 32);
             this.pnlSpases.Margin = new System.Windows.Forms.Padding(3, 3, 3, 39);
@@ -491,40 +492,16 @@
             // hfpnlSpaces
             // 
             this.hfpnlSpaces.AutoScroll = true;
-            this.hfpnlSpaces.AutoScrollMinSize = new System.Drawing.Size(599, 0);
+            this.hfpnlSpaces.AutoScrollMinSize = new System.Drawing.Size(773, 0);
             this.hfpnlSpaces.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.hfpnlSpaces.Dock = System.Windows.Forms.DockStyle.Fill;
             this.hfpnlSpaces.Location = new System.Drawing.Point(0, 0);
             this.hfpnlSpaces.Margin = new System.Windows.Forms.Padding(0);
             this.hfpnlSpaces.Name = "hfpnlSpaces";
-            this.hfpnlSpaces.Size = new System.Drawing.Size(599, 44);
+            this.hfpnlSpaces.Size = new System.Drawing.Size(773, 44);
             this.hfpnlSpaces.TabIndex = 1;
             this.hfpnlSpaces.WrapContents = false;
-            // 
-            // btnEditSpaces
-            // 
-            this.btnEditSpaces.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.btnEditSpaces.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.btnEditSpaces.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnEditSpaces.BorderRadius = 0;
-            this.btnEditSpaces.BorderSize = 0;
-            this.btnEditSpaces.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnEditSpaces.FlatAppearance.BorderSize = 0;
-            this.btnEditSpaces.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditSpaces.Font = new System.Drawing.Font("Segoe UI Symbol", 9F, System.Drawing.FontStyle.Bold);
-            this.btnEditSpaces.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.btnEditSpaces.Image = global::LaCucina.Properties.Resources.edit__1_;
-            this.btnEditSpaces.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditSpaces.Location = new System.Drawing.Point(599, 0);
-            this.btnEditSpaces.Margin = new System.Windows.Forms.Padding(0);
-            this.btnEditSpaces.Name = "btnEditSpaces";
-            this.btnEditSpaces.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
-            this.btnEditSpaces.Size = new System.Drawing.Size(174, 44);
-            this.btnEditSpaces.TabIndex = 4;
-            this.btnEditSpaces.Text = "Edit Spaces  ";
-            this.btnEditSpaces.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
-            this.btnEditSpaces.UseVisualStyleBackColor = false;
-            this.btnEditSpaces.Click += new System.EventHandler(this.rjButton1_Click);
+            this.hfpnlSpaces.Paint += new System.Windows.Forms.PaintEventHandler(this.hfpnlSpaces_Paint);
             // 
             // rjPanel4
             // 
@@ -688,8 +665,8 @@
             this.pnlFormat.PerformLayout();
             this.pnlChairCount.ResumeLayout(false);
             this.pnlChairCount.PerformLayout();
-            this.pnlTables.ResumeLayout(false);
             this.pnlTableButtons.ResumeLayout(false);
+            this.pnlTables.ResumeLayout(false);
             this.rjPanel3.ResumeLayout(false);
             this.pnlSpases.ResumeLayout(false);
             this.rjPanel4.ResumeLayout(false);
@@ -699,13 +676,10 @@
         }
 
         #endregion
-
-        private CustomControls.RJControls.RJPanel pnlSpases;
         private CustomControls.RJControls.RJButton rjButton5;
         private CustomControls.RJControls.RJButton rjButton6;
         private CustomControls.RJControls.RJButton rjButton7;
         private CustomControls.RJControls.RJButton rjButton8;
-        private CustomControls.RJControls.RJPanel rjPanel3;
         private CustomControls.RJControls.RJButton btnNewTable;
         private MaterialSkin.Controls.MaterialDivider materialDivider2;
         private CustomControls.RJControls.RJPanel rjPanel4;
@@ -724,16 +698,17 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel pnlTables;
         private System.Windows.Forms.Panel pnlFormat;
         private System.Windows.Forms.Panel pnlChairCount;
-        private CustomControls.RJControls.RJButton btnEditSpaces;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblError;
-        private controls.HorizontalFlowPanel hfpnlSpaces;
         public CustomControls.RJControls.RJButton btnEditTable;
         public CustomControls.RJControls.RJButton btnDeleteTable;
         public System.Windows.Forms.Panel pnlTableButtons;
         private CustomControls.RJControls.RJButton btnEdit;
+        private CustomControls.RJControls.RJPanel pnlSpases;
+        private controls.HorizontalFlowPanel hfpnlSpaces;
+        private CustomControls.RJControls.RJPanel rjPanel3;
+        private System.Windows.Forms.Panel pnlTables;
     }
 }

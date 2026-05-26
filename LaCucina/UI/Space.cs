@@ -1,4 +1,5 @@
 ﻿using CustomControls.RJControls;
+using LaCucina.UI;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -61,7 +62,12 @@ namespace LaCucina
                     editor.fillTablePanel(true);
                     return;
                 }
-                current = current.Parent;
+                else if(current is UCFloorPlan viwer)
+                {
+                    viwer.fillTablePanel(false);
+                    return;
+                }
+                    current = current.Parent;
             }
 
         }

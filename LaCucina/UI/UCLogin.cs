@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LaCucina.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,27 +28,54 @@ namespace LaCucina
 
         private void btnAccessSystem_Click(object sender, EventArgs e)
         {
-            LoginLogic loginlogic = new LoginLogic();
-            if (string.IsNullOrEmpty(txtPassword.Texts) || string.IsNullOrEmpty(txtUserName.Texts))
+            LoginService loginlogic = new LoginService();
+
+            if (string.IsNullOrWhiteSpace(txtUserName.Texts) ||
+                string.IsNullOrWhiteSpace(txtPassword.Texts))
             {
                 MessageBox.Show("fill all fields");
+                return;
             }
-            else {
-                bool confirm = loginlogic.ConfirmLogin(txtUserName.Texts, txtPassword.Texts);
-                if (confirm)
-                {
-                    txtPassword.Texts = "";
-                    txtUserName.Texts = "";
-                    txtUserName.Focus();
-                    loginlogic.ShowDialog(this.FindForm());
-                }
-                else MessageBox.Show("not found", "");
+
+            User user = loginlogic.ConfirmLogin(
+                txtUserName.Texts,
+                txtPassword.Texts
+            );
+
+            if (user == null)
+            {
+                MessageBox.Show("not found");
+                return;
             }
-          
+
+            txtPassword.Texts = "";
+            txtUserName.Texts = "";
+            txtUserName.Focus();
+
+            Form current = this.FindForm();
+            current.Hide();
+
+            // navigation هنا في UI فقط
+            switch (user.UserRole)
+            {
+                case User.Role.Admin:
+                    new ManagerForm(current).ShowDialog();
+                    break;
+
+                case User.Role.Waiter:
+                    new FloorPlanForm(current).ShowDialog();
+                    break;
+
+                case User.Role.Chef:
+                    new KDS(current).ShowDialog();
+                    break;
+            }
+
+            current.Show();
         }
 
-       
-        
+
+
 
         private void txtUserName_KeyPress_1(object sender, KeyPressEventArgs e)
         {

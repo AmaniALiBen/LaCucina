@@ -33,7 +33,7 @@ namespace LaCucina
         private void ManagerForm_Load(object sender, EventArgs e)
         {
             btnFloorplan.PerformClick();
-            lblUser.Text = Session.CurrentUser.username;
+            lblUser.Text = Session.CurrentUser.Username;
         }
 
 

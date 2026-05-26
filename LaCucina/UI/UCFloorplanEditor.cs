@@ -1,4 +1,8 @@
 ﻿using CustomControls.RJControls;
+using LaCucina.DataLink;
+using LaCucina.Models;
+using LaCucina.Services;
+using LaCucina.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,10 +16,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LaCucina
 { 
-    public partial class USFloorplanEditor : UserControl
+    public partial class USFloorplanEditor :UserControl
     {
-        
-        
+
+        private FloorPlanService service = new FloorPlanService();
         public USFloorplanEditor()
         {
             InitializeComponent();
@@ -34,25 +38,69 @@ namespace LaCucina
         {
             hfpnlSpaces.Controls.Clear();
 
-            foreach (var item in DataBase.spaces)
-            {
+            var spaces = service.GetSpaces();
 
-                Space s=new Space(item.Key,item.Value.name);
+            foreach (var space in spaces)
+            {
+                Space s = new Space(space.id, space.name);
                 hfpnlSpaces.Controls.Add(s);
-                
             }
+
             SelectDefaultSpace();
         }
-        public void fillTablePanel(bool isEditing) 
+        public void fillTablePanel(bool isEditing)
         {
             clearTablePanel();
-            foreach (var table in DataBase.tables)
+            clearSelection();
+
+            int spaceId = Space.lastSelectedSpace.id;
+
+            var tables = service.GetTablesBySpace(spaceId);
+
+            foreach (var table in tables)
             {
-               if(table.Value.spaceId==Space.lastSelectedSpace.id)
-                addTableToPanel(table.Value, isEditing);
+                addTableToPanel(table, isEditing);
+            }
+        }
+        public void addTableToPanel(Table table, bool isEditing)
+        {
+            UCtable t = null;
+
+            if (table.tableFormat == TableFormat.circular)
+            {
+                t = new CircularTableUserControl(table.id, table.tableNum, table.chairCount, table.tableStatus, isEditing);
+
+            }
+            if (table.tableFormat == TableFormat.vertical)
+            {
+                t = new VerticalTableUserControl(table.id, table.tableNum, table.chairCount, table.tableStatus, isEditing);
+
+            }
+            if (table.tableFormat == TableFormat.horizontal)
+            {
+                t = new HorizontalTableUserControl(table.id, table.tableNum, table.chairCount, table.tableStatus, isEditing);
+
+
+            }
+            if (t != null)
+            {
+                t.Location = table.location;
+                pnlTables.Controls.Add(t);
+                t.BringToFront();
+            }
+        }
+
+        public void clearTablePanel()
+        {
+            foreach (var table in pnlTables.Controls.OfType<UCtable>().ToList())
+            {
+                pnlTables.Controls.Remove(table);
+                table.Dispose();
 
             }
         }
+        
+        
         public TableFormat getSelectedFormat() 
         {
 
@@ -81,33 +129,7 @@ namespace LaCucina
             return 2;
 
         }
-       public void addTableToPanel(Table table, bool isEditing)
-        {
-            UCtable t = null;
-
-            if (table.tableFormat == TableFormat.circular)
-            {
-                t = new CircularTableUserControl(table.id,table.tableNum, table.chairCount, table.tableStatus, isEditing);
-
-            }
-            if (table.tableFormat == TableFormat.vertical)
-            {
-                t = new VerticalTableUserControl(table.id, table.tableNum, table.chairCount, table.tableStatus, isEditing);
-
-            }
-            if (table.tableFormat == TableFormat.horizontal)
-            {
-                t = new HorizontalTableUserControl(table.id, table.tableNum, table.chairCount, table.tableStatus, isEditing);
-
-
-            }
-            if (t != null)
-            {
-                t.Location = table.location;
-                pnlTables.Controls.Add(t);
-                t.BringToFront();
-            }
-        }
+      
 
         private void rjPanel4_Paint(object sender, PaintEventArgs e)
         {
@@ -124,10 +146,7 @@ namespace LaCucina
 
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
+        
 
         private void FloorplanEditorUS_Load(object sender, EventArgs e)
         {
@@ -152,11 +171,16 @@ namespace LaCucina
         
         private void pnlTables_Click(object sender, EventArgs e)
         {
+            pnlNewTable.Visible=false;
+            clearSelection();
+        }
+        private void clearSelection() 
+        {
             if (UCtable.lastSelectedTable != null)
             {
                 foreach (RJgradiantPanal item in UCtable.lastSelectedTable.Controls)
                 {
-                    
+
                     item.BorderSize = 0;
 
                 }
@@ -168,34 +192,33 @@ namespace LaCucina
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (tableNumIsNotValid()) return;
-            Table t = new Table(++DataBase.tableCounter, txtTablenum.Texts, getSelectedChairCount(), getSelectedFormat(),new Point(pnlTables.Width/2,pnlTables.Height/2), Space.lastSelectedSpace.id, TableStatus.vacant);
-            DataBase.tables.Add(DataBase.tableCounter, t);
-            addTableToPanel(t, true);
+            
+            Table t = new Table(
+                0,
+                txtTablenum.Texts,
+                getSelectedChairCount(),
+                getSelectedFormat(),
+                new Point(pnlTables.Width / 2, pnlTables.Height / 2),
+                Space.lastSelectedSpace.id,
+                TableStatus.vacant
+            );
+            string error = service.ValidateTable(t, false);
+
+            if (error != null)
+            {
+                lblError.Text = error;
+                lblError.Visible = true;
+                return;
+            }
+
+            service.AddTable(t);
+
+            fillTablePanel(true);
+
             lblError.Visible = false;
             resetpnlNewTable();
         }
-        public bool tableNumIsNotValid()
-        {
-            bool valid = false;
-            foreach (var item in DataBase.tables)
-            {
-
-                if (item.Value.tableNum == txtTablenum.Texts && item.Value.spaceId == Space.lastSelectedSpace.id)
-                {
-                    if (btnEdit.Visible && item.Key == UCtable.lastSelectedTable.id) return false;
-                    lblError.Visible = true;
-                    lblError.Text = " table number alredy Exists in this space";
-
-                    valid = true;
-                }
-                
-            }
-            return valid;
-
-
-        }
-
+        
         private void rbtnCircular_CheckedChanged(object sender, EventArgs e)
         {
            
@@ -208,87 +231,81 @@ namespace LaCucina
             
         }
 
-        private void rjButton1_Click(object sender, EventArgs e)
-        {
-            ManageSpacesForm form = new ManageSpacesForm(this);
-            form.ShowDialog();
-        }
-
-       public void clearTablePanel() 
-        {
-            foreach(var table in pnlTables.Controls.OfType<UCtable>().ToList())
-            {
-                pnlTables.Controls.Remove(table);
-                table.Dispose();
-                pnlTableButtons.Visible = false;
-            }
-        }
-
-
         private void btnDeleteTable_Click(object sender, EventArgs e)
         {
             int id = UCtable.lastSelectedTable.id;
-            foreach (var table in pnlTables.Controls.OfType<UCtable>().ToList())
-            {
-                if (table.id == id)
-                {
-                    pnlTables.Controls.Remove(table);
-                    table.Dispose();
-                    pnlTableButtons.Visible = false;
-                }
-            }
 
-           DataBase.tables.Remove(id);
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to delete this table?",
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (result == DialogResult.No)
+                return;
+
+            service.DeleteTable(id);
+
+            fillTablePanel(true);
+
+            pnlTableButtons.Visible = false;
         }
-
         private void btnEditTable_Click(object sender, EventArgs e)
         {
-            
             pnlNewTable.Visible = true;
             btnEdit.Visible = true;
-            int id=UCtable.lastSelectedTable.id;
+
+            int id = UCtable.lastSelectedTable.id;
+
+            Table t = service.GetTableById(id);
 
             foreach (RadioButton btn in pnlFormat.Controls.OfType<RadioButton>())
             {
-                if ((TableFormat)Enum.Parse(typeof(TableFormat), btn.Tag.ToString()) == DataBase.tables[id].tableFormat)
-                {
+                if ((TableFormat)Enum.Parse(typeof(TableFormat), btn.Tag.ToString()) == t.tableFormat)
                     btn.Checked = true;
-                }
             }
 
-            foreach (RadioButton btn in pnlChairCount.Controls.OfType<RadioButton>()) 
+            foreach (RadioButton btn in pnlChairCount.Controls.OfType<RadioButton>())
             {
-                if (btn.Tag.ToString() == DataBase.tables[id].chairCount.ToString())
-                {
+                if (btn.Tag.ToString() == t.chairCount.ToString())
                     btn.Checked = true;
-                }
             }
-            txtTablenum.Texts = DataBase.tables[id].tableNum;
-           
 
-
+            txtTablenum.Texts = t.tableNum;
         }
-
         private void btnEdit_Click(object sender, EventArgs e)
         {
             int id = UCtable.lastSelectedTable.id;
-            if (tableNumIsNotValid()) { return; }
-            DataBase.tables[id].tableFormat = getSelectedFormat();
-            DataBase.tables[id].tableNum = txtTablenum.Texts;
-            DataBase.tables[id].chairCount = getSelectedChairCount();
-            foreach (var table in pnlTables.Controls.OfType<UCtable>().ToList())
+
+            
+
+            Table t = new Table(
+                id,
+                txtTablenum.Texts,
+                getSelectedChairCount(),
+                getSelectedFormat(),
+                UCtable.lastSelectedTable.Location,
+                Space.lastSelectedSpace.id,
+                TableStatus.vacant
+            );
+
+            string error = service.ValidateTable(t, true);
+
+            if (error != null)
             {
-                if (table.id == id)
-                {
-                    pnlTables.Controls.Remove(table);
-                    table.Dispose();
-                    pnlTableButtons.Visible = false;
-                }
+                lblError.Text = error;
+                lblError.Visible = true;
+                return;
             }
-            addTableToPanel(DataBase.tables[id], true);
+
+            service.UpdateTable(t);
+
+            fillTablePanel(true);
+
             btnEdit.Visible = false;
             pnlNewTable.Visible = false;
-
+            lblError.Visible = false;
             resetpnlNewTable();
         }
 
@@ -297,6 +314,30 @@ namespace LaCucina
             rbtnHorizantal.Checked = true;
             rbtn2.Checked = true;
             txtTablenum.Texts = "";
+        }
+
+        private void hfpnlSpaces_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnlNewTable_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        
+
+        private void txtTablenum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar== (char)Keys.Enter)
+            {
+                if (btnAdd.Visible) { btnAdd.PerformClick(); }
+                else { btnEdit.PerformClick(); }
+                e.Handled = true;
+               
+            }
+
         }
     }
 

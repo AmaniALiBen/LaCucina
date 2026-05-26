@@ -8,25 +8,37 @@ namespace LaCucina
 {
     public class User
     {
-       public enum Role
-        { Admin,
-          Owner,
-          Waiter,
-          Chef
-
-        };
-        public Role role; 
-        public bool isActive;
-        public string username;
-        public string password;
-        public bool isDeleted;
-       public  User(string username,string password,bool isActive , Role role,bool isDeleted)
+        public enum Role
         {
-            this.username = username;  
-            this.password = password;
-            this.isActive = isActive;
-            this.role = role;
-            this.isDeleted = isDeleted;
+            Admin = 0,
+            Waiter = 1,
+            Chef = 2
+        }
+
+        public int Id { get; set; }
+
+        public string Username { get; set; }
+
+        public string PasswordHash { get; set; }
+
+        public Role UserRole { get; set; }
+
+        public bool IsActive { get; set; }
+
+        public bool IsDeleted { get; set; }
+
+        public User()
+        {
+        }
+
+        public User(int id,string username, string passwordHash, Role role, bool isActive)
+        {
+            Id = id;
+            Username = username;
+            PasswordHash = passwordHash;
+            UserRole = role;
+            IsActive = isActive;
+            IsDeleted = false;
         }
     }
 }
