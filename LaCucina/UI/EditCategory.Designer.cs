@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditCategory));
             this.pnlMain = new CustomControls.RJControls.RJPanel();
             this.btnSave = new CustomControls.RJControls.RJButton();
             this.rJgradiantPanal1 = new CustomControls.RJControls.RJgradiantPanal();
@@ -38,6 +39,7 @@
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.label1 = new System.Windows.Forms.Label();
             this.tblCategories = new LaCucina.controls.TablePanel();
+            this.btnClose = new CustomControls.RJControls.RJButton();
             this.pnlMain.SuspendLayout();
             this.rJgradiantPanal1.SuspendLayout();
             this.SuspendLayout();
@@ -48,6 +50,7 @@
             this.pnlMain.BorderColor = System.Drawing.Color.Gray;
             this.pnlMain.BorderRadius = 7;
             this.pnlMain.BorderSize = 2;
+            this.pnlMain.Controls.Add(this.btnClose);
             this.pnlMain.Controls.Add(this.btnSave);
             this.pnlMain.Controls.Add(this.rJgradiantPanal1);
             this.pnlMain.Controls.Add(this.btnAddCategory);
@@ -59,10 +62,10 @@
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.ForeColor = System.Drawing.Color.Black;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.pnlMain.Size = new System.Drawing.Size(596, 653);
+            this.pnlMain.Padding = new System.Windows.Forms.Padding(3);
+            this.pnlMain.Size = new System.Drawing.Size(596, 687);
             this.pnlMain.TabIndex = 0;
             this.pnlMain.Click += new System.EventHandler(this.pnlMain_Click);
             // 
@@ -79,9 +82,9 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.Transparent;
             this.btnSave.Image = global::LaCucina.Properties.Resources.checked__1_;
-            this.btnSave.Location = new System.Drawing.Point(526, 130);
+            this.btnSave.Location = new System.Drawing.Point(526, 137);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(52, 47);
+            this.btnSave.Size = new System.Drawing.Size(52, 49);
             this.btnSave.TabIndex = 36;
             this.btnSave.TextColor = System.Drawing.Color.Transparent;
             this.btnSave.UseVisualStyleBackColor = false;
@@ -99,9 +102,9 @@
             this.rJgradiantPanal1.GradientAngle = 0F;
             this.rJgradiantPanal1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(81)))), ((int)(((byte)(0)))));
             this.rJgradiantPanal1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
-            this.rJgradiantPanal1.Location = new System.Drawing.Point(234, 585);
+            this.rJgradiantPanal1.Location = new System.Drawing.Point(234, 616);
             this.rJgradiantPanal1.Name = "rJgradiantPanal1";
-            this.rJgradiantPanal1.Size = new System.Drawing.Size(128, 47);
+            this.rJgradiantPanal1.Size = new System.Drawing.Size(128, 49);
             this.rJgradiantPanal1.TabIndex = 34;
             // 
             // btnDone
@@ -120,14 +123,14 @@
             this.btnDone.Font = new System.Drawing.Font("Yu Gothic Medium", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDone.ForeColor = System.Drawing.Color.Black;
             this.btnDone.Location = new System.Drawing.Point(0, 0);
-            this.btnDone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDone.Margin = new System.Windows.Forms.Padding(4);
             this.btnDone.Name = "btnDone";
-            this.btnDone.Size = new System.Drawing.Size(128, 47);
+            this.btnDone.Size = new System.Drawing.Size(128, 49);
             this.btnDone.TabIndex = 1;
             this.btnDone.Text = "Done";
             this.btnDone.TextColor = System.Drawing.Color.Black;
             this.btnDone.UseVisualStyleBackColor = false;
-            this.btnDone.Click += new System.EventHandler(this.btnUpdateToppings_Click);
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
             // btnAddCategory
             // 
@@ -142,9 +145,9 @@
             this.btnAddCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddCategory.ForeColor = System.Drawing.Color.Transparent;
             this.btnAddCategory.Image = global::LaCucina.Properties.Resources.plus;
-            this.btnAddCategory.Location = new System.Drawing.Point(526, 130);
+            this.btnAddCategory.Location = new System.Drawing.Point(526, 137);
             this.btnAddCategory.Name = "btnAddCategory";
-            this.btnAddCategory.Size = new System.Drawing.Size(52, 47);
+            this.btnAddCategory.Size = new System.Drawing.Size(52, 49);
             this.btnAddCategory.TabIndex = 27;
             this.btnAddCategory.TextColor = System.Drawing.Color.Transparent;
             this.btnAddCategory.UseVisualStyleBackColor = false;
@@ -160,8 +163,8 @@
             this.txtAddCategory.CustomPasswordChar = '●';
             this.txtAddCategory.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAddCategory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.txtAddCategory.Location = new System.Drawing.Point(66, 130);
-            this.txtAddCategory.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtAddCategory.Location = new System.Drawing.Point(66, 137);
+            this.txtAddCategory.Margin = new System.Windows.Forms.Padding(6);
             this.txtAddCategory.Multiline = false;
             this.txtAddCategory.Name = "txtAddCategory";
             this.txtAddCategory.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -180,7 +183,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Yu Gothic", 10F);
             this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(64, 94);
+            this.label2.Location = new System.Drawing.Point(64, 99);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(182, 26);
@@ -192,7 +195,7 @@
             this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
             this.materialDivider1.Depth = 0;
             this.materialDivider1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.materialDivider1.Location = new System.Drawing.Point(0, 72);
+            this.materialDivider1.Location = new System.Drawing.Point(0, 76);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
             this.materialDivider1.Size = new System.Drawing.Size(596, 1);
@@ -204,32 +207,56 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Yu Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(16, 16);
+            this.label1.Location = new System.Drawing.Point(16, 17);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(2, 6, 0, 15);
-            this.label1.Size = new System.Drawing.Size(242, 52);
+            this.label1.Padding = new System.Windows.Forms.Padding(2, 6, 0, 16);
+            this.label1.Size = new System.Drawing.Size(242, 53);
             this.label1.TabIndex = 23;
             this.label1.Text = "Manage Categories";
             // 
             // tblCategories
             // 
             this.tblCategories.AutoScroll = true;
-            this.tblCategories.Location = new System.Drawing.Point(70, 241);
-            this.tblCategories.Margin = new System.Windows.Forms.Padding(38, 37, 38, 22);
+            this.tblCategories.Location = new System.Drawing.Point(70, 254);
+            this.tblCategories.Margin = new System.Windows.Forms.Padding(38, 39, 38, 23);
             this.tblCategories.Name = "tblCategories";
-            this.tblCategories.Size = new System.Drawing.Size(456, 319);
+            this.tblCategories.Size = new System.Drawing.Size(456, 336);
             this.tblCategories.TabIndex = 35;
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.BackgroundColor = System.Drawing.Color.Transparent;
+            this.btnClose.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.btnClose.BorderRadius = 0;
+            this.btnClose.BorderSize = 0;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.ForeColor = System.Drawing.Color.Transparent;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(555, 9);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(32, 36);
+            this.btnClose.TabIndex = 37;
+            this.btnClose.TextColor = System.Drawing.Color.Transparent;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // EditCategory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.ClientSize = new System.Drawing.Size(596, 653);
+            this.ClientSize = new System.Drawing.Size(596, 687);
             this.Controls.Add(this.pnlMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditCategory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "EditCategory";
@@ -252,5 +279,6 @@
         private System.Windows.Forms.Label label1;
         private controls.TablePanel tblCategories;
         private CustomControls.RJControls.RJButton btnSave;
+        private CustomControls.RJControls.RJButton btnClose;
     }
 }

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,18 +13,57 @@ namespace LaCucina
 {
     public partial class UCIngredientInItem : UserControl
     {
-        public int id;
+        
         public int itemId;
         public int ingredientId;
         public bool isMain;
-        public UCIngredientInItem(int id,int itemId,int ingredientId,bool isMain)
+        public string name;
+      public string Name
         {
-            InitializeComponent();
-            this.id = id;
-            this.itemId = itemId;
-            this.ingredientId = ingredientId;
-            this.isMain = isMain;
-            lblIngredient.Text = DataBase.ingredients[ingredientId].name;
+            get { return name; }
+            set { name = value; 
+            lblIngredient.Text = value;
+            }
+        }
+
+        public int ItemId
+        {
+            get
+            {
+                return itemId;
+            }
+            set
+            {
+                itemId = value;
+            }
+        }
+
+        public int IngredientId
+        {
+            get
+            {
+                return ingredientId;
+            }
+            set
+            {
+                ingredientId = value;
+            }
+        }
+
+        public bool IsMain
+        {
+            get
+            {
+                return isMain;
+            }
+            set
+            {
+                isMain = value;
+            }
+        }
+        public UCIngredientInItem()
+        {
+            InitializeComponent(); 
 
         }
 

@@ -44,6 +44,26 @@ namespace LaCucina
                 return cmd.ExecuteNonQuery();
             }
         }
+
+        public static int ExecuteScalar(string query)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+
+               
+                object result = cmd.ExecuteScalar();
+
+                if (result != null && result != DBNull.Value)
+                {
+                    return Convert.ToInt32(result);
+                }
+
+                return 0;
+            }
+        }
     }
 }
 

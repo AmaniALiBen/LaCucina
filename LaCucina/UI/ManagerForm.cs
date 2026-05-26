@@ -95,5 +95,11 @@ namespace LaCucina
             uc.Dock = DockStyle.Fill;
             panel2.Controls.Add(uc);
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+           Form f = loginForm.FindForm();
+            f.Close();
+        }
     }
 }

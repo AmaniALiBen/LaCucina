@@ -1,115 +1,201 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace LaCucina
 {
     public partial class UCDiscountManager : UserControl
     {
-        public void LoadData()
-        {
-            tblDiscounts.Controls.Clear();
-           foreach( var entry in DataBase.discounts)
-            {
-                var key = entry.Key;
-                var d = entry.Value;
-                
-                UCRowDiscount row = new UCRowDiscount();
-                row.Tag = key;
-                row.name = d.name;
-                row.type = d.type.ToString();
-                if(d.type==Discounts.Type.Percentage)
-                row.value = d.value + "%";
-                else row.value = d.value +"LYD";
-                row.isActive=d.isActive;
-                row.startDate = d.start_date;
-                row.endtDate = d.end_date;
-                if (d.isDeleted)
-                    continue;
-                tblDiscounts.Controls.Add(row);
-            }
-        }
+        Control _selectedRow;
+
         public UCDiscountManager()
         {
             InitializeComponent();
         }
 
-       
+        // 🚀 الطريقة الشغالة والمضمونة: الشحن المباشر من الـ DataTable لربط الـ ID الحقيقي بالأسطر
+        public void LoadData()
+        {
+            tblDiscounts.Controls.Clear();
+
+            // استدعاء دالة الـ DataTable الأصلية من الريبو لقراءة الـ IDs بشكل صحيح
+            DataTable dt = DiscountRepository.GetAllDiscountsTable();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                UCRowDiscount ucrow = new UCRowDiscount();
+
+                ucrow.Tag = Convert.ToInt32(row["discount_id"]);
+                ucrow.name = row["discount_name"].ToString();
+
+                int typeVal = Convert.ToInt32(row["discount_type"]);
+                double amount = Convert.ToDouble(row["discount_amount"]);
+
+                if (typeVal == 0)
+                {
+                    ucrow.type = "Percentage";
+                    ucrow.value = amount + "%";
+                }
+                else
+                {
+                    ucrow.type = "Fixed";
+                    ucrow.value = amount + " LYD";
+                }
+
+                ucrow.isActive = Convert.ToBoolean(row["is_active"]);
+                ucrow.startDate = row["start_date"] != DBNull.Value ? Convert.ToDateTime(row["start_date"]).ToString("yyyy-MM-dd") : DateTime.Today.ToString("yyyy-MM-dd");
+                ucrow.endtDate = row["end_date"] != DBNull.Value ? Convert.ToDateTime(row["end_date"]).ToString("yyyy-MM-dd") : DateTime.Today.AddDays(7).ToString("yyyy-MM-dd");
+
+                tblDiscounts.Controls.Add(ucrow);
+            }
+        }
 
         private void UCDiscountManager_Load(object sender, EventArgs e)
         {
             LoadData();
+            // ربط الحدث الأصلي للجدول كما كان تماماً
             tblDiscounts.RowDoubleClicked += tblDiscounts_RowDoubleClicked;
-            
-
         }
 
-        Control _selectedRow;
-
+        // 🎯 حدث النقر المزدوج الأصلي المستقر
         private void tblDiscounts_RowDoubleClicked(object sender, EventArgs e)
         {
-            DiscountsManager.clearFields(pnlAddDiscount);
+            txtDiscountName.Texts = "";
+            txtValue.Texts = "";
 
             Control selectedRow = (Control)sender;
             _selectedRow = (Control)sender;
 
             if (selectedRow.Tag != null)
-           {
-                int discountKey = Convert.ToInt32(selectedRow.Tag);
-                if (DataBase.discounts.ContainsKey(discountKey))
+            {
+                int dbId = Convert.ToInt32(selectedRow.Tag);
+
+                // جلب بيانات الخصم الفردية حياً من الداتابيز
+                DataTable dt = DatabaseHelper.ExecuteQuery($"SELECT discount_name, discount_type, discount_amount, start_date, end_date, is_active FROM discounts WHERE discount_id = {dbId}");
+
+                if (dt.Rows.Count > 0)
                 {
-                    var selectedDiscount = DataBase.discounts[discountKey];
+                    DataRow row = dt.Rows[0];
+                    txtDiscountName.Texts = row["discount_name"].ToString();
+                    switchisActive.Checked = Convert.ToBoolean(row["is_active"]);
 
+                    int typeVal = Convert.ToInt32(row["discount_type"]);
+                    cmbType.SelectedItem = (typeVal == 0) ? "Percentage" : "Fixed";
 
-                    txtDiscountName.Texts = selectedDiscount.name;
-                    switchisActive.Checked = selectedDiscount.isActive;
-                    
-                    cmbType.SelectedItem = selectedDiscount.type.ToString();
-                    txtValue.Texts = selectedDiscount.value.ToString();
-                    pickStartDate.Text = selectedDiscount.start_date;
-                    pickEndDate.Text = selectedDiscount.end_date;
+                    txtValue.Texts = row["discount_amount"].ToString();
 
+                    if (row["start_date"] != DBNull.Value) pickStartDate.Text = Convert.ToDateTime(row["start_date"]).ToString("yyyy-MM-dd");
+                    if (row["end_date"] != DBNull.Value) pickEndDate.Text = Convert.ToDateTime(row["end_date"]).ToString("yyyy-MM-dd");
 
+                    // تبديل الأزرار الفخمة في الواجهة
                     gradiantAddDiscount.Visible = false;
                     btnClear.Visible = false;
                     gradiantSaveChanges.Visible = true;
                     btnDelete.Visible = true;
-                   
-                    
+                }
+            }
+        }
 
+        // ➕ إضافة خصم جديد باستخدام اللوجيك وفحص التواريخ
+        private void btnAddDiscount_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtDiscountName.Texts) || cmbType.SelectedIndex < 0 || string.IsNullOrEmpty(txtValue.Texts))
+            {
+                MessageBox.Show("Please fill all fields", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (Enum.TryParse(cmbType.SelectedItem.ToString(), out Discounts.Type type))
+            {
+                if (double.TryParse(txtValue.Texts, out double value))
+                {
+                    // استدعاء دالة اللوجيك الحية التي تضيف لقاعدة البيانات مباشرة
+                    bool success = DiscountsManager.AddDiscount(
+                        txtDiscountName.Texts,
+                        type,
+                        value,
+                        pickStartDate.Text,
+                        pickEndDate.Text,
+                        switchisActive.Checked
+                    );
+
+                    if (success)
+                    {
+                        LoadData();
+                        btnDiscard.PerformClick();
+                    }
+                }
+            }
+        }
+
+        // 💾 حفظ التعديلات المستقرة
+        private void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+            if (_selectedRow != null)
+            {
+                int dbId = Convert.ToInt32(_selectedRow.Tag);
+
+                if (string.IsNullOrEmpty(txtDiscountName.Texts) || string.IsNullOrEmpty(txtValue.Texts) || cmbType.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Please fill all fields", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
 
+                Discounts.Type type = (Discounts.Type)Enum.Parse(typeof(Discounts.Type), cmbType.SelectedItem.ToString());
+                double value = Convert.ToDouble(txtValue.Texts);
 
+                Discounts updatedDiscount = new Discounts(
+                    txtDiscountName.Texts,
+                    type,
+                    value,
+                    pickStartDate.Text,
+                    pickEndDate.Text,
+                    switchisActive.Checked,
+                    false
+                );
 
+                // استدعاء اللوجيك للتحديث
+                bool success = DiscountsManager.UpdateDB(dbId, updatedDiscount);
+
+                if (success)
+                {
+                    LoadData();
+                    btnDiscard.PerformClick();
+                }
+            }
+        }
+
+        // ❌ حذف الخصم
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (_selectedRow != null)
+            {
+                int dbId = Convert.ToInt32(_selectedRow.Tag);
+
+                bool success = DiscountsManager.DeleteDiscount(dbId);
+
+                if (success)
+                {
+                    btnDiscard.PerformClick();
+                    LoadData();
+                }
             }
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            DiscountsManager.clearFields(pnlAddDiscount);
+            DiscountsManager.clearFields(this);
         }
-
-        
 
         private void btnDiscard_Click(object sender, EventArgs e)
         {
-            DiscountsManager.clearFields(pnlAddDiscount);
+            DiscountsManager.clearFields(this);
             gradiantAddDiscount.Visible = true;
             btnClear.Visible = true;
             gradiantSaveChanges.Visible = false;
             btnDelete.Visible = false;
+            _selectedRow = null;
         }
-
-
-
-      
 
         private void txtValue__TextChanged(object sender, EventArgs e)
         {
@@ -118,14 +204,9 @@ namespace LaCucina
             {
                 if (double.TryParse(txtValue.Texts, out double val))
                 {
-                    if (val > 100)
-                    {
-                        txtValue.Texts = "100";
-
-                    }
+                    if (val > 100) txtValue.Texts = "100";
                 }
             }
-            else return;
         }
 
         private void txtValue_KeyPress(object sender, KeyPressEventArgs e)
@@ -134,9 +215,7 @@ namespace LaCucina
             {
                 e.Handled = true;
             }
-
-           
-            if ((e.KeyChar == '.') && (txtValue.Texts.IndexOf('.') > -1)|| (e.KeyChar == '.') && txtValue.Texts.Length==0)
+            if ((e.KeyChar == '.') && (txtValue.Texts.IndexOf('.') > -1) || (e.KeyChar == '.') && txtValue.Texts.Length == 0)
             {
                 e.Handled = true;
             }
@@ -144,62 +223,8 @@ namespace LaCucina
 
         private void cmbType_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            txtValue.Enabled = false;
+            txtValue.Enabled = cmbType.SelectedIndex > -1;
             txtValue.Texts = "";
-            if (cmbType.SelectedIndex > -1)
-            txtValue.Enabled = true;
-            else txtValue.Enabled = false;
-        }
-
-        private void btnAddDiscount_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtDiscountName.Texts) ||  cmbType.SelectedIndex<0||string.IsNullOrEmpty(txtValue.Texts))
-            {
-                MessageBox.Show("fill all fields", "");
-                return;
-
-            }
-            if (Enum.TryParse(cmbType.SelectedItem.ToString(), out Discounts.Type type))
-            {
-                if (double.TryParse(txtValue.Texts, out double value))
-                    DiscountsManager.AddDiscount(txtDiscountName.Texts, type, value, pickStartDate.Text, pickEndDate.Text, switchisActive.Checked);
-                LoadData();
-               btnDiscard.PerformClick();
-            }
-        }
-
-        private void btnSaveChanges_Click(object sender, EventArgs e)
-        {
-            if (_selectedRow != null)
-            {
-                int key = Convert.ToInt32(_selectedRow.Tag);
-                Discounts d = DataBase.discounts[key];
-                if (!string.IsNullOrEmpty(txtDiscountName.Texts) && !string.IsNullOrEmpty(txtValue.Texts) && cmbType.SelectedIndex != -1)
-                {
-                    d.name = txtDiscountName.Texts;
-                    d.end_date = pickEndDate.Text.ToString();
-                    d.start_date = pickStartDate.Text.ToString();
-                    d.type = (Discounts.Type)Enum.Parse(typeof(Discounts.Type), cmbType.SelectedItem.ToString());
-                    d.value = Convert.ToDouble(txtValue.Texts);
-                    d.isActive = switchisActive.Checked;
-                   bool updated= DiscountsManager.UpdateDB(key, d);
-                    if (updated) {  LoadData();
-                        btnDiscard.PerformClick();
-                    }
-                }
-                else MessageBox.Show("fill all fields", "");
-
-                
-            }
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            int key= Convert.ToInt32(_selectedRow.Tag);
-           bool deleted= DiscountsManager.DeleteDiscount(key);
-            if(deleted) { btnDiscard.PerformClick();
-            
-            LoadData();}
         }
 
         private void txtSearch__TextChanged(object sender, EventArgs e)
@@ -213,8 +238,6 @@ namespace LaCucina
                     if (tblDiscounts.Controls[i] is UCRowDiscount ucdiscount)
                     {
                         string name = ucdiscount.name.ToLower().Trim();
-
-
                         if (!name.StartsWith(search))
                         {
                             tblDiscounts.Controls.RemoveAt(i);
@@ -229,7 +252,7 @@ namespace LaCucina
         {
             if (cmbFilterStatus.SelectedIndex > -1)
             {
-                cmbType.SelectedIndex = -1;
+                cmbFilterType.SelectedIndex = -1;
                 string Status = cmbFilterStatus.SelectedItem.ToString();
                 LoadData();
                 for (int i = tblDiscounts.Controls.Count - 1; i >= 0; i--)
@@ -238,7 +261,6 @@ namespace LaCucina
                     {
                         if (Status == "Active" && !ucdiscount.isActive)
                             tblDiscounts.Controls.RemoveAt(i);
-
                         else if (Status == "inActive" && ucdiscount.isActive)
                             tblDiscounts.Controls.RemoveAt(i);
                     }
@@ -258,10 +280,9 @@ namespace LaCucina
                 {
                     if (tblDiscounts.Controls[i] is UCRowDiscount ucdiscount)
                     {
-                        if (type == "Percentage" && ucdiscount.type==Discounts.Type.Fixed.ToString())
+                        if (type == "Percentage" && ucdiscount.type == "Fixed")
                             tblDiscounts.Controls.RemoveAt(i);
-
-                        else if (type == "Fixed" && ucdiscount.type == Discounts.Type.Percentage.ToString())
+                        else if (type == "Fixed" && ucdiscount.type == "Percentage")
                             tblDiscounts.Controls.RemoveAt(i);
                     }
                 }
@@ -272,7 +293,7 @@ namespace LaCucina
         private void btnNoFilter_Click(object sender, EventArgs e)
         {
             cmbFilterType.SelectedIndex = -1;
-            cmbFilterStatus.SelectedIndex= -1;
+            cmbFilterStatus.SelectedIndex = -1;
             LoadData();
         }
     }

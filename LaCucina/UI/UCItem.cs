@@ -1,5 +1,8 @@
-﻿using System;
+﻿using LaCucina.DataLink;
+using LaCucina.Models;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -9,23 +12,28 @@ namespace LaCucina
 {
     public partial class UCItem : UserControl
     {
-        int id;
-        bool isEditing;
+        public int id;
+        public bool isEditing;
         public Action OnClose;
-        bool picChanged = false;
+        public bool picChanged = false;
+
 
         public UCItem(int id, bool isEditing)
         {
             this.id = id;
             this.isEditing = isEditing;
-
             InitializeComponent();
             fillSearchResultPanel();
             fillCmbCategory();
             LoadInfo();
         }
+        public UCItem() { }
 
-       
+
+        List<Categories> categoriesList = CategoryRepository.GetAll();
+        List<ingredients> ingredientsList = IngredientsRepository.GetAll();
+        List<menu_item_ingredients> itemIngredientsList = menuItemIngredientsRepository.GetAll();
+
         private void SetPicImage(Image newImage)
         {
             if (picItem.Image != null)
@@ -37,11 +45,11 @@ namespace LaCucina
         }
         public void fillCmbCategory()
         {
-            cmbCatagory.ValueMember = "id";
 
-            foreach (var category in DataBase.category)
+
+            foreach (Categories category in categoriesList)
             {
-                cmbCatagory.Items.Add(category.Value);
+                cmbCatagory.Items.Add(category.name);
             }
         }
 
@@ -49,7 +57,7 @@ namespace LaCucina
         {
             if (isEditing)
             {
-                Item item = DataBase.items[this.id];
+                Item item = ItemRepository.GetById(id);
 
                 txtName.Texts = item.Name;
                 txtPrice.Texts = item.Price.ToString();
@@ -63,11 +71,11 @@ namespace LaCucina
                     SetPicImage(new Bitmap(imagePath));
                 }
 
-                foreach (Categories category in cmbCatagory.Items)
+                foreach (Categories category in categoriesList)
                 {
                     if (item.CategoryId == category.id)
                     {
-                        cmbCatagory.SelectedItem = category;
+                        cmbCatagory.SelectedItem = category.name;
                         break;
                     }
                 }
@@ -78,13 +86,26 @@ namespace LaCucina
 
         public void fillIngredintsPanels()
         {
-            foreach (var ingredientInItem in DataBase.ingredientInItem)
-            {
-                if (ingredientInItem.Value.itemId == this.id)
-                {
-                    UCIngredientInItem ing = ingredientInItem.Value;
 
-                    if (ingredientInItem.Value.isMain)
+
+            pnlMainIngredients.Controls.Clear();
+            pnlSideIngredients.Controls.Clear();
+
+            this.itemIngredientsList = menuItemIngredientsRepository.GetByMenuItem(this.id);
+
+            foreach (menu_item_ingredients itemIngredient in this.itemIngredientsList)
+            {
+                UCIngredientInItem ing = new UCIngredientInItem();
+                ing.ingredientId = itemIngredient.IngredientId;
+                ing.itemId = itemIngredient.ItemId;
+                ing.isMain = itemIngredient.IsMain;
+
+                ingredients i = IngredientsRepository.GetById(itemIngredient.IngredientId);
+                if (i != null)
+                {
+                    ing.Name = i.Name;
+
+                    if (itemIngredient.IsMain)
                         pnlMainIngredients.Controls.Add(ing);
                     else
                         pnlSideIngredients.Controls.Add(ing);
@@ -94,7 +115,7 @@ namespace LaCucina
 
         private void picItem_Click(object sender, EventArgs e)
         {
-           
+
             choosePic();
         }
 
@@ -113,22 +134,46 @@ namespace LaCucina
 
         public void fillSearchResultPanel()
         {
+           
             pnlSearchResults.Controls.Clear();
 
-            string query = txtSearch.Texts.ToLower();
+            string query = txtSearch.Texts.ToLower().Trim();
 
-            foreach (var ingredient in DataBase.ingredients)
+            this.ingredientsList = IngredientsRepository.GetAll();
+
+            foreach (ingredients ingredient in this.ingredientsList)
             {
-                if (ingredient.Value.name.ToLower().Contains(query))
+                if (ingredient.IsDeleted) continue;
+
+                if (ingredient.Name.ToLower().StartsWith(query))
                 {
-                    pnlSearchResults.Controls.Add(ingredient.Value);
+                    UCIngredient u = new UCIngredient();
+                    u.Name = ingredient.Name;
+                    u.Id = ingredient.Id;
+
+                    u.OnIngredientDeleted = () => {
+                        RefreshAllPanelsAfterDelete();
+                    };
+
+                    pnlSearchResults.Controls.Add(u);
                 }
             }
 
-            if (pnlSearchResults.Controls.Count == 0)
+            if (pnlSearchResults.Controls.Count == 0 && !string.IsNullOrEmpty(query))
                 btnAddAsNew.Visible = true;
             else
                 btnAddAsNew.Visible = false;
+        }
+        public void RefreshAllPanelsAfterDelete()
+        {
+            fillSearchResultPanel();
+
+            pnlMainIngredients.Controls.Clear();
+            pnlSideIngredients.Controls.Clear();
+
+            itemIngredientsList = menuItemIngredientsRepository.GetAll();
+
+            fillIngredintsPanels();
         }
 
         private void txtSearch__TextChanged(object sender, EventArgs e)
@@ -143,39 +188,46 @@ namespace LaCucina
 
         private void addNewIngredient()
         {
-            UCIngredient ing = new UCIngredient(
-                ++DataBase.ingredientCounter,
-                txtSearch.Texts
-            );
+            string name = txtSearch.Texts.Trim();
+            if (string.IsNullOrEmpty(name)) return;
 
-            DataBase.ingredients.Add(DataBase.ingredientCounter, ing);
+            int newId = IngredientsRepository.Add(name);
 
-            btnAddAsNew.Visible = false;
-            txtSearch.Texts = "";
+            ingredients i = new ingredients(newId, name,false);
+            ingredientsList.Add(i);
 
-            addIngrediantToPannel(DataBase.ingredientCounter);
+            addIngrediantToPannel(newId, name, isNew: true);
         }
 
-        private void addIngrediantToPannel(int ingredientId)
+        private void addIngrediantToPannel(int ingredientId, string name, bool isNew)
         {
-            foreach (var item in DataBase.ingredientInItem)
+             var existingControls = pnlMainIngredients.Controls.OfType<UCIngredientInItem>()
+            .Concat(pnlSideIngredients.Controls.OfType<UCIngredientInItem>());
+           
+            foreach (var control in existingControls)
             {
-                if (item.Value.ingredientId == ingredientId &&
-                    item.Value.itemId == this.id)
+                if (control.ingredientId == ingredientId)
+                {
+                    MessageBox.Show("This ingredient is already added to the list!", "Warning",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
+                }
             }
 
-            UCIngredientInItem ing = new UCIngredientInItem(
-                ++DataBase.ingredientInItemCounter,
-                this.id,
-                ingredientId,
-                rbtnAddToMain.Checked
-            );
+            UCIngredientInItem ing = new UCIngredientInItem();
+            ing.itemId = this.id;
+            ing.ingredientId = ingredientId;
+            ing.Name = name;
+            ing.isMain = rbtnAddToMain.Checked;
 
             if (rbtnAddToMain.Checked)
                 pnlMainIngredients.Controls.Add(ing);
             else
                 pnlSideIngredients.Controls.Add(ing);
+
+            btnAddAsNew.Visible = false;
+            txtSearch.Texts = "";
+            fillSearchResultPanel();
         }
 
         private void btnAddSelected_Click(object sender, EventArgs e)
@@ -187,7 +239,7 @@ namespace LaCucina
                 return;
             }
 
-            addIngrediantToPannel(UCIngredient.lastSelectedIngredient.id);
+            addIngrediantToPannel(UCIngredient.lastSelectedIngredient.id, UCIngredient.lastSelectedIngredient.Name, isNew: false);
         }
 
         private void UCItem_Load_1(object sender, EventArgs e)
@@ -221,75 +273,76 @@ namespace LaCucina
         {
             if (string.IsNullOrWhiteSpace(txtName.Texts))
             {
-                MessageBox.Show("Please enter item name.", "Validation",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter item name.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (cmbCatagory.SelectedItem == null)
             {
-                MessageBox.Show("Please select a category.", "Validation",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a category.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (!double.TryParse(txtPrice.Texts, out double price))
             {
-                MessageBox.Show("Please enter a valid price.", "Validation",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a valid price.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (picChanged)
-            { savePic(); }
 
-            Categories selectedCategory = (Categories)cmbCatagory.SelectedItem;
+            if (picChanged) { savePic(); }
+
+            int selectedCategoryId = 0;
+            foreach (Categories category in categoriesList)
+            {
+                if (category.name == cmbCatagory.SelectedItem.ToString())
+                {
+                    selectedCategoryId = category.id;
+                    break;
+                }
+            }
 
             Item item = new Item(
                 this.id,
-                txtName.Texts,
-                selectedCategory.id,
+                txtName.Texts.Trim(),
+                selectedCategoryId,
                 price,
                 btnActive.Checked
             );
 
             if (this.isEditing)
-                DataBase.items[this.id] = item;
-            else
-                DataBase.items.Add(this.id, item);
-
-            if (isEditing)
             {
-                List<int> remove = new List<int>();
-
-                foreach (var ingredientInItem in DataBase.ingredientInItem)
-                {
-                    if (ingredientInItem.Value.itemId == this.id)
-                        remove.Add(ingredientInItem.Key);
-                }
-
-                foreach (int key in remove)
-                    DataBase.ingredientInItem.Remove(key);
+                ItemRepository.Update(item);
+                menuItemIngredientsRepository.DeleteAllByMenuItem(this.id);
+            }
+            else
+            {
+                this.id = ItemRepository.Add(item);
             }
 
+           
             foreach (UCIngredientInItem control in pnlMainIngredients.Controls.OfType<UCIngredientInItem>())
             {
-                DataBase.ingredientInItem.Add(control.id, control);
+                menu_item_ingredients mIngredients = new menu_item_ingredients(this.id, control.ingredientId, isMain: true);
+                menuItemIngredientsRepository.Add(mIngredients);
             }
 
             foreach (UCIngredientInItem control in pnlSideIngredients.Controls.OfType<UCIngredientInItem>())
             {
-                DataBase.ingredientInItem.Add(control.id, control);
+                menu_item_ingredients mIngredients = new menu_item_ingredients(this.id, control.ingredientId, isMain: false);
+                menuItemIngredientsRepository.Add(mIngredients);
             }
 
-            MessageBox.Show("Item saved successfully!", "Success",
+            MessageBox.Show("New Item and its ingredients saved successfully!", "Success",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            pnlMainIngredients.Controls.Clear();
+            pnlSideIngredients.Controls.Clear();
             CleanupImages();
             OnClose?.Invoke();
         }
-        private void CleanupImages()
+        public void CleanupImages()
         {
-            // Dispose the image to release file lock
-            if (picItem.Image != null)
+            if (picItem.Image != null)
             {
                 picItem.Image.Dispose();
                 picItem.Image = null;
@@ -303,11 +356,16 @@ namespace LaCucina
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(
-                "Are you sure you want to cancel?\nAny unsaved changes will be lost.",
-                "Confirm Cancel", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+              "Are you sure you want to cancel?\nAny unsaved changes will be lost.",
+              "Confirm Cancel", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             { CleanupImages(); OnClose?.Invoke(); }
+        }
+
+        private void rjPanel7_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

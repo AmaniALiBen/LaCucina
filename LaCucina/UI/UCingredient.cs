@@ -15,12 +15,24 @@ namespace LaCucina
         public int id;
         public string name;
         public static UCIngredient lastSelectedIngredient=null;
-        public UCIngredient(int id, string name)
+        public Action OnIngredientDeleted { get; set; }
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+
+        }
+        public string Name
+        {
+            get { return name; }
+            set { name = value; 
+            lblIngredient.Text = name;
+            }
+        }
+        public UCIngredient()
         {
             InitializeComponent();
-            this.id = id;
-            this.name = name;
-            lblIngredient.Text = name;
+           
         }
 
         private void pnlIngredient_Click(object sender, EventArgs e)
@@ -40,23 +52,42 @@ namespace LaCucina
 
         private void btnRemoveIngredient_Click(object sender, EventArgs e)
         {
-            DataBase.ingredients.Remove(this.id);
-            List<int> remove = new List<int>();
+            //DataBase.ingredients.Remove(this.id);
+            //List<int> remove = new List<int>();
 
-            foreach (var ingredientInItem in DataBase.ingredientInItem)
+            //foreach (var ingredientInItem in DataBase.ingredientInItem)
+            //{
+            //    if (ingredientInItem.Value.ingredientId == this.id)
+            //    {
+            //        remove.Add(ingredientInItem.Key);
+            //    }
+            //}
+
+            //foreach (int id in remove)
+            //{
+            //    DataBase.ingredientInItem.Remove(id);
+            //}
+            //this.Dispose();
+            DialogResult result = MessageBox.Show(
+                $"Are you sure you want to delete '{this.name}'?",
+                "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
             {
-                if (ingredientInItem.Value.ingredientId == this.id)
-                {
-                    remove.Add(ingredientInItem.Key);
-                }
+                
+                    // 2. استدعاء اللوجيك المفسول تماماً 🔥
+                    bool isDeleted = IngredientsRepository.DeleteIngredient(this.id);
+
+                    if (isDeleted)
+                    {
+                        // 3. وظيفة الـ UI: تحديث الشاشة وتنبيه العناصر الأخرى
+                        OnIngredientDeleted?.Invoke();
+                        this.Dispose(); // إخفاء العنصر
+                    }
+                
+               
             }
 
-            foreach (int id in remove)
-            {
-                DataBase.ingredientInItem.Remove(id);
-            }
-            this.Dispose();
-            
 
         }
     }

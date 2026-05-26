@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,11 +13,15 @@ namespace LaCucina
 {
     public partial class UCMenuEditorItem : UserControl
     {
+        private bool _isInitializing = false;
+
+        public int ItemId { get; set; }
+        public Action OnStatusChanged { get; set; }
+
         public UCMenuEditorItem()
         {
             InitializeComponent();
         }
-
 
         public string ItemName
         {
@@ -24,21 +29,64 @@ namespace LaCucina
             set { lblName.Text = value; }
         }
 
-        public void lblName_Click(object sender, EventArgs e)
+        public void SetCardData(int id, string name, bool isAvailable)
         {
+            _isInitializing = true; 
 
+            this.ItemId = id;
+            this.ItemName = name;
+
+            rjToggleButton1.Checked = isAvailable;
+            lblStatus.Text = isAvailable ? "Available" : "Not Available";
+
+            try
+            {
+                string imagesFolder = Path.Combine(Application.StartupPath, "Images");
+                string imagePath = Path.Combine(imagesFolder, $"{id}.png");
+
+                if (File.Exists(imagePath))
+                {
+                    byte[] imageData = File.ReadAllBytes(imagePath);
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        picItem.Image = new Bitmap(ms);
+                    }
+                }
+                else
+                {
+                    picItem.Image = null;
+                }
+            }
+            catch (OutOfMemoryException)
+            {
+                picItem.Image = null;
+                Console.WriteLine($"Invalid image file for item {id} in Chef Menu");
+            }
+            catch (Exception ex)
+            {
+                picItem.Image = null;
+                Console.WriteLine($"Error loading image in Chef Menu: {ex.Message}");
+            }
+
+            _isInitializing = false;
         }
 
         private void rjToggleButton1_CheckedChanged(object sender, EventArgs e)
         {
-            if (rjToggleButton1.Checked )
+            if (_isInitializing) return;
+
+            if (rjToggleButton1.Checked)
             {
                 lblStatus.Text = "Available";
-
+                ItemRepository.EnableItemManually(this.ItemId);
             }
-            else {
+            else
+            {
                 lblStatus.Text = "Not Available";
+                ItemRepository.DisableItemForToday(this.ItemId);
             }
+
+            OnStatusChanged?.Invoke();
         }
     }
 }

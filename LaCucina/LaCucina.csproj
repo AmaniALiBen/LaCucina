@@ -51,8 +51,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataLink\DiscountRepository.cs" />
+    <Compile Include="DataLink\ingredientsRepository.cs" />
+    <Compile Include="DataLink\menuItemIngredientsRepository.cs" />
     <Compile Include="Models\Categories.cs" />
     <Compile Include="DataLink\CategoryRepository.cs" />
+    <Compile Include="Models\ingredients.cs" />
+    <Compile Include="Models\menu_item_ingredients.cs" />
     <Compile Include="UI\CircularTableUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

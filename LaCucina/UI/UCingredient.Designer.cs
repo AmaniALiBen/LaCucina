@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlIngredient = new CustomControls.RJControls.RJPanel();
-            this.lblIngredient = new System.Windows.Forms.Label();
             this.btnRemoveIngredient = new CustomControls.RJControls.RJButton();
+            this.lblIngredient = new System.Windows.Forms.Label();
             this.pnlIngredient.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,22 +46,10 @@
             this.pnlIngredient.ForeColor = System.Drawing.Color.Black;
             this.pnlIngredient.Location = new System.Drawing.Point(0, 5);
             this.pnlIngredient.Name = "pnlIngredient";
-            this.pnlIngredient.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.pnlIngredient.Size = new System.Drawing.Size(590, 55);
+            this.pnlIngredient.Padding = new System.Windows.Forms.Padding(0, 0, 0, 11);
+            this.pnlIngredient.Size = new System.Drawing.Size(590, 58);
             this.pnlIngredient.TabIndex = 0;
             this.pnlIngredient.Click += new System.EventHandler(this.pnlIngredient_Click);
-            // 
-            // lblIngredient
-            // 
-            this.lblIngredient.AutoSize = true;
-            this.lblIngredient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIngredient.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lblIngredient.Location = new System.Drawing.Point(21, 11);
-            this.lblIngredient.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblIngredient.Name = "lblIngredient";
-            this.lblIngredient.Size = new System.Drawing.Size(71, 25);
-            this.lblIngredient.TabIndex = 10;
-            this.lblIngredient.Text = "tomato";
             // 
             // btnRemoveIngredient
             // 
@@ -78,21 +66,33 @@
             this.btnRemoveIngredient.Image = global::LaCucina.Properties.Resources.icons8_delete_16;
             this.btnRemoveIngredient.Location = new System.Drawing.Point(546, 8);
             this.btnRemoveIngredient.Name = "btnRemoveIngredient";
-            this.btnRemoveIngredient.Size = new System.Drawing.Size(41, 40);
+            this.btnRemoveIngredient.Size = new System.Drawing.Size(41, 42);
             this.btnRemoveIngredient.TabIndex = 12;
             this.btnRemoveIngredient.TextColor = System.Drawing.Color.White;
             this.btnRemoveIngredient.UseVisualStyleBackColor = false;
             this.btnRemoveIngredient.Click += new System.EventHandler(this.btnRemoveIngredient_Click);
             // 
+            // lblIngredient
+            // 
+            this.lblIngredient.AutoSize = true;
+            this.lblIngredient.Font = new System.Drawing.Font("Yu Gothic", 10F);
+            this.lblIngredient.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblIngredient.Location = new System.Drawing.Point(21, 12);
+            this.lblIngredient.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIngredient.Name = "lblIngredient";
+            this.lblIngredient.Size = new System.Drawing.Size(76, 26);
+            this.lblIngredient.TabIndex = 10;
+            this.lblIngredient.Text = "tomato";
+            // 
             // UCIngredient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.Controls.Add(this.pnlIngredient);
             this.Name = "UCIngredient";
             this.Padding = new System.Windows.Forms.Padding(0, 5, 10, 5);
-            this.Size = new System.Drawing.Size(600, 65);
+            this.Size = new System.Drawing.Size(600, 68);
             this.pnlIngredient.ResumeLayout(false);
             this.pnlIngredient.PerformLayout();
             this.ResumeLayout(false);

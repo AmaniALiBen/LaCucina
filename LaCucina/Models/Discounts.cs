@@ -9,6 +9,8 @@ namespace LaCucina
     public class Discounts
     {
         public enum Type { Percentage, Fixed };
+
+        public int Id { get; set; }
         public string name;
         public Type type;
         public double value;
@@ -16,16 +18,28 @@ namespace LaCucina
         public string end_date;
         public bool isActive;
         public bool isDeleted;
-        public Discounts(string name, Type type, double value, string start_date, string end_date, bool isActive, bool isDeleted) 
-        { 
-        this.name = name;
-            this.type = type;  
+
+        public Discounts(int id, string name, Type type, double value, string start_date, string end_date, bool isActive, bool isDeleted)
+        {
+            this.Id = id;
+            this.name = name;
+            this.type = type;
             this.value = value;
             this.start_date = start_date;
             this.end_date = end_date;
             this.isActive = isActive;
             this.isDeleted = isDeleted;
+        }
 
+        public Discounts(string name, Type type, double value, string start_date, string end_date, bool isActive, bool isDeleted)
+        {
+            this.name = name;
+            this.type = type;
+            this.value = value;
+            this.start_date = start_date;
+            this.end_date = end_date;
+            this.isActive = isActive;
+            this.isDeleted = isDeleted;
         }
     }
 }

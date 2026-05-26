@@ -7,20 +7,22 @@ using System.Xml.Linq;
 
 namespace LaCucina
 {
-    internal class Categories
+    public  class Categories
     {
-        public int id;
-        public string name;
+        public  int id;
+        public  string name;
 
+        public int Id { get; set; }
+        public string Name { get; set; }
        public Categories(int id,string name)
         {
             this.name = name;
             this.id = id;
         }
-        public override string ToString()
-        {
-            return name;
-        }
+        //public override string ToString()
+        //{
+        //    return name;
+        //}
 
     }
 }

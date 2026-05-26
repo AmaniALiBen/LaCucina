@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LaCucina.Models;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -37,24 +38,24 @@ namespace LaCucina
 
         };
 
-        public static Dictionary<int, UCIngredient> ingredients = new Dictionary<int, UCIngredient>()
+        public static Dictionary<int, ingredients> ingredients = new Dictionary<int, ingredients>()
         {
-            [1]=new UCIngredient(1,"tomato"),
-            [2]=new UCIngredient(2,"onion"),
-            [3]=new UCIngredient(3,"mayo"),
-            [4]=new UCIngredient(4,"chicken"),
-            [5]=new UCIngredient(5,"beef"),
-            [6]=new UCIngredient(6,"cheese")
+            //[1]=new ingredients(1,"tomato"),
+            //[2]=new ingredients(2,"onion"),
+            //[3]=new ingredients(3,"mayo"),
+            //[4]=new ingredients(4,"chicken"),
+            //[5]=new ingredients(5,"beef"),
+            //[6]=new ingredients(6,"cheese")
 
         };
 
-        public static Dictionary<int, UCIngredientInItem> ingredientInItem = new Dictionary<int, UCIngredientInItem>()
-        {
-            [1] = new UCIngredientInItem(1, 1, 1, true),
-            [2] = new UCIngredientInItem(2, 1, 2, false)
+        //public static Dictionary<int, menu_item_ingredients> ingredientInItem = new Dictionary<int, menu_item_ingredients>()
+        //{
+        //    [1] = new menu_item_ingredients(1, 1, 1, true),
+        //    [2] = new menu_item_ingredients(2, 1, 2, false)
 
 
-        };
+        //};
 
 
         public static Dictionary<int, Item> items = new Dictionary<int, Item>()

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCManagerItemCard));
             this.rjPanel1 = new CustomControls.RJControls.RJPanel();
             this.lblPrice = new System.Windows.Forms.Label();
             this.btnDelete = new CustomControls.RJControls.RJButton();
@@ -101,7 +102,7 @@
             this.btnEdit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.ForeColor = System.Drawing.Color.Transparent;
-            this.btnEdit.Image = global::LaCucina.Properties.Resources.edit;
+            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
             this.btnEdit.Location = new System.Drawing.Point(231, 317);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(50, 52);

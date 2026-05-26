@@ -241,6 +241,7 @@
             this.btnClose.TabIndex = 14;
             this.btnClose.TextColor = System.Drawing.Color.Transparent;
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // materialDivider1
             // 

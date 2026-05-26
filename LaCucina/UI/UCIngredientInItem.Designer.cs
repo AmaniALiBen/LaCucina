@@ -46,8 +46,8 @@
             this.rjPanel1.ForeColor = System.Drawing.Color.Black;
             this.rjPanel1.Location = new System.Drawing.Point(0, 5);
             this.rjPanel1.Name = "rjPanel1";
-            this.rjPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.rjPanel1.Size = new System.Drawing.Size(455, 55);
+            this.rjPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 11);
+            this.rjPanel1.Size = new System.Drawing.Size(455, 58);
             this.rjPanel1.TabIndex = 1;
             // 
             // btnRemoveIngredient
@@ -65,7 +65,7 @@
             this.btnRemoveIngredient.Image = global::LaCucina.Properties.Resources.icons8_cancel_16__2_;
             this.btnRemoveIngredient.Location = new System.Drawing.Point(403, 8);
             this.btnRemoveIngredient.Name = "btnRemoveIngredient";
-            this.btnRemoveIngredient.Size = new System.Drawing.Size(41, 40);
+            this.btnRemoveIngredient.Size = new System.Drawing.Size(41, 42);
             this.btnRemoveIngredient.TabIndex = 11;
             this.btnRemoveIngredient.TextColor = System.Drawing.Color.White;
             this.btnRemoveIngredient.UseVisualStyleBackColor = false;
@@ -74,24 +74,24 @@
             // lblIngredient
             // 
             this.lblIngredient.AutoSize = true;
-            this.lblIngredient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIngredient.Font = new System.Drawing.Font("Yu Gothic", 10F);
             this.lblIngredient.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lblIngredient.Location = new System.Drawing.Point(21, 14);
+            this.lblIngredient.Location = new System.Drawing.Point(21, 15);
             this.lblIngredient.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIngredient.Name = "lblIngredient";
-            this.lblIngredient.Size = new System.Drawing.Size(71, 25);
+            this.lblIngredient.Size = new System.Drawing.Size(76, 26);
             this.lblIngredient.TabIndex = 10;
             this.lblIngredient.Text = "tomato";
             // 
             // UCIngredientInItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.Controls.Add(this.rjPanel1);
             this.Name = "UCIngredientInItem";
             this.Padding = new System.Windows.Forms.Padding(0, 5, 5, 5);
-            this.Size = new System.Drawing.Size(460, 65);
+            this.Size = new System.Drawing.Size(460, 68);
             this.rjPanel1.ResumeLayout(false);
             this.rjPanel1.PerformLayout();
             this.ResumeLayout(false);

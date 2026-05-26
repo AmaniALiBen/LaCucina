@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LaCucina.DataLink;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,27 +8,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace LaCucina
 {
     public partial class UCManagerMenu : UserControl
     {
         UCbtnCategory _selectedCategory;
-        CategoryRepository categoryRepository = new CategoryRepository();
-        ItemRepository itemRepository = new ItemRepository();
+        
+        
         public void loadMenu()
         {
             FlowpnlItems.Controls.Clear();
             pnlCategories.Controls.Clear();
-            DataTable table = categoryRepository.GetAll();
+            List<Categories> categoryList = CategoryRepository.GetAll();
             
-            foreach (DataRow row in table.Rows)
+            foreach (Categories cat in categoryList)
             {
-                int id = (int)row["category_id"];
-                string name =(string) row["category_name"];
+               // int id = (int)row["category_id"];
+               // string name =(string) row["category_name"];
                 UCbtnCategory category= new UCbtnCategory();
-                category._Name = name;
-                category.Tag = id;
+                category._Name = cat.name;
+                category.Tag = cat.id;
 
 
                 category.clickCategory = () =>
@@ -65,7 +67,7 @@ namespace LaCucina
                     };
                     FlowpnlItems.Controls.Add(u);
 
-                    List<Item> items = itemRepository.GetByCategory(Convert.ToInt32(_selectedCategory.Tag));
+                    List<Item> items = ItemRepository.GetByCategory(Convert.ToInt32(_selectedCategory.Tag));
                     foreach (Item i in items)
                     {
                         UCManagerItemCard card = new UCManagerItemCard();
@@ -77,9 +79,21 @@ namespace LaCucina
                             FlowpnlItems.Controls.Add(card);
                         card.Delete = () =>
                         {
-                            ManagerMenu.DeleteItem(i.Id);
-                            FlowpnlItems.Controls.Remove(card);
-
+                            DialogResult result = MessageBox.Show(
+                                    $"Are you sure you want to delete this item",
+                                    "Confirm Delete",
+                                    MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Warning
+                                );
+                            if (result == DialogResult.Yes)
+                            {
+                                ItemRepository.Delete(i.Id);
+                                menuItemIngredientsRepository.DeleteAllByMenuItem(i.Id);
+                                UCItem c = new UCItem();
+                               // c.CleanupImages();
+                                MessageBox.Show("Item has been deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                FlowpnlItems.Controls.Remove(card);
+                            }
                         };
                         // Add this Edit action
                         card.Edit = () =>

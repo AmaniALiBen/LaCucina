@@ -1,9 +1,5 @@
 ﻿using CustomControls.RJControls;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LaCucina
@@ -21,141 +17,58 @@ namespace LaCucina
                 else if (c is RJToggleButton togg)
                     togg.Checked = true;
                 else if (c is RJDatePicker date)
-                   date.Value=DateTime.Now;
+                    date.Value = DateTime.Now;
+
                 if (c.HasChildren)
                     clearFields(c);
             }
         }
-        public static void ResetPermissions(Control ctr)
+
+        public static bool DateLogic(string startDate, string endDate)
         {
-            foreach (Control c in ctr.Controls)
+            if (DateTime.TryParse(startDate, out DateTime start) && DateTime.TryParse(endDate, out DateTime end))
             {
-                c.Enabled = true;
-                if (c.HasChildren)
-                {
-                    ResetPermissions(c);
-                }
-            }
-        }
-        public static bool DeleteDiscount(int key)
-        {
-            if (DataBase.discounts.ContainsKey(key))
-            {
-                Discounts d = DataBase.discounts[key];
-                d.isDeleted = true;
-                MessageBox.Show("Deleted successfully", "");
-                return true;
+                return end.Date >= start.Date;
             }
             return false;
-
         }
+
+        public static bool AddDiscount(string name, Discounts.Type type, double value, string startDate, string endDate, bool isActive)
+        {
+            if (!DateLogic(startDate, endDate))
+            {
+                MessageBox.Show("Invalid date: End date must be after or equal to start date.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            Discounts newDiscount = new Discounts(name, type, value, startDate, endDate, isActive, false);
+            DiscountRepository.Add(newDiscount);
+            MessageBox.Show("Discount added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return true;
+        }
+
         public static bool UpdateDB(int key, Discounts discount)
         {
-            if (discount == null)
+            if (key == 0 || discount == null) return false;
+
+            if (!DateLogic(discount.start_date, discount.end_date))
+            {
+                MessageBox.Show("Invalid date: End date must be after or equal to start date.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
-            if (key == 0) return  false;
-            if (DataBase.discounts.ContainsKey(key))
-            {
-                Discounts d = DataBase.discounts[key];
-                bool validDate=DateLogic(d.start_date, d.end_date);
-                d.name = discount.name;
-                d.value = discount.value;
-                d.type = discount.type;
-                d.isActive = discount.isActive;
-                d.start_date = discount.start_date;
-                d.end_date = discount.end_date;
-                if (validDate)
-                {
-                    DataBase.discounts[key] = d;
-                    MessageBox.Show("Updated Successfully", "");
-                    return true;
-                }
-                else {
-                    MessageBox.Show("invalid Date");
-                        return false;
-
-                }
-            } else return false;
-            
-        }
-        public static bool DateLogic(string startDate,string endDate)
-        {
-            string[] StartDate;
-            string[] EndDate;
-            StartDate = startDate.Split('/');
-            EndDate = endDate.Split('/');
-            bool ValidDate = false;
-            if (Convert.ToInt32(StartDate[0]) > Convert.ToInt32(EndDate[0]))
-
-                ValidDate = false;
-            if (Convert.ToInt32(StartDate[0]) == Convert.ToInt32(EndDate[0]))
-            {
-                if (Convert.ToInt32(StartDate[1]) > Convert.ToInt32(EndDate[1]))
-                    ValidDate = false;
-                else if (Convert.ToInt32(StartDate[1]) < Convert.ToInt32(EndDate[1]))
-                    ValidDate = true;
-                else if (Convert.ToInt32(StartDate[1]) == Convert.ToInt32(EndDate[1]))
-                {
-                    if (Convert.ToInt32(StartDate[2]) <= Convert.ToInt32(EndDate[2]))
-                        ValidDate = true;
-                    else if (Convert.ToInt32(StartDate[2]) > Convert.ToInt32(EndDate[2]))
-                        ValidDate = false;
-                }
             }
 
-
-            else if (Convert.ToInt32(StartDate[0]) < Convert.ToInt32(EndDate[0]))
-            {
-                ValidDate = true;
-            }
-            if(ValidDate) return true;
-            else return false;
+            DiscountRepository.Update(key, discount);
+            MessageBox.Show("Updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return true;
         }
 
-        public static void AddDiscount(string name, Discounts.Type type, double value, string startDate, string endDate, bool isActive)
+        public static bool DeleteDiscount(int key)
         {
+            if (key == 0) return false;
 
-            //string[] StartDate;
-            //string[] EndDate;
-            //StartDate = startDate.Split('/');
-            //EndDate = endDate.Split('/');
-            //bool ValidDate = false;
-            //if (Convert.ToInt32(StartDate[0]) > Convert.ToInt32(EndDate[0]))
-
-            //    ValidDate = false;
-            //if (Convert.ToInt32(StartDate[0]) == Convert.ToInt32(EndDate[0]))
-            //{
-            //    if (Convert.ToInt32(StartDate[1]) > Convert.ToInt32(EndDate[1]))
-            //        ValidDate = false;
-            //    else if (Convert.ToInt32(StartDate[1]) < Convert.ToInt32(EndDate[1]))
-            //        ValidDate = true;
-            //    else if (Convert.ToInt32(StartDate[1]) == Convert.ToInt32(EndDate[1]))
-            //    {
-            //        if (Convert.ToInt32(StartDate[2]) <= Convert.ToInt32(EndDate[2]))
-            //            ValidDate = true;
-            //        else if (Convert.ToInt32(StartDate[2]) > Convert.ToInt32(EndDate[2]))
-            //            ValidDate = false;
-            //    }
-            //}
-
-
-            //else if (Convert.ToInt32(StartDate[0]) < Convert.ToInt32(EndDate[0]))
-            //{
-            //    ValidDate = true;
-            //}
-            bool validDate=DateLogic(startDate, endDate);
-            if (!validDate)
-            { 
-            MessageBox.Show("invalid date", "");
-            return; }
-            
-            else { 
-
-            int nextId = DataBase.discounts.Count > 0 ? DataBase.discounts.Keys.Max() + 1 : 1;
-            Discounts newDiscount = new Discounts(name, type,value, startDate,endDate,isActive,  false);
-            DataBase.discounts.Add(nextId, newDiscount);
-            MessageBox.Show("discount added", "");
-            }
+            DiscountRepository.Delete(key);
+            MessageBox.Show("Deleted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return true;
         }
     }
 }
