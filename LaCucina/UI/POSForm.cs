@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LaCucina.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,20 +11,23 @@ using System.Windows.Forms;
 
 namespace LaCucina
 {
-    public partial class Test : Form
+    public partial class POSForm : Form
     {
         UCbtnCategory _selectedCategory;
+        MenuService Service = new MenuService();
+
         public void loadMenu()
         {
 
             pnlCAtegories.Controls.Clear();
-            foreach (var entry in DataBase.category)
+            List<Categories> categoryList = Service.GetCategories();
+
+            foreach (Categories cat in categoryList)
             {
-                var key = entry.Key;
-                var value = entry.Value;
+
                 UCbtnCategory category = new UCbtnCategory();
-                category._Name = value.name;
-                category.Tag = key;
+                category._Name = cat.name;
+                category.Tag = cat.id;
 
 
                 category.clickCategory = () =>
@@ -42,19 +46,18 @@ namespace LaCucina
 
                     }
                     pnlItems.Controls.Clear();
-                    foreach (Item i in DataBase.items.Values)
+                    List<Item> items = Service.GetInStockItemsByCategory(Convert.ToInt32(_selectedCategory.Tag));
+                    foreach (Item i in items)
                     {
                         UC_ProductCard card = new UC_ProductCard();
-                        if (i.CategoryId == value.id)
-                        {
-
+                       
                             card.Name = i.Name;
                             card.Price = i.Price;
                             card.Id = i.Id;
 
                             pnlItems.Controls.Add(card);
 
-                        }
+                        
                        
                     }
 
@@ -70,12 +73,12 @@ namespace LaCucina
 
         }
         Form form;
-        public Test()
+        public POSForm()
         {
             InitializeComponent();
            
         }
-        public Test(Form form)
+        public POSForm(Form form)
         {
             this.form = form;
             InitializeComponent();

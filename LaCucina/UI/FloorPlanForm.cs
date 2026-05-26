@@ -39,7 +39,7 @@ namespace LaCucina
 
         private void rjButton3_Click(object sender, EventArgs e)
         {
-            Test t= new Test(this.FindForm());
+            POSForm t= new POSForm(this.FindForm());
             t.Show();
             this.Hide();
             

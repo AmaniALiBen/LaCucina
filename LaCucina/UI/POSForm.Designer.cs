@@ -1,6 +1,6 @@
 ﻿namespace LaCucina
 {
-    partial class Test
+    partial class POSForm
     {
         /// <summary>
         /// Required designer variable.
@@ -339,7 +339,6 @@
             this.rjButton7.Text = "pay";
             this.rjButton7.TextColor = System.Drawing.Color.Black;
             this.rjButton7.UseVisualStyleBackColor = false;
-            this.rjButton7.Click += new System.EventHandler(this.rjButton7_Click);
             // 
             // rJgradiantPanal2
             // 
@@ -472,7 +471,6 @@
             this.lblDate.Size = new System.Drawing.Size(15, 23);
             this.lblDate.TabIndex = 11;
             this.lblDate.Text = "l";
-            this.lblDate.Click += new System.EventHandler(this.lblDate_Click);
             // 
             // lblTime
             // 

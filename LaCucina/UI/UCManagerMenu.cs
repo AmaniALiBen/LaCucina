@@ -1,4 +1,5 @@
 ﻿using LaCucina.DataLink;
+using LaCucina.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,17 +17,19 @@ namespace LaCucina
     {
         UCbtnCategory _selectedCategory;
         
-        
+        MenuService Service= new MenuService();
+
+
+
         public void loadMenu()
         {
             FlowpnlItems.Controls.Clear();
             pnlCategories.Controls.Clear();
-            List<Categories> categoryList = CategoryRepository.GetAll();
+            List<Categories> categoryList = Service.GetCategories();
             
             foreach (Categories cat in categoryList)
             {
-               // int id = (int)row["category_id"];
-               // string name =(string) row["category_name"];
+              
                 UCbtnCategory category= new UCbtnCategory();
                 category._Name = cat.name;
                 category.Tag = cat.id;
@@ -67,7 +70,8 @@ namespace LaCucina
                     };
                     FlowpnlItems.Controls.Add(u);
 
-                    List<Item> items = ItemRepository.GetByCategory(Convert.ToInt32(_selectedCategory.Tag));
+                    List<Item> items = Service.GetItemsByCategory(Convert.ToInt32(_selectedCategory.Tag));
+
                     foreach (Item i in items)
                     {
                         UCManagerItemCard card = new UCManagerItemCard();
@@ -87,8 +91,8 @@ namespace LaCucina
                                 );
                             if (result == DialogResult.Yes)
                             {
-                                ItemRepository.Delete(i.Id);
-                                menuItemIngredientsRepository.DeleteAllByMenuItem(i.Id);
+                               Service.DeleteItem(i.Id);
+                                
                                 UCItem c = new UCItem();
                                // c.CleanupImages();
                                 MessageBox.Show("Item has been deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

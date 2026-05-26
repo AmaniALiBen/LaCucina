@@ -129,7 +129,7 @@ namespace LaCucina
                 {
                     if (category.id < 0)
                     {
-                        CategoryRepository.Add(category.Name);
+                        CategoryRepository.Add(category.name);
                     }
                     else
                     {

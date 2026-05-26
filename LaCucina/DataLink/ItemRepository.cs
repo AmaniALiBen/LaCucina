@@ -49,13 +49,14 @@ namespace LaCucina
         }
 
         // 🔹 3. Get active items only (POS menu)
-        public static List<Item> GetActiveItems()
+        public static List<Item> GetActiveItemsByCategory(int categoryId)
         {
-            string query = @"
+            string query = $@"
             SELECT menu_item_id, menu_item_name, price, category_id, is_active
             FROM menu_items
             WHERE is_active = 1
             AND is_deleted = 0
+            AND category_id = {categoryId}
             AND (disabled_until IS NULL OR GETDATE() >= disabled_until)"; // تصفية ذكية حية
 
             return MapToList(query);
@@ -145,7 +146,7 @@ namespace LaCucina
             SELECT menu_item_id, menu_item_name, price, category_id, is_active, disabled_until
             FROM menu_items
             WHERE category_id = {categoryId}
-            AND is_deleted = 0";
+            AND is_deleted = 0 AND is_active= 1";
 
             return MapToList(query);
         }
