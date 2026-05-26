@@ -86,7 +86,7 @@ namespace LaCucina
         {
             lblDate.Text = DateTime.Now.ToString("dd /MM /yyyy");
             loadMenu();
-            lblUser.Text = Session.CurrentUser.username;
+            lblUser.Text = Session.CurrentUser.Username;
         }
 
        
@@ -218,6 +218,11 @@ namespace LaCucina
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rjButton7_Click(object sender, EventArgs e)
         {
 
         }

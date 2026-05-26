@@ -16,40 +16,36 @@ namespace LaCucina
 {
     public partial class UCUserManegment : UserControl
     {
-       
-        public void LoadData()
+        Control _selectedRow;
+        UserManagementService Service = new UserManagementService();
+        private List<User> allUsers;
+        public void LoadData(List<User> users)
         {
-           tblUsers.Controls.Clear();
+            tblUsers.Controls.Clear();
+
             int i = 0;
-            foreach (var entry in DataBase.users)
-            {   
-                var key = entry.Key;
-                var user = entry.Value;
-             UCuserRow row = new UCuserRow();
-                row.Tag = key;
-                row.Role = user.role.ToString();
-                row.Username = user.username.ToString();
-                row.isActive = user.isActive;
-                
-                    if (i % 2 == 0)
 
-                        row.rjPanel1.BackColor = Color.FromArgb(10, 10, 10);
+            foreach (User user in users)
+            {
+                UCuserRow row = new UCuserRow();
 
-                    else row.rjPanel1.BackColor = Color.FromArgb(17, 17, 17);
-                if (Session.CurrentUser.role == User.Role.Admin &&( user.role == User.Role.Admin||user.role == User.Role.Owner )||user.isDeleted)
-                    continue;
-                 tblUsers.Controls.Add(row);
-                    i++; 
+                row.Tag = user.Id;
 
+                row.Role = user.UserRole.ToString();
+
+                row.Username = user.Username;
+
+                row.isActive = user.IsActive;
+
+                if (i % 2 == 0)
+                    row.rjPanel1.BackColor = Color.FromArgb(10, 10, 10);
+                else
+                    row.rjPanel1.BackColor = Color.FromArgb(17, 17, 17);
+
+                tblUsers.Controls.Add(row);
+
+                i++;
             }
-            
-
-
-
-
-
-
-            
         }
         public UCUserManegment()
         {
@@ -57,261 +53,311 @@ namespace LaCucina
             tblUsers.RowDoubleClicked += tblUsers_RowDoubleClicked;
         }
 
-        
-        private void smoothFlowPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void USuserManegment_Load(object sender, EventArgs e)
         {
             
-            LoadData();
-            UserManagement.FillRoles(cmbRoles, Session.CurrentUser.role.ToString());
-            UserManagement.FillRoles(cmbFilterRoles, Session.CurrentUser.role.ToString());
+            allUsers = Service.GetAllUsers();
+            LoadData(allUsers);
+            FillRoles(cmbRoles, Session.CurrentUser.UserRole.ToString());
+            FillRoles(cmbFilterRoles, Session.CurrentUser.UserRole.ToString());
             gradiantAddUser.Visible = true;
             btnClear.Visible = true;
             gradiantSaveChanges.Visible = false;
             btnDelete.Visible = false;
 
-
-
         }
-
-        private void rjButton6_Click(object sender, EventArgs e)
+        public  void FillRoles(RJComboBox cmb, string currentUserRole)
         {
+            cmb.Items.Clear();
+            cmb.Items.Add("Waiter");
+            cmb.Items.Add("Chef");
 
-        }
-
-        private void rjPanel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tablePanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnAddUser_Click(object sender, EventArgs e)
-        {
-
-            if (Enum.TryParse(cmbRoles.Texts, out User.Role role))
-            {
-                bool status = UserManagement.AddUser(txtUsername.Texts, txtPassword.Texts, txtPasswordVerification.Texts, role, switchIsActive.Checked, false);
-                if (status)
-                {
-
-                    UserManagement.clearFields(pnlAddUser);
-                    LoadData();
-                    UserManagement.ResetPermissions(pnlAddUser);
-                }
-            }
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-
-            UserManagement.clearFields(pnlAddUser);
+            if (cmb.Items.Count > 0) cmb.SelectedIndex = -1;
         }
 
         
-
-        private void label12_Click(object sender, EventArgs e)
+        private void btnAddUser_Click(object sender, EventArgs e)
         {
+            if (!Enum.TryParse(cmbRoles.Texts, out User.Role role))
+                return;
 
-        }
+            string result = Service.AddUser(
+                txtUsername.Texts,
+                txtPassword.Texts,
+                txtPasswordVerification.Texts,
+                role,
+                switchIsActive.Checked
+            );
 
-       
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-        Control _selectedRow;
-        private void tblUsers_RowDoubleClicked(object sender, EventArgs e)
-        {
-            UserManagement.clearFields(pnlAddUser);
-            UserManagement.ResetPermissions(pnlAddUser);
-           
-            Control selectedRow = (Control)sender;
-            _selectedRow = (Control)sender;
-            
-            if (selectedRow.Tag != null)
+            if (result != null)
             {
-                int userKey = Convert.ToInt32(selectedRow.Tag);
-                if (DataBase.users.ContainsKey(userKey))
-                {
-                    var selectedUser = DataBase.users[userKey];
-                   
-                   
-                    txtUsername.Texts = selectedUser.username;
-                   switchIsActive.Checked = selectedUser.isActive;
-                    cmbRoles.SelectedItem=selectedUser.role.ToString();
-
-                   gradiantAddUser.Visible = false;
-                   btnClear.Visible = false;    
-                   gradiantSaveChanges.Visible = true;
-                    btnDelete.Visible = true;
-                    UserManagement.AdminPermission(btnDelete);
-                    if(selectedUser.role==User.Role.Owner)
-                    UserManagement.OwnerPermission(btnDelete, switchIsActive, cmbRoles);
-
-                }
-
-
-
+                MessageBox.Show(result);
+                return;
             }
 
+            MessageBox.Show("User added");
+
+            clearFields(pnlAddUser);
+
+            allUsers = Service.GetAllUsers();
+
+            LoadData(allUsers);
+
+            ResetPermissions(pnlAddUser);
+        }
+        public void ResetPermissions(Control ctr)
+        {
+            foreach (Control c in ctr.Controls)
+            {
+                c.Enabled = true;
+                if (c.HasChildren)
+                {
+                    ResetPermissions(c);
+                }
+            }
+        }
+        public void clearFields(Control ctrl)
+        {
+            foreach (Control c in ctrl.Controls)
+            {
+                if (c is TextBox)
+                    c.Text = "";
+                else if (c is RJComboBox cmb)
+                    cmb.SelectedIndex = -1;
+                else if (c is RJToggleButton togg)
+                    togg.Checked = true;
+                if (c.HasChildren)
+                    clearFields(c);
+            }
+        }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+          clearFields(pnlAddUser);
         }
 
-        private void label14_Click(object sender, EventArgs e)
+        private void tblUsers_RowDoubleClicked(object sender, EventArgs e)
         {
+            clearFields(pnlAddUser);
 
+            ResetPermissions(pnlAddUser);
+
+            Control selectedRow = (Control)sender;
+
+            _selectedRow = selectedRow;
+
+            if (selectedRow.Tag == null)
+                return;
+
+            int userId = Convert.ToInt32(selectedRow.Tag);
+
+            User selectedUser = Service.GetUserById(userId);
+
+            if (selectedUser == null)
+                return;
+
+            if(selectedUser.UserRole==User.Role.Admin)
+            {
+                cmbRoles.Visible = false; 
+                pnlActive.Visible = false; 
+                lblRole.Visible = false;
+                btnDelete.Visible = false;
+                cmbRoles.Texts = "Admin"; 
+            }
+           
+            else
+            { 
+                cmbRoles.Visible = true;
+                pnlActive.Visible = true; 
+                lblRole.Visible = true;
+                btnDelete.Visible = true; 
+            }
+
+            txtUsername.Texts = selectedUser.Username;
+
+            switchIsActive.Checked = selectedUser.IsActive;
+
+            cmbRoles.SelectedItem = selectedUser.UserRole.ToString();
+
+            gradiantAddUser.Visible = false;
+
+            btnClear.Visible = false;
+
+            gradiantSaveChanges.Visible = true;
+
+            btnDelete.Visible = true;
         }
 
         private void btnDiscard_Click(object sender, EventArgs e)
         {
-           
-           gradiantAddUser.Visible = true;
+
+            gradiantAddUser.Visible = true;
             btnClear.Visible = true;
             gradiantSaveChanges.Visible = false;
             btnDelete.Visible = false;
-            UserManagement.ResetPermissions(pnlAddUser);
-            UserManagement.clearFields(pnlAddUser);
+            ResetPermissions(pnlAddUser);
+            clearFields(pnlAddUser);
         }
-
-
 
         private void txtSearch__TextChanged(object sender, EventArgs e)
         {
-            if (txtSearch.Texts.Length > 0) {
-                string search = txtSearch.Texts.ToLower().Trim();
-                LoadData();
-                for (int i = tblUsers.Controls.Count - 1; i >= 0; i--)
-                {
-                    if (tblUsers.Controls[i] is UCuserRow ucuser)
-                    {
-                        string name = ucuser.Username.ToLower().Trim();
+            string search = txtSearch.Texts;
 
-                       
-                        if (!name.StartsWith(search))
-                        {
-                            tblUsers.Controls.RemoveAt(i);
-                        }
-                    }
-                }
-            }
-            else LoadData();
-             
+            List<User> filteredUsers = Service.SearchUsers(allUsers, search);
+
+            LoadData(filteredUsers);
+
         }
 
         private void cmbFilterStatus_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbFilterStatus.SelectedIndex> -1)
-            {
-                cmbFilterRoles.SelectedIndex = -1;
-                string Status = cmbFilterStatus.SelectedItem.ToString();
-                LoadData();
-                for (int i = tblUsers.Controls.Count - 1; i >= 0; i--)
-                {
-                    if (tblUsers.Controls[i] is UCuserRow ucuser)
-                    {
-                        if(Status=="Active"&&!ucuser.isActive)
-                            tblUsers.Controls.RemoveAt(i);
+            cmbFilterRoles.SelectedIndex = -1;
 
-                        else if(Status == "inActive" && ucuser.isActive)
-                            tblUsers.Controls.RemoveAt(i);
-                    }
-                }
-            }
-            else LoadData();
+            List<User> users;
+
+            if (cmbFilterStatus.SelectedIndex == -1)
+                users = allUsers;
+            else
+                users = Service.FilterByStatus(
+                    allUsers,
+                    cmbFilterStatus.SelectedItem.ToString()
+                );
+
+            LoadData(users);
         }
-
         private void cmbFilterRoles_OnSelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbFilterRoles.SelectedIndex>-1)
+            cmbFilterStatus.SelectedIndex = -1;
+
+            List<User> users;
+
+            if (cmbFilterRoles.SelectedIndex == -1)
+                users = allUsers;
+            else
+                users = Service.FilterByRole(
+                    allUsers,
+                    cmbFilterRoles.SelectedItem.ToString()
+                );
+
+            LoadData(users);
+        }
+
+        private void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+
+            if (_selectedRow?.Tag == null)
+                return;
+
+             
+                int id = Convert.ToInt32(_selectedRow.Tag);
+            User user = new User(
+                id,
+                txtUsername.Texts,
+                txtPassword.Texts,
+                (User.Role)Enum.Parse(typeof(User.Role), cmbRoles.Texts),
+                switchIsActive.Checked
+
+           );
+
+
+            string confirmPassword = txtPasswordVerification.Texts;
+
+            bool success = Service.UpdateUser(user, confirmPassword);
+
+            if (success)
             {
-                cmbFilterStatus.SelectedIndex = -1;
-                string Role = cmbFilterRoles.SelectedItem.ToString();
-                LoadData();
-                for (int i = tblUsers.Controls.Count - 1; i >= 0; i--)
-                {
-                    if (tblUsers.Controls[i] is UCuserRow ucuser)
-                    {
-                        if(ucuser.Role!=Role)
-                            tblUsers.Controls.RemoveAt(i);
-                    }
-                }
+                clearFields(pnlAddUser);
+
+                MessageBox.Show("Updated Successfully");
+
+                allUsers = Service.GetAllUsers();
+
+                LoadData(allUsers);
             }
-            else LoadData();
+        }
+
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (_selectedRow == null || _selectedRow.Tag == null)
+            {
+                MessageBox.Show("Select a user first");
+                return;
+            }
+
+            int id = Convert.ToInt32(_selectedRow.Tag.ToString());
+
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to delete this user?",
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning
+            );
+
+            if (result == DialogResult.No)
+                return;
+
+            bool success = Service.DeleteUser(id);
+
+            if (success)
+            {
+                MessageBox.Show("Deleted successfully");
+                allUsers = Service.GetAllUsers();
+                LoadData(allUsers);
+                btnDiscard.PerformClick();
+            }
+            else
+            {
+                MessageBox.Show("User not found");
+            }
+        }
+        private void btnNoFilter_Click(object sender, EventArgs e)
+        {
+            cmbFilterStatus.SelectedIndex = -1;
+
+            cmbFilterRoles.SelectedIndex = -1;
+
+            LoadData(allUsers);
+        }
+
+        private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar ==(char) Keys.Enter) 
+            {
+                txtPassword.Focus();
+            }
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                txtPasswordVerification.Focus();
+            }
+        }
+
+        private void txtPasswordVerification_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+
+                cmbRoles.Focus();
+                cmbRoles.Open();
+
+                
+            }
         }
 
        
 
-        private void btnSaveChanges_Click(object sender, EventArgs e)
+        private void cmbRoles_KeyDown(object sender, KeyEventArgs e)
         {
-            
-            if (_selectedRow.Tag != null) {
-                int key = Convert.ToInt32(_selectedRow.Tag);
-                User u = DataBase.users[key];
-                if (!string.IsNullOrEmpty(txtUsername.Texts) && cmbRoles.SelectedIndex != -1)
-                {
-                    u.username = txtUsername.Texts;
-                    if(u.role!=User.Role.Owner)
-                    u.role = (User.Role)Enum.Parse(typeof(User.Role), cmbRoles.Texts);
-                    u.isActive = switchIsActive.Checked;
-                    if (!string.IsNullOrEmpty(txtPassword.Texts))
-                    {
-                        if (string.IsNullOrEmpty(txtPasswordVerification.Texts))
-                            MessageBox.Show("Fill Password verification", "Warning");
-                       
-                        else if(txtPassword.Texts!=txtPasswordVerification.Texts)
-                            MessageBox.Show("Password Mismatch", "Warning");
-                        else u.password = txtPassword.Texts;
-
-                    }
-                  bool success= UserManagement.UpdateDB(key, u);
-                    if (success) {
-                        UserManagement.clearFields(pnlAddUser);
-                        MessageBox.Show("Updated Successfully", "");
-                        LoadData();
-                    }
-
-
-                }
-               else MessageBox.Show("Fill All Fields ", "Warning");
-            }
-            
-        }
-
-        private void rJgradiantPanal2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-                if(_selectedRow.Tag!=null)
+            if (e.KeyCode == Keys.Enter)
             {
-                int key =Convert.ToInt32(_selectedRow.Tag.ToString()) ;
-                UserManagement.DeleteUser(key);
-                btnDiscard_Click(sender, e);
-                LoadData();
+                if (btnAddUser.Visible) { btnAddUser.PerformClick(); }
+                else { btnSaveChanges.PerformClick(); }
+
             }
-
-          }
-
-        private void btnNoFilter_Click(object sender, EventArgs e)
-        {
-            cmbFilterStatus.SelectedIndex = -1;
-            cmbFilterRoles.SelectedIndex = -1;
-            LoadData();
         }
     }
 }

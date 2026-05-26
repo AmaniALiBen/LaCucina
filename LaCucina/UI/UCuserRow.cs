@@ -64,7 +64,10 @@ namespace LaCucina
         {
 
         }
-       
-       
+
+        private void rjPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

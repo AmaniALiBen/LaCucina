@@ -51,11 +51,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataLink\SpaceRepository.cs" />
+    <Compile Include="DataLink\TableRepository.cs" />
+    <Compile Include="DataLink\UserRepository.cs" />
     <Compile Include="DataLink\DiscountRepository.cs" />
     <Compile Include="DataLink\ingredientsRepository.cs" />
     <Compile Include="DataLink\menuItemIngredientsRepository.cs" />
     <Compile Include="Models\Categories.cs" />
     <Compile Include="DataLink\CategoryRepository.cs" />
+    <Compile Include="Models\spaces.cs" />
+    <Compile Include="Services\FloorPlanService.cs" />
     <Compile Include="Models\ingredients.cs" />
     <Compile Include="Models\menu_item_ingredients.cs" />
     <Compile Include="UI\CircularTableUserControl.cs">
@@ -159,7 +164,7 @@
     </Compile>
     <Compile Include="Models\Item.cs" />
     <Compile Include="DataLink\ItemRepository.cs" />
-    <Compile Include="Services\LoginLogic.cs" />
+    <Compile Include="Services\LoginService.cs" />
     <Compile Include="Services\ManagerMenu.cs" />
     <Compile Include="UI\OrdersForm.cs">
       <SubType>Form</SubType>
@@ -167,7 +172,6 @@
     <Compile Include="UI\OrdersForm.Designer.cs">
       <DependentUpon>OrdersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Services\PermissionService.cs" />
     <Compile Include="Services\Session.cs" />
     <Compile Include="UI\Space.cs">
       <SubType>Component</SubType>
@@ -196,6 +200,12 @@
     </Compile>
     <Compile Include="UI\UCDiscountManager.Designer.cs">
       <DependentUpon>UCDiscountManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UCFloorPlan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCFloorPlan.Designer.cs">
+      <DependentUpon>UCFloorPlan.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\UCFloorplanEditor.cs">
       <SubType>UserControl</SubType>
@@ -380,7 +390,10 @@
       <DependentUpon>UC_ProductCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs" />
-    <Compile Include="Services\UserManagement.cs" />
+    <Compile Include="Services\UserManagementService.cs" />
+    <EmbeddedResource Include="controls\RJComboBox.resx">
+      <DependentUpon>RJComboBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\CircularTableUserControl.resx">
       <DependentUpon>CircularTableUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -416,6 +429,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UCDiscountManager.resx">
       <DependentUpon>UCDiscountManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCFloorPlan.resx">
+      <DependentUpon>UCFloorPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UCFloorplanEditor.resx">
       <DependentUpon>UCFloorplanEditor.cs</DependentUpon>
