@@ -105,7 +105,7 @@ namespace LaCucina
         }
 
         private void materialDivider2_Click(object sender, EventArgs e) { }
-        private void btnLogout_Click(object sender, EventArgs e) { }
+       
         private void label2_Click(object sender, EventArgs e) { }
 
         private void txtSearch__TextChanged(object sender, EventArgs e)
