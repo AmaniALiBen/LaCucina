@@ -16,5 +16,10 @@ namespace LaCucina.UI
         {
             InitializeComponent();
         }
+
+        private void pnlContiner_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

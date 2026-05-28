@@ -671,6 +671,10 @@
     <None Include="Resources\close %281%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-arrow-24 %283%29.png" />
+    <None Include="Resources\icons8-arrow-24 %282%29.png" />
+    <None Include="Resources\icons8-arrow-24 %281%29.png" />
+    <None Include="Resources\icons8-arrow-24.png" />
     <None Include="Resources\file.png" />
     <None Include="Resources\icons8-delete-16.png" />
     <None Include="Resources\checked %281%29.png" />

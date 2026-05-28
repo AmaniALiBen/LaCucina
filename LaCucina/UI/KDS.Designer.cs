@@ -52,7 +52,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.rJgradiantPanal1 = new CustomControls.RJControls.RJgradiantPanal();
             this.rjButton1 = new CustomControls.RJControls.RJButton();
+            this.ucBatchCard1 = new LaCucina.UI.UCBatchCard();
+            this.ucBatchCard2 = new LaCucina.UI.UCBatchCard();
+            this.ucBatchCard3 = new LaCucina.UI.UCBatchCard();
+            this.ucBatchCard4 = new LaCucina.UI.UCBatchCard();
             this.rjPanel4.SuspendLayout();
+            this.smoothFlowPanel1.SuspendLayout();
             this.rjPanel2.SuspendLayout();
             this.rjPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -80,6 +85,10 @@
             // 
             this.smoothFlowPanel1.AutoScroll = true;
             this.smoothFlowPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.smoothFlowPanel1.Controls.Add(this.ucBatchCard1);
+            this.smoothFlowPanel1.Controls.Add(this.ucBatchCard2);
+            this.smoothFlowPanel1.Controls.Add(this.ucBatchCard3);
+            this.smoothFlowPanel1.Controls.Add(this.ucBatchCard4);
             this.smoothFlowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.smoothFlowPanel1.Location = new System.Drawing.Point(14, 10);
             this.smoothFlowPanel1.Margin = new System.Windows.Forms.Padding(4);
@@ -446,6 +455,50 @@
             this.rjButton1.UseVisualStyleBackColor = false;
             this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
             // 
+            // ucBatchCard1
+            // 
+            this.ucBatchCard1.AutoSize = true;
+            this.ucBatchCard1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ucBatchCard1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.ucBatchCard1.Location = new System.Drawing.Point(13, 3);
+            this.ucBatchCard1.MinimumSize = new System.Drawing.Size(395, 0);
+            this.ucBatchCard1.Name = "ucBatchCard1";
+            this.ucBatchCard1.Size = new System.Drawing.Size(395, 940);
+            this.ucBatchCard1.TabIndex = 1;
+            // 
+            // ucBatchCard2
+            // 
+            this.ucBatchCard2.AutoSize = true;
+            this.ucBatchCard2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ucBatchCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.ucBatchCard2.Location = new System.Drawing.Point(414, 3);
+            this.ucBatchCard2.MinimumSize = new System.Drawing.Size(395, 0);
+            this.ucBatchCard2.Name = "ucBatchCard2";
+            this.ucBatchCard2.Size = new System.Drawing.Size(395, 940);
+            this.ucBatchCard2.TabIndex = 2;
+            // 
+            // ucBatchCard3
+            // 
+            this.ucBatchCard3.AutoSize = true;
+            this.ucBatchCard3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ucBatchCard3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.ucBatchCard3.Location = new System.Drawing.Point(13, 949);
+            this.ucBatchCard3.MinimumSize = new System.Drawing.Size(395, 0);
+            this.ucBatchCard3.Name = "ucBatchCard3";
+            this.ucBatchCard3.Size = new System.Drawing.Size(395, 940);
+            this.ucBatchCard3.TabIndex = 3;
+            // 
+            // ucBatchCard4
+            // 
+            this.ucBatchCard4.AutoSize = true;
+            this.ucBatchCard4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ucBatchCard4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.ucBatchCard4.Location = new System.Drawing.Point(414, 949);
+            this.ucBatchCard4.MinimumSize = new System.Drawing.Size(395, 0);
+            this.ucBatchCard4.Name = "ucBatchCard4";
+            this.ucBatchCard4.Size = new System.Drawing.Size(395, 940);
+            this.ucBatchCard4.TabIndex = 4;
+            // 
             // KDS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -462,6 +515,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.KDS_Load);
             this.rjPanel4.ResumeLayout(false);
+            this.smoothFlowPanel1.ResumeLayout(false);
+            this.smoothFlowPanel1.PerformLayout();
             this.rjPanel2.ResumeLayout(false);
             this.rjPanel2.PerformLayout();
             this.rjPanel6.ResumeLayout(false);
@@ -500,5 +555,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private CustomControls.RJControls.RJButton btnHistory;
+        private UI.UCBatchCard ucBatchCard1;
+        private UI.UCBatchCard ucBatchCard2;
+        private UI.UCBatchCard ucBatchCard3;
+        private UI.UCBatchCard ucBatchCard4;
     }
 }

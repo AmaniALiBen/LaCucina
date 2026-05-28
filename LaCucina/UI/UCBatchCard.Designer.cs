@@ -28,74 +28,81 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.smoothFlowPanel1 = new SmoothFlowPanel();
-            this.ucItemInBatch1 = new LaCucina.UI.UCItemInBatch();
-            this.ucItemInBatch2 = new LaCucina.UI.UCItemInBatch();
+            this.pnlContiner = new System.Windows.Forms.Panel();
+            this.pnlBatchItems = new SmoothFlowPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pnlContinue = new System.Windows.Forms.Panel();
             this.ucItemInBatch3 = new LaCucina.UI.UCItemInBatch();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblTime = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.ucItemInBatch2 = new LaCucina.UI.UCItemInBatch();
+            this.ucItemInBatch1 = new LaCucina.UI.UCItemInBatch();
+            this.pnlColor = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3.SuspendLayout();
-            this.smoothFlowPanel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.lblOrderId = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lblTable = new System.Windows.Forms.Label();
+            this.pnlHeader = new System.Windows.Forms.Panel();
+            this.pnlContiner.SuspendLayout();
+            this.pnlBatchItems.SuspendLayout();
+            this.pnlContinue.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel3
+            // pnlContiner
             // 
-            this.panel3.AutoSize = true;
-            this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.panel3.Controls.Add(this.smoothFlowPanel1);
-            this.panel3.Controls.Add(this.panel2);
-            this.panel3.Controls.Add(this.panel1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.MinimumSize = new System.Drawing.Size(375, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.panel3.Size = new System.Drawing.Size(395, 724);
-            this.panel3.TabIndex = 3;
+            this.pnlContiner.AutoSize = true;
+            this.pnlContiner.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pnlContiner.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.pnlContiner.Controls.Add(this.pnlBatchItems);
+            this.pnlContiner.Controls.Add(this.pnlHeader);
+            this.pnlContiner.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlContiner.Location = new System.Drawing.Point(0, 0);
+            this.pnlContiner.MinimumSize = new System.Drawing.Size(375, 0);
+            this.pnlContiner.Name = "pnlContiner";
+            this.pnlContiner.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.pnlContiner.Size = new System.Drawing.Size(395, 770);
+            this.pnlContiner.TabIndex = 3;
+            this.pnlContiner.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContiner_Paint);
             // 
-            // smoothFlowPanel1
+            // pnlBatchItems
             // 
-            this.smoothFlowPanel1.AutoScroll = true;
-            this.smoothFlowPanel1.AutoSize = true;
-            this.smoothFlowPanel1.Controls.Add(this.ucItemInBatch1);
-            this.smoothFlowPanel1.Controls.Add(this.ucItemInBatch2);
-            this.smoothFlowPanel1.Controls.Add(this.ucItemInBatch3);
-            this.smoothFlowPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.smoothFlowPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.smoothFlowPanel1.Location = new System.Drawing.Point(0, 76);
-            this.smoothFlowPanel1.MinimumSize = new System.Drawing.Size(375, 0);
-            this.smoothFlowPanel1.Name = "smoothFlowPanel1";
-            this.smoothFlowPanel1.Size = new System.Drawing.Size(375, 648);
-            this.smoothFlowPanel1.TabIndex = 5;
-            this.smoothFlowPanel1.WrapContents = false;
+            this.pnlBatchItems.AutoScroll = true;
+            this.pnlBatchItems.AutoSize = true;
+            this.pnlBatchItems.Controls.Add(this.ucItemInBatch1);
+            this.pnlBatchItems.Controls.Add(this.ucItemInBatch2);
+            this.pnlBatchItems.Controls.Add(this.ucItemInBatch3);
+            this.pnlBatchItems.Controls.Add(this.pnlContinue);
+            this.pnlBatchItems.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlBatchItems.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.pnlBatchItems.Location = new System.Drawing.Point(0, 62);
+            this.pnlBatchItems.MinimumSize = new System.Drawing.Size(375, 0);
+            this.pnlBatchItems.Name = "pnlBatchItems";
+            this.pnlBatchItems.Size = new System.Drawing.Size(375, 708);
+            this.pnlBatchItems.TabIndex = 5;
+            this.pnlBatchItems.WrapContents = false;
             // 
-            // ucItemInBatch1
+            // label3
             // 
-            this.ucItemInBatch1.AutoSize = true;
-            this.ucItemInBatch1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ucItemInBatch1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.ucItemInBatch1.Location = new System.Drawing.Point(3, 3);
-            this.ucItemInBatch1.MinimumSize = new System.Drawing.Size(375, 0);
-            this.ucItemInBatch1.Name = "ucItemInBatch1";
-            this.ucItemInBatch1.Size = new System.Drawing.Size(375, 210);
-            this.ucItemInBatch1.TabIndex = 0;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DimGray;
+            this.label3.Image = global::LaCucina.Properties.Resources.icons8_arrow_24__3_;
+            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label3.Location = new System.Drawing.Point(195, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(148, 32);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Continue     ";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ucItemInBatch2
+            // pnlContinue
             // 
-            this.ucItemInBatch2.AutoSize = true;
-            this.ucItemInBatch2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ucItemInBatch2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.ucItemInBatch2.Location = new System.Drawing.Point(3, 219);
-            this.ucItemInBatch2.MinimumSize = new System.Drawing.Size(375, 0);
-            this.ucItemInBatch2.Name = "ucItemInBatch2";
-            this.ucItemInBatch2.Size = new System.Drawing.Size(375, 210);
-            this.ucItemInBatch2.TabIndex = 1;
+            this.pnlContinue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.pnlContinue.Controls.Add(this.label3);
+            this.pnlContinue.Location = new System.Drawing.Point(3, 651);
+            this.pnlContinue.Name = "pnlContinue";
+            this.pnlContinue.Size = new System.Drawing.Size(375, 54);
+            this.pnlContinue.TabIndex = 6;
             // 
             // ucItemInBatch3
             // 
@@ -106,61 +113,95 @@
             this.ucItemInBatch3.MinimumSize = new System.Drawing.Size(375, 0);
             this.ucItemInBatch3.Name = "ucItemInBatch3";
             this.ucItemInBatch3.Size = new System.Drawing.Size(375, 210);
-            this.ucItemInBatch3.TabIndex = 2;
+            this.ucItemInBatch3.TabIndex = 5;
             // 
-            // panel2
+            // ucItemInBatch2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.panel2.Controls.Add(this.lblTime);
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 14);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(375, 62);
-            this.panel2.TabIndex = 4;
+            this.ucItemInBatch2.AutoSize = true;
+            this.ucItemInBatch2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ucItemInBatch2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.ucItemInBatch2.Location = new System.Drawing.Point(3, 219);
+            this.ucItemInBatch2.MinimumSize = new System.Drawing.Size(375, 0);
+            this.ucItemInBatch2.Name = "ucItemInBatch2";
+            this.ucItemInBatch2.Size = new System.Drawing.Size(375, 210);
+            this.ucItemInBatch2.TabIndex = 4;
+            // 
+            // ucItemInBatch1
+            // 
+            this.ucItemInBatch1.AutoSize = true;
+            this.ucItemInBatch1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ucItemInBatch1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.ucItemInBatch1.Location = new System.Drawing.Point(3, 3);
+            this.ucItemInBatch1.MinimumSize = new System.Drawing.Size(375, 0);
+            this.ucItemInBatch1.Name = "ucItemInBatch1";
+            this.ucItemInBatch1.Size = new System.Drawing.Size(375, 210);
+            this.ucItemInBatch1.TabIndex = 3;
+            // 
+            // pnlColor
+            // 
+            this.pnlColor.BackColor = System.Drawing.Color.DarkGray;
+            this.pnlColor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlColor.Location = new System.Drawing.Point(0, 0);
+            this.pnlColor.Name = "pnlColor";
+            this.pnlColor.Size = new System.Drawing.Size(375, 14);
+            this.pnlColor.TabIndex = 5;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panel1.Controls.Add(this.lblTable);
+            this.panel1.Controls.Add(this.lblTime);
+            this.panel1.Controls.Add(this.lblOrderId);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 14);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.panel1.Size = new System.Drawing.Size(375, 48);
+            this.panel1.TabIndex = 7;
+            // 
+            // lblOrderId
+            // 
+            this.lblOrderId.AutoSize = true;
+            this.lblOrderId.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderId.ForeColor = System.Drawing.Color.DimGray;
+            this.lblOrderId.Location = new System.Drawing.Point(124, 10);
+            this.lblOrderId.Name = "lblOrderId";
+            this.lblOrderId.Size = new System.Drawing.Size(74, 32);
+            this.lblOrderId.TabIndex = 3;
+            this.lblOrderId.Text = "#1212";
             // 
             // lblTime
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblTime.Location = new System.Drawing.Point(330, 23);
+            this.lblTime.Location = new System.Drawing.Point(289, 19);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(16, 21);
             this.lblTime.TabIndex = 4;
             this.lblTime.Text = "-";
             // 
-            // label2
+            // lblTable
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(113, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 32);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "#1212";
+            this.lblTable.AutoSize = true;
+            this.lblTable.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTable.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTable.Location = new System.Drawing.Point(14, 10);
+            this.lblTable.Name = "lblTable";
+            this.lblTable.Size = new System.Drawing.Size(104, 32);
+            this.lblTable.TabIndex = 2;
+            this.lblTable.Text = "Table 22";
             // 
-            // label1
+            // pnlHeader
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Location = new System.Drawing.Point(3, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 32);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Table 22";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DarkGray;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(375, 14);
-            this.panel1.TabIndex = 3;
+            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.pnlHeader.Controls.Add(this.panel1);
+            this.pnlHeader.Controls.Add(this.pnlColor);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(375, 62);
+            this.pnlHeader.TabIndex = 4;
             // 
             // UCBatchCard
             // 
@@ -169,31 +210,37 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.pnlContiner);
             this.MinimumSize = new System.Drawing.Size(395, 0);
             this.Name = "UCBatchCard";
-            this.Size = new System.Drawing.Size(395, 724);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.smoothFlowPanel1.ResumeLayout(false);
-            this.smoothFlowPanel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.Size = new System.Drawing.Size(395, 770);
+            this.pnlContiner.ResumeLayout(false);
+            this.pnlContiner.PerformLayout();
+            this.pnlBatchItems.ResumeLayout(false);
+            this.pnlBatchItems.PerformLayout();
+            this.pnlContinue.ResumeLayout(false);
+            this.pnlContinue.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.pnlHeader.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel3;
-        private SmoothFlowPanel smoothFlowPanel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblTime;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlContiner;
+        private SmoothFlowPanel pnlBatchItems;
         private UCItemInBatch ucItemInBatch1;
         private UCItemInBatch ucItemInBatch2;
         private UCItemInBatch ucItemInBatch3;
+        private System.Windows.Forms.Panel pnlContinue;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel pnlHeader;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblTable;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label lblOrderId;
+        private System.Windows.Forms.Panel pnlColor;
     }
 }
