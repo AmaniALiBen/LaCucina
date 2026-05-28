@@ -26,20 +26,13 @@ namespace LaCucina
 
         private void rjButton6_Click(object sender, EventArgs e)
         {
-            UCInvoiceCard c = new UCInvoiceCard();
-            smoothFlowPanel1.Controls.Add(c);
+          
 
         }
         public void InvoicesLoad()
         {
-            for(int i = 0; i < 15; i++)
-            {
-                UCInvoiceCard c = new UCInvoiceCard();
-                c.OrderNum = "Order: #"+i + 1;
-                c.TableNum = "Table :" + i + 1;
-                smoothFlowPanel1.Controls.Add(c);
-            }
-                }
+            
+        }
 
         private void rjButton1_Click(object sender, EventArgs e)
         {

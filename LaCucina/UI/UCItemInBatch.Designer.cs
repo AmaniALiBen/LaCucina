@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.pnlModifiers = new SmoothFlowPanel();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
             this.pnlNote = new System.Windows.Forms.Panel();
             this.lblNote = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.smoothFlowPanel2 = new SmoothFlowPanel();
             this.lblItemNameAndQuantity = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
             this.pnlModifiers.SuspendLayout();
             this.pnlNote.SuspendLayout();
             this.smoothFlowPanel2.SuspendLayout();
@@ -45,6 +45,7 @@
             // 
             // pnlModifiers
             // 
+            this.pnlModifiers.AutoScroll = true;
             this.pnlModifiers.AutoSize = true;
             this.pnlModifiers.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlModifiers.Controls.Add(this.label26);
@@ -58,6 +59,39 @@
             this.pnlModifiers.Size = new System.Drawing.Size(375, 67);
             this.pnlModifiers.TabIndex = 6;
             this.pnlModifiers.WrapContents = false;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label26.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label26.Location = new System.Drawing.Point(3, 10);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(78, 19);
+            this.label26.TabIndex = 27;
+            this.label26.Text = "no cheess";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label27.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label27.Location = new System.Drawing.Point(3, 29);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(78, 19);
+            this.label27.TabIndex = 28;
+            this.label27.Text = "no cheess";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label28.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label28.Location = new System.Drawing.Point(3, 48);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(78, 19);
+            this.label28.TabIndex = 29;
+            this.label28.Text = "no cheess";
             // 
             // pnlNote
             // 
@@ -99,6 +133,7 @@
             // 
             // smoothFlowPanel2
             // 
+            this.smoothFlowPanel2.AutoScroll = true;
             this.smoothFlowPanel2.AutoSize = true;
             this.smoothFlowPanel2.Controls.Add(this.pnlModifiers);
             this.smoothFlowPanel2.Controls.Add(this.pnlNote);
@@ -133,39 +168,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(375, 1);
             this.panel1.TabIndex = 0;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label26.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label26.Location = new System.Drawing.Point(3, 10);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(78, 19);
-            this.label26.TabIndex = 27;
-            this.label26.Text = "no cheess";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label27.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label27.Location = new System.Drawing.Point(3, 29);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(78, 19);
-            this.label27.TabIndex = 28;
-            this.label27.Text = "no cheess";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label28.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label28.Location = new System.Drawing.Point(3, 48);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(78, 19);
-            this.label28.TabIndex = 29;
-            this.label28.Text = "no cheess";
             // 
             // UCItemInBatch
             // 
