@@ -177,6 +177,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Models\Table.cs" />
+    <Compile Include="UI\UCBatchCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCBatchCard.Designer.cs">
+      <DependentUpon>UCBatchCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UCbtnAddItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -305,6 +311,12 @@
     <Compile Include="UI\UCItem.Designer.cs">
       <DependentUpon>UCItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UCItemInBatch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCItemInBatch.Designer.cs">
+      <DependentUpon>UCItemInBatch.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UCLogin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -412,6 +424,9 @@
     <EmbeddedResource Include="UI\OrdersForm.resx">
       <DependentUpon>OrdersForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCBatchCard.resx">
+      <DependentUpon>UCBatchCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\UCbtnAddItem.resx">
       <DependentUpon>UCbtnAddItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -475,6 +490,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UCItem.resx">
       <DependentUpon>UCItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCItemInBatch.resx">
+      <DependentUpon>UCItemInBatch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UCLogin.resx">
       <DependentUpon>UCLogin.cs</DependentUpon>
