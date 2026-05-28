@@ -21,17 +21,24 @@ public class SmoothFlowPanel : FlowLayoutPanel
         this.AutoScroll = true;
     }
 
+    
+    
     // 2. تحسين استجابة عجلة الماوس لجعلها "أنعم" وأسرع
     protected override void OnMouseWheel(MouseEventArgs e)
     {
-        // بدلاً من التمرير الافتراضي البطيء، سنقوم بحساب المسافة يدوياً
-        int scrollStep = 50; // يمكنك زيادة هذا الرقم لزيادة السرعة
+        // حساب المسافة يدوياً لتسريع السكرول
+        int scrollStep = 50;
         int delta = e.Delta > 0 ? -scrollStep : scrollStep;
-
         this.AutoScrollPosition = new Point(0, Math.Abs(this.AutoScrollPosition.Y) + delta);
 
-        // نمنع الحدث الأصلي من التأثير لكي لا يحدث تضارب
-        ((HandledMouseEventArgs)e).Handled = true;
+        // ---- التعديل الآمن لمنع الكراش ----
+        // نقوم بعمل تحويل آمن باستخدام (as) بدلاً من الكاست الإجباري القديم
+        var handledArgs = e as HandledMouseEventArgs;
+        if (handledArgs != null)
+        {
+            // نمنع الحدث الأصلي فقط إذا كان يدعم الخاصية
+            handledArgs.Handled = true;
+        }
     }
 
     // 3. ضمان إخفاء شريط التمرير في كل الحالات

@@ -51,18 +51,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataLink\KdsRepository.cs" />
     <Compile Include="DataLink\SpaceRepository.cs" />
     <Compile Include="DataLink\TableRepository.cs" />
     <Compile Include="DataLink\UserRepository.cs" />
     <Compile Include="DataLink\DiscountRepository.cs" />
     <Compile Include="DataLink\ingredientsRepository.cs" />
     <Compile Include="DataLink\menuItemIngredientsRepository.cs" />
+    <Compile Include="Models\BatchCardDto.cs" />
+    <Compile Include="Models\BatchItemDto.cs" />
     <Compile Include="Models\Categories.cs" />
     <Compile Include="DataLink\CategoryRepository.cs" />
+    <Compile Include="Models\Enums.cs" />
+    <Compile Include="Models\KitchenLoadItemDto.cs" />
     <Compile Include="Models\spaces.cs" />
     <Compile Include="Services\FloorPlanService.cs" />
     <Compile Include="Models\ingredients.cs" />
     <Compile Include="Models\menu_item_ingredients.cs" />
+    <Compile Include="Services\KdsService.cs" />
     <Compile Include="UI\CircularTableUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -200,6 +206,12 @@
     </Compile>
     <Compile Include="UI\UCcategoryRow.Designer.cs">
       <DependentUpon>UCcategoryRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UCContinue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCContinue.Designer.cs">
+      <DependentUpon>UCContinue.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\UCDiscountManager.cs">
       <SubType>UserControl</SubType>
@@ -435,6 +447,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UCcategoryRow.resx">
       <DependentUpon>UCcategoryRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCContinue.resx">
+      <DependentUpon>UCContinue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UCDiscountManager.resx">
       <DependentUpon>UCDiscountManager.cs</DependentUpon>

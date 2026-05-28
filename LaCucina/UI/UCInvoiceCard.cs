@@ -77,5 +77,10 @@ namespace LaCucina
         {
 
         }
+
+        private void lblTableNum_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
