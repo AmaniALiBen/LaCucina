@@ -55,14 +55,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataLink\KdsRepository.cs" />
+    <Compile Include="DataLink\OrdersRepository.cs" />
     <Compile Include="DataLink\SpaceRepository.cs" />
     <Compile Include="DataLink\TableRepository.cs" />
     <Compile Include="DataLink\UserRepository.cs" />
     <Compile Include="DataLink\DiscountRepository.cs" />
     <Compile Include="DataLink\ingredientsRepository.cs" />
     <Compile Include="DataLink\menuItemIngredientsRepository.cs" />
+    <Compile Include="Models\BatchCardDto.cs" />
+    <Compile Include="Models\BatchItemDto.cs" />
     <Compile Include="Models\Categories.cs" />
     <Compile Include="DataLink\CategoryRepository.cs" />
+    <Compile Include="Models\Enums.cs" />
+    <Compile Include="Models\KitchenLoadItemDto.cs" />
+    <Compile Include="Models\OrderDetailDto.cs" />
+    <Compile Include="Models\OrderItemDto.cs" />
+    <Compile Include="Models\OrderRowDto.cs" />
     <Compile Include="Models\ItemDetails.cs" />
     <Compile Include="Models\MemoryIngredientRemoved.cs" />
     <Compile Include="Models\MemoryOrderItem.cs" />
@@ -83,6 +92,8 @@
     <Compile Include="UI\btnOptionalIngredient.Designer.cs">
       <DependentUpon>btnOptionalIngredient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\KdsService.cs" />
+    <Compile Include="Services\OrdersService.cs" />
     <Compile Include="UI\CircularTableUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -197,6 +208,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Models\Table.cs" />
+    <Compile Include="UI\UCBatchCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCBatchCard.Designer.cs">
+      <DependentUpon>UCBatchCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UCbtnAddItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -214,6 +231,12 @@
     </Compile>
     <Compile Include="UI\UCcategoryRow.Designer.cs">
       <DependentUpon>UCcategoryRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UCContinue.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCContinue.Designer.cs">
+      <DependentUpon>UCContinue.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\UCDiscountManager.cs">
       <SubType>UserControl</SubType>
@@ -325,6 +348,12 @@
     <Compile Include="UI\UCItem.Designer.cs">
       <DependentUpon>UCItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UCItemInBatch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCItemInBatch.Designer.cs">
+      <DependentUpon>UCItemInBatch.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UCLogin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -348,6 +377,18 @@
     </Compile>
     <Compile Include="UI\UCMenuEditorItem.Designer.cs">
       <DependentUpon>UCMenuEditorItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UCOrderItemRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCOrderItemRow.Designer.cs">
+      <DependentUpon>UCOrderItemRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UCOrderRow,cs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCOrderRow,cs.Designer.cs">
+      <DependentUpon>UCOrderRow,cs.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\UCOrders.cs">
       <SubType>UserControl</SubType>
@@ -438,6 +479,9 @@
     <EmbeddedResource Include="UI\OrdersForm.resx">
       <DependentUpon>OrdersForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCBatchCard.resx">
+      <DependentUpon>UCBatchCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\UCbtnAddItem.resx">
       <DependentUpon>UCbtnAddItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -446,6 +490,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UCcategoryRow.resx">
       <DependentUpon>UCcategoryRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCContinue.resx">
+      <DependentUpon>UCContinue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UCDiscountManager.resx">
       <DependentUpon>UCDiscountManager.cs</DependentUpon>
@@ -502,6 +549,9 @@
     <EmbeddedResource Include="UI\UCItem.resx">
       <DependentUpon>UCItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCItemInBatch.resx">
+      <DependentUpon>UCItemInBatch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\UCLogin.resx">
       <DependentUpon>UCLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -513,6 +563,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UCMenuEditorItem.resx">
       <DependentUpon>UCMenuEditorItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCOrderRow,cs.resx">
+      <DependentUpon>UCOrderRow,cs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UCOrders.resx">
       <DependentUpon>UCOrders.cs</DependentUpon>
@@ -679,6 +732,10 @@
     <None Include="Resources\close %281%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\icons8-arrow-24 %283%29.png" />
+    <None Include="Resources\icons8-arrow-24 %282%29.png" />
+    <None Include="Resources\icons8-arrow-24 %281%29.png" />
+    <None Include="Resources\icons8-arrow-24.png" />
     <None Include="Resources\icons8-check-24.png" />
     <None Include="Resources\file.png" />
     <None Include="Resources\icons8-delete-16.png" />

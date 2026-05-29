@@ -16,12 +16,9 @@ namespace LaCucina
         public UCInvoiceCard()
         {
             InitializeComponent();
+            
         }
 
-        private void lblTime_Click(object sender, EventArgs e)
-        {
-
-        }
         public string OrderNum
         {
             get => lblOrderNum.Text;
@@ -77,6 +74,11 @@ namespace LaCucina
         }
 
         private void rjPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblTableNum_Click(object sender, EventArgs e)
         {
 
         }
