@@ -57,7 +57,8 @@ namespace LaCucina
         {
             if (isEditing)
             {
-                Item item = ItemRepository.GetById(id);
+                ItemRepository repo = new ItemRepository();
+                Item item = repo.GetById(id);
 
                 txtName.Texts = item.Name;
                 txtPrice.Texts = item.Price.ToString();
@@ -311,12 +312,14 @@ namespace LaCucina
 
             if (this.isEditing)
             {
-                ItemRepository.Update(item);
+                ItemRepository repo = new ItemRepository();
+                repo.Update(item);
                 menuItemIngredientsRepository.DeleteAllByMenuItem(this.id);
             }
             else
             {
-                this.id = ItemRepository.Add(item);
+                ItemRepository repo = new ItemRepository();
+                this.id = repo.Add(item);
             }
 
            

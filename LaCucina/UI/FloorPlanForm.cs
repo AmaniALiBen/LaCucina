@@ -39,8 +39,8 @@ namespace LaCucina
 
         private void rjButton3_Click(object sender, EventArgs e)
         {
-            POSForm t= new POSForm(this.FindForm());
-            t.Show();
+            POSForm t= new POSForm(this.FindForm(),true);
+            t.ShowDialog();
             this.Hide();
             
         }

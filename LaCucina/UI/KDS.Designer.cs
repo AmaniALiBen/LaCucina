@@ -70,7 +70,7 @@
             this.rjPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rjPanel4.ForeColor = System.Drawing.Color.Black;
             this.rjPanel4.Location = new System.Drawing.Point(167, 49);
-            this.rjPanel4.Margin = new System.Windows.Forms.Padding(30, 30, 30, 30);
+            this.rjPanel4.Margin = new System.Windows.Forms.Padding(30);
             this.rjPanel4.Name = "rjPanel4";
             this.rjPanel4.Padding = new System.Windows.Forms.Padding(9, 7, 7, 7);
             this.rjPanel4.Size = new System.Drawing.Size(700, 446);
@@ -158,7 +158,7 @@
             this.rjPanel6.ForeColor = System.Drawing.Color.Black;
             this.rjPanel6.Location = new System.Drawing.Point(552, 0);
             this.rjPanel6.Name = "rjPanel6";
-            this.rjPanel6.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rjPanel6.Padding = new System.Windows.Forms.Padding(2);
             this.rjPanel6.Size = new System.Drawing.Size(148, 48);
             this.rjPanel6.TabIndex = 13;
             // 
@@ -230,7 +230,7 @@
             this.materialDivider5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.materialDivider5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.materialDivider5.Location = new System.Drawing.Point(0, 48);
-            this.materialDivider5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.materialDivider5.Margin = new System.Windows.Forms.Padding(2);
             this.materialDivider5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider5.Name = "materialDivider5";
             this.materialDivider5.Size = new System.Drawing.Size(700, 1);
@@ -374,7 +374,7 @@
             this.materialDivider2.Dock = System.Windows.Forms.DockStyle.Top;
             this.materialDivider2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.materialDivider2.Location = new System.Drawing.Point(0, 33);
-            this.materialDivider2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.materialDivider2.Margin = new System.Windows.Forms.Padding(2);
             this.materialDivider2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider2.Name = "materialDivider2";
             this.materialDivider2.Size = new System.Drawing.Size(167, 1);
@@ -407,7 +407,7 @@
             this.rJgradiantPanal1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(81)))), ((int)(((byte)(0)))));
             this.rJgradiantPanal1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
             this.rJgradiantPanal1.Location = new System.Drawing.Point(0, 449);
-            this.rJgradiantPanal1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rJgradiantPanal1.Margin = new System.Windows.Forms.Padding(2);
             this.rJgradiantPanal1.Name = "rJgradiantPanal1";
             this.rJgradiantPanal1.Size = new System.Drawing.Size(167, 41);
             this.rJgradiantPanal1.TabIndex = 2;

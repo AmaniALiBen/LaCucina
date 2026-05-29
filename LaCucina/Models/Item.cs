@@ -15,7 +15,8 @@ namespace LaCucina
         private double price;
         private bool isActive;
         private string imagePath;
-        private DateTime? disabledUntil; // 🔹 إضافة الحقل الخاص بالتاريخ ويقبل قيمة فارغة Nullable
+        private DateTime? disabledUntil; 
+     
 
         public int Id
         {

@@ -69,14 +69,14 @@ namespace LaCucina
                 {
                     ctrl.Click += (s, e) =>
                     {
-                        POSForm f = new POSForm();
+                        POSForm f = new POSForm(false,tableNum,id);
                         f.Show(this);
                     };
                     foreach (Control sub in ctrl.Controls)
                     {
                         sub.Click += (s, e) => 
                         {
-                            POSForm f = new POSForm();
+                            POSForm f = new POSForm(false,tableNum,id);
                             f.Show(this);
                         };
                     }
@@ -168,7 +168,7 @@ namespace LaCucina
             }
 
             else {
-                POSForm test = new POSForm(this.FindForm());
+                POSForm test = new POSForm(this.FindForm(),false);
                 test.Show();
                 
 

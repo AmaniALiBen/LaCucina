@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using CustomControls.RJControls;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LaCucina
@@ -14,7 +9,9 @@ namespace LaCucina
     {
         private double total;
         private int qty;
+
         public event EventHandler DataChanged;
+        public event EventHandler ItemRemoved; 
 
         public string ItemName
         {
@@ -28,8 +25,8 @@ namespace LaCucina
             set
             {
                 qty = value;
-                lblQty.Text =  qty.ToString();
-                UpdateSubtotal(); 
+                lblQty.Text = qty.ToString();
+                UpdateSubtotal();
             }
         }
 
@@ -38,31 +35,32 @@ namespace LaCucina
             get => total;
             set { total = value; UpdateSubtotal(); }
         }
+
         public UC_InvoiceItem(string name, int qty, double price)
         {
-           
-                InitializeComponent();
+            InitializeComponent();
             this.ItemName = name;
             this.total = price;
             this.Quantity = qty;
             this.Price = total;
-
         }
+
         public double Subtotal => qty * total;
+
         private void UpdateSubtotal()
         {
-            lblTotal.Text = (qty * total).ToString("N2") ;
-
+            lblTotal.Text = (qty * total).ToString("N2");
         }
 
-
-        private void RemoveItem()
+        public void MarkAsSavedInDatabase()
         {
-            if (this.Parent != null)
-            {
-                this.Parent.Controls.Remove(this);
-              
-            }
+            btnPlus.Enabled = false;
+            btnMinus.Enabled = false;
+
+            if (btnDelete != null) btnDelete.Enabled = false;
+
+            lblItemName.ForeColor = Color.Gray;
+            lblItemName.Font = new Font(lblItemName.Font, lblItemName.Font.Style | FontStyle.Strikeout);
         }
 
         private void btnMinus_Click_1(object sender, EventArgs e)
@@ -74,33 +72,25 @@ namespace LaCucina
             }
             else
             {
-               
-                RemoveItem();
+                ItemRemoved?.Invoke(this, EventArgs.Empty);
             }
-        }
-
-        private void lblQty_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnPlus_Click_1(object sender, EventArgs e)
         {
             Quantity++;
             DataChanged?.Invoke(this, EventArgs.Empty);
-
-
         }
 
-        private void rjButton1_Click(object sender, EventArgs e)
-        {
-            RemoveItem();
-            DataChanged?.Invoke(this, EventArgs.Empty);
+        
+        
 
-        }
+        private void lblQty_Click(object sender, EventArgs e) { }
+        private void UC_InvoiceItem_Load(object sender, EventArgs e) { }
 
-        private void UC_InvoiceItem_Load(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
+            ItemRemoved?.Invoke(this, EventArgs.Empty);
 
         }
     }

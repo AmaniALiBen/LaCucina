@@ -19,7 +19,7 @@ namespace LaCucina
         public UC_ProductCard()
         {
             InitializeComponent();
-            BindClickEvent(this);
+           // BindClickEvent(this);
         }
         private double price;
         private string name;
@@ -90,30 +90,55 @@ namespace LaCucina
                 lblName.Text = name;
             }
         }
-        private void BindClickEvent(Control parent)
-    {
-        foreach (Control c in parent.Controls)
-        {
-            if (c is PictureBox)
-            {
-                c.Click += (s, e) => this.OnClick(e);
-            }
+        public Action clickCard;
+    //    private void BindClickEvent(Control parent)
+    //{
+    //    foreach (Control c in parent.Controls)
+    //    {
+    //        if (c is PictureBox)
+    //        {
+    //            c.Click += (s, e) => this.OnClick(e);
+    //        }
           
-            else if (c.HasChildren)
-            {
-                BindClickEvent(c);
-            }
-            else
-            {
-                c.Click += (s, e) => this.OnClick(e);
-            }
-        }
+    //        else if (c.HasChildren)
+    //        {
+    //            BindClickEvent(c);
+    //        }
+    //        else
+    //        {
+    //            c.Click += (s, e) => this.OnClick(e);
+    //        }
+    //    }
 
        
-    }
+    //}
+       
         private void UC_ProductCard_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void rjPanel1_Click(object sender, EventArgs e)
+        { if (clickCard != null)
+                clickCard.Invoke();
+        }
+
+        private void picBox_Click(object sender, EventArgs e)
+        {
+            if (clickCard != null)
+                clickCard.Invoke();
+        }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+            if (clickCard != null)
+                clickCard.Invoke();
+        }
+
+        private void lblPrice_Click(object sender, EventArgs e)
+        {
+            if (clickCard != null)
+                clickCard.Invoke();
         }
     }
 

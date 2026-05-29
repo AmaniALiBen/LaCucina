@@ -78,12 +78,14 @@ namespace LaCucina
             if (rjToggleButton1.Checked)
             {
                 lblStatus.Text = "Available";
-                ItemRepository.EnableItemManually(this.ItemId);
+                ItemRepository repo = new ItemRepository();
+                repo.EnableItemManually(this.ItemId);
             }
             else
             {
                 lblStatus.Text = "Not Available";
-                ItemRepository.DisableItemForToday(this.ItemId);
+                ItemRepository repo = new ItemRepository();
+                repo.DisableItemForToday(this.ItemId);
             }
 
             OnStatusChanged?.Invoke();

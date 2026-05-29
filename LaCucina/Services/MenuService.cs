@@ -17,19 +17,21 @@ namespace LaCucina.Services
 
         public List<Item> GetItemsByCategory(int categoryId)
         {
-            return ItemRepository.GetByCategory(categoryId);
+            ItemRepository repo = new ItemRepository();
+            return repo.GetByCategory(categoryId);
         }
 
         // ================= DELETE ITEM =================
 
         public bool DeleteItem(int itemId)
         {
-            Item item = ItemRepository.GetById(itemId);
+            ItemRepository repo = new ItemRepository();
+            Item item = repo.GetById(itemId);
 
             if (item == null)
                 return false;
 
-            ItemRepository.Delete(itemId);
+            repo.Delete(itemId);
 
             menuItemIngredientsRepository.DeleteAllByMenuItem(itemId);
 
@@ -39,7 +41,8 @@ namespace LaCucina.Services
 
         public List<Item> GetInStockItemsByCategory(int categoryId) 
         {
-            return ItemRepository.GetActiveItemsByCategory(categoryId);
+            ItemRepository repo = new ItemRepository();
+            return repo.GetActiveItemsByCategory(categoryId);
         }
     }
 }

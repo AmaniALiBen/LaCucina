@@ -70,7 +70,8 @@ namespace LaCucina
             if (_selectedCategory != null)
             {
                 int currentCategoryId = Convert.ToInt32(_selectedCategory.Tag);
-                List<Item> items = ItemRepository.GetByCategoryForChef(currentCategoryId);
+                ItemRepository repo = new ItemRepository();
+                List<Item> items = repo.GetByCategoryForChef(currentCategoryId);
 
                 foreach (Item i in items)
                 {
