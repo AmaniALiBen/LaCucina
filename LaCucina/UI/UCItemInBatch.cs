@@ -207,7 +207,7 @@ namespace LaCucina.UI
             }
 
             // If already done in DB — apply visuals immediately, no event fired
-            if (item.ItemStatus == 1)
+            if (item.ItemStatus == 1 || item.ItemStatus == 2)
             {
                 ApplyDoneVisuals();
                 _isDone = true;

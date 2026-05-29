@@ -1,5 +1,7 @@
 ﻿using CustomControls.RJControls;
+using LaCucina;
 using LaCucina.Services;
+using LaCucina.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,12 +10,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Services.Description;
 using System.Windows.Forms;
 
 namespace LaCucina.UI
 {
     public partial class UCFloorPlan : UserControl
     {
+        private Timer readyItemsCheckTimer;
 
         private FloorPlanService service = new FloorPlanService();
         public UCFloorPlan()
@@ -112,12 +116,71 @@ namespace LaCucina.UI
                 }
             }
             pnlTables.Invalidate();
+            InitializeReadyItemsTimer();
         }
 
         private void pnlTables_Paint(object sender, PaintEventArgs e)
         {
             int l = (rjPanel3.Size.Width / 2 - (pnlSpases.Width / 2));
             pnlSpases.Location = new Point(l);
+        }
+
+        private void InitializeReadyItemsTimer()
+        {
+            readyItemsCheckTimer = new Timer();
+            readyItemsCheckTimer.Interval = 20000; // 60 seconds
+            readyItemsCheckTimer.Tick += ReadyItemsCheckTimer_Tick;
+            readyItemsCheckTimer.Start();
+        }
+
+        private void ReadyItemsCheckTimer_Tick(object sender, EventArgs e)
+        {
+            // Run in background to not block UI
+            Task.Run(() =>
+            {
+                try
+                {
+                    var readyTableIds = service.GetTablesWithReadyItems();
+
+                    // Update UI on the main thread
+                    this.Invoke(new Action(() =>
+                    {
+                        UpdateTableNotifications(readyTableIds);
+                    }));
+                }
+                catch (Exception ex)
+                {
+                    // Log error silently
+                    System.Diagnostics.Debug.WriteLine($"Error checking ready items: {ex.Message}");
+                }
+            });
+        }
+
+        private void UpdateTableNotifications(List<int> readyTableIds)
+        {
+            // Loop through all table controls
+            foreach (var tableControl in pnlTables.Controls.OfType<UCtable>())
+            {
+                if (readyTableIds.Contains(tableControl.id))
+                {
+                    tableControl.ShowNotification();
+                }
+                else
+                {
+                    tableControl.HideNotification();
+                }
+            }
+        }
+
+
+        protected override void OnHandleDestroyed(EventArgs e)
+        {
+            if (readyItemsCheckTimer != null)
+            {
+                readyItemsCheckTimer.Stop();
+                readyItemsCheckTimer.Dispose();
+            }
+            base.OnHandleDestroyed(e);
         }
     }
 }

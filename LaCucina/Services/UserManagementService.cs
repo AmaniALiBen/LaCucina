@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LaCucina.Models;
 
 namespace LaCucina
 {
@@ -25,7 +26,7 @@ namespace LaCucina
                 string username,
                 string password,
                 string confirmPassword,
-                User.Role role,
+                Role role,
                 bool isActive)
             {
                 username = username.Trim();

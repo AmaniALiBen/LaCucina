@@ -26,16 +26,13 @@ namespace LaCucina.Models
         vertical
     }
 
-   
+
     public enum TableStatus
     {
-        vacant,
-        preparing,
-        ready,
-        completed
-
+        vacant = 0,
+        occupied = 1,
+        served = 2
     }
-    
     public enum ItemStatus : byte
     {
         Preparing = 0,

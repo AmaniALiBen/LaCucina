@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LaCucina.Models;
 
 namespace LaCucina.DataLink
 {
@@ -126,6 +127,92 @@ namespace LaCucina.DataLink
                  (TableStatus)Convert.ToInt32(row["table_status"])
 
             );
+        }
+
+        // Add these methods to TableRepository.cs
+
+        // Get all table IDs that have items with status = 1 (Done/Ready)
+        public List<int> GetTablesWithReadyItems()
+        {
+            string query = @"
+    SELECT DISTINCT t.table_id 
+    FROM dining_tables t
+    INNER JOIN orders o ON o.table_id = t.table_id
+    INNER JOIN order_items oi ON oi.order_id = o.order_id
+    WHERE oi.item_status = 1 
+      AND o.order_status = 0  -- Open orders only
+      AND t.is_deleted = 0";
+
+            DataTable dt = DatabaseHelper.ExecuteQuery(query);
+            List<int> tableIds = new List<int>();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                tableIds.Add(Convert.ToInt32(row["table_id"]));
+            }
+
+            return tableIds;
+        }
+
+        // Mark all ready items as delivered for a specific table
+        public bool MarkReadyItemsAsDelivered(int tableId)
+        {
+            try
+            {
+                // Step 1: Update all item_status from 1 to 2 for this table
+                string updateQuery = $@"
+        UPDATE order_items 
+        SET item_status = 2 
+        WHERE item_status = 1 
+          AND order_id IN (SELECT order_id FROM orders WHERE table_id = {tableId} AND order_status = 0)";
+
+                DatabaseHelper.ExecuteNonQuery(updateQuery);
+
+                // Step 2: Check if any items are still pending (status 0) or ready (status 1)
+                string checkQuery = $@"
+        SELECT COUNT(*) 
+        FROM order_items oi
+        INNER JOIN orders o ON o.order_id = oi.order_id
+        WHERE o.table_id = {tableId} 
+          AND o.order_status = 0
+          AND oi.item_status IN (0, 1)";
+
+                DataTable dt = DatabaseHelper.ExecuteQuery(checkQuery);
+                int pendingCount = Convert.ToInt32(dt.Rows[0][0]);
+
+                // Step 3: If no pending/ready items, set table_status to served (2)
+                if (pendingCount == 0)
+                {
+                    string statusQuery = $@"
+            UPDATE dining_tables 
+            SET table_status = 2 
+            WHERE table_id = {tableId}";
+
+                    DatabaseHelper.ExecuteNonQuery(statusQuery);
+                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        // Get order ID for a table (open order)
+        public int? GetOpenOrderIdByTable(int tableId)
+        {
+            string query = $@"
+    SELECT order_id 
+    FROM orders 
+    WHERE table_id = {tableId} AND order_status = 0";
+
+            DataTable dt = DatabaseHelper.ExecuteQuery(query);
+
+            if (dt.Rows.Count > 0)
+                return Convert.ToInt32(dt.Rows[0]["order_id"]);
+
+            return null;
         }
     }
 }

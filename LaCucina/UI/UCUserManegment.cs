@@ -2,6 +2,7 @@
 using LaCucina;
 using LaCucina.controls;
 using System;
+using LaCucina.Models;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -19,6 +20,7 @@ namespace LaCucina
         Control _selectedRow;
         UserManagementService Service = new UserManagementService();
         private List<User> allUsers;
+
         public void LoadData(List<User> users)
         {
             tblUsers.Controls.Clear();
@@ -47,6 +49,7 @@ namespace LaCucina
                 i++;
             }
         }
+
         public UCUserManegment()
         {
             InitializeComponent();
@@ -55,7 +58,6 @@ namespace LaCucina
 
         private void USuserManegment_Load(object sender, EventArgs e)
         {
-            
             allUsers = Service.GetAllUsers();
             LoadData(allUsers);
             FillRoles(cmbRoles, Session.CurrentUser.UserRole.ToString());
@@ -64,9 +66,9 @@ namespace LaCucina
             btnClear.Visible = true;
             gradiantSaveChanges.Visible = false;
             btnDelete.Visible = false;
-
         }
-        public  void FillRoles(RJComboBox cmb, string currentUserRole)
+
+        public void FillRoles(RJComboBox cmb, string currentUserRole)
         {
             cmb.Items.Clear();
             cmb.Items.Add("Waiter");
@@ -75,10 +77,10 @@ namespace LaCucina
             if (cmb.Items.Count > 0) cmb.SelectedIndex = -1;
         }
 
-        
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            if (!Enum.TryParse(cmbRoles.Texts, out User.Role role))
+            // ✅ FIXED: Changed User.Role to Role
+            if (!Enum.TryParse(cmbRoles.Texts, out Role role))
                 return;
 
             string result = Service.AddUser(
@@ -105,6 +107,7 @@ namespace LaCucina
 
             ResetPermissions(pnlAddUser);
         }
+
         public void ResetPermissions(Control ctr)
         {
             foreach (Control c in ctr.Controls)
@@ -116,6 +119,7 @@ namespace LaCucina
                 }
             }
         }
+
         public void clearFields(Control ctrl)
         {
             foreach (Control c in ctrl.Controls)
@@ -130,9 +134,10 @@ namespace LaCucina
                     clearFields(c);
             }
         }
+
         private void btnClear_Click(object sender, EventArgs e)
         {
-          clearFields(pnlAddUser);
+            clearFields(pnlAddUser);
         }
 
         private void tblUsers_RowDoubleClicked(object sender, EventArgs e)
@@ -155,21 +160,21 @@ namespace LaCucina
             if (selectedUser == null)
                 return;
 
-            if(selectedUser.UserRole==User.Role.Admin)
+            // ✅ FIXED: Changed User.Role.Admin to Role.Admin
+            if (selectedUser.UserRole == Role.Admin)
             {
-                cmbRoles.Visible = false; 
-                pnlActive.Visible = false; 
+                cmbRoles.Visible = false;
+                pnlActive.Visible = false;
                 lblRole.Visible = false;
                 btnDelete.Visible = false;
-                cmbRoles.Texts = "Admin"; 
+                cmbRoles.Texts = "Admin";
             }
-           
             else
-            { 
+            {
                 cmbRoles.Visible = true;
-                pnlActive.Visible = true; 
+                pnlActive.Visible = true;
                 lblRole.Visible = true;
-                btnDelete.Visible = true; 
+                btnDelete.Visible = true;
             }
 
             txtUsername.Texts = selectedUser.Username;
@@ -189,7 +194,6 @@ namespace LaCucina
 
         private void btnDiscard_Click(object sender, EventArgs e)
         {
-
             gradiantAddUser.Visible = true;
             btnClear.Visible = true;
             gradiantSaveChanges.Visible = false;
@@ -205,7 +209,6 @@ namespace LaCucina
             List<User> filteredUsers = Service.SearchUsers(allUsers, search);
 
             LoadData(filteredUsers);
-
         }
 
         private void cmbFilterStatus_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -224,6 +227,7 @@ namespace LaCucina
 
             LoadData(users);
         }
+
         private void cmbFilterRoles_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             cmbFilterStatus.SelectedIndex = -1;
@@ -243,21 +247,19 @@ namespace LaCucina
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
-
             if (_selectedRow?.Tag == null)
                 return;
 
-             
-                int id = Convert.ToInt32(_selectedRow.Tag);
+            int id = Convert.ToInt32(_selectedRow.Tag);
+
+            // ✅ FIXED: Changed User.Role to Role
             User user = new User(
                 id,
                 txtUsername.Texts,
                 txtPassword.Texts,
-                (User.Role)Enum.Parse(typeof(User.Role), cmbRoles.Texts),
+                (Role)Enum.Parse(typeof(Role), cmbRoles.Texts),
                 switchIsActive.Checked
-
-           );
-
+            );
 
             string confirmPassword = txtPasswordVerification.Texts;
 
@@ -274,7 +276,6 @@ namespace LaCucina
                 LoadData(allUsers);
             }
         }
-
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -310,18 +311,17 @@ namespace LaCucina
                 MessageBox.Show("User not found");
             }
         }
+
         private void btnNoFilter_Click(object sender, EventArgs e)
         {
             cmbFilterStatus.SelectedIndex = -1;
-
             cmbFilterRoles.SelectedIndex = -1;
-
             LoadData(allUsers);
         }
 
         private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar ==(char) Keys.Enter) 
+            if (e.KeyChar == (char)Keys.Enter)
             {
                 txtPassword.Focus();
             }
@@ -340,15 +340,10 @@ namespace LaCucina
             if (e.KeyChar == (char)Keys.Enter)
             {
                 e.Handled = true;
-
                 cmbRoles.Focus();
                 cmbRoles.Open();
-
-                
             }
         }
-
-       
 
         private void cmbRoles_KeyDown(object sender, KeyEventArgs e)
         {
@@ -356,7 +351,6 @@ namespace LaCucina
             {
                 if (btnAddUser.Visible) { btnAddUser.PerformClick(); }
                 else { btnSaveChanges.PerformClick(); }
-
             }
         }
     }

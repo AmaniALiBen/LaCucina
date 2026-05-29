@@ -183,6 +183,7 @@ namespace LaCucina
         }
 
         // 🌟 تحديث دالة الحفظ والـ Send (تتعامل بالسعر الكامل ولا تفرض خصومات أثناء تعليق الطلب)
+        // 🌟 تحديث دالة الحفظ والـ Send
         public bool SaveFullOrderTransaction(
             int tableId,
             int userId,
@@ -207,6 +208,7 @@ namespace LaCucina
 
             int orderStatus = isTakeAway ? 1 : 0;
             int is_takeaway = isTakeAway ? 1 : 0;
+
             try
             {
                 if (!isTakeAway && items.Count == 0 && tableId > 0)
@@ -216,7 +218,6 @@ namespace LaCucina
                     if (dtCheck != null && dtCheck.Rows.Count > 0)
                     {
                         generatedOrderId = Convert.ToInt32(dtCheck.Rows[0]["order_id"]);
-                        // نقوم بتحديث لقطة الحساب النهائي والخصم للطلب المفتوح حالياً
                         return UpdateOrderDiscountDetails(generatedOrderId, subTotalAmount, finalTotalAmount, discountId, discountType, discountAmountValue);
                     }
                     return false;
@@ -224,11 +225,11 @@ namespace LaCucina
 
                 if (isTakeAway)
                 {
-                    // [حالة التيك أواي]: تنزل الفاتورة فوراً بالقيم النهائية والخصم المطبق
+                    // حالة التيك أواي
                     string orderQuery = $@"
-                    INSERT INTO orders (table_id, user_id, order_status, created_at, discount_id, discount_type, discount_amount, sub_total, total_amount,is_takeaway)
-                    VALUES (NULL, {userId}, {orderStatus}, GETDATE(), {sqlDiscountId}, {sqlDiscountType}, {sqlDiscountValue}, {formattedSubTotal}, {formattedFinalTotal},{is_takeaway});
-                    SELECT SCOPE_IDENTITY();";
+            INSERT INTO orders (table_id, user_id, order_status, created_at, discount_id, discount_type, discount_amount, sub_total, total_amount, is_takeaway)
+            VALUES (NULL, {userId}, {orderStatus}, GETDATE(), {sqlDiscountId}, {sqlDiscountType}, {sqlDiscountValue}, {formattedSubTotal}, {formattedFinalTotal}, {is_takeaway});
+            SELECT SCOPE_IDENTITY();";
 
                     DataTable dtOrder = DatabaseHelper.ExecuteQuery(orderQuery);
                     if (dtOrder == null || dtOrder.Rows.Count == 0) return false;
@@ -238,43 +239,56 @@ namespace LaCucina
                 }
                 else
                 {
-                    // [حالة الصالة - زر الـ Send]:
+                    // حالة الصالة
                     string checkQuery = $@"SELECT order_id FROM orders WHERE table_id = {tableId} AND order_status = 0";
                     DataTable dtCheck = DatabaseHelper.ExecuteQuery(checkQuery);
 
                     if (dtCheck != null && dtCheck.Rows.Count > 0)
                     {
+                        // ✅ أوردر مفتوح موجود - نضيف أكل جديد
                         generatedOrderId = Convert.ToInt32(dtCheck.Rows[0]["order_id"]);
 
-                        // عند إضافة وجبات جديدة للمطبخ، نزيد الـ sub_total والـ total_amount بالسعر الكامل 
-                        // بدون تطبيق الخصم (لأن الخصم سيُعاد حسابه بالكامل وتحديثه لحظة الضغط على Pay)
                         string updateOrderQuery = $@"
-                        UPDATE orders 
-                        SET sub_total = sub_total + {formattedSubTotal},
-                            total_amount = total_amount + {formattedFinalTotal}
-                        WHERE order_id = {generatedOrderId}";
+                UPDATE orders 
+                SET sub_total = sub_total + {formattedSubTotal},
+                    total_amount = total_amount + {formattedFinalTotal}
+                WHERE order_id = {generatedOrderId}";
 
                         DatabaseHelper.ExecuteNonQuery(updateOrderQuery);
+
+                        // ✅ نرجع الطاولة لحالة occupied لو كانت served
+                        string updateTableStatus = $@"
+                UPDATE dining_tables 
+                SET table_status = 1 
+                WHERE table_id = {tableId} AND table_status != 1";
+
+                        DatabaseHelper.ExecuteNonQuery(updateTableStatus);
                     }
                     else
                     {
-                        // إنشاء فاتورة صالة جديدة لأول مرة (تنزل بالسعر الكامل وبدون خصم)
+                        // ✅ أوردر جديد - ننشئ أوردر جديد
                         string orderQuery = $@"
-                        INSERT INTO orders (table_id, user_id, order_status, created_at, discount_id, discount_type, discount_amount, sub_total, total_amount,is_takeaway)
-                        VALUES ({sqlTableId}, {userId}, {orderStatus}, GETDATE(), NULL, NULL, NULL, {formattedSubTotal}, {formattedFinalTotal},{is_takeaway});
-                        SELECT SCOPE_IDENTITY();";
+                INSERT INTO orders (table_id, user_id, order_status, created_at, discount_id, discount_type, discount_amount, sub_total, total_amount, is_takeaway)
+                VALUES ({sqlTableId}, {userId}, {orderStatus}, GETDATE(), NULL, NULL, NULL, {formattedSubTotal}, {formattedFinalTotal}, {is_takeaway});
+                SELECT SCOPE_IDENTITY();";
 
                         DataTable dtOrder = DatabaseHelper.ExecuteQuery(orderQuery);
                         if (dtOrder == null || dtOrder.Rows.Count == 0) return false;
 
                         generatedOrderId = Convert.ToInt32(dtOrder.Rows[0][0]);
+
+                        // ✅ تحديث حالة الطاولة إلى occupied
+                        if (!isTakeAway && tableId > 0)
+                        {
+                            UpdateTableStatusToOccupied(tableId);
+                        }
                     }
 
-                    // فتح باتش المطبخ للأصناف المرسلة حديثاً
+                    // ✅ فتح باتش المطبخ
                     string batchQuery = $@"
-                    INSERT INTO order_batches (sent_at, order_id, batch_status) 
-                    VALUES (GETDATE(), {generatedOrderId}, 0);
-                    SELECT SCOPE_IDENTITY();";
+            INSERT INTO order_batches (sent_at, order_id, batch_status) 
+            VALUES (GETDATE(), {generatedOrderId}, 0);
+            SELECT SCOPE_IDENTITY();";
 
                     DataTable dtBatch = DatabaseHelper.ExecuteQuery(batchQuery);
                     if (dtBatch == null || dtBatch.Rows.Count == 0) return false;
@@ -291,7 +305,6 @@ namespace LaCucina
                 return false;
             }
         }
-
         // 🌟 دالة مساعدة جديدة: لتحديث تفاصيل الخصم الإجمالية للفاتورة لحظة الدفع الفعلي
         public bool UpdateOrderDiscountDetails(int orderId, double subTotal, double finalTotal, int? discountId, byte? discountType, double discountAmountValue)
         {
@@ -366,6 +379,29 @@ namespace LaCucina
             }
         }
 
+        
+
+        // Method 1: Update table status to occupied when order is saved
+        public void UpdateTableStatusToOccupied(int tableId)
+        {
+            string query = $@"
+    UPDATE dining_tables 
+    SET table_status = 1 
+    WHERE table_id = {tableId}";
+
+            DatabaseHelper.ExecuteNonQuery(query);
+        }
+
+        // Method 2: Update table status to vacant when order is closed
+        public void UpdateTableStatusToVacant(int tableId)
+        {
+            string query = $@"
+    UPDATE dining_tables 
+    SET table_status = 0 
+    WHERE table_id = {tableId}";
+
+            DatabaseHelper.ExecuteNonQuery(query);
+        }
         public List<MemoryOrderItem> GetActiveOrderItemsByTable(int tableId, out int openOrderId, out double currentTotal)
         {
             List<MemoryOrderItem> loadedItems = new List<MemoryOrderItem>();
@@ -430,12 +466,32 @@ namespace LaCucina
         {
             try
             {
+                // First, get the table_id before closing
+                string getTableQuery = $@"
+        SELECT table_id FROM orders WHERE order_id = {orderId}";
+
+                DataTable dt = DatabaseHelper.ExecuteQuery(getTableQuery);
+                int? tableId = null;
+
+                if (dt.Rows.Count > 0 && dt.Rows[0]["table_id"] != DBNull.Value)
+                {
+                    tableId = Convert.ToInt32(dt.Rows[0]["table_id"]);
+                }
+
+                // Close the order
                 string query = $@"
-                UPDATE orders 
-                SET order_status = 1 
-                WHERE order_id = {orderId}";
+        UPDATE orders 
+        SET order_status = 1 
+        WHERE order_id = {orderId}";
 
                 int rowsAffected = DatabaseHelper.ExecuteNonQuery(query);
+
+                // If it's a dine-in order, set table status to vacant
+                if (tableId.HasValue && tableId.Value > 0)
+                {
+                    UpdateTableStatusToVacant(tableId.Value);
+                }
+
                 return rowsAffected > 0;
             }
             catch

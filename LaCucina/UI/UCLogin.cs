@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using LaCucina.Models;
 namespace LaCucina
 {
     public partial class UCLogin : UserControl
@@ -58,15 +58,15 @@ namespace LaCucina
             // navigation هنا في UI فقط
             switch (user.UserRole)
             {
-                case User.Role.Admin:
+                case Role.Admin:
                     new ManagerForm(current).ShowDialog();
                     break;
 
-                case User.Role.Waiter:
+                case Role.Waiter:
                     new FloorPlanForm(current).ShowDialog();
                     break;
 
-                case User.Role.Chef:
+                case Role.Chef:
                     new KDS(current).ShowDialog();
                     break;
             }

@@ -3,18 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LaCucina.Models;
 
 namespace LaCucina
 {
     public class User
     {
-        public enum Role
-        {
-            Admin = 0,
-            Waiter = 1,
-            Chef = 2
-        }
-
+       
         public int Id { get; set; }
 
         public string Username { get; set; }

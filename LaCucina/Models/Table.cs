@@ -5,28 +5,15 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using LaCucina.Models;
 
 
 namespace LaCucina
 {
     
 
-    public enum TableFormat
-    {
-       circular,
-       horizontal,
-       vertical
-    }
-
    
-    public enum TableStatus
-    {
-        vacant,
-        preparing,
-        ready,
-        completed
-        
-    }
+   
     public class Table
     {
        

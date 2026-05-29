@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using LaCucina.Models;
 
 namespace LaCucina.DataLink
 {
@@ -108,7 +109,7 @@ namespace LaCucina.DataLink
             {
                 Id = Convert.ToInt32(row["user_id"]),
                 Username = row["username"].ToString(),
-                UserRole = (User.Role)Convert.ToInt32(row["user_role"]),
+                UserRole = (Role)Convert.ToInt32(row["user_role"]),
                 PasswordHash = row["password_hash"].ToString(),
                 IsActive = Convert.ToBoolean(row["is_active"]),
                 IsDeleted = Convert.ToBoolean(row["is_deleted"])
