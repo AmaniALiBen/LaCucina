@@ -324,24 +324,6 @@
     <Compile Include="UI\UCIngriedentsSelectorRow.Designer.cs">
       <DependentUpon>UCIngriedentsSelectorRow.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\UCInvoiceCard.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\UCInvoiceCard.Designer.cs">
-      <DependentUpon>UCInvoiceCard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\UCInvoiceItemHistory.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\UCInvoiceItemHistory.Designer.cs">
-      <DependentUpon>UCInvoiceItemHistory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\UCInvoiceRowHeader.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\UCInvoiceRowHeader.Designer.cs">
-      <DependentUpon>UCInvoiceRowHeader.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\UCItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -536,15 +518,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UCIngredientInItem.resx">
       <DependentUpon>UCIngredientInItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\UCInvoiceCard.resx">
-      <DependentUpon>UCInvoiceCard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\UCInvoiceItemHistory.resx">
-      <DependentUpon>UCInvoiceItemHistory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\UCInvoiceRowHeader.resx">
-      <DependentUpon>UCInvoiceRowHeader.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UCItem.resx">
       <DependentUpon>UCItem.cs</DependentUpon>

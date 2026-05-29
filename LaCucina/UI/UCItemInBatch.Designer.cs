@@ -48,8 +48,8 @@
             this.pnlModifiers.Location = new System.Drawing.Point(3, 3);
             this.pnlModifiers.MinimumSize = new System.Drawing.Size(375, 0);
             this.pnlModifiers.Name = "pnlModifiers";
-            this.pnlModifiers.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.pnlModifiers.Size = new System.Drawing.Size(375, 10);
+            this.pnlModifiers.Padding = new System.Windows.Forms.Padding(0, 11, 0, 0);
+            this.pnlModifiers.Size = new System.Drawing.Size(375, 11);
             this.pnlModifiers.TabIndex = 6;
             this.pnlModifiers.WrapContents = false;
             // 
@@ -59,11 +59,11 @@
             this.pnlNote.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlNote.Controls.Add(this.lblNote);
             this.pnlNote.Controls.Add(this.lblNoteTitle);
-            this.pnlNote.Location = new System.Drawing.Point(3, 19);
+            this.pnlNote.Location = new System.Drawing.Point(3, 20);
             this.pnlNote.MinimumSize = new System.Drawing.Size(375, 0);
             this.pnlNote.Name = "pnlNote";
-            this.pnlNote.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.pnlNote.Size = new System.Drawing.Size(375, 110);
+            this.pnlNote.Padding = new System.Windows.Forms.Padding(0, 11, 0, 0);
+            this.pnlNote.Size = new System.Drawing.Size(375, 111);
             this.pnlNote.TabIndex = 7;
             // 
             // lblNote
@@ -72,7 +72,7 @@
             this.lblNote.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblNote.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNote.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblNote.Location = new System.Drawing.Point(0, 35);
+            this.lblNote.Location = new System.Drawing.Point(0, 36);
             this.lblNote.MaximumSize = new System.Drawing.Size(375, 0);
             this.lblNote.MinimumSize = new System.Drawing.Size(375, 0);
             this.lblNote.Name = "lblNote";
@@ -87,7 +87,7 @@
             this.lblNoteTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblNoteTitle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoteTitle.ForeColor = System.Drawing.Color.IndianRed;
-            this.lblNoteTitle.Location = new System.Drawing.Point(0, 10);
+            this.lblNoteTitle.Location = new System.Drawing.Point(0, 11);
             this.lblNoteTitle.Name = "lblNoteTitle";
             this.lblNoteTitle.Size = new System.Drawing.Size(60, 25);
             this.lblNoteTitle.TabIndex = 4;
@@ -101,10 +101,10 @@
             this.smoothFlowPanel2.Controls.Add(this.pnlNote);
             this.smoothFlowPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.smoothFlowPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.smoothFlowPanel2.Location = new System.Drawing.Point(0, 48);
+            this.smoothFlowPanel2.Location = new System.Drawing.Point(0, 49);
             this.smoothFlowPanel2.MinimumSize = new System.Drawing.Size(375, 0);
             this.smoothFlowPanel2.Name = "smoothFlowPanel2";
-            this.smoothFlowPanel2.Size = new System.Drawing.Size(375, 132);
+            this.smoothFlowPanel2.Size = new System.Drawing.Size(375, 134);
             this.smoothFlowPanel2.TabIndex = 8;
             this.smoothFlowPanel2.WrapContents = false;
             // 
@@ -117,8 +117,8 @@
             this.lblItemNameAndQuantity.Location = new System.Drawing.Point(0, 1);
             this.lblItemNameAndQuantity.MaximumSize = new System.Drawing.Size(375, 0);
             this.lblItemNameAndQuantity.Name = "lblItemNameAndQuantity";
-            this.lblItemNameAndQuantity.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.lblItemNameAndQuantity.Size = new System.Drawing.Size(258, 47);
+            this.lblItemNameAndQuantity.Padding = new System.Windows.Forms.Padding(0, 16, 0, 0);
+            this.lblItemNameAndQuantity.Size = new System.Drawing.Size(258, 48);
             this.lblItemNameAndQuantity.TabIndex = 3;
             this.lblItemNameAndQuantity.Text = "1×Chicken shaworma";
             // 
@@ -133,7 +133,7 @@
             // 
             // UCItemInBatch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -143,7 +143,7 @@
             this.Controls.Add(this.panel1);
             this.MinimumSize = new System.Drawing.Size(375, 0);
             this.Name = "UCItemInBatch";
-            this.Size = new System.Drawing.Size(375, 180);
+            this.Size = new System.Drawing.Size(375, 183);
             this.pnlNote.ResumeLayout(false);
             this.pnlNote.PerformLayout();
             this.smoothFlowPanel2.ResumeLayout(false);
