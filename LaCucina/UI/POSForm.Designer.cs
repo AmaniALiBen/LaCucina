@@ -472,7 +472,7 @@
             this.send.Location = new System.Drawing.Point(54, 107);
             this.send.Margin = new System.Windows.Forms.Padding(2);
             this.send.Name = "send";
-            this.send.Size = new System.Drawing.Size(224, 36);
+            this.send.Size = new System.Drawing.Size(225, 36);
             this.send.TabIndex = 1;
             // 
             // btnSend
@@ -491,7 +491,7 @@
             this.btnSend.ForeColor = System.Drawing.Color.Black;
             this.btnSend.Location = new System.Drawing.Point(0, 0);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(224, 36);
+            this.btnSend.Size = new System.Drawing.Size(225, 36);
             this.btnSend.TabIndex = 1;
             this.btnSend.Text = "Send";
             this.btnSend.TextColor = System.Drawing.Color.Black;
@@ -569,7 +569,7 @@
             this.rJgradiantPanal1.Location = new System.Drawing.Point(54, 148);
             this.rJgradiantPanal1.Margin = new System.Windows.Forms.Padding(2);
             this.rJgradiantPanal1.Name = "rJgradiantPanal1";
-            this.rJgradiantPanal1.Size = new System.Drawing.Size(224, 36);
+            this.rJgradiantPanal1.Size = new System.Drawing.Size(225, 36);
             this.rJgradiantPanal1.TabIndex = 0;
             // 
             // btnPay
@@ -588,7 +588,7 @@
             this.btnPay.ForeColor = System.Drawing.Color.Black;
             this.btnPay.Location = new System.Drawing.Point(0, 0);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(224, 36);
+            this.btnPay.Size = new System.Drawing.Size(225, 36);
             this.btnPay.TabIndex = 1;
             this.btnPay.Text = "pay and print invoice";
             this.btnPay.TextColor = System.Drawing.Color.Black;
@@ -606,10 +606,10 @@
             this.rJgradiantPanal2.GradientAngle = 0F;
             this.rJgradiantPanal2.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(81)))), ((int)(((byte)(0)))));
             this.rJgradiantPanal2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
-            this.rJgradiantPanal2.Location = new System.Drawing.Point(160, 107);
+            this.rJgradiantPanal2.Location = new System.Drawing.Point(160, 148);
             this.rJgradiantPanal2.Margin = new System.Windows.Forms.Padding(2);
             this.rJgradiantPanal2.Name = "rJgradiantPanal2";
-            this.rJgradiantPanal2.Size = new System.Drawing.Size(34, 36);
+            this.rJgradiantPanal2.Size = new System.Drawing.Size(25, 22);
             this.rJgradiantPanal2.TabIndex = 1;
             // 
             // btnPrintInvoice
@@ -628,7 +628,7 @@
             this.btnPrintInvoice.ForeColor = System.Drawing.Color.Black;
             this.btnPrintInvoice.Location = new System.Drawing.Point(0, 0);
             this.btnPrintInvoice.Name = "btnPrintInvoice";
-            this.btnPrintInvoice.Size = new System.Drawing.Size(34, 36);
+            this.btnPrintInvoice.Size = new System.Drawing.Size(25, 22);
             this.btnPrintInvoice.TabIndex = 0;
             this.btnPrintInvoice.Text = "print invoice";
             this.btnPrintInvoice.TextColor = System.Drawing.Color.Black;
