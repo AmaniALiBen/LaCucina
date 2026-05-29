@@ -199,6 +199,9 @@ namespace LaCucina
             lblOrderNum.Text = "Order: " + currentOrderId;
             LoadOpenOrderItems();
             FillDiscountsCombo();
+            if(this.isTakeAway)
+                send.Visible= false;
+                
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -342,49 +345,37 @@ namespace LaCucina
                 return;
             }
 
+            // إذا كان تيك أواي، نوجّه المستخدم لزر الدفع مباشرة دون تكرار الحفظ بقيم فارغة
+            if (this.isTakeAway)
+            {
+                MessageBox.Show("For Takeaway orders, please use the Pay button directly.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // منطق الصالة العادي (بدون تعديل)
             double subTotalAmount = CalTotal();
             double finalTotalAmount = subTotalAmount;
-
             int? discountId = null;
             byte? discountType = null;
             double discountValue = 0;
 
             POSService pOSService = new POSService();
-
             bool isSaved = pOSService.ProcessAndSendOrder(
-                currentTableId,
-                currentUserId,
-                currentOrderItems,
-                subTotalAmount,
-                finalTotalAmount,
-                discountId,
-                discountType,
-                discountValue,
-                isTakeAway,
-                out currentOrderId
+                currentTableId, currentUserId, currentOrderItems,
+                subTotalAmount, finalTotalAmount, discountId, discountType, discountValue,
+                isTakeAway, out currentOrderId
             );
 
             if (isSaved)
             {
-                if (this.isTakeAway)
-                {
-                    btnPay.PerformClick();
-                    return;
-                }
-
                 MessageBox.Show("Batch sent successfully to the kitchen.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 lblOrderNum.Text = "Order: " + currentOrderId.ToString() + "#";
 
                 foreach (Control ctrl in pnlInvoiceItems.Controls)
                 {
-                    if (ctrl is UC_InvoiceItem uiItem)
-                    {
-                        uiItem.MarkAsSavedInDatabase();
-                    }
+                    if (ctrl is UC_InvoiceItem uiItem) uiItem.MarkAsSavedInDatabase();
                 }
-
                 currentOrderItems.Clear();
-
                 CalTotal();
             }
             else
@@ -427,7 +418,7 @@ namespace LaCucina
             byte? discountType = null;
             double discountValue = 0;
 
-            if (cmbDiscounts.SelectedIndex > 0)
+            if (cmbDiscounts.SelectedIndex > 0 && cmbDiscounts.SelectedItem != null)
             {
                 DataRowView selectedDiscount = (DataRowView)cmbDiscounts.SelectedItem;
                 discountId = Convert.ToInt32(selectedDiscount["discount_id"]);
@@ -438,7 +429,7 @@ namespace LaCucina
                 {
                     discountAmountValueCalculated = subTotalAmount * (discountValue / 100);
                 }
-                else
+                else 
                 {
                     discountAmountValueCalculated = discountValue;
                 }
@@ -447,80 +438,58 @@ namespace LaCucina
                 if (finalTotalAmount < 0) finalTotalAmount = 0;
             }
 
-            string confirmMsg = "";
-            if (discountAmountValueCalculated > 0)
+            string confirmMsg = discountAmountValueCalculated > 0
+                ? $"Original Total: {subTotalAmount:N2} LYD\nDiscount Applied: -{discountAmountValueCalculated:N2} LYD\n-----------------------------------\nNet Amount to Pay: {finalTotalAmount:N2} LYD\n\nDo you want to process payment?"
+                : $"Total Amount to Pay: {finalTotalAmount:N2} LYD\n\nAre you sure you want to complete the payment?";
+
+            if (MessageBox.Show(confirmMsg, "Confirm Payment", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                return;
+
+            POSService pOSService = new POSService();
+
+            if (isTakeAway)
             {
-                confirmMsg = $"Original Total: {subTotalAmount:N2} LYD\n" +
-                             $"Discount Applied: -{discountAmountValueCalculated:N2} LYD\n" +
-                             $"-----------------------------------\n" +
-                             $"Net Amount to Pay: {finalTotalAmount:N2} LYD\n\n" +
-                             $"Do you want to process payment and close this order?";
+                bool isSaved = pOSService.ProcessAndSendOrder(
+                    currentTableId, currentUserId, currentOrderItems,
+                    subTotalAmount, finalTotalAmount, discountId, discountType, discountAmountValueCalculated,
+                    isTakeAway, out currentOrderId
+                );
+
+                if (!isSaved)
+                {
+                    MessageBox.Show("Failed to save the takeaway order details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            else if (!isTakeAway && currentOrderId > 0)
+            {
+                int tempOrderId;
+                pOSService.ProcessAndSendOrder(currentTableId, currentUserId, new List<MemoryOrderItem>(), subTotalAmount, finalTotalAmount, discountId, discountType, discountValue, isTakeAway, out tempOrderId);
+                pOSService.UpdateOrderDiscount(currentOrderId, subTotalAmount, finalTotalAmount, discountId, discountType, discountAmountValueCalculated);
             }
             else
             {
-                confirmMsg = $"Total Amount to Pay: {finalTotalAmount:N2} LYD\n\n" +
-                             $"Are you sure you want to complete the payment?";
+                MessageBox.Show("Please send the order to the kitchen first before processing payment.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
-            DialogResult result = MessageBox.Show(confirmMsg, "Confirm Process Payment", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            bool isPaid = pOSService.CompleteOrderPayment(currentOrderId);
 
-            if (result == DialogResult.Yes)
+            if (isPaid)
             {
-                POSService pOSService = new POSService();
+                MessageBox.Show("Payment completed successfully! The order is now closed.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnPrintInvoice.PerformClick();
 
-                if (isTakeAway && currentOrderId == 0)
-                {
-                    bool isSaved = pOSService.ProcessAndSendOrder(
-                        currentTableId, currentUserId, currentOrderItems,
-                        subTotalAmount, finalTotalAmount, discountId, discountType, discountValue,
-                        isTakeAway, out currentOrderId
-                    );
-
-                    if (!isSaved)
-                    {
-                        MessageBox.Show("Failed to save the takeaway order details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-
-                    if (discountId > 0)
-                    {
-                        pOSService.UpdateOrderDiscount(currentOrderId, subTotalAmount, finalTotalAmount, discountId, discountType, discountAmountValueCalculated);
-                    }
-                }
-                else if (!isTakeAway && currentOrderId > 0)
-                {
-                    int tempOrderId;
-                    pOSService.ProcessAndSendOrder(
-                        currentTableId, currentUserId, new List<MemoryOrderItem>(),
-                        subTotalAmount, finalTotalAmount, discountId, discountType, discountValue,
-                        isTakeAway, out tempOrderId
-                    );
-
-                    pOSService.UpdateOrderDiscount(currentOrderId, subTotalAmount, finalTotalAmount, discountId, discountType, discountAmountValueCalculated);
-                }
-                else if (!isTakeAway && currentOrderId == 0)
-                {
-                    MessageBox.Show("Please send the order to the kitchen first before processing payment.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                bool isPaid = pOSService.CompleteOrderPayment(currentOrderId);
-
-                if (isPaid)
-                {
-                    MessageBox.Show("Payment completed successfully! The order is now closed.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    btnPrintInvoice.PerformClick();
-                    currentOrderItems.Clear();
-                    pnlInvoiceItems.Controls.Clear();
-                    currentOrderId = 0;
-                    lblOrderNum.Text = "Order: 0";
-                    cmbDiscounts.SelectedIndex = 0;
-                    CalTotal();
-                }
-                else
-                {
-                    MessageBox.Show("An error occurred while processing the payment in the database.", "Payment Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                currentOrderItems.Clear();
+                pnlInvoiceItems.Controls.Clear();
+                currentOrderId = 0;
+                lblOrderNum.Text = "Order: 0";
+                cmbDiscounts.SelectedIndex = 0;
+                CalTotal();
+            }
+            else
+            {
+                MessageBox.Show("An error occurred while processing the payment.", "Payment Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -595,6 +564,11 @@ namespace LaCucina
             }
 
             BuildProductCards(filteredItems);
+        }
+
+        private void rjPanel7_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

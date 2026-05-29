@@ -56,7 +56,7 @@
             this.rjPanel7 = new CustomControls.RJControls.RJPanel();
             this.lblNetTotal = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.rJgradiantPanal3 = new CustomControls.RJControls.RJgradiantPanal();
+            this.send = new CustomControls.RJControls.RJgradiantPanal();
             this.btnSend = new CustomControls.RJControls.RJButton();
             this.label11 = new System.Windows.Forms.Label();
             this.cmbDiscounts = new CustomControls.RJControls.RJComboBox();
@@ -81,7 +81,7 @@
             this.rjPanel2.SuspendLayout();
             this.rjPanel5.SuspendLayout();
             this.rjPanel7.SuspendLayout();
-            this.rJgradiantPanal3.SuspendLayout();
+            this.send.SuspendLayout();
             this.rJgradiantPanal1.SuspendLayout();
             this.rJgradiantPanal2.SuspendLayout();
             this.rjPanel1.SuspendLayout();
@@ -419,7 +419,7 @@
             this.rjPanel7.BorderSize = 0;
             this.rjPanel7.Controls.Add(this.lblNetTotal);
             this.rjPanel7.Controls.Add(this.label4);
-            this.rjPanel7.Controls.Add(this.rJgradiantPanal3);
+            this.rjPanel7.Controls.Add(this.send);
             this.rjPanel7.Controls.Add(this.label11);
             this.rjPanel7.Controls.Add(this.cmbDiscounts);
             this.rjPanel7.Controls.Add(this.lblSubtotal);
@@ -432,6 +432,7 @@
             this.rjPanel7.Name = "rjPanel7";
             this.rjPanel7.Size = new System.Drawing.Size(329, 190);
             this.rjPanel7.TabIndex = 0;
+            this.rjPanel7.Paint += new System.Windows.Forms.PaintEventHandler(this.rjPanel7_Paint);
             // 
             // lblNetTotal
             // 
@@ -457,22 +458,22 @@
             this.label4.TabIndex = 18;
             this.label4.Text = "Net Total :";
             // 
-            // rJgradiantPanal3
+            // send
             // 
-            this.rJgradiantPanal3.BackColor = System.Drawing.Color.Transparent;
-            this.rJgradiantPanal3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.rJgradiantPanal3.BorderRadius = 15;
-            this.rJgradiantPanal3.BorderSize = 2;
-            this.rJgradiantPanal3.Controls.Add(this.btnSend);
-            this.rJgradiantPanal3.ForeColor = System.Drawing.Color.Black;
-            this.rJgradiantPanal3.GradientAngle = 0F;
-            this.rJgradiantPanal3.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(81)))), ((int)(((byte)(0)))));
-            this.rJgradiantPanal3.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
-            this.rJgradiantPanal3.Location = new System.Drawing.Point(54, 107);
-            this.rJgradiantPanal3.Margin = new System.Windows.Forms.Padding(2);
-            this.rJgradiantPanal3.Name = "rJgradiantPanal3";
-            this.rJgradiantPanal3.Size = new System.Drawing.Size(96, 36);
-            this.rJgradiantPanal3.TabIndex = 1;
+            this.send.BackColor = System.Drawing.Color.Transparent;
+            this.send.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.send.BorderRadius = 15;
+            this.send.BorderSize = 2;
+            this.send.Controls.Add(this.btnSend);
+            this.send.ForeColor = System.Drawing.Color.Black;
+            this.send.GradientAngle = 0F;
+            this.send.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(81)))), ((int)(((byte)(0)))));
+            this.send.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
+            this.send.Location = new System.Drawing.Point(54, 107);
+            this.send.Margin = new System.Windows.Forms.Padding(2);
+            this.send.Name = "send";
+            this.send.Size = new System.Drawing.Size(224, 36);
+            this.send.TabIndex = 1;
             // 
             // btnSend
             // 
@@ -490,7 +491,7 @@
             this.btnSend.ForeColor = System.Drawing.Color.Black;
             this.btnSend.Location = new System.Drawing.Point(0, 0);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(96, 36);
+            this.btnSend.Size = new System.Drawing.Size(224, 36);
             this.btnSend.TabIndex = 1;
             this.btnSend.Text = "Send";
             this.btnSend.TextColor = System.Drawing.Color.Black;
@@ -589,7 +590,7 @@
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(224, 36);
             this.btnPay.TabIndex = 1;
-            this.btnPay.Text = "pay";
+            this.btnPay.Text = "pay and print invoice";
             this.btnPay.TextColor = System.Drawing.Color.Black;
             this.btnPay.UseVisualStyleBackColor = false;
             this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
@@ -608,7 +609,7 @@
             this.rJgradiantPanal2.Location = new System.Drawing.Point(160, 107);
             this.rJgradiantPanal2.Margin = new System.Windows.Forms.Padding(2);
             this.rJgradiantPanal2.Name = "rJgradiantPanal2";
-            this.rJgradiantPanal2.Size = new System.Drawing.Size(118, 36);
+            this.rJgradiantPanal2.Size = new System.Drawing.Size(34, 36);
             this.rJgradiantPanal2.TabIndex = 1;
             // 
             // btnPrintInvoice
@@ -627,7 +628,7 @@
             this.btnPrintInvoice.ForeColor = System.Drawing.Color.Black;
             this.btnPrintInvoice.Location = new System.Drawing.Point(0, 0);
             this.btnPrintInvoice.Name = "btnPrintInvoice";
-            this.btnPrintInvoice.Size = new System.Drawing.Size(118, 36);
+            this.btnPrintInvoice.Size = new System.Drawing.Size(34, 36);
             this.btnPrintInvoice.TabIndex = 0;
             this.btnPrintInvoice.Text = "print invoice";
             this.btnPrintInvoice.TextColor = System.Drawing.Color.Black;
@@ -799,7 +800,7 @@
             this.rjPanel5.PerformLayout();
             this.rjPanel7.ResumeLayout(false);
             this.rjPanel7.PerformLayout();
-            this.rJgradiantPanal3.ResumeLayout(false);
+            this.send.ResumeLayout(false);
             this.rJgradiantPanal1.ResumeLayout(false);
             this.rJgradiantPanal2.ResumeLayout(false);
             this.rjPanel1.ResumeLayout(false);
@@ -853,7 +854,7 @@
         private CustomControls.RJControls.RJComboBox cmbDiscounts;
         public System.Windows.Forms.Label label11;
         private MaterialSkin.Controls.MaterialDivider materialDivider5;
-        private CustomControls.RJControls.RJgradiantPanal rJgradiantPanal3;
+        private CustomControls.RJControls.RJgradiantPanal send;
         private CustomControls.RJControls.RJButton btnSend;
         public System.Windows.Forms.Label lblNetTotal;
         private System.Windows.Forms.Label label4;

@@ -91,27 +91,30 @@ namespace LaCucina.DataLink
         public DataTable GetActiveBatchesRaw()
         {
             string sql = @"
-                SELECT
-                    ob.batch_id, ob.order_id, ob.sent_at, ob.batch_status,
-                    t.number        AS table_number,
-                    s.space_name,
-                    oi.order_item_id, oi.quantity, oi.item_status,
-                    m.menu_item_name,
-                    n.note_text,
-                    i.ingredient_name
-                FROM order_batches ob
-                JOIN orders             o   ON ob.order_id      = o.order_id
-                JOIN dining_tables      t   ON o.table_id       = t.table_id
-                JOIN spaces             s   ON t.space_id       = s.space_id
-                JOIN order_items        oi  ON oi.batch_id      = ob.batch_id
-                JOIN menu_items         m   ON oi.menu_item_id  = m.menu_item_id
-                LEFT JOIN notes         n   ON n.note_id        = oi.order_item_id
-                LEFT JOIN order_item_ingredients oii
-                                            ON oii.order_item_id = oi.order_item_id
-                                           AND oii.is_removed    = 1
-                LEFT JOIN ingredients   i   ON i.ingredient_id  = oii.ingredient_id
-                WHERE ob.batch_status = 0
-                ORDER BY ob.sent_at ASC";
+        SELECT
+            ob.batch_id, ob.order_id, ob.sent_at, ob.batch_status,
+            CASE 
+                WHEN o.is_takeaway = 1 THEN 'Takeaway'
+                ELSE 'Table ' + CAST(t.number AS VARCHAR(10))
+            END AS table_number,
+            ISNULL(s.space_name, 'Takeaway') AS space_name,
+            oi.order_item_id, oi.quantity, oi.item_status,
+            m.menu_item_name,
+            n.note_text,
+            i.ingredient_name
+        FROM order_batches ob
+        JOIN orders               o   ON ob.order_id       = o.order_id
+        LEFT JOIN dining_tables   t   ON o.table_id        = t.table_id
+        LEFT JOIN spaces          s   ON t.space_id        = s.space_id
+        JOIN order_items          oi  ON oi.batch_id      = ob.batch_id
+        JOIN menu_items           m   ON oi.menu_item_id  = m.menu_item_id
+        LEFT JOIN notes           n   ON n.note_id         = oi.order_item_id
+        LEFT JOIN order_item_ingredients oii
+                                    ON oii.order_item_id = oi.order_item_id
+                                   AND oii.is_removed    = 1
+        LEFT JOIN ingredients   i   ON i.ingredient_id  = oii.ingredient_id
+        WHERE ob.batch_status = 0
+        ORDER BY ob.sent_at ASC";
 
             return DatabaseHelper.ExecuteQuery(sql);
         }

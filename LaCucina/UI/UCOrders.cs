@@ -1,9 +1,14 @@
-﻿using LaCucina.Models;
+﻿using CrystalDecisions.Windows.Forms;
+using LaCucina.DataLink;
+using LaCucina.Models;
 using LaCucina.Services;
 using LaCucina.UI;
 using System;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using CrystalDecisions.Windows.Forms;
+using CrystalDecisions.CrystalReports.Engine;
 
 namespace LaCucina
 {
@@ -153,8 +158,44 @@ namespace LaCucina
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
-            if (_selectedRow == null) return;
-            // TODO: implement printing
+            if (_selectedRow == null || _selectedRow.OrderId == 0)
+            {
+                MessageBox.Show("Please select or open an active order to print.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                POSRepository repo = new POSRepository();
+                DataTable dtReceipt = repo.GetOrderReceiptDetails(_selectedRow.OrderId);
+
+                if (dtReceipt.Rows.Count > 0)
+                {
+                    CrystalReport3 myReport = new CrystalReport3();
+                    myReport.SetDataSource(dtReceipt);
+
+                    using (Form previewForm = new Form())
+                    {
+                        CrystalReportViewer viewer = new CrystalReportViewer();
+                        viewer.Dock = DockStyle.Fill;
+                        viewer.ReportSource = myReport;
+
+                        previewForm.Controls.Add(viewer);
+                        previewForm.WindowState = FormWindowState.Maximized;
+                        previewForm.Text = "Invoice Preview - La Cucina";
+
+                        previewForm.ShowDialog();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show($"No data found in the database for order number {_selectedRow.OrderId}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred during the display process: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void panel2_Paint(object sender, System.Windows.Forms.PaintEventArgs e) { }
