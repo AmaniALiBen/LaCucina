@@ -8,8 +8,9 @@ namespace LaCucina
 {
     public class Discounts
     {
-    public enum Type { Percentage, Fixed };
 
+
+        public enum Type { Percentage, Fixed };
 
         public int Id { get; set; }
         public string name;

@@ -1,66 +1,184 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using LaCucina.Models;
+using LaCucina.Services;
+using LaCucina.UI;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LaCucina
 {
     public partial class UCOrders : UserControl
     {
+        private readonly OrdersService _service = new OrdersService();
+        private UCOrderRow _selectedRow = null;
+
         public UCOrders()
         {
             InitializeComponent();
         }
 
-        private void USOrders_Load(object sender, EventArgs e)
+        // ════════════════════════════════════════════════════════════════
+        //  Load
+        // ════════════════════════════════════════════════════════════════
+
+        private void UCOrders_Load(object sender, EventArgs e)
         {
-            for (int i = 1; i < 20; i++)
+            if (DesignMode) return;
+            dtpFrom.Value = new DateTime(2000, 1, 1);
+            dtpTo.Value = DateTime.Today;
+
+            LoadFilters();
+            LoadOrders();
+        }
+
+        private void LoadFilters()
+        {
+            cmbWaiter.Items.Clear();
+            cmbWaiter.Items.Add("All");
+            foreach (var waiter in _service.GetWaiters())
+                cmbWaiter.Items.Add(waiter);
+            cmbWaiter.SelectedIndex = 0;
+        }
+
+        // ════════════════════════════════════════════════════════════════
+        //  Load orders
+        // ════════════════════════════════════════════════════════════════
+
+        private void LoadOrders()
+        {
+            flowOrders.Controls.Clear();
+            _selectedRow = null;
+            ClearReceipt();
+
+            string waiter = cmbWaiter.SelectedIndex > 0
+                ? cmbWaiter.SelectedItem.ToString()
+                : null;
+
+            var orders = _service.GetOrders(
+                from: dtpFrom.Value.Date,
+                to: dtpTo.Value.Date,
+                waiter: waiter);
+
+            foreach (var order in orders)
             {
-               UCInvoiceRowHeader r=new UCInvoiceRowHeader();
-                UCInvoiceItemHistory h=new UCInvoiceItemHistory();
+                var row = new UCOrderRow();
+                row.LoadOrder(order);
+                row.Width = flowOrders.ClientSize.Width - 4;
+                row.RowSelected += OnRowSelected;
+                flowOrders.Controls.Add(row);
 
-                if (i % 2 == 1)
+                var sep = new Panel
                 {
-                    foreach (Control item in r.Controls)
-                    {
-                        item.BackColor = Color.FromArgb(10, 10, 10);
+                    Height = 1,
+                    Width = flowOrders.ClientSize.Width - 4,
+                    BackColor = Color.FromArgb(30, 30, 30)
+                };
+                flowOrders.Controls.Add(sep);
+            }
+        }
 
+        // ════════════════════════════════════════════════════════════════
+        //  Row selected → load receipt
+        // ════════════════════════════════════════════════════════════════
 
-                    }
-                    foreach (Control item in h.Controls)
-                    {
-                        item.BackColor = Color.FromArgb(27, 27, 27);
+        private void OnRowSelected(object sender, EventArgs e)
+        {
+            var row = (UCOrderRow)sender;
 
+            if (_selectedRow != null)
+                _selectedRow.SetSelected(false);
 
-                    }
-                }
-                tablePanel1.Controls.Add(r);
-                smoothFlowPanel1.Controls.Add(h);
+            _selectedRow = row;
+            row.SetSelected(true);
+
+            LoadReceipt(row.OrderId);
+        }
+
+        private void LoadReceipt(int orderId)
+        {
+            var detail = _service.GetOrderDetail(orderId);
+            if (detail == null) return;
+
+            lblReceiptOrderId.Text = "Order ID #" + detail.OrderId;
+            lblReceiptMeta.Text = (detail.IsTakeaway ? "Takeaway" : "Dine-in  T-" + detail.TableNumber)
+                                   + "   " + detail.CreatedAt.ToString("HH:mm  yyyy-MM-dd");
+
+            flowReceiptItems.Controls.Clear();
+            foreach (var item in detail.Items)
+            {
+                var uc = new UCOrderItemRow();
+                uc.LoadItem(item);
+                uc.Width = flowReceiptItems.ClientSize.Width - 4;
+                flowReceiptItems.Controls.Add(uc);
             }
 
+            decimal subtotal = detail.TotalAmount + (detail.DiscountAmount ?? 0);
+            lblSubtotalV.Text = "$" + subtotal.ToString("0.00");
+            lblDiscountV.Text = detail.DiscountAmount.HasValue
+                ? "-$" + detail.DiscountAmount.Value.ToString("0.00")
+                : "$0.00";
+            lblTotalV.Text = "$" + detail.TotalAmount.ToString("0.00");
         }
 
-        private void label10_Click(object sender, EventArgs e)
+        private void ClearReceipt()
+        {
+            lblReceiptOrderId.Text = "Select an order";
+            lblReceiptMeta.Text = "";
+            flowReceiptItems.Controls.Clear();
+            lblSubtotalV.Text = "$0.00";
+            lblDiscountV.Text = "$0.00";
+            lblTotalV.Text = "$0.00";
+        }
+
+        // ════════════════════════════════════════════════════════════════
+        //  Filter buttons
+        // ════════════════════════════════════════════════════════════════
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            LoadOrders();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            dtpFrom.Value = new DateTime(2000, 1, 1);
+            dtpTo.Value = DateTime.Today;
+            cmbWaiter.SelectedIndex = 0;
+            LoadOrders();
+        }
+
+        // ════════════════════════════════════════════════════════════════
+        //  Print
+        // ════════════════════════════════════════════════════════════════
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            if (_selectedRow == null) return;
+            // TODO: implement printing
+        }
+
+        private void panel2_Paint(object sender, System.Windows.Forms.PaintEventArgs e) { }
+        private void label12_Click(object sender, EventArgs e) { }
+        private void label1_Click(object sender, EventArgs e) { }
+        private void USOrders_Load(object sender, EventArgs e) { }
+        private void rjButton3_Click(object sender, EventArgs e) { }
+
+        private void pnlFilters_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void dtpTo_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void label12_Click(object sender, EventArgs e)
+        private void cmbWaiter_OnSelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void lblFilterWaiter_Click(object sender, EventArgs e)
         {
 
         }

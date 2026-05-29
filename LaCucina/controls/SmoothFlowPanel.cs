@@ -22,7 +22,9 @@ public class SmoothFlowPanel : FlowLayoutPanel
     }
 
     
+   
     
+
     // 2. تحسين استجابة عجلة الماوس لجعلها "أنعم" وأسرع
     protected override void OnMouseWheel(MouseEventArgs e)
     {
@@ -42,12 +44,38 @@ public class SmoothFlowPanel : FlowLayoutPanel
     }
 
     // 3. ضمان إخفاء شريط التمرير في كل الحالات
+    //protected override void WndProc(ref Message m)
+    //{
+    //    base.WndProc(ref m);
+    //    if (this.Handle != IntPtr.Zero)
+    //    {
+    //        ShowScrollBar(this.Handle, SB_BOTH, false);
+    //    }
+    //}
     protected override void WndProc(ref Message m)
     {
+        // 1. استدعاء الدالة الأساسية أولاً لمعالجة الرسالة طبيعي
         base.WndProc(ref m);
-        if (this.Handle != IntPtr.Zero)
+
+        // 2. صمام الأمان الحاسم: 
+        // نتحقق أن الـ Panel نفسه لم يتم التخلص منه (Disposed) وأن الـ Handle ما زال مبنياً وحياً
+        if (!this.IsDisposed && !this.Disposing && this.IsHandleCreated && this.Handle != IntPtr.Zero)
         {
-            ShowScrollBar(this.Handle, SB_BOTH, false);
+            // 3. التحقق من عائلة الأب (الكرت): لو الكرت الأب قاعد ينحذف أو يموت، نخرج فوراً ونترك شريط التمرير
+            if (this.Parent != null && (this.Parent.IsDisposed || this.Parent.Disposing))
+            {
+                return;
+            }
+
+            try
+            {
+                // 4. الآن استدعاء الدالة الخارجية آمن 100%
+                ShowScrollBar(this.Handle, SB_BOTH, false);
+            }
+            catch
+            {
+                // حماية إضافية ضد أي تضارب رسائل عابر في أجزاء الملي ثانية
+            }
         }
     }
 

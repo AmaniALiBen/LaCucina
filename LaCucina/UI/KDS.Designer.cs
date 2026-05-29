@@ -131,10 +131,10 @@
             this.pnlItemsList.AutoScroll = true;
             this.pnlItemsList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlItemsList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.pnlItemsList.Location = new System.Drawing.Point(0, 212);
+            this.pnlItemsList.Location = new System.Drawing.Point(0, 197);
             this.pnlItemsList.Name = "pnlItemsList";
             this.pnlItemsList.Padding = new System.Windows.Forms.Padding(0, 0, 20, 20);
-            this.pnlItemsList.Size = new System.Drawing.Size(267, 554);
+            this.pnlItemsList.Size = new System.Drawing.Size(267, 569);
             this.pnlItemsList.TabIndex = 25;
             this.pnlItemsList.WrapContents = false;
             // 
@@ -142,13 +142,13 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(128)))), ((int)(((byte)(16)))));
-            this.label3.Location = new System.Drawing.Point(0, 145);
+            this.label3.Location = new System.Drawing.Point(0, 130);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(8, 30, 0, 7);
-            this.label3.Size = new System.Drawing.Size(189, 67);
+            this.label3.Size = new System.Drawing.Size(187, 67);
             this.label3.TabIndex = 24;
             this.label3.Text = "         On the Fire";
             // 
@@ -156,13 +156,13 @@
             // 
             this.lblItemsInQueue.AutoSize = true;
             this.lblItemsInQueue.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblItemsInQueue.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblItemsInQueue.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblItemsInQueue.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblItemsInQueue.Location = new System.Drawing.Point(0, 85);
+            this.lblItemsInQueue.Location = new System.Drawing.Point(0, 80);
             this.lblItemsInQueue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblItemsInQueue.Name = "lblItemsInQueue";
-            this.lblItemsInQueue.Padding = new System.Windows.Forms.Padding(8, 25, 0, 7);
-            this.lblItemsInQueue.Size = new System.Drawing.Size(231, 60);
+            this.lblItemsInQueue.Padding = new System.Windows.Forms.Padding(8, 15, 0, 7);
+            this.lblItemsInQueue.Size = new System.Drawing.Size(224, 50);
             this.lblItemsInQueue.TabIndex = 23;
             this.lblItemsInQueue.Text = "    Items in Queue ×18";
             // 
@@ -170,7 +170,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 84);
+            this.panel2.Location = new System.Drawing.Point(0, 79);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(267, 1);
             this.panel2.TabIndex = 22;
@@ -179,13 +179,13 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(128)))), ((int)(((byte)(16)))));
             this.label1.Location = new System.Drawing.Point(0, 30);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(8, 15, 0, 7);
-            this.label1.Size = new System.Drawing.Size(226, 54);
+            this.label1.Padding = new System.Windows.Forms.Padding(8, 10, 0, 7);
+            this.label1.Size = new System.Drawing.Size(218, 49);
             this.label1.TabIndex = 21;
             this.label1.Text = "    Prep Summary ";
             // 

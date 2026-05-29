@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.pnlContiner = new System.Windows.Forms.Panel();
+            this.pnlBatchItems = new SmoothFlowPanel();
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTable = new System.Windows.Forms.Label();
@@ -37,7 +38,6 @@
             this.lblOrderId = new System.Windows.Forms.Label();
             this.pnlColor = new System.Windows.Forms.Panel();
             this.orderTimer = new System.Windows.Forms.Timer(this.components);
-            this.pnlBatchItems = new SmoothFlowPanel();
             this.pnlContiner.SuspendLayout();
             this.pnlHeader.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -59,6 +59,20 @@
             this.pnlContiner.TabIndex = 3;
             this.pnlContiner.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContiner_Paint);
             // 
+            // pnlBatchItems
+            // 
+            this.pnlBatchItems.AutoScroll = true;
+            this.pnlBatchItems.AutoSize = true;
+            this.pnlBatchItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.pnlBatchItems.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlBatchItems.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.pnlBatchItems.Location = new System.Drawing.Point(0, 62);
+            this.pnlBatchItems.MinimumSize = new System.Drawing.Size(375, 0);
+            this.pnlBatchItems.Name = "pnlBatchItems";
+            this.pnlBatchItems.Size = new System.Drawing.Size(375, 0);
+            this.pnlBatchItems.TabIndex = 5;
+            this.pnlBatchItems.WrapContents = false;
+            // 
             // pnlHeader
             // 
             this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
@@ -77,10 +91,10 @@
             this.panel1.Controls.Add(this.lblTime);
             this.panel1.Controls.Add(this.lblOrderId);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 14);
+            this.panel1.Location = new System.Drawing.Point(0, 8);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panel1.Size = new System.Drawing.Size(375, 48);
+            this.panel1.Size = new System.Drawing.Size(375, 54);
             this.panel1.TabIndex = 7;
             // 
             // lblTable
@@ -123,7 +137,7 @@
             this.pnlColor.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlColor.Location = new System.Drawing.Point(0, 0);
             this.pnlColor.Name = "pnlColor";
-            this.pnlColor.Size = new System.Drawing.Size(375, 14);
+            this.pnlColor.Size = new System.Drawing.Size(375, 8);
             this.pnlColor.TabIndex = 5;
             // 
             // orderTimer
@@ -131,19 +145,6 @@
             this.orderTimer.Enabled = true;
             this.orderTimer.Interval = 1000;
             this.orderTimer.Tick += new System.EventHandler(this.orderTimer_Tick);
-            // 
-            // pnlBatchItems
-            // 
-            this.pnlBatchItems.AutoSize = true;
-            this.pnlBatchItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.pnlBatchItems.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlBatchItems.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.pnlBatchItems.Location = new System.Drawing.Point(0, 62);
-            this.pnlBatchItems.MinimumSize = new System.Drawing.Size(375, 0);
-            this.pnlBatchItems.Name = "pnlBatchItems";
-            this.pnlBatchItems.Size = new System.Drawing.Size(375, 0);
-            this.pnlBatchItems.TabIndex = 5;
-            this.pnlBatchItems.WrapContents = false;
             // 
             // UCBatchCard
             // 

@@ -12,6 +12,8 @@ namespace LaCucina.Models
         public string MenuItemName { get; set; }
         public int Quantity { get; set; }
         public string NoteText { get; set; }  // null if no note
+
+        public int  ItemStatus { get; set; }
         public List<string> RemovedIngredients { get; set; } = new List<string>();
     }
 }

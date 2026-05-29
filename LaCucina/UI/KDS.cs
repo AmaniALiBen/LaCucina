@@ -1,181 +1,4 @@
-﻿//using LaCucina.Models;
-//using LaCucina.Services;
-//using LaCucina.UI;
-//using System;
-//using System.Collections.Generic;
-//using System.ComponentModel;
-//using System.Data;
-//using System.Drawing;
-//using System.Linq;
-//using System.Reflection;
-//using System.Runtime.InteropServices;
-//using System.Text;
-//using System.Threading.Tasks;
-//using System.Windows.Forms;
-
-//namespace LaCucina
-//{
-
-//    public partial class KDS : Form, IMessageFilter
-//    {
-//        private System.Windows.Forms.Timer _refreshTimer;
-
-//        Form form;
-
-
-//        private const int WM_MOUSEWHEEL = 0x020A;
-
-
-//        [DllImport("user32.dll")]
-//        private static extern IntPtr SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
-
-//        public KDS(Form form)
-//        {
-//            this.form = form;
-//            InitializeComponent();
-
-
-//            Application.AddMessageFilter(this);
-
-//            LoadKds();
-
-//            _refreshTimer = new System.Windows.Forms.Timer();
-//            _refreshTimer.Interval = 1000000;
-//            _refreshTimer.Tick += (s, e) => LoadKds();
-//            _refreshTimer.Start();
-//        }
-
-//        public bool PreFilterMessage(ref Message m)
-//        {
-//            if (m.Msg == WM_MOUSEWHEEL)
-//            {
-
-//                Control targetControl = Control.FromHandle(m.HWnd);
-
-//                if (targetControl != null && pnlBatches != null)
-//                {
-
-//                    if (IsChildOf(targetControl, pnlBatches))
-//                    {
-
-//                        SendMessage(pnlBatches.Handle, m.Msg, m.WParam, m.LParam);
-//                        return true; 
-//                    }
-//                }
-//            }
-//            return false;
-//        }
-
-
-//        private bool IsChildOf(Control child, Control parent)
-//        {
-//            while (child != null)
-//            {
-//                if (child == parent) return true;
-//                child = child.Parent;
-//            }
-//            return false;
-//        }
-
-
-//        protected override void OnFormClosed(FormClosedEventArgs e)
-//        {
-//            Application.RemoveMessageFilter(this);
-//            base.OnFormClosed(e);
-//        }
-
-//        private void rjPanel2_Paint(object sender, PaintEventArgs e)
-//        {
-
-//        }
-
-//        private void rjButton6_Click(object sender, EventArgs e)
-//        {
-
-
-//        }
-//        public void InvoicesLoad()
-//        {
-
-//        }
-
-//        private void LoadKds()
-//        {
-//            var service = new KdsService();
-//            var batches = service.GetActiveBatches();
-
-//            pnlBatches.Controls.Clear();
-//            pnlBatches.SuspendLayout(); 
-
-//            int maxCardHeight = Screen.GetWorkingArea(this).Height - 100;
-
-//            foreach (var batch in batches)
-//            {
-//                var chunks = service.SplitBatchIntoChunks(batch, maxCardHeight);
-
-
-//                var chunksList = chunks.ToList();
-//                int totalChunks = chunksList.Count;
-
-//                for (int i = 0; i < totalChunks; i++)
-//                {
-//                    var chunk = chunksList[i];
-
-//                    var chunkBatch = new BatchCardDto
-//                    {
-//                        TableNumber = batch.TableNumber,
-//                        OrderId = batch.OrderId,
-//                        SentAt = batch.SentAt,
-//                        Items = chunk
-//                    };
-
-
-//                    bool isFirst = (i == 0);                
-//                    bool isLast = (i == totalChunks - 1);  
-
-//                    var card = new UCBatchCard();
-
-
-//                    card.LoadBatch(chunkBatch, isFirstCard: isFirst, isLastCard: isLast);
-
-//                    pnlBatches.Controls.Add(card);
-//                }
-//            }
-
-//            pnlBatches.ResumeLayout();
-//        }
-
-//        private void rjButton1_Click(object sender, EventArgs e)
-//        {
-//            EditItemsForm editItemsForm = new EditItemsForm(this);
-//            editItemsForm.Show();
-//        }
-
-//        private void KDS_Load(object sender, EventArgs e)
-//        {
-//            InvoicesLoad();
-//        }
-
-//        private void btnClose_Click(object sender, EventArgs e)
-//        {
-//            this.Close();
-//        }
-
-//        private void btnLogout_Click(object sender, EventArgs e)
-//        {
-//            form.Show();
-//            this.Close();
-//        }
-
-//        private void btnHistory_Click(object sender, EventArgs e)
-//        {
-//            OrdersForm form = new OrdersForm();
-//            form.ShowDialog();
-//        }
-//    }
-//}
-
-using LaCucina.Models;
+﻿using LaCucina.Models;
 using LaCucina.Services;
 using LaCucina.UI;
 using System;
@@ -212,7 +35,7 @@ namespace LaCucina
             LoadKitchenLoad();
 
             _refreshTimer = new System.Windows.Forms.Timer();
-            _refreshTimer.Interval = 1000000;
+            _refreshTimer.Interval = 60000;
             _refreshTimer.Tick += (s, e) =>
             {
                 LoadKds();
@@ -256,20 +79,27 @@ namespace LaCucina
         }
 
         // ════════════════════════════════════════════════════════════════
-        //  Load batches
+        //  Load batches — only adds new ones, leaves existing cards alone
         // ════════════════════════════════════════════════════════════════
 
         private void LoadKds()
         {
             var batches = _kdsService.GetActiveBatches();
 
-            pnlBatches.Controls.Clear();
+            // Collect batch IDs already on screen
+            var existingIds = new HashSet<int>();
+            foreach (Control c in pnlBatches.Controls)
+                if (c is UCBatchCard card)
+                    existingIds.Add(card.BatchId);
+
             pnlBatches.SuspendLayout();
 
             int maxCardHeight = Screen.GetWorkingArea(this).Height - 100;
 
             foreach (var batch in batches)
             {
+                if (existingIds.Contains(batch.BatchId)) continue; // already on screen
+
                 var chunks = _kdsService.SplitBatchIntoChunks(batch, maxCardHeight);
                 int totalChunks = chunks.Count;
 
@@ -277,6 +107,7 @@ namespace LaCucina
                 {
                     var chunkBatch = new BatchCardDto
                     {
+                        BatchId = batch.BatchId,
                         TableNumber = batch.TableNumber,
                         OrderId = batch.OrderId,
                         SentAt = batch.SentAt,
@@ -284,6 +115,7 @@ namespace LaCucina
                     };
 
                     var card = new UCBatchCard();
+                    card.ItemOrBatchChanged += (s, e) => LoadKitchenLoad();
                     card.LoadBatch(chunkBatch, isFirstCard: i == 0, isLastCard: i == totalChunks - 1);
                     pnlBatches.Controls.Add(card);
                 }
@@ -293,7 +125,7 @@ namespace LaCucina
         }
 
         // ════════════════════════════════════════════════════════════════
-        //  Load kitchen load (side panel)
+        //  Kitchen load side panel
         // ════════════════════════════════════════════════════════════════
 
         private void LoadKitchenLoad()
@@ -306,9 +138,7 @@ namespace LaCucina
             lblItemsInQueue.Text = $"    Items in Queue ×{total}";
 
             foreach (var item in load)
-            {
                 pnlItemsList.Controls.Add(MakeLoadItemLabel(item));
-            }
         }
 
         private Label MakeLoadItemLabel(KitchenLoadItemDto item)
@@ -317,9 +147,9 @@ namespace LaCucina
             {
                 AutoSize = true,
                 Dock = DockStyle.Top,
-                Font = new Font("Segoe UI", 10f, FontStyle.Bold),
+                Font = new Font("Segoe UI", 9.5f, FontStyle.Regular),
                 ForeColor = Color.WhiteSmoke,
-                Padding = new Padding(8, 15, 0, 7),
+                Padding = new Padding(8, 10, 0, 7),
                 Margin = new Padding(4, 0, 4, 0),
                 Text = $"{item.MenuItemName} ×{item.TotalQuantity}",
                 Tag = item.MenuItemId,

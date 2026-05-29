@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataLink\KdsRepository.cs" />
+    <Compile Include="DataLink\OrdersRepository.cs" />
     <Compile Include="DataLink\SpaceRepository.cs" />
     <Compile Include="DataLink\TableRepository.cs" />
     <Compile Include="DataLink\UserRepository.cs" />
@@ -64,11 +65,15 @@
     <Compile Include="DataLink\CategoryRepository.cs" />
     <Compile Include="Models\Enums.cs" />
     <Compile Include="Models\KitchenLoadItemDto.cs" />
+    <Compile Include="Models\OrderDetailDto.cs" />
+    <Compile Include="Models\OrderItemDto.cs" />
+    <Compile Include="Models\OrderRowDto.cs" />
     <Compile Include="Models\spaces.cs" />
     <Compile Include="Services\FloorPlanService.cs" />
     <Compile Include="Models\ingredients.cs" />
     <Compile Include="Models\menu_item_ingredients.cs" />
     <Compile Include="Services\KdsService.cs" />
+    <Compile Include="Services\OrdersService.cs" />
     <Compile Include="UI\CircularTableUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -353,6 +358,18 @@
     <Compile Include="UI\UCMenuEditorItem.Designer.cs">
       <DependentUpon>UCMenuEditorItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UCOrderItemRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCOrderItemRow.Designer.cs">
+      <DependentUpon>UCOrderItemRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UCOrderRow,cs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCOrderRow,cs.Designer.cs">
+      <DependentUpon>UCOrderRow,cs.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UCOrders.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -520,6 +537,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UCMenuEditorItem.resx">
       <DependentUpon>UCMenuEditorItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCOrderRow,cs.resx">
+      <DependentUpon>UCOrderRow,cs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UCOrders.resx">
       <DependentUpon>UCOrders.cs</DependentUpon>

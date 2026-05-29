@@ -12,6 +12,13 @@ namespace LaCucina.Models
         Waiter = 1,
         Chef = 2
     }
+    public enum OrderStatus
+    {
+        Open = 0,
+        Sent = 1,
+        Ready = 2,
+        Closed = 3
+    }
     public enum TableFormat
     {
         circular,
@@ -28,16 +35,18 @@ namespace LaCucina.Models
         completed
 
     }
-    public enum BatchStatus
+    
+    public enum ItemStatus : byte
     {
-        Pending = 0,
-        Ready = 1,
-        Served = 2
-    }
-    public enum OrderItemStatus
-    {
-        Pending = 0,
+        Preparing = 0,
         Done = 1,
-        Cancelled = 2
+        Delivered = 2
+    }
+
+    public enum BatchStatus : byte
+    {
+        Active = 0,
+        Ready = 1,
+        Delivered = 2
     }
 }

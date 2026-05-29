@@ -121,7 +121,6 @@
             this.lblItemNameAndQuantity.Size = new System.Drawing.Size(258, 47);
             this.lblItemNameAndQuantity.TabIndex = 3;
             this.lblItemNameAndQuantity.Text = "1×Chicken shaworma";
-            this.lblItemNameAndQuantity.Click += new System.EventHandler(this.lblItemNameAndQuantity_Click);
             // 
             // panel1
             // 
