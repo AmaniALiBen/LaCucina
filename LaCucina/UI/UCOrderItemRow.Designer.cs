@@ -21,82 +21,106 @@
             this.lblNote = new System.Windows.Forms.Label();
             this.pnlNote.SuspendLayout();
             this.SuspendLayout();
-
-            // ── lblQuantity ──────────────────────────────────────────────
-            this.lblQuantity.AutoSize = false;
-            this.lblQuantity.Location = new System.Drawing.Point(10, 10);
-            this.lblQuantity.Size = new System.Drawing.Size(28, 24);
-            this.lblQuantity.Font = new System.Drawing.Font("Yu Gothic", 9f);
-            this.lblQuantity.ForeColor = System.Drawing.Color.FromArgb(180, 180, 180);
+            // 
+            // lblQuantity
+            // 
             this.lblQuantity.BackColor = System.Drawing.Color.Transparent;
-            this.lblQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblQuantity.Font = new System.Drawing.Font("Yu Gothic", 9F);
+            this.lblQuantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.lblQuantity.Location = new System.Drawing.Point(13, 13);
+            this.lblQuantity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(36, 30);
+            this.lblQuantity.TabIndex = 0;
             this.lblQuantity.Text = "1";
-
-            // ── lblName ──────────────────────────────────────────────────
-            this.lblName.AutoSize = false;
-            this.lblName.Location = new System.Drawing.Point(44, 10);
-            this.lblName.Size = new System.Drawing.Size(340, 24);
-            this.lblName.Font = new System.Drawing.Font("Yu Gothic", 9f);
-            this.lblName.ForeColor = System.Drawing.Color.FromArgb(242, 242, 242);
+            this.lblQuantity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblName
+            // 
             this.lblName.BackColor = System.Drawing.Color.Transparent;
-            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblName.Font = new System.Drawing.Font("Yu Gothic", 9F);
+            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.lblName.Location = new System.Drawing.Point(57, 13);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(437, 30);
+            this.lblName.TabIndex = 1;
             this.lblName.Text = "Item Name";
-
-            // ── lblPrice ─────────────────────────────────────────────────
-            this.lblPrice.AutoSize = false;
-            this.lblPrice.Location = new System.Drawing.Point(394, 10);
-            this.lblPrice.Size = new System.Drawing.Size(100, 24);
-            this.lblPrice.Font = new System.Drawing.Font("Yu Gothic", 9f);
-            this.lblPrice.ForeColor = System.Drawing.Color.FromArgb(242, 242, 242);
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblPrice
+            // 
             this.lblPrice.BackColor = System.Drawing.Color.Transparent;
-            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPrice.Font = new System.Drawing.Font("Yu Gothic", 9F);
+            this.lblPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.lblPrice.Location = new System.Drawing.Point(430, 13);
+            this.lblPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(130, 30);
+            this.lblPrice.TabIndex = 2;
             this.lblPrice.Text = "$0.00";
-
-            // ── pnlModifiers ─────────────────────────────────────────────
-            this.pnlModifiers.Location = new System.Drawing.Point(44, 36);
-            this.pnlModifiers.Size = new System.Drawing.Size(450, 0);
+            this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pnlModifiers
+            // 
             this.pnlModifiers.AutoSize = true;
             this.pnlModifiers.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.pnlModifiers.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.pnlModifiers.WrapContents = false;
             this.pnlModifiers.BackColor = System.Drawing.Color.Transparent;
-            this.pnlModifiers.Padding = new System.Windows.Forms.Padding(0);
+            this.pnlModifiers.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.pnlModifiers.Location = new System.Drawing.Point(57, 46);
             this.pnlModifiers.Margin = new System.Windows.Forms.Padding(0);
-
-            // ── pnlNote ──────────────────────────────────────────────────
+            this.pnlModifiers.Name = "pnlModifiers";
+            this.pnlModifiers.Size = new System.Drawing.Size(0, 0);
+            this.pnlModifiers.TabIndex = 3;
+            this.pnlModifiers.WrapContents = false;
+            // 
+            // pnlNote
+            // 
             this.pnlNote.AutoSize = true;
             this.pnlNote.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlNote.BackColor = System.Drawing.Color.Transparent;
-            this.pnlNote.Padding = new System.Windows.Forms.Padding(0);
             this.pnlNote.Controls.Add(this.lblNote);
-
-            // ── lblNote ──────────────────────────────────────────────────
+            this.pnlNote.Location = new System.Drawing.Point(0, 0);
+            this.pnlNote.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlNote.Name = "pnlNote";
+            this.pnlNote.Size = new System.Drawing.Size(4, 28);
+            this.pnlNote.TabIndex = 4;
+            // 
+            // lblNote
+            // 
             this.lblNote.AutoSize = true;
-            this.lblNote.Font = new System.Drawing.Font("Yu Gothic", 8.5f, System.Drawing.FontStyle.Italic);
-            this.lblNote.ForeColor = System.Drawing.Color.FromArgb(239, 128, 16);
             this.lblNote.BackColor = System.Drawing.Color.Transparent;
-            this.lblNote.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.lblNote.Text = "";
-
-            // ── UCOrderItemRow ───────────────────────────────────────────
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7f, 15f);
+            this.lblNote.Font = new System.Drawing.Font("Yu Gothic", 8.5F, System.Drawing.FontStyle.Italic);
+            this.lblNote.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(128)))), ((int)(((byte)(16)))));
+            this.lblNote.Location = new System.Drawing.Point(0, 0);
+            this.lblNote.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNote.Name = "lblNote";
+            this.lblNote.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.lblNote.Size = new System.Drawing.Size(0, 28);
+            this.lblNote.TabIndex = 0;
+            // 
+            // UCOrderItemRow
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.FromArgb(28, 28, 28);
-            this.MinimumSize = new System.Drawing.Size(500, 44);
-            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.Controls.AddRange(new System.Windows.Forms.Control[]
-            {
-                this.lblQuantity,
-                this.lblName,
-                this.lblPrice,
-                this.pnlModifiers,
-                this.pnlNote
-            });
-
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.Controls.Add(this.lblQuantity);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.lblPrice);
+            this.Controls.Add(this.pnlModifiers);
+            this.Controls.Add(this.pnlNote);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(560, 56);
+            this.Name = "UCOrderItemRow";
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.Size = new System.Drawing.Size(640, 56);
             this.pnlNote.ResumeLayout(false);
+            this.pnlNote.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         private System.Windows.Forms.Label lblQuantity;

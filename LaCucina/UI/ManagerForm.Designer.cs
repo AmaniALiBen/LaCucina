@@ -43,6 +43,8 @@
             this.materialDivider3 = new MaterialSkin.Controls.MaterialDivider();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblUser = new System.Windows.Forms.Label();
+            this.btnKitchenView = new CustomControls.RJControls.RJButton();
+            this.btnWaterPortal = new CustomControls.RJControls.RJButton();
             this.rjPanel2.SuspendLayout();
             this.professionalNavPanel1.SuspendLayout();
             this.rjPanel1.SuspendLayout();
@@ -55,7 +57,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 67);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1414, 640);
+            this.panel2.Size = new System.Drawing.Size(1800, 640);
             this.panel2.TabIndex = 21;
             // 
             // rjPanel2
@@ -64,6 +66,8 @@
             this.rjPanel2.BorderColor = System.Drawing.SystemColors.ControlLight;
             this.rjPanel2.BorderRadius = 0;
             this.rjPanel2.BorderSize = 0;
+            this.rjPanel2.Controls.Add(this.btnKitchenView);
+            this.rjPanel2.Controls.Add(this.btnWaterPortal);
             this.rjPanel2.Controls.Add(this.professionalNavPanel1);
             this.rjPanel2.Controls.Add(this.btnClose);
             this.rjPanel2.Controls.Add(this.materialDivider1);
@@ -73,7 +77,7 @@
             this.rjPanel2.Location = new System.Drawing.Point(0, 0);
             this.rjPanel2.Name = "rjPanel2";
             this.rjPanel2.Padding = new System.Windows.Forms.Padding(0, 7, 0, 0);
-            this.rjPanel2.Size = new System.Drawing.Size(1414, 67);
+            this.rjPanel2.Size = new System.Drawing.Size(1800, 67);
             this.rjPanel2.TabIndex = 4;
             // 
             // professionalNavPanel1
@@ -85,7 +89,7 @@
             this.professionalNavPanel1.Controls.Add(this.btnDiscounts);
             this.professionalNavPanel1.Controls.Add(this.btnOrdersHistory);
             this.professionalNavPanel1.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(128)))), ((int)(((byte)(16)))));
-            this.professionalNavPanel1.Location = new System.Drawing.Point(56, 3);
+            this.professionalNavPanel1.Location = new System.Drawing.Point(395, 0);
             this.professionalNavPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.professionalNavPanel1.Name = "professionalNavPanel1";
             this.professionalNavPanel1.Size = new System.Drawing.Size(1150, 64);
@@ -252,7 +256,7 @@
             this.materialDivider1.Location = new System.Drawing.Point(0, 66);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(1198, 1);
+            this.materialDivider1.Size = new System.Drawing.Size(1584, 1);
             this.materialDivider1.TabIndex = 0;
             this.materialDivider1.Text = "materialDivider1";
             // 
@@ -268,7 +272,7 @@
             this.rjPanel1.Controls.Add(this.lblUser);
             this.rjPanel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.rjPanel1.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel1.Location = new System.Drawing.Point(1198, 7);
+            this.rjPanel1.Location = new System.Drawing.Point(1584, 7);
             this.rjPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.rjPanel1.Name = "rjPanel1";
             this.rjPanel1.Padding = new System.Windows.Forms.Padding(3);
@@ -337,12 +341,54 @@
             this.lblUser.TabIndex = 9;
             this.lblUser.Text = "maysem";
             // 
+            // btnKitchenView
+            // 
+            this.btnKitchenView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.btnKitchenView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.btnKitchenView.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnKitchenView.BorderRadius = 5;
+            this.btnKitchenView.BorderSize = 1;
+            this.btnKitchenView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKitchenView.FlatAppearance.BorderSize = 0;
+            this.btnKitchenView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKitchenView.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnKitchenView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.btnKitchenView.Location = new System.Drawing.Point(227, 22);
+            this.btnKitchenView.Name = "btnKitchenView";
+            this.btnKitchenView.Size = new System.Drawing.Size(141, 31);
+            this.btnKitchenView.TabIndex = 21;
+            this.btnKitchenView.Text = "Kitchen View";
+            this.btnKitchenView.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.btnKitchenView.UseVisualStyleBackColor = false;
+            this.btnKitchenView.Click += new System.EventHandler(this.btnKitchenView_Click);
+            // 
+            // btnWaterPortal
+            // 
+            this.btnWaterPortal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(128)))), ((int)(((byte)(16)))));
+            this.btnWaterPortal.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(128)))), ((int)(((byte)(16)))));
+            this.btnWaterPortal.BorderColor = System.Drawing.Color.Transparent;
+            this.btnWaterPortal.BorderRadius = 5;
+            this.btnWaterPortal.BorderSize = 0;
+            this.btnWaterPortal.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnWaterPortal.FlatAppearance.BorderSize = 0;
+            this.btnWaterPortal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWaterPortal.Font = new System.Drawing.Font("Segoe UI Symbol", 9F);
+            this.btnWaterPortal.ForeColor = System.Drawing.Color.Black;
+            this.btnWaterPortal.Location = new System.Drawing.Point(73, 22);
+            this.btnWaterPortal.Name = "btnWaterPortal";
+            this.btnWaterPortal.Size = new System.Drawing.Size(141, 31);
+            this.btnWaterPortal.TabIndex = 22;
+            this.btnWaterPortal.Text = "Waiter Portal";
+            this.btnWaterPortal.TextColor = System.Drawing.Color.Black;
+            this.btnWaterPortal.UseVisualStyleBackColor = false;
+            this.btnWaterPortal.Click += new System.EventHandler(this.btnWaterPortal_Click);
+            // 
             // ManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.ClientSize = new System.Drawing.Size(1414, 707);
+            this.ClientSize = new System.Drawing.Size(1800, 707);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.rjPanel2);
@@ -377,5 +423,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblUser;
         private CustomControls.RJControls.RJButton btnOrdersHistory;
+        private CustomControls.RJControls.RJButton btnKitchenView;
+        private CustomControls.RJControls.RJButton btnWaterPortal;
     }
 }

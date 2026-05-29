@@ -101,5 +101,21 @@ namespace LaCucina
            Form f = loginForm.FindForm();
             f.Close();
         }
+
+        private void btnWaterPortal_Click(object sender, EventArgs e)
+        {
+            FloorPlanForm f = new FloorPlanForm(this);
+            this.Hide();
+            f.Show();
+            f.BringToFront();
+        }
+
+        private void btnKitchenView_Click(object sender, EventArgs e)
+        {
+            KDS f = new KDS(this);
+            this.Hide();
+            f.Show();
+            f.BringToFront();
+        }
     }
 }

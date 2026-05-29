@@ -104,9 +104,10 @@
             this.rjPanel10.Controls.Add(this.pnlItems);
             this.rjPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rjPanel10.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel10.Location = new System.Drawing.Point(166, 57);
+            this.rjPanel10.Location = new System.Drawing.Point(250, 83);
+            this.rjPanel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rjPanel10.Name = "rjPanel10";
-            this.rjPanel10.Size = new System.Drawing.Size(346, 398);
+            this.rjPanel10.Size = new System.Drawing.Size(555, 582);
             this.rjPanel10.TabIndex = 2;
             // 
             // pnlItems
@@ -115,10 +116,10 @@
             this.pnlItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.pnlItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlItems.Location = new System.Drawing.Point(0, 0);
-            this.pnlItems.Margin = new System.Windows.Forms.Padding(17, 5, 0, 5);
+            this.pnlItems.Margin = new System.Windows.Forms.Padding(26, 7, 0, 7);
             this.pnlItems.Name = "pnlItems";
-            this.pnlItems.Padding = new System.Windows.Forms.Padding(8, 4, 0, 0);
-            this.pnlItems.Size = new System.Drawing.Size(346, 398);
+            this.pnlItems.Padding = new System.Windows.Forms.Padding(12, 6, 0, 0);
+            this.pnlItems.Size = new System.Drawing.Size(555, 582);
             this.pnlItems.TabIndex = 0;
             // 
             // rjPanel3
@@ -131,11 +132,11 @@
             this.rjPanel3.Controls.Add(this.rjPanel8);
             this.rjPanel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.rjPanel3.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel3.Location = new System.Drawing.Point(1, 57);
-            this.rjPanel3.Margin = new System.Windows.Forms.Padding(7, 5, 5, 5);
+            this.rjPanel3.Location = new System.Drawing.Point(2, 83);
+            this.rjPanel3.Margin = new System.Windows.Forms.Padding(10, 7, 8, 7);
             this.rjPanel3.Name = "rjPanel3";
-            this.rjPanel3.Padding = new System.Windows.Forms.Padding(7);
-            this.rjPanel3.Size = new System.Drawing.Size(165, 398);
+            this.rjPanel3.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.rjPanel3.Size = new System.Drawing.Size(248, 582);
             this.rjPanel3.TabIndex = 1;
             // 
             // rjPanel8
@@ -148,9 +149,10 @@
             this.rjPanel8.Controls.Add(this.rjPanel9);
             this.rjPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rjPanel8.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel8.Location = new System.Drawing.Point(7, 7);
+            this.rjPanel8.Location = new System.Drawing.Point(10, 10);
+            this.rjPanel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rjPanel8.Name = "rjPanel8";
-            this.rjPanel8.Size = new System.Drawing.Size(151, 384);
+            this.rjPanel8.Size = new System.Drawing.Size(228, 562);
             this.rjPanel8.TabIndex = 0;
             // 
             // pnlCAtegories
@@ -159,11 +161,11 @@
             this.pnlCAtegories.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.pnlCAtegories.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCAtegories.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.pnlCAtegories.Location = new System.Drawing.Point(0, 55);
+            this.pnlCAtegories.Location = new System.Drawing.Point(0, 80);
             this.pnlCAtegories.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCAtegories.Name = "pnlCAtegories";
-            this.pnlCAtegories.Padding = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.pnlCAtegories.Size = new System.Drawing.Size(151, 329);
+            this.pnlCAtegories.Padding = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.pnlCAtegories.Size = new System.Drawing.Size(228, 482);
             this.pnlCAtegories.TabIndex = 0;
             this.pnlCAtegories.WrapContents = false;
             // 
@@ -178,8 +180,9 @@
             this.rjPanel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.rjPanel9.ForeColor = System.Drawing.Color.Black;
             this.rjPanel9.Location = new System.Drawing.Point(0, 0);
+            this.rjPanel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rjPanel9.Name = "rjPanel9";
-            this.rjPanel9.Size = new System.Drawing.Size(151, 55);
+            this.rjPanel9.Size = new System.Drawing.Size(228, 80);
             this.rjPanel9.TabIndex = 0;
             // 
             // materialDivider4
@@ -187,11 +190,11 @@
             this.materialDivider4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.materialDivider4.Depth = 0;
             this.materialDivider4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.materialDivider4.Location = new System.Drawing.Point(17, 50);
-            this.materialDivider4.Margin = new System.Windows.Forms.Padding(21, 2, 2, 2);
+            this.materialDivider4.Location = new System.Drawing.Point(26, 73);
+            this.materialDivider4.Margin = new System.Windows.Forms.Padding(32, 3, 3, 3);
             this.materialDivider4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider4.Name = "materialDivider4";
-            this.materialDivider4.Size = new System.Drawing.Size(100, 1);
+            this.materialDivider4.Size = new System.Drawing.Size(150, 1);
             this.materialDivider4.TabIndex = 13;
             this.materialDivider4.Text = "materialDivider4";
             // 
@@ -201,11 +204,11 @@
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.label9.Font = new System.Drawing.Font("Yu Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label9.Location = new System.Drawing.Point(14, 2);
+            this.label9.Location = new System.Drawing.Point(21, 3);
             this.label9.Margin = new System.Windows.Forms.Padding(0);
             this.label9.Name = "label9";
-            this.label9.Padding = new System.Windows.Forms.Padding(5, 10, 10, 10);
-            this.label9.Size = new System.Drawing.Size(123, 45);
+            this.label9.Padding = new System.Windows.Forms.Padding(8, 15, 15, 15);
+            this.label9.Size = new System.Drawing.Size(177, 66);
             this.label9.TabIndex = 12;
             this.label9.Text = "Categories";
             // 
@@ -220,11 +223,11 @@
             this.rjPanel2.Controls.Add(this.rjPanel7);
             this.rjPanel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.rjPanel2.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel2.Location = new System.Drawing.Point(512, 57);
-            this.rjPanel2.Margin = new System.Windows.Forms.Padding(0, 5, 5, 5);
+            this.rjPanel2.Location = new System.Drawing.Point(805, 83);
+            this.rjPanel2.Margin = new System.Windows.Forms.Padding(0, 7, 8, 7);
             this.rjPanel2.Name = "rjPanel2";
-            this.rjPanel2.Padding = new System.Windows.Forms.Padding(7);
-            this.rjPanel2.Size = new System.Drawing.Size(343, 398);
+            this.rjPanel2.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.rjPanel2.Size = new System.Drawing.Size(514, 582);
             this.rjPanel2.TabIndex = 1;
             // 
             // pnlInvoiceItems
@@ -233,10 +236,10 @@
             this.pnlInvoiceItems.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.pnlInvoiceItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlInvoiceItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlInvoiceItems.Location = new System.Drawing.Point(7, 133);
+            this.pnlInvoiceItems.Location = new System.Drawing.Point(10, 194);
             this.pnlInvoiceItems.Margin = new System.Windows.Forms.Padding(0);
             this.pnlInvoiceItems.Name = "pnlInvoiceItems";
-            this.pnlInvoiceItems.Size = new System.Drawing.Size(329, 68);
+            this.pnlInvoiceItems.Size = new System.Drawing.Size(494, 100);
             this.pnlInvoiceItems.TabIndex = 2;
             // 
             // rjPanel5
@@ -259,10 +262,10 @@
             this.rjPanel5.Controls.Add(this.label1);
             this.rjPanel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.rjPanel5.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel5.Location = new System.Drawing.Point(7, 7);
+            this.rjPanel5.Location = new System.Drawing.Point(10, 10);
             this.rjPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.rjPanel5.Name = "rjPanel5";
-            this.rjPanel5.Size = new System.Drawing.Size(329, 126);
+            this.rjPanel5.Size = new System.Drawing.Size(494, 184);
             this.rjPanel5.TabIndex = 1;
             // 
             // label12
@@ -270,10 +273,9 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label12.Location = new System.Drawing.Point(208, 101);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Location = new System.Drawing.Point(312, 148);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(35, 16);
+            this.label12.Size = new System.Drawing.Size(53, 23);
             this.label12.TabIndex = 15;
             this.label12.Text = "Price";
             // 
@@ -282,10 +284,9 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label8.Location = new System.Drawing.Point(264, 101);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(396, 148);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 16);
+            this.label8.Size = new System.Drawing.Size(50, 23);
             this.label8.TabIndex = 14;
             this.label8.Text = "Total";
             // 
@@ -294,10 +295,9 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label7.Location = new System.Drawing.Point(71, 101);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(106, 148);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(32, 16);
+            this.label7.Size = new System.Drawing.Size(47, 23);
             this.label7.TabIndex = 13;
             this.label7.Text = "Item";
             // 
@@ -306,10 +306,9 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label6.Location = new System.Drawing.Point(5, 101);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(8, 148);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 16);
+            this.label6.Size = new System.Drawing.Size(79, 23);
             this.label6.TabIndex = 12;
             this.label6.Text = "Quantity";
             // 
@@ -318,10 +317,9 @@
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.lblDate.Location = new System.Drawing.Point(210, 55);
-            this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDate.Location = new System.Drawing.Point(315, 80);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(10, 16);
+            this.lblDate.Size = new System.Drawing.Size(15, 23);
             this.lblDate.TabIndex = 11;
             this.lblDate.Text = "l";
             // 
@@ -330,10 +328,9 @@
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.lblTime.Location = new System.Drawing.Point(210, 76);
-            this.lblTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTime.Location = new System.Drawing.Point(315, 111);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(10, 16);
+            this.lblTime.Size = new System.Drawing.Size(15, 23);
             this.lblTime.TabIndex = 10;
             this.lblTime.Text = "l";
             // 
@@ -342,10 +339,9 @@
             this.lblOrderNum.AutoSize = true;
             this.lblOrderNum.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrderNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.lblOrderNum.Location = new System.Drawing.Point(27, 55);
-            this.lblOrderNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblOrderNum.Location = new System.Drawing.Point(40, 80);
             this.lblOrderNum.Name = "lblOrderNum";
-            this.lblOrderNum.Size = new System.Drawing.Size(75, 16);
+            this.lblOrderNum.Size = new System.Drawing.Size(111, 23);
             this.lblOrderNum.TabIndex = 5;
             this.lblOrderNum.Text = "ORDER :#23";
             // 
@@ -354,10 +350,9 @@
             this.lblTableNum.AutoSize = true;
             this.lblTableNum.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTableNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.lblTableNum.Location = new System.Drawing.Point(27, 76);
-            this.lblTableNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTableNum.Location = new System.Drawing.Point(40, 111);
             this.lblTableNum.Name = "lblTableNum";
-            this.lblTableNum.Size = new System.Drawing.Size(62, 16);
+            this.lblTableNum.Size = new System.Drawing.Size(91, 23);
             this.lblTableNum.TabIndex = 4;
             this.lblTableNum.Text = "TABLE:12";
             // 
@@ -366,11 +361,10 @@
             this.materialDivider2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.materialDivider2.Depth = 0;
             this.materialDivider2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.materialDivider2.Location = new System.Drawing.Point(54, 94);
-            this.materialDivider2.Margin = new System.Windows.Forms.Padding(2);
+            this.materialDivider2.Location = new System.Drawing.Point(81, 137);
             this.materialDivider2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider2.Name = "materialDivider2";
-            this.materialDivider2.Size = new System.Drawing.Size(227, 1);
+            this.materialDivider2.Size = new System.Drawing.Size(340, 1);
             this.materialDivider2.TabIndex = 3;
             this.materialDivider2.Text = "materialDivider2";
             // 
@@ -379,11 +373,10 @@
             this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.materialDivider1.Depth = 0;
             this.materialDivider1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.materialDivider1.Location = new System.Drawing.Point(54, 32);
-            this.materialDivider1.Margin = new System.Windows.Forms.Padding(2);
+            this.materialDivider1.Location = new System.Drawing.Point(81, 47);
             this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider1.Name = "materialDivider1";
-            this.materialDivider1.Size = new System.Drawing.Size(227, 1);
+            this.materialDivider1.Size = new System.Drawing.Size(340, 1);
             this.materialDivider1.TabIndex = 2;
             this.materialDivider1.Text = "materialDivider1";
             // 
@@ -392,10 +385,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label2.Location = new System.Drawing.Point(138, 40);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(207, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 16);
+            this.label2.Size = new System.Drawing.Size(81, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "INVOICE";
             // 
@@ -404,10 +396,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(128)))), ((int)(((byte)(16)))));
-            this.label1.Location = new System.Drawing.Point(113, 2);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(170, 3);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 28);
+            this.label1.Size = new System.Drawing.Size(161, 44);
             this.label1.TabIndex = 0;
             this.label1.Text = "La Cucina";
             // 
@@ -428,9 +419,10 @@
             this.rjPanel7.Controls.Add(this.rJgradiantPanal2);
             this.rjPanel7.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.rjPanel7.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel7.Location = new System.Drawing.Point(7, 201);
+            this.rjPanel7.Location = new System.Drawing.Point(10, 294);
+            this.rjPanel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rjPanel7.Name = "rjPanel7";
-            this.rjPanel7.Size = new System.Drawing.Size(329, 190);
+            this.rjPanel7.Size = new System.Drawing.Size(494, 278);
             this.rjPanel7.TabIndex = 0;
             this.rjPanel7.Paint += new System.Windows.Forms.PaintEventHandler(this.rjPanel7_Paint);
             // 
@@ -439,10 +431,9 @@
             this.lblNetTotal.AutoSize = true;
             this.lblNetTotal.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNetTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.lblNetTotal.Location = new System.Drawing.Point(73, 58);
-            this.lblNetTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNetTotal.Location = new System.Drawing.Point(110, 85);
             this.lblNetTotal.Name = "lblNetTotal";
-            this.lblNetTotal.Size = new System.Drawing.Size(31, 16);
+            this.lblNetTotal.Size = new System.Drawing.Size(45, 23);
             this.lblNetTotal.TabIndex = 19;
             this.lblNetTotal.Text = "0.00";
             // 
@@ -451,10 +442,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label4.Location = new System.Drawing.Point(5, 58);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(8, 85);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 16);
+            this.label4.Size = new System.Drawing.Size(94, 23);
             this.label4.TabIndex = 18;
             this.label4.Text = "Net Total :";
             // 
@@ -469,10 +459,9 @@
             this.send.GradientAngle = 0F;
             this.send.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(81)))), ((int)(((byte)(0)))));
             this.send.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
-            this.send.Location = new System.Drawing.Point(54, 107);
-            this.send.Margin = new System.Windows.Forms.Padding(2);
+            this.send.Location = new System.Drawing.Point(81, 156);
             this.send.Name = "send";
-            this.send.Size = new System.Drawing.Size(225, 36);
+            this.send.Size = new System.Drawing.Size(338, 53);
             this.send.TabIndex = 1;
             // 
             // btnSend
@@ -490,8 +479,9 @@
             this.btnSend.Font = new System.Drawing.Font("Yu Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSend.ForeColor = System.Drawing.Color.Black;
             this.btnSend.Location = new System.Drawing.Point(0, 0);
+            this.btnSend.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(225, 36);
+            this.btnSend.Size = new System.Drawing.Size(338, 53);
             this.btnSend.TabIndex = 1;
             this.btnSend.Text = "Send";
             this.btnSend.TextColor = System.Drawing.Color.Black;
@@ -503,10 +493,9 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Yu Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label11.Location = new System.Drawing.Point(148, 18);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Location = new System.Drawing.Point(222, 26);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(76, 18);
+            this.label11.Size = new System.Drawing.Size(110, 26);
             this.label11.TabIndex = 17;
             this.label11.Text = "Discounts:";
             // 
@@ -521,12 +510,11 @@
             this.cmbDiscounts.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
             this.cmbDiscounts.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.cmbDiscounts.ListTextColor = System.Drawing.Color.Silver;
-            this.cmbDiscounts.Location = new System.Drawing.Point(151, 48);
-            this.cmbDiscounts.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbDiscounts.MinimumSize = new System.Drawing.Size(133, 20);
+            this.cmbDiscounts.Location = new System.Drawing.Point(226, 70);
+            this.cmbDiscounts.MinimumSize = new System.Drawing.Size(200, 29);
             this.cmbDiscounts.Name = "cmbDiscounts";
-            this.cmbDiscounts.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.cmbDiscounts.Size = new System.Drawing.Size(159, 26);
+            this.cmbDiscounts.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
+            this.cmbDiscounts.Size = new System.Drawing.Size(238, 50);
             this.cmbDiscounts.TabIndex = 7;
             this.cmbDiscounts.Texts = "";
             this.cmbDiscounts.OnSelectedIndexChanged += new System.EventHandler(this.cmbDiscounts_OnSelectedIndexChanged);
@@ -536,10 +524,9 @@
             this.lblSubtotal.AutoSize = true;
             this.lblSubtotal.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubtotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.lblSubtotal.Location = new System.Drawing.Point(72, 19);
-            this.lblSubtotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSubtotal.Location = new System.Drawing.Point(108, 28);
             this.lblSubtotal.Name = "lblSubtotal";
-            this.lblSubtotal.Size = new System.Drawing.Size(31, 16);
+            this.lblSubtotal.Size = new System.Drawing.Size(45, 23);
             this.lblSubtotal.TabIndex = 16;
             this.lblSubtotal.Text = "0.00";
             // 
@@ -548,10 +535,9 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Yu Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label10.Location = new System.Drawing.Point(5, 19);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(8, 28);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(60, 16);
+            this.label10.Size = new System.Drawing.Size(88, 23);
             this.label10.TabIndex = 15;
             this.label10.Text = "Subtotal :";
             // 
@@ -566,10 +552,9 @@
             this.rJgradiantPanal1.GradientAngle = 0F;
             this.rJgradiantPanal1.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(81)))), ((int)(((byte)(0)))));
             this.rJgradiantPanal1.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
-            this.rJgradiantPanal1.Location = new System.Drawing.Point(54, 148);
-            this.rJgradiantPanal1.Margin = new System.Windows.Forms.Padding(2);
+            this.rJgradiantPanal1.Location = new System.Drawing.Point(81, 216);
             this.rJgradiantPanal1.Name = "rJgradiantPanal1";
-            this.rJgradiantPanal1.Size = new System.Drawing.Size(225, 36);
+            this.rJgradiantPanal1.Size = new System.Drawing.Size(338, 53);
             this.rJgradiantPanal1.TabIndex = 0;
             // 
             // btnPay
@@ -587,8 +572,9 @@
             this.btnPay.Font = new System.Drawing.Font("Yu Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPay.ForeColor = System.Drawing.Color.Black;
             this.btnPay.Location = new System.Drawing.Point(0, 0);
+            this.btnPay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(225, 36);
+            this.btnPay.Size = new System.Drawing.Size(338, 53);
             this.btnPay.TabIndex = 1;
             this.btnPay.Text = "pay and print invoice";
             this.btnPay.TextColor = System.Drawing.Color.Black;
@@ -606,10 +592,9 @@
             this.rJgradiantPanal2.GradientAngle = 0F;
             this.rJgradiantPanal2.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(81)))), ((int)(((byte)(0)))));
             this.rJgradiantPanal2.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
-            this.rJgradiantPanal2.Location = new System.Drawing.Point(160, 148);
-            this.rJgradiantPanal2.Margin = new System.Windows.Forms.Padding(2);
+            this.rJgradiantPanal2.Location = new System.Drawing.Point(240, 216);
             this.rJgradiantPanal2.Name = "rJgradiantPanal2";
-            this.rJgradiantPanal2.Size = new System.Drawing.Size(25, 22);
+            this.rJgradiantPanal2.Size = new System.Drawing.Size(38, 32);
             this.rJgradiantPanal2.TabIndex = 1;
             // 
             // btnPrintInvoice
@@ -627,8 +612,9 @@
             this.btnPrintInvoice.Font = new System.Drawing.Font("Yu Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPrintInvoice.ForeColor = System.Drawing.Color.Black;
             this.btnPrintInvoice.Location = new System.Drawing.Point(0, 0);
+            this.btnPrintInvoice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPrintInvoice.Name = "btnPrintInvoice";
-            this.btnPrintInvoice.Size = new System.Drawing.Size(25, 22);
+            this.btnPrintInvoice.Size = new System.Drawing.Size(38, 32);
             this.btnPrintInvoice.TabIndex = 0;
             this.btnPrintInvoice.Text = "print invoice";
             this.btnPrintInvoice.TextColor = System.Drawing.Color.Black;
@@ -647,11 +633,11 @@
             this.rjPanel1.Controls.Add(this.txtSearch);
             this.rjPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.rjPanel1.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel1.Location = new System.Drawing.Point(1, 1);
-            this.rjPanel1.Margin = new System.Windows.Forms.Padding(5);
+            this.rjPanel1.Location = new System.Drawing.Point(2, 1);
+            this.rjPanel1.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.rjPanel1.Name = "rjPanel1";
-            this.rjPanel1.Padding = new System.Windows.Forms.Padding(7);
-            this.rjPanel1.Size = new System.Drawing.Size(854, 56);
+            this.rjPanel1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.rjPanel1.Size = new System.Drawing.Size(1317, 82);
             this.rjPanel1.TabIndex = 0;
             // 
             // materialDivider5
@@ -660,11 +646,10 @@
             this.materialDivider5.Depth = 0;
             this.materialDivider5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.materialDivider5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.materialDivider5.Location = new System.Drawing.Point(7, 48);
-            this.materialDivider5.Margin = new System.Windows.Forms.Padding(2);
+            this.materialDivider5.Location = new System.Drawing.Point(10, 71);
             this.materialDivider5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider5.Name = "materialDivider5";
-            this.materialDivider5.Size = new System.Drawing.Size(696, 1);
+            this.materialDivider5.Size = new System.Drawing.Size(1081, 1);
             this.materialDivider5.TabIndex = 25;
             this.materialDivider5.Text = "materialDivider5";
             // 
@@ -682,10 +667,10 @@
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.ForeColor = System.Drawing.Color.Transparent;
             this.btnBack.Image = global::LaCucina.Properties.Resources.back__2_;
-            this.btnBack.Location = new System.Drawing.Point(0, 9);
+            this.btnBack.Location = new System.Drawing.Point(0, 13);
             this.btnBack.Margin = new System.Windows.Forms.Padding(0);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(32, 35);
+            this.btnBack.Size = new System.Drawing.Size(48, 51);
             this.btnBack.TabIndex = 16;
             this.btnBack.TextColor = System.Drawing.Color.Transparent;
             this.btnBack.UseVisualStyleBackColor = false;
@@ -702,10 +687,11 @@
             this.rjPanel6.Controls.Add(this.lblUser);
             this.rjPanel6.Dock = System.Windows.Forms.DockStyle.Right;
             this.rjPanel6.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel6.Location = new System.Drawing.Point(703, 7);
+            this.rjPanel6.Location = new System.Drawing.Point(1091, 10);
+            this.rjPanel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rjPanel6.Name = "rjPanel6";
-            this.rjPanel6.Padding = new System.Windows.Forms.Padding(2);
-            this.rjPanel6.Size = new System.Drawing.Size(144, 42);
+            this.rjPanel6.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.rjPanel6.Size = new System.Drawing.Size(216, 62);
             this.rjPanel6.TabIndex = 12;
             // 
             // materialDivider3
@@ -714,20 +700,21 @@
             this.materialDivider3.Depth = 0;
             this.materialDivider3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.materialDivider3.ForeColor = System.Drawing.Color.Gray;
-            this.materialDivider3.Location = new System.Drawing.Point(2, 39);
+            this.materialDivider3.Location = new System.Drawing.Point(3, 58);
+            this.materialDivider3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.materialDivider3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider3.Name = "materialDivider3";
-            this.materialDivider3.Size = new System.Drawing.Size(140, 1);
+            this.materialDivider3.Size = new System.Drawing.Size(210, 1);
             this.materialDivider3.TabIndex = 12;
             this.materialDivider3.Text = "materialDivider3";
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::LaCucina.Properties.Resources.user__4_;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 8);
+            this.pictureBox2.Location = new System.Drawing.Point(4, 12);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(21, 21);
+            this.pictureBox2.Size = new System.Drawing.Size(32, 31);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
@@ -738,10 +725,10 @@
             this.lblUser.BackColor = System.Drawing.Color.Transparent;
             this.lblUser.Font = new System.Drawing.Font("Yu Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.lblUser.Location = new System.Drawing.Point(28, 10);
+            this.lblUser.Location = new System.Drawing.Point(42, 15);
             this.lblUser.Margin = new System.Windows.Forms.Padding(0);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(66, 20);
+            this.lblUser.Size = new System.Drawing.Size(97, 29);
             this.lblUser.TabIndex = 9;
             this.lblUser.Text = "maysem";
             // 
@@ -756,16 +743,16 @@
             this.txtSearch.CustomPasswordChar = '●';
             this.txtSearch.Font = new System.Drawing.Font("Yu Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.txtSearch.Location = new System.Drawing.Point(157, 10);
+            this.txtSearch.Location = new System.Drawing.Point(254, 15);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(0);
             this.txtSearch.Multiline = false;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Padding = new System.Windows.Forms.Padding(7, 5, 7, 5);
+            this.txtSearch.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
             this.txtSearch.PasswordChar = false;
             this.txtSearch.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtSearch.PlaceholderFont = new System.Drawing.Font("Segoe UI", 9.5F);
             this.txtSearch.PlaceholderText = "⌕ search item...";
-            this.txtSearch.Size = new System.Drawing.Size(338, 31);
+            this.txtSearch.Size = new System.Drawing.Size(507, 44);
             this.txtSearch.TabIndex = 10;
             this.txtSearch.TabStop = false;
             this.txtSearch.Texts = "";
@@ -774,19 +761,18 @@
             // 
             // POSForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(19)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(856, 456);
+            this.ClientSize = new System.Drawing.Size(1321, 666);
             this.Controls.Add(this.rjPanel10);
             this.Controls.Add(this.rjPanel3);
             this.Controls.Add(this.rjPanel2);
             this.Controls.Add(this.rjPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.HelpButton = true;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "POSForm";
-            this.Padding = new System.Windows.Forms.Padding(1);
+            this.Padding = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.Text = "Test";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Test_Load);

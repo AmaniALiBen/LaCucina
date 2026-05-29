@@ -13,21 +13,16 @@ namespace LaCucina
     public partial class FloorPlanForm : Form
     {
         Form form;
-        Form loginForm;
-        //public FloorPlanForm(Form form)
-        //{this.form = form;
-        //    InitializeComponent();
-        //}
-        
+        private Form callerForm;
+
         public FloorPlanForm()
         {
             InitializeComponent();
         }
-        public FloorPlanForm(Form loginForm)
+        public FloorPlanForm(Form caller)
         {
-            this.loginForm = loginForm;
-            
             InitializeComponent();
+            this.callerForm = caller;
         }
 
         private void FloorPlanForm_Load(object sender, EventArgs e)
@@ -39,27 +34,29 @@ namespace LaCucina
 
         private void rjButton3_Click(object sender, EventArgs e)
         {
-            POSForm t= new POSForm(this.FindForm(),true);
-            t.ShowDialog();
+            POSForm t= new POSForm(this,true);
+            t.Show();
             this.Hide();
             
         }
 
-        //private void btnLogout_Click(object sender, EventArgs e)
-        //{
-        //    form.Show();
-        //    this.Close();
-        //}
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
 
-            loginForm.Show();
+            callerForm.Show();
             this.Close();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            this.Close();
+            if (callerForm is ManagerForm)
+            {
+                callerForm.Show();
+            }
+
+            
             this.Close();
         }
     }

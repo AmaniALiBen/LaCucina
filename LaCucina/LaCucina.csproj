@@ -571,6 +571,9 @@
     <EmbeddedResource Include="UI\UCMenuEditorItem.resx">
       <DependentUpon>UCMenuEditorItem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCOrderItemRow.resx">
+      <DependentUpon>UCOrderItemRow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\UCOrderRow,cs.resx">
       <DependentUpon>UCOrderRow,cs.cs</DependentUpon>
     </EmbeddedResource>

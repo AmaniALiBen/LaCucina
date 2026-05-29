@@ -11,7 +11,7 @@ namespace LaCucina.UI
     {
         private static readonly Color ColorNormal = Color.FromArgb(28, 28, 28);
         private static readonly Color ColorHover = Color.FromArgb(38, 38, 38);
-        private static readonly Color ColorSelected = Color.FromArgb(50, 45, 35);
+        private static readonly Color ColorSelected = Color.FromArgb(48, 48, 48);
         private static readonly Color AccentOrange = Color.FromArgb(239, 128, 16);
 
         private bool _isSelected = false;

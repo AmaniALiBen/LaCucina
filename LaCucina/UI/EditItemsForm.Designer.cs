@@ -39,7 +39,6 @@
             this.rjButton4 = new CustomControls.RJControls.RJButton();
             this.rjButton5 = new CustomControls.RJControls.RJButton();
             this.rjPanel1 = new CustomControls.RJControls.RJPanel();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnClose = new CustomControls.RJControls.RJButton();
             this.txtSearch = new CustomControls.RJControls.RJTextBox();
             this.rjPanel3.SuspendLayout();
@@ -53,7 +52,7 @@
             this.materialDivider2.Depth = 0;
             this.materialDivider2.Dock = System.Windows.Forms.DockStyle.Top;
             this.materialDivider2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.materialDivider2.Location = new System.Drawing.Point(0, 86);
+            this.materialDivider2.Location = new System.Drawing.Point(0, 82);
             this.materialDivider2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider2.Name = "materialDivider2";
             this.materialDivider2.Size = new System.Drawing.Size(1284, 2);
@@ -66,10 +65,10 @@
             this.pnlProducts.AutoScroll = true;
             this.pnlProducts.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.pnlProducts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlProducts.Location = new System.Drawing.Point(0, 156);
+            this.pnlProducts.Location = new System.Drawing.Point(0, 149);
             this.pnlProducts.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlProducts.Name = "pnlProducts";
-            this.pnlProducts.Size = new System.Drawing.Size(1284, 546);
+            this.pnlProducts.Size = new System.Drawing.Size(1284, 518);
             this.pnlProducts.TabIndex = 6;
             // 
             // rjPanel3
@@ -81,10 +80,10 @@
             this.rjPanel3.Controls.Add(this.pnlCategoriesNavbar);
             this.rjPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.rjPanel3.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel3.Location = new System.Drawing.Point(0, 88);
-            this.rjPanel3.Margin = new System.Windows.Forms.Padding(8, 31, 8, 31);
+            this.rjPanel3.Location = new System.Drawing.Point(0, 84);
+            this.rjPanel3.Margin = new System.Windows.Forms.Padding(8, 29, 8, 29);
             this.rjPanel3.Name = "rjPanel3";
-            this.rjPanel3.Size = new System.Drawing.Size(1284, 68);
+            this.rjPanel3.Size = new System.Drawing.Size(1284, 65);
             this.rjPanel3.TabIndex = 5;
             // 
             // pnlCategoriesNavbar
@@ -102,7 +101,7 @@
             this.pnlCategoriesNavbar.Location = new System.Drawing.Point(0, 0);
             this.pnlCategoriesNavbar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pnlCategoriesNavbar.Name = "pnlCategoriesNavbar";
-            this.pnlCategoriesNavbar.Size = new System.Drawing.Size(1284, 68);
+            this.pnlCategoriesNavbar.Size = new System.Drawing.Size(1284, 65);
             this.pnlCategoriesNavbar.TabIndex = 5;
             this.pnlCategoriesNavbar.WrapContents = false;
             // 
@@ -123,7 +122,7 @@
             this.rjButton6.Location = new System.Drawing.Point(4, 5);
             this.rjButton6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rjButton6.Name = "rjButton6";
-            this.rjButton6.Size = new System.Drawing.Size(225, 42);
+            this.rjButton6.Size = new System.Drawing.Size(225, 40);
             this.rjButton6.TabIndex = 1;
             this.rjButton6.Text = "Burgers";
             this.rjButton6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -148,7 +147,7 @@
             this.rjButton1.Location = new System.Drawing.Point(237, 5);
             this.rjButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(225, 42);
+            this.rjButton1.Size = new System.Drawing.Size(225, 40);
             this.rjButton1.TabIndex = 2;
             this.rjButton1.Text = "Pastas";
             this.rjButton1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -173,7 +172,7 @@
             this.rjButton2.Location = new System.Drawing.Point(470, 5);
             this.rjButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rjButton2.Name = "rjButton2";
-            this.rjButton2.Size = new System.Drawing.Size(225, 42);
+            this.rjButton2.Size = new System.Drawing.Size(225, 40);
             this.rjButton2.TabIndex = 3;
             this.rjButton2.Text = "Sandwiches";
             this.rjButton2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -198,7 +197,7 @@
             this.rjButton3.Location = new System.Drawing.Point(703, 5);
             this.rjButton3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rjButton3.Name = "rjButton3";
-            this.rjButton3.Size = new System.Drawing.Size(225, 42);
+            this.rjButton3.Size = new System.Drawing.Size(225, 40);
             this.rjButton3.TabIndex = 4;
             this.rjButton3.Text = "Salads";
             this.rjButton3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -223,7 +222,7 @@
             this.rjButton4.Location = new System.Drawing.Point(936, 5);
             this.rjButton4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rjButton4.Name = "rjButton4";
-            this.rjButton4.Size = new System.Drawing.Size(225, 42);
+            this.rjButton4.Size = new System.Drawing.Size(225, 40);
             this.rjButton4.TabIndex = 5;
             this.rjButton4.Text = "Grills";
             this.rjButton4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -247,7 +246,7 @@
             this.rjButton5.Location = new System.Drawing.Point(1169, 5);
             this.rjButton5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rjButton5.Name = "rjButton5";
-            this.rjButton5.Size = new System.Drawing.Size(225, 42);
+            this.rjButton5.Size = new System.Drawing.Size(225, 40);
             this.rjButton5.TabIndex = 6;
             this.rjButton5.Text = "Drinks";
             this.rjButton5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -260,30 +259,16 @@
             this.rjPanel1.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rjPanel1.BorderRadius = 0;
             this.rjPanel1.BorderSize = 0;
-            this.rjPanel1.Controls.Add(this.label2);
             this.rjPanel1.Controls.Add(this.btnClose);
             this.rjPanel1.Controls.Add(this.txtSearch);
             this.rjPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.rjPanel1.ForeColor = System.Drawing.Color.Black;
             this.rjPanel1.Location = new System.Drawing.Point(0, 0);
-            this.rjPanel1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 31);
+            this.rjPanel1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 29);
             this.rjPanel1.Name = "rjPanel1";
-            this.rjPanel1.Padding = new System.Windows.Forms.Padding(10, 11, 10, 5);
-            this.rjPanel1.Size = new System.Drawing.Size(1284, 86);
+            this.rjPanel1.Padding = new System.Windows.Forms.Padding(10, 10, 10, 5);
+            this.rjPanel1.Size = new System.Drawing.Size(1284, 82);
             this.rjPanel1.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Yu Gothic", 11F);
-            this.label2.ForeColor = System.Drawing.Color.LightGray;
-            this.label2.Location = new System.Drawing.Point(1142, 31);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 29);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Quick Edits";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnClose
             // 
@@ -299,10 +284,10 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.ForeColor = System.Drawing.Color.Transparent;
             this.btnClose.Image = global::LaCucina.Properties.Resources.back__2_;
-            this.btnClose.Location = new System.Drawing.Point(0, 14);
+            this.btnClose.Location = new System.Drawing.Point(0, 13);
             this.btnClose.Margin = new System.Windows.Forms.Padding(0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(78, 60);
+            this.btnClose.Size = new System.Drawing.Size(78, 57);
             this.btnClose.TabIndex = 13;
             this.btnClose.TextColor = System.Drawing.Color.Transparent;
             this.btnClose.UseVisualStyleBackColor = false;
@@ -319,7 +304,7 @@
             this.txtSearch.CustomPasswordChar = '●';
             this.txtSearch.Font = new System.Drawing.Font("Yu Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.White;
-            this.txtSearch.Location = new System.Drawing.Point(411, 14);
+            this.txtSearch.Location = new System.Drawing.Point(314, 24);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(0);
             this.txtSearch.Multiline = false;
             this.txtSearch.Name = "txtSearch";
@@ -337,10 +322,10 @@
             // 
             // EditItemsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.ClientSize = new System.Drawing.Size(1284, 702);
+            this.ClientSize = new System.Drawing.Size(1284, 667);
             this.Controls.Add(this.pnlProducts);
             this.Controls.Add(this.rjPanel3);
             this.Controls.Add(this.materialDivider2);
@@ -354,7 +339,6 @@
             this.rjPanel3.ResumeLayout(false);
             this.pnlCategoriesNavbar.ResumeLayout(false);
             this.rjPanel1.ResumeLayout(false);
-            this.rjPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -373,6 +357,5 @@
         private CustomControls.RJControls.RJButton rjButton3;
         private CustomControls.RJControls.RJButton rjButton4;
         private CustomControls.RJControls.RJButton rjButton5;
-        private System.Windows.Forms.Label label2;
     }
 }

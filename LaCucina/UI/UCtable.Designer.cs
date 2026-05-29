@@ -49,6 +49,7 @@
             this.btnNotification.Text = "🔔";
             this.btnNotification.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.btnNotification.UseVisualStyleBackColor = false;
+            this.btnNotification.Visible = false;
             // 
             // UCtable
             // 

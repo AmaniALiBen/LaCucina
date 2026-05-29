@@ -59,19 +59,19 @@ namespace LaCucina
             switch (user.UserRole)
             {
                 case Role.Admin:
-                    new ManagerForm(current).ShowDialog();
+                    new ManagerForm(current).Show();
                     break;
 
                 case Role.Waiter:
-                    new FloorPlanForm(current).ShowDialog();
+                    new FloorPlanForm(current).Show();
                     break;
 
                 case Role.Chef:
-                    new KDS(current).ShowDialog();
+                    new KDS(current).Show();
                     break;
             }
 
-            current.Show();
+           
         }
 
 
