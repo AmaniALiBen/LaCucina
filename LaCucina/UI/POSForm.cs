@@ -10,6 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CrystalDecisions.Windows.Forms;
+using CrystalDecisions.CrystalReports.Engine;
+using LaCucina.DataLink;
 
 namespace LaCucina
 {
@@ -23,9 +26,10 @@ namespace LaCucina
         private int currentTableId;
         private int currentUserId = 1;
         private int currentOrderId = 0;
-        private string Note = "";
 
         private bool isTakeAway = false;
+
+        private List<Item> currentCategoryItems = new List<Item>();
 
         public void loadMenu()
         {
@@ -50,50 +54,118 @@ namespace LaCucina
                             c.btnName.ForeColor = Color.FromArgb(242, 242, 242);
                         }
                     }
+
                     pnlItems.Controls.Clear();
-                    List<Item> items = Service.GetInStockItemsByCategory(Convert.ToInt32(_selectedCategory.Tag));
-                    foreach (Item i in items)
-                    {
-                        UC_ProductCard card = new UC_ProductCard();
 
-                        card.Name = i.Name;
-                        card.Price = i.Price;
-                        card.Id = i.Id;
+                    if (txtSearch != null) txtSearch.Texts="";
 
-                        pnlItems.Controls.Add(card);
+                    currentCategoryItems = Service.GetInStockItemsByCategory(Convert.ToInt32(_selectedCategory.Tag));
 
-                        card.clickCard = () =>
-                        {
-                            MemoryOrderItem newItem = new MemoryOrderItem();
-                            newItem.UniqueId = Guid.NewGuid().ToString();
-                            newItem.MenuItemId = i.Id;
-                            newItem.ItemName = i.Name;
-                            newItem.UnitPrice = i.Price;
-                            newItem.Quantity = 1;
-
-                            ItemModifierForm f = new ItemModifierForm(newItem);
-
-                            if (f.ShowDialog() == DialogResult.OK)
-                            {
-                                currentOrderItems.Add(newItem);
-
-                                UC_InvoiceItem invoiceUiItem = new UC_InvoiceItem(newItem.ItemName, newItem.Quantity, Convert.ToDouble(newItem.UnitPrice));
-
-                                invoiceUiItem.Tag = newItem;
-
-                                newItem.Quantity = invoiceUiItem.Quantity;
-                                newItem.TotalPrice = invoiceUiItem.Subtotal;
-                                invoiceUiItem.DataChanged += Item_DataChanged;
-                                invoiceUiItem.ItemRemoved += Item_ItemRemoved;
-                                pnlInvoiceItems.Controls.Add(invoiceUiItem);
-
-                                CalTotal();
-                            }
-                        };
-                    }
+                    BuildProductCards(currentCategoryItems);
                 };
 
                 pnlCAtegories.Controls.Add(category);
+            }
+        }
+
+        private void BuildProductCards(List<Item> itemsList)
+        {
+            pnlItems.Controls.Clear();
+
+            foreach (Item i in itemsList)
+            {
+                UC_ProductCard card = new UC_ProductCard();
+
+                card.Name = i.Name;
+                card.Price = i.Price;
+                card.Id = i.Id;
+
+                pnlItems.Controls.Add(card);
+
+                card.clickCard = () =>
+                {
+                    MemoryOrderItem newItem = new MemoryOrderItem();
+                    newItem.UniqueId = Guid.NewGuid().ToString();
+                    newItem.MenuItemId = i.Id;
+                    newItem.ItemName = i.Name;
+                    newItem.UnitPrice = i.Price;
+                    newItem.Quantity = 1;
+
+                    ItemModifierForm f = new ItemModifierForm(newItem);
+
+                    if (f.ShowDialog() == DialogResult.OK)
+                    {
+                        bool isMerged = false;
+
+                        foreach (Control ctrl in pnlInvoiceItems.Controls)
+                        {
+                            if (ctrl is UC_InvoiceItem uiItem && uiItem.Tag is MemoryOrderItem attachedMemoryItem)
+                            {
+                                bool listsMatch = true;
+                                if (attachedMemoryItem.RemovedIngredientIds.Count == newItem.RemovedIngredientIds.Count)
+                                {
+                                    foreach (int id in attachedMemoryItem.RemovedIngredientIds)
+                                    {
+                                        if (!newItem.RemovedIngredientIds.Contains(id))
+                                        {
+                                            listsMatch = false;
+                                            break;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    listsMatch = false;
+                                }
+
+                                bool isSameItemAndModifiers = attachedMemoryItem.MenuItemId == newItem.MenuItemId &&
+                                                              attachedMemoryItem.NoteText == newItem.NoteText &&
+                                                              listsMatch;
+
+                                if (isSameItemAndModifiers && !uiItem.IsSavedInDatabase)
+                                {
+                                    MemoryOrderItem existingItem = null;
+                                    foreach (MemoryOrderItem oi in currentOrderItems)
+                                    {
+                                        if (oi.UniqueId == attachedMemoryItem.UniqueId)
+                                        {
+                                            existingItem = oi;
+                                            break;
+                                        }
+                                    }
+
+                                    if (existingItem != null)
+                                    {
+                                        existingItem.Quantity += newItem.Quantity;
+                                        existingItem.TotalPrice = existingItem.Quantity * existingItem.UnitPrice;
+                                    }
+
+                                    uiItem.Quantity = attachedMemoryItem.Quantity;
+                                    isMerged = true;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (!isMerged)
+                        {
+                            currentOrderItems.Add(newItem);
+
+                            UC_InvoiceItem invoiceUiItem = new UC_InvoiceItem(newItem.ItemName, newItem.Quantity, Convert.ToDouble(newItem.UnitPrice));
+                            invoiceUiItem.Tag = newItem;
+
+                            newItem.Quantity = invoiceUiItem.Quantity;
+                            newItem.TotalPrice = invoiceUiItem.Subtotal;
+
+                            invoiceUiItem.DataChanged += Item_DataChanged;
+                            invoiceUiItem.ItemRemoved += Item_ItemRemoved;
+
+                            pnlInvoiceItems.Controls.Add(invoiceUiItem);
+                        }
+
+                        CalTotal();
+                    }
+                };
             }
         }
 
@@ -138,11 +210,11 @@ namespace LaCucina
         {
             if (!isTakeAway)
             {
-                ItemModifierService modifierService = new ItemModifierService();
+                POSService pOSService = new POSService();
                 int openOrderId;
                 double currentTotal;
 
-                List<MemoryOrderItem> savedItems = modifierService.LoadOpenOrder(currentTableId, out openOrderId, out currentTotal);
+                List<MemoryOrderItem> savedItems = pOSService.LoadOpenOrder(currentTableId, out openOrderId, out currentTotal);
 
                 if (openOrderId > 0)
                 {
@@ -167,8 +239,8 @@ namespace LaCucina
         {
             try
             {
-                ItemModifierService itemModifierService = new ItemModifierService();
-                DataTable dtDiscounts = itemModifierService.GetDiscountsForForm();
+                POSService pOSService = new POSService();
+                DataTable dtDiscounts = pOSService.GetDiscountsForForm();
                 DataRow defaultRow = dtDiscounts.NewRow();
                 defaultRow["discount_id"] = 0;
                 defaultRow["discount_name"] = "No Discount";
@@ -203,10 +275,16 @@ namespace LaCucina
         {
             if (sender is UC_InvoiceItem uiItem && uiItem.Tag is MemoryOrderItem memoryItem)
             {
-                currentOrderItems.RemoveAll(x => x.UniqueId == memoryItem.UniqueId);
+                for (int i = currentOrderItems.Count - 1; i >= 0; i--)
+                {
+                    if (currentOrderItems[i].UniqueId == memoryItem.UniqueId)
+                    {
+                        currentOrderItems.RemoveAt(i);
+                    }
+                }
 
                 pnlInvoiceItems.Controls.Remove(uiItem);
-                uiItem.Dispose(); 
+                uiItem.Dispose();
 
                 CalTotal();
             }
@@ -263,7 +341,6 @@ namespace LaCucina
                 MessageBox.Show("Add Items To The Order", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-           
 
             double subTotalAmount = CalTotal();
             double finalTotalAmount = subTotalAmount;
@@ -272,9 +349,9 @@ namespace LaCucina
             byte? discountType = null;
             double discountValue = 0;
 
-            ItemModifierService modifierService = new ItemModifierService();
+            POSService pOSService = new POSService();
 
-            bool isSaved = modifierService.ProcessAndSendOrder(
+            bool isSaved = pOSService.ProcessAndSendOrder(
                 currentTableId,
                 currentUserId,
                 currentOrderItems,
@@ -389,11 +466,11 @@ namespace LaCucina
 
             if (result == DialogResult.Yes)
             {
-                ItemModifierService modifierService = new ItemModifierService();
+                POSService pOSService = new POSService();
 
                 if (isTakeAway && currentOrderId == 0)
                 {
-                    bool isSaved = modifierService.ProcessAndSendOrder(
+                    bool isSaved = pOSService.ProcessAndSendOrder(
                         currentTableId, currentUserId, currentOrderItems,
                         subTotalAmount, finalTotalAmount, discountId, discountType, discountValue,
                         isTakeAway, out currentOrderId
@@ -407,19 +484,19 @@ namespace LaCucina
 
                     if (discountId > 0)
                     {
-                        modifierService.UpdateOrderDiscount(currentOrderId, subTotalAmount, finalTotalAmount, discountId, discountType, discountAmountValueCalculated);
+                        pOSService.UpdateOrderDiscount(currentOrderId, subTotalAmount, finalTotalAmount, discountId, discountType, discountAmountValueCalculated);
                     }
                 }
                 else if (!isTakeAway && currentOrderId > 0)
                 {
                     int tempOrderId;
-                    modifierService.ProcessAndSendOrder(
+                    pOSService.ProcessAndSendOrder(
                         currentTableId, currentUserId, new List<MemoryOrderItem>(),
                         subTotalAmount, finalTotalAmount, discountId, discountType, discountValue,
                         isTakeAway, out tempOrderId
                     );
 
-                    modifierService.UpdateOrderDiscount(currentOrderId, subTotalAmount, finalTotalAmount, discountId, discountType, discountAmountValueCalculated);
+                    pOSService.UpdateOrderDiscount(currentOrderId, subTotalAmount, finalTotalAmount, discountId, discountType, discountAmountValueCalculated);
                 }
                 else if (!isTakeAway && currentOrderId == 0)
                 {
@@ -427,12 +504,12 @@ namespace LaCucina
                     return;
                 }
 
-                bool isPaid = modifierService.CompleteOrderPayment(currentOrderId);
+                bool isPaid = pOSService.CompleteOrderPayment(currentOrderId);
 
                 if (isPaid)
                 {
                     MessageBox.Show("Payment completed successfully! The order is now closed.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    btnPrintInvoice.PerformClick();
                     currentOrderItems.Clear();
                     pnlInvoiceItems.Controls.Clear();
                     currentOrderId = 0;
@@ -458,6 +535,66 @@ namespace LaCucina
                 }
             }
             UpdateNetTotalDisplay(subTotalAmount);
+        }
+
+        private void btnPrintInvoice_Click(object sender, EventArgs e)
+        {
+            if (currentOrderId == 0)
+            {
+                MessageBox.Show("Please select or open an active order to print.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                POSRepository repo = new POSRepository();
+                DataTable dtReceipt = repo.GetOrderReceiptDetails(currentOrderId);
+
+                if (dtReceipt.Rows.Count > 0)
+                {
+                    CrystalReport3 myReport = new CrystalReport3();
+                    myReport.SetDataSource(dtReceipt);
+
+                    using (Form previewForm = new Form())
+                    {
+                        CrystalReportViewer viewer = new CrystalReportViewer();
+                        viewer.Dock = DockStyle.Fill;
+                        viewer.ReportSource = myReport;
+
+                        previewForm.Controls.Add(viewer);
+                        previewForm.WindowState = FormWindowState.Maximized;
+                        previewForm.Text = "Invoice Preview - La Cucina";
+
+                        previewForm.ShowDialog();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show($"No data found in the database for order number {currentOrderId}.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred during the display process: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtSearch__TextChanged(object sender, EventArgs e)
+        {
+            if (_selectedCategory == null) return;
+
+            string keyword = txtSearch.Texts.Trim().ToLower();
+
+            List<Item> filteredItems = new List<Item>();
+            foreach (Item item in currentCategoryItems)
+            {
+                if (item.Name.ToLower().StartsWith(keyword))
+                {
+                    filteredItems.Add(item);
+                }
+            }
+
+            BuildProductCards(filteredItems);
         }
     }
 }

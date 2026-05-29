@@ -72,7 +72,7 @@ namespace LaCucina.DataLink
                 LEFT  JOIN dining_tables dt ON dt.table_id = o.table_id
                 WHERE o.created_at >= '{from.Date:yyyy-MM-dd}'
                   AND o.created_at <  '{to.Date.AddDays(1):yyyy-MM-dd}'
-                  {waiterFilter}
+                  {waiterFilter} AND o.order_status=1
                   
                   
                 ORDER BY o.created_at DESC";
