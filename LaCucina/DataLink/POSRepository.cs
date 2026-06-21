@@ -2,16 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace LaCucina.DataLink
 {
     public class POSRepository
     {
-        public bool SaveFullOrderTransaction(
+        public virtual bool SaveFullOrderTransaction(
             int tableId,
             int userId,
             List<MemoryOrderItem> items,
@@ -51,7 +48,6 @@ namespace LaCucina.DataLink
 
                 if (isTakeAway)
                 {
-                    // 1. إدخال الطلب في جدول orders
                     string orderQuery = $@"
                     INSERT INTO orders (table_id, user_id, order_status, created_at, discount_id, discount_type, discount_amount, sub_total, total_amount, is_takeaway)
                     VALUES (NULL, {userId}, {orderStatus}, GETDATE(), {sqlDiscountId}, {sqlDiscountType}, {sqlDiscountValue}, {formattedSubTotal}, {formattedFinalTotal}, {is_takeaway});
@@ -62,7 +58,6 @@ namespace LaCucina.DataLink
 
                     generatedOrderId = Convert.ToInt32(dtOrder.Rows[0][0]);
 
-                    // 🌟 [التعديل الإستراتيجي هنا]: إنشاء باتش للتيك أواي ليتمكن الشيف من استقباله
                     string batchQuery = $@"
                     INSERT INTO order_batches (sent_at, order_id, batch_status) 
                     VALUES (GETDATE(), {generatedOrderId}, 0);
@@ -72,8 +67,6 @@ namespace LaCucina.DataLink
                     if (dtBatch == null || dtBatch.Rows.Count == 0) return false;
 
                     string batchIdString = dtBatch.Rows[0][0].ToString();
-
-                    // 2. حفظ الأصناف وتمرير معرف الباتش الجديد بدلاً من "NULL"
                     SaveOrderItemsAndIngredients(generatedOrderId, items, batchIdString);
                 }
                 else
@@ -127,7 +120,7 @@ namespace LaCucina.DataLink
             }
         }
 
-        public bool UpdateOrderDiscountDetails(int orderId, double subTotal, double finalTotal, int? discountId, byte? discountType, double discountAmountValue)
+        public virtual bool UpdateOrderDiscountDetails(int orderId, double subTotal, double finalTotal, int? discountId, byte? discountType, double discountAmountValue)
         {
             try
             {
@@ -156,47 +149,7 @@ namespace LaCucina.DataLink
             }
         }
 
-        private void SaveOrderItemsAndIngredients(int orderId, List<MemoryOrderItem> items, string batchIdString)
-        {
-            foreach (MemoryOrderItem item in items)
-            {
-                string formattedUnitPrice = ((decimal)item.UnitPrice).ToString(System.Globalization.CultureInfo.InvariantCulture);
-                string formattedTotalPrice = ((decimal)item.TotalPrice).ToString(System.Globalization.CultureInfo.InvariantCulture);
-
-                string itemQuery = $@"
-                INSERT INTO order_items (order_id, menu_item_id, unit_price, quantity, total_price, batch_id)
-                VALUES ({orderId}, {item.MenuItemId}, {formattedUnitPrice}, {item.Quantity}, {formattedTotalPrice}, {batchIdString});
-                SELECT SCOPE_IDENTITY();";
-
-                DataTable dtItem = DatabaseHelper.ExecuteQuery(itemQuery);
-                if (dtItem != null && dtItem.Rows.Count > 0)
-                {
-                    int newOrderItemId = Convert.ToInt32(dtItem.Rows[0][0]);
-
-                    if (!string.IsNullOrWhiteSpace(item.NoteText))
-                    {
-                        string cleanNote = item.NoteText.Replace("'", "''").Trim();
-
-                        string noteQuery = $@"
-                        INSERT INTO notes (note_id, note_text)
-                        VALUES ({newOrderItemId}, N'{cleanNote}')";
-
-                        DatabaseHelper.ExecuteNonQuery(noteQuery);
-                    }
-
-                    foreach (int ingredientId in item.RemovedIngredientIds)
-                    {
-                        string ingQuery = $@"
-                        INSERT INTO order_item_ingredients (order_item_id, ingredient_id, is_removed)
-                        VALUES ({newOrderItemId}, {ingredientId}, 1)";
-
-                        DatabaseHelper.ExecuteNonQuery(ingQuery);
-                    }
-                }
-            }
-        }
-
-        public List<MemoryOrderItem> GetActiveOrderItemsByTable(int tableId, out int openOrderId, out double currentTotal)
+        public virtual List<MemoryOrderItem> GetActiveOrderItemsByTable(int tableId, out int openOrderId, out double currentTotal)
         {
             List<MemoryOrderItem> loadedItems = new List<MemoryOrderItem>();
             openOrderId = 0;
@@ -210,7 +163,6 @@ namespace LaCucina.DataLink
                 WHERE table_id = {tableId} AND order_status = 0 AND is_takeaway = 0";
 
                 DataTable dtOrder = DatabaseHelper.ExecuteQuery(orderQuery);
-
                 if (dtOrder == null || dtOrder.Rows.Count == 0) return loadedItems;
 
                 openOrderId = Convert.ToInt32(dtOrder.Rows[0]["order_id"]);
@@ -242,21 +194,17 @@ namespace LaCucina.DataLink
 
                     DataTable dtIng = DatabaseHelper.ExecuteQuery(ingQuery);
                     foreach (DataRow ingRow in dtIng.Rows)
-                    {
                         item.RemovedIngredientIds.Add(Convert.ToInt32(ingRow["ingredient_id"]));
-                    }
 
                     loadedItems.Add(item);
                 }
             }
-            catch
-            {
-            }
+            catch { }
 
             return loadedItems;
         }
 
-        public bool PayAndCloseOrder(int orderId)
+        public virtual bool PayAndCloseOrder(int orderId)
         {
             try
             {
@@ -274,7 +222,7 @@ namespace LaCucina.DataLink
             }
         }
 
-        public DataTable GetActiveDiscountsForToday()
+        public virtual DataTable GetActiveDiscountsForToday()
         {
             string query = @"
             SELECT discount_id, discount_name, discount_type, discount_amount 
@@ -286,7 +234,7 @@ namespace LaCucina.DataLink
             return DatabaseHelper.ExecuteQuery(query);
         }
 
-        public DataTable GetOrderReceiptDetails(int orderId)
+        public virtual DataTable GetOrderReceiptDetails(int orderId)
         {
             string sql = $@"
             SELECT 
@@ -319,6 +267,43 @@ namespace LaCucina.DataLink
             WHERE o.order_id = {orderId}";
 
             return DatabaseHelper.ExecuteQuery(sql);
+        }
+
+        private void SaveOrderItemsAndIngredients(int orderId, List<MemoryOrderItem> items, string batchIdString)
+        {
+            foreach (MemoryOrderItem item in items)
+            {
+                string formattedUnitPrice = ((decimal)item.UnitPrice).ToString(System.Globalization.CultureInfo.InvariantCulture);
+                string formattedTotalPrice = ((decimal)item.TotalPrice).ToString(System.Globalization.CultureInfo.InvariantCulture);
+
+                string itemQuery = $@"
+                INSERT INTO order_items (order_id, menu_item_id, unit_price, quantity, total_price, batch_id)
+                VALUES ({orderId}, {item.MenuItemId}, {formattedUnitPrice}, {item.Quantity}, {formattedTotalPrice}, {batchIdString});
+                SELECT SCOPE_IDENTITY();";
+
+                DataTable dtItem = DatabaseHelper.ExecuteQuery(itemQuery);
+                if (dtItem != null && dtItem.Rows.Count > 0)
+                {
+                    int newOrderItemId = Convert.ToInt32(dtItem.Rows[0][0]);
+
+                    if (!string.IsNullOrWhiteSpace(item.NoteText))
+                    {
+                        string cleanNote = item.NoteText.Replace("'", "''").Trim();
+                        string noteQuery = $@"
+                        INSERT INTO notes (note_id, note_text)
+                        VALUES ({newOrderItemId}, N'{cleanNote}')";
+                        DatabaseHelper.ExecuteNonQuery(noteQuery);
+                    }
+
+                    foreach (int ingredientId in item.RemovedIngredientIds)
+                    {
+                        string ingQuery = $@"
+                        INSERT INTO order_item_ingredients (order_item_id, ingredient_id, is_removed)
+                        VALUES ({newOrderItemId}, {ingredientId}, 1)";
+                        DatabaseHelper.ExecuteNonQuery(ingQuery);
+                    }
+                }
+            }
         }
     }
 }

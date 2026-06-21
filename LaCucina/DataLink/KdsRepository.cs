@@ -1,12 +1,9 @@
-﻿
-
-using System.Data;
-
+﻿using System.Data;
 namespace LaCucina.DataLink
 {
     public class KdsRepository
     {
-        public DataTable GetActiveBatchesRaw()
+        public virtual DataTable GetActiveBatchesRaw()
         {
             string sql = @"
         SELECT
@@ -33,11 +30,10 @@ namespace LaCucina.DataLink
         LEFT JOIN ingredients   i   ON i.ingredient_id  = oii.ingredient_id
         WHERE ob.batch_status = 0
         ORDER BY ob.sent_at ASC";
-
             return DatabaseHelper.ExecuteQuery(sql);
         }
 
-        public DataTable GetKitchenLoadRaw()
+        public virtual DataTable GetKitchenLoadRaw()
         {
             string sql = @"
                 SELECT
@@ -51,60 +47,54 @@ namespace LaCucina.DataLink
                 AND oi.item_status  = 0
                 GROUP BY m.menu_item_id, m.menu_item_name
                 ORDER BY total_quantity DESC";
-
             return DatabaseHelper.ExecuteQuery(sql);
         }
 
-        public int GetTotalItemsInQueue()
+        public virtual int GetTotalItemsInQueue()
         {
             string sql = @"
                 SELECT ISNULL(SUM(oi.quantity), 0)
                 FROM order_batches ob
                 JOIN order_items oi ON oi.batch_id = ob.batch_id
                 WHERE  ob.batch_status = 0
-                AND oi.item_status  = 0"
-;
-
+                AND oi.item_status  = 0";
             return DatabaseHelper.ExecuteScalar(sql);
         }
 
-        public void MarkItemDone(int orderItemId)
+        public virtual void MarkItemDone(int orderItemId)
         {
             string sql = $@"
                 UPDATE order_items
                 SET item_status = 1
                 WHERE order_item_id = {orderItemId}";
-
             DatabaseHelper.ExecuteNonQuery(sql);
         }
 
-        public void MarkBatchReady(int batchId)
+        public virtual void MarkBatchReady(int batchId)
         {
             string sql = $@"
                 UPDATE order_batches
                 SET batch_status = 1
                 WHERE batch_id = {batchId}";
-
             DatabaseHelper.ExecuteNonQuery(sql);
         }
 
-        public int CountPendingItems(int batchId)
+        public virtual int CountPendingItems(int batchId)
         {
             string sql = $@"
                 SELECT COUNT(*)
                 FROM order_items
                 WHERE batch_id   = {batchId}
                   AND item_status = 0";
-
             return DatabaseHelper.ExecuteScalar(sql);
         }
-        public void MarkAllItemsDone(int batchId)
+
+        public virtual void MarkAllItemsDone(int batchId)
         {
             string sql = $@"
         UPDATE order_items
         SET item_status = 1
         WHERE batch_id = {batchId}";
-
             DatabaseHelper.ExecuteNonQuery(sql);
         }
     }

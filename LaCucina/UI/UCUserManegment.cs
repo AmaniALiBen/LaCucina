@@ -263,7 +263,8 @@ namespace LaCucina
 
             string confirmPassword = txtPasswordVerification.Texts;
 
-            bool success = Service.UpdateUser(user, confirmPassword);
+            // ✅ FIXED: UpdateUser now returns (bool success, string error) instead of bool
+            var (success, error) = Service.UpdateUser(user, confirmPassword);
 
             if (success)
             {
@@ -274,6 +275,10 @@ namespace LaCucina
                 allUsers = Service.GetAllUsers();
 
                 LoadData(allUsers);
+            }
+            else
+            {
+                MessageBox.Show(error);
             }
         }
 

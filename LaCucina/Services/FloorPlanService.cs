@@ -1,8 +1,5 @@
-﻿
-
-using LaCucina.DataLink;
+﻿using LaCucina.DataLink;
 using LaCucina.Models;
-using System;
 using System.Collections.Generic;
 using System.Drawing;
 
@@ -10,57 +7,42 @@ namespace LaCucina.Services
 {
     public class FloorPlanService
     {
-        private TableRepository tableRepo;
-        private SpaceRepository spaceRepo;
+        private readonly TableRepository tableRepo;
+        private readonly SpaceRepository spaceRepo;
 
-        public FloorPlanService()
+        public FloorPlanService() : this(new TableRepository(), new SpaceRepository()) { }
+
+        public FloorPlanService(TableRepository tableRepo, SpaceRepository spaceRepo)
         {
-            tableRepo = new TableRepository();
-            spaceRepo = new SpaceRepository();
+            this.tableRepo = tableRepo;
+            this.spaceRepo = spaceRepo;
         }
 
-        // ── Spaces ───────────────────────────────────────────────────────
         public List<spaces> GetSpaces() => spaceRepo.GetAll();
 
-        // ── Tables ───────────────────────────────────────────────────────
         public List<Table> GetTablesBySpace(int spaceId) => tableRepo.GetBySpace(spaceId);
         public Table GetTableById(int tableId) => tableRepo.GetById(tableId);
         public void DeleteTable(int id) => tableRepo.Delete(id);
         public void AddTable(Table t) => tableRepo.Add(t);
         public void UpdateTable(Table t) => tableRepo.Update(t);
-
         public void editLocation(int id, Point location)
             => tableRepo.editLocation(id, location.X, location.Y);
 
-        // ── Notification helpers ─────────────────────────────────────────
-
-        /// <summary>
-        /// Returns table IDs that have at least one item with item_status = 1 (Done).
-        /// Called by the floor plan timer to decide which tables show the 🔔 icon.
-        /// </summary>
         public List<int> GetTablesWithReadyItems()
             => tableRepo.GetTablesWithReadyItems();
 
-        /// <summary>
-        /// Marks all item_status = 1 items as Delivered (2) for the given table.
-        /// If no pending or ready items remain, sets table_status = served (2).
-        /// </summary>
         public bool MarkReadyItemsAsDelivered(int tableId)
             => tableRepo.MarkReadyItemsAsDelivered(tableId);
 
-        // ── Validation ───────────────────────────────────────────────────
         public string ValidateTable(Table table, bool isEdit = false)
         {
             table.tableNum = table.tableNum.Trim();
-
             if (string.IsNullOrWhiteSpace(table.tableNum))
                 return "Table number is required";
-
             if (table.tableNum.Length > 3)
                 return "Table number is too long";
 
             var tables = tableRepo.GetBySpace(table.spaceId);
-
             foreach (var t in tables)
             {
                 if (t.tableNum == table.tableNum)
@@ -70,7 +52,6 @@ namespace LaCucina.Services
                     return "Table number already exists";
                 }
             }
-
             return null;
         }
     }

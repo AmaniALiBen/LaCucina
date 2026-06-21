@@ -1,5 +1,4 @@
-﻿
-using LaCucina.DataLink;
+﻿using LaCucina.DataLink;
 using LaCucina.Models;
 using LaCucina.UI;
 using System;
@@ -10,16 +9,18 @@ namespace LaCucina.Services
 {
     public class KdsService
     {
-        private readonly KdsRepository _repo = new KdsRepository();
+        private readonly KdsRepository _repo;
 
-        // ════════════════════════════════════════════════════════════════
-        //  Get active batches
-        // ════════════════════════════════════════════════════════════════
+        public KdsService() : this(new KdsRepository()) { }
+
+        public KdsService(KdsRepository repo)
+        {
+            _repo = repo;
+        }
 
         public List<BatchCardDto> GetActiveBatches()
         {
             DataTable dt = _repo.GetActiveBatchesRaw();
-
             var batches = new Dictionary<int, BatchCardDto>();
             var items = new Dictionary<int, BatchItemDto>();
 
@@ -48,28 +49,21 @@ namespace LaCucina.Services
                         OrderItemId = orderItemId,
                         MenuItemName = row["menu_item_name"].ToString(),
                         Quantity = Convert.ToInt32(row["quantity"]),
-                        ItemStatus = Convert.ToInt32(row["item_status"]),  // ← fetch status
+                        ItemStatus = Convert.ToInt32(row["item_status"]),
                         NoteText = row["note_text"] == DBNull.Value
-                                           ? null
-                                           : row["note_text"].ToString()
+                                       ? null
+                                       : row["note_text"].ToString()
                     };
                     items[orderItemId] = item;
                     batches[batchId].Items.Add(item);
                 }
 
                 if (row["ingredient_name"] != DBNull.Value)
-                {
-                    items[orderItemId].RemovedIngredients
-                        .Add("No " + row["ingredient_name"].ToString());
-                }
+                    items[orderItemId].RemovedIngredients.Add("No " + row["ingredient_name"].ToString());
             }
 
             return new List<BatchCardDto>(batches.Values);
         }
-
-        // ════════════════════════════════════════════════════════════════
-        //  Kitchen load
-        // ════════════════════════════════════════════════════════════════
 
         public List<KitchenLoadItemDto> GetKitchenLoad()
         {
@@ -89,37 +83,15 @@ namespace LaCucina.Services
             return result;
         }
 
-        public int GetTotalItemsInQueue()
-        {
-            return _repo.GetTotalItemsInQueue();
-        }
+        public int GetTotalItemsInQueue() => _repo.GetTotalItemsInQueue();
 
-        // ════════════════════════════════════════════════════════════════
-        //  Mark done
-        // ════════════════════════════════════════════════════════════════
+        public void MarkItemDone(int orderItemId) => _repo.MarkItemDone(orderItemId);
 
-        public void MarkItemDone(int orderItemId)
-        {
-            _repo.MarkItemDone(orderItemId);
-        }
+        public void MarkBatchReady(int batchId) => _repo.MarkBatchReady(batchId);
 
-        public void MarkBatchReady(int batchId)
-        {
-            _repo.MarkBatchReady(batchId);
-        }
+        public int CountPendingItems(int batchId) => _repo.CountPendingItems(batchId);
 
-        /// <summary>
-        /// Returns how many items in this batch are still pending in the DB.
-        /// Used by split cards to check if ALL chunks are done before removing.
-        /// </summary>
-        public int CountPendingItems(int batchId)
-        {
-            return _repo.CountPendingItems(batchId);
-        }
-
-        // ════════════════════════════════════════════════════════════════
-        //  Split into chunks
-        // ════════════════════════════════════════════════════════════════
+        public void MarkAllItemsDone(int batchId) => _repo.MarkAllItemsDone(batchId);
 
         public List<List<BatchItemDto>> SplitBatchIntoChunks(BatchCardDto batch, int maxHeight)
         {
@@ -134,7 +106,6 @@ namespace LaCucina.Services
                 for (int i = index; i < batch.Items.Count; i++)
                 {
                     chunk.Add(batch.Items[i]);
-
                     tempCard.pnlBatchItems.Controls.Clear();
                     foreach (var item in chunk)
                     {
@@ -142,7 +113,6 @@ namespace LaCucina.Services
                         uc.LoadItem(item);
                         tempCard.pnlBatchItems.Controls.Add(uc);
                     }
-
                     if (tempCard.pnlBatchItems.Height > maxHeight)
                     {
                         chunk.RemoveAt(chunk.Count - 1);
@@ -157,11 +127,5 @@ namespace LaCucina.Services
             tempCard.Dispose();
             return chunks;
         }
-        public void MarkAllItemsDone(int batchId)
-        {
-            _repo.MarkAllItemsDone(batchId);
-        }
     }
-
 }
-
