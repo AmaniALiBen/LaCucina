@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace LaCucina
 {
-    public static class DiscountRepository
+    public  class DiscountRepository
     {
         // 🔹 1. جلب كل الخصومات الحية (غير المحذوفة) كـ List
-        public static List<Discounts> GetAll()
+        public virtual List<Discounts> GetAll()
         {
             string query = @"
                 SELECT discount_id, discount_name, discount_type, discount_amount, start_date, end_date, is_active 
@@ -21,7 +21,7 @@ namespace LaCucina
         }
 
         // 🔹 2. إضافة خصم جديد باستقبال كلاس Discounts مباشرة
-        public static void Add(Discounts discount)
+        public virtual void Add(Discounts discount)
         {
             // تحويل الـ Enum إلى TinyInt (0 لـ Percentage و 1 لـ Fixed بناءً على الـ Check Constraint)
             int typeValue = (discount.type == Discounts.Type.Percentage) ? 0 : 1;
@@ -38,7 +38,7 @@ namespace LaCucina
         }
 
         // 🔹 3. تحديث بيانات الخصم باستخدام الـ ID والكلاس
-        public static void Update(int discountId, Discounts discount)
+        public virtual void Update(int discountId, Discounts discount)
         {
             int typeValue = (discount.type == Discounts.Type.Percentage) ? 0 : 1;
             string formattedStart = DateTime.Parse(discount.start_date).ToString("yyyy-MM-dd HH:mm:ss");
@@ -59,7 +59,7 @@ namespace LaCucina
         }
 
         // 🔹 4. حذف منطقي للخصم (Soft Delete)
-        public static void Delete(int discountId)
+        public virtual void Delete(int discountId)
         {
             string query = $@"
                 UPDATE discounts 
@@ -70,7 +70,7 @@ namespace LaCucina
         }
 
         // 🔥 Helper: تحويل الـ DataTable إلى قائمة List<Discounts> متطابقة 100% مع نمط الـ ItemRepository
-        private static List<Discounts> MapToList(string query)
+        private  List<Discounts> MapToList(string query)
         {
             DataTable dt = DatabaseHelper.ExecuteQuery(query);
             List<Discounts> list = new List<Discounts>();
@@ -99,7 +99,7 @@ namespace LaCucina
         }
 
         // 🔹 5. دالة إضافية مساعدة لجلب جدول البيانات كاملاً لو احتجتِ الـ IDs مباشرة في الواجهة
-        public static DataTable GetAllDiscountsTable()
+        public virtual DataTable GetAllDiscountsTable()
         {
             string query = @"
                 SELECT discount_id, discount_name, discount_type, discount_amount, start_date, end_date, is_active 

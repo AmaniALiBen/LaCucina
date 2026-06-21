@@ -9,10 +9,10 @@ using LaCucina.Models; // تأكد من وجود كلاس Categories داخل م
 
 namespace LaCucina
 {
-    public static class CategoryRepository
+    public  class CategoryRepository
     {
         // 🔹 1. Get all active categories (List)
-        public static List<Categories> GetAll()
+        public virtual List<Categories> GetAll()
         {
             // جلب التصنيفات غير المحذوفة (إذا كنت قد أضفت عمود الحذف الناعم)
             string query = "SELECT category_id, category_name FROM categories";
@@ -21,7 +21,7 @@ namespace LaCucina
         }
 
         // 🔹 2. Get category by id
-        public static Categories GetById(int id)
+        public virtual Categories GetById(int id)
         {
             string query = $"SELECT category_id, category_name FROM categories WHERE category_id = {id}";
             DataTable dt = DatabaseHelper.ExecuteQuery(query);
@@ -38,28 +38,28 @@ namespace LaCucina
         }
 
         // 🔹 3. Add new category
-        public static void Add(String name)
+        public virtual void Add(String name)
         {
             string query = $"INSERT INTO categories (category_name) VALUES ('{name}')";
             DatabaseHelper.ExecuteNonQuery(query);
         }
 
         // 🔹 4. Delete category (يفضل مراجعة طريقة الحذف لتجنب الـ Foreign Key Error)
-        public static void Delete(int id)
+        public virtual void Delete(int id)
         {
             string query = $"DELETE FROM categories WHERE category_id = {id}";
             DatabaseHelper.ExecuteNonQuery(query);
         }
 
         // 🔹 5. Update category name
-        public static void Update(Categories category)
+        public virtual void Update(Categories category)
         {
             string query = $"UPDATE categories SET category_name = '{category.name}' WHERE category_id = {category.id}";
             DatabaseHelper.ExecuteNonQuery(query);
         }
 
         // 🔥 Helper: reuse mapping logic
-        private static List<Categories> MapToList(string query)
+        private  List<Categories> MapToList(string query)
         {
             DataTable dt = DatabaseHelper.ExecuteQuery(query);
             List<Categories> list = new List<Categories>();

@@ -4,9 +4,10 @@ using System.Windows.Forms;
 
 namespace LaCucina
 {
-    public static class DiscountsManager
+    public  class DiscountsManager
     {
-        public static void clearFields(Control ctrl)
+        DiscountRepository discountRepository = new DiscountRepository();
+        public virtual void clearFields(Control ctrl)
         {
             foreach (Control c in ctrl.Controls)
             {
@@ -24,7 +25,7 @@ namespace LaCucina
             }
         }
 
-        public static bool DateLogic(string startDate, string endDate)
+        public virtual bool DateLogic(string startDate, string endDate)
         {
             if (DateTime.TryParse(startDate, out DateTime start) && DateTime.TryParse(endDate, out DateTime end))
             {
@@ -33,7 +34,7 @@ namespace LaCucina
             return false;
         }
 
-        public static bool AddDiscount(string name, Discounts.Type type, double value, string startDate, string endDate, bool isActive)
+        public virtual bool AddDiscount(string name, Discounts.Type type, double value, string startDate, string endDate, bool isActive)
         {
             if (!DateLogic(startDate, endDate))
             {
@@ -42,12 +43,12 @@ namespace LaCucina
             }
 
             Discounts newDiscount = new Discounts(name, type, value, startDate, endDate, isActive, false);
-            DiscountRepository.Add(newDiscount);
+            discountRepository.Add(newDiscount);
             MessageBox.Show("Discount added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             return true;
         }
 
-        public static bool UpdateDB(int key, Discounts discount)
+        public virtual bool UpdateDB(int key, Discounts discount)
         {
             if (key == 0 || discount == null) return false;
 
@@ -57,16 +58,16 @@ namespace LaCucina
                 return false;
             }
 
-            DiscountRepository.Update(key, discount);
+            discountRepository.Update(key, discount);
             MessageBox.Show("Updated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             return true;
         }
 
-        public static bool DeleteDiscount(int key)
+        public virtual bool DeleteDiscount(int key)
         {
             if (key == 0) return false;
 
-            DiscountRepository.Delete(key);
+            discountRepository.Delete(key);
             MessageBox.Show("Deleted successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             return true;
         }

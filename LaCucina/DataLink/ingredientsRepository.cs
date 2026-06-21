@@ -10,10 +10,10 @@ using LaCucina.Models; // تأكد من استدعاء مساحة الأسماء
 
 namespace LaCucina
 {
-    public static class IngredientsRepository
+    public class IngredientsRepository
     {
         // 🔹 1. Get all ingredients (not deleted)
-        public static List<ingredients> GetAll()
+        public virtual List<ingredients> GetAll()
         {
             string query = @"
             SELECT ingredient_id, ingredient_name, is_deleted
@@ -24,7 +24,7 @@ namespace LaCucina
         }
 
         // 🔹 2. Get ingredient by id (for edit page)
-        public static ingredients GetById(int id)
+        public virtual ingredients GetById(int id)
         {
             string query = $@"
             SELECT *
@@ -49,7 +49,7 @@ namespace LaCucina
         }
 
         // 🔹 3. Search ingredients
-        public static List<ingredients> Search(string keyword)
+        public virtual List<ingredients> Search(string keyword)
         {
             string query = $@"
             SELECT ingredient_id, ingredient_name, is_deleted
@@ -61,7 +61,7 @@ namespace LaCucina
         }
 
         // 🔹 4. Add ingredient
-        public static int Add(string name)
+        public virtual int Add(string name)
         {
             string query = $@"
             INSERT INTO ingredients
@@ -77,7 +77,7 @@ namespace LaCucina
         }
 
         // 🔹 5. Update ingredient
-        public static void Update(ingredients ingredient)
+        public virtual void Update(ingredients ingredient)
         {
             string query = $@"
             UPDATE ingredients
@@ -89,7 +89,7 @@ namespace LaCucina
         }
 
         // 🔹 6. Soft delete ingredient
-        //public static void Delete(int id)
+        //public virtual void Delete(int id)
         //{
         //    string query = $@"
         //    UPDATE ingredients
@@ -98,7 +98,7 @@ namespace LaCucina
 
         //    DatabaseHelper.ExecuteNonQuery(query);
         //}
-        public static bool DeleteIngredient(int ingredientId)
+        public virtual bool DeleteIngredient(int ingredientId)
         {
             try
             {

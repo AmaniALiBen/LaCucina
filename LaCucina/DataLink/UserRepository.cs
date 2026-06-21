@@ -45,7 +45,7 @@ namespace LaCucina.DataLink
         }
 
         // ================= GET BY USERNAME =================
-        public User GetByUsername(string username)
+        public virtual User GetByUsername(string username)
         {
             string query = @"
             SELECT user_id, username, user_role, password_hash, is_active, is_deleted

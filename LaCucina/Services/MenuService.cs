@@ -1,48 +1,46 @@
 ﻿using LaCucina.DataLink;
 using System.Collections.Generic;
 using System.Linq;
-
 namespace LaCucina.Services
 {
     public class MenuService
     {
-        // ================= CATEGORIES =================
+        private readonly CategoryRepository categoryRepository;
+        private readonly ItemRepository itemRepository;
+        private readonly menuItemIngredientsRepository MenuItemIngredientsRepository;
 
+        public MenuService() : this(new CategoryRepository(), new ItemRepository(), new menuItemIngredientsRepository()) { }
+
+        public MenuService(CategoryRepository categoryRepository, ItemRepository itemRepository, menuItemIngredientsRepository menuItemIngredientsRepository)
+        {
+            this.categoryRepository = categoryRepository;
+            this.itemRepository = itemRepository;
+            this.MenuItemIngredientsRepository = menuItemIngredientsRepository;
+        }
+
+        // ================= CATEGORIES =================
         public List<Categories> GetCategories()
         {
-            return CategoryRepository.GetAll();
+            return categoryRepository.GetAll();
         }
-
         // ================= ITEMS =================
-
         public List<Item> GetItemsByCategory(int categoryId)
         {
-            ItemRepository repo = new ItemRepository();
-            return repo.GetByCategory(categoryId);
+            return itemRepository.GetByCategory(categoryId);
         }
-
         // ================= DELETE ITEM =================
-
         public bool DeleteItem(int itemId)
         {
-            ItemRepository repo = new ItemRepository();
-            Item item = repo.GetById(itemId);
-
+            Item item = itemRepository.GetById(itemId);
             if (item == null)
                 return false;
-
-            repo.Delete(itemId);
-
-            menuItemIngredientsRepository.DeleteAllByMenuItem(itemId);
-
+            itemRepository.Delete(itemId);
+            MenuItemIngredientsRepository.DeleteAllByMenuItem(itemId);
             return true;
         }
-
-
-        public List<Item> GetInStockItemsByCategory(int categoryId) 
+        public List<Item> GetInStockItemsByCategory(int categoryId)
         {
-            ItemRepository repo = new ItemRepository();
-            return repo.GetActiveItemsByCategory(categoryId);
+            return itemRepository.GetActiveItemsByCategory(categoryId);
         }
     }
 }

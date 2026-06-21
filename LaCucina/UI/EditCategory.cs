@@ -13,9 +13,10 @@ namespace LaCucina
        
         private List<Categories> _localCategories = new List<Categories>();
         private List<int> _categoriesToDelete = new List<int>();
-
+        private CategoryRepository categoryRepository = new CategoryRepository();
         private UCcategoryRow _selectedRow = null;
         private int _temporaryIdCounter = -1;
+
 
        // public Action Done { get; set; }
 
@@ -30,7 +31,7 @@ namespace LaCucina
        
         private void LoadInitialData()
         {
-            _localCategories = CategoryRepository.GetAll();
+            _localCategories = categoryRepository.GetAll();
 
             RefreshCategoryTable();
         }
@@ -122,18 +123,18 @@ namespace LaCucina
             
                 foreach (int deleteId in _categoriesToDelete)
                 {
-                    CategoryRepository.Delete(deleteId);
+                    categoryRepository.Delete(deleteId);
                 }
 
                 foreach (var category in _localCategories)
                 {
                     if (category.id < 0)
                     {
-                        CategoryRepository.Add(category.name);
+                        categoryRepository.Add(category.name);
                     }
                     else
                     {
-                       CategoryRepository.Update(category);
+                       categoryRepository.Update(category);
                     }
                 }
 

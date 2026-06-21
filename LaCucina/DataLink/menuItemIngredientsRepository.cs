@@ -9,10 +9,10 @@ using LaCucina.Models; // تأكد من استدعاء مساحة الأسماء
 
 namespace LaCucina.DataLink
 {
-    public static class menuItemIngredientsRepository
+    public  class menuItemIngredientsRepository
     {
         // 🔹 جلب كافة سجلات ربط المكونات بالوجبات في المنظومة
-        public static List<menu_item_ingredients> GetAll()
+        public virtual List<menu_item_ingredients> GetAll()
         {
             string query = "SELECT ingredient_id, menu_item_id, is_main_ingredient FROM menu_item_ingredients";
 
@@ -33,7 +33,7 @@ namespace LaCucina.DataLink
             return list;
         }
         // 🔹 1. Get all ingredients for a specific menu item (جلب مكونات وجبة معينة)
-        public static List<menu_item_ingredients> GetByMenuItem(int menuItemId)
+        public virtual List<menu_item_ingredients> GetByMenuItem(int menuItemId)
         {
             string query = $@"
             SELECT ingredient_id, menu_item_id, is_main_ingredient
@@ -44,7 +44,7 @@ namespace LaCucina.DataLink
         }
 
         // 🔹 2. Add an ingredient to a menu item (ربط مكون بوجبة)
-        public static void Add(menu_item_ingredients item)
+        public virtual void Add(menu_item_ingredients item)
         {
             string query = $@"
             INSERT INTO menu_item_ingredients
@@ -56,7 +56,7 @@ namespace LaCucina.DataLink
         }
 
         // 🔹 3. Remove an ingredient from a menu item (حذف مكون من وجبة)
-        public static void Delete(int ingredientId, int menuItemId)
+        public virtual void Delete(int ingredientId, int menuItemId)
         {
             // لأن الجدول يعتمد على مفتاح مركب، نحذف بشرط الـ ID للوجبة والمكون معاً
             string query = $@"
@@ -68,14 +68,14 @@ namespace LaCucina.DataLink
         }
 
         // 🔹 4. Remove all ingredients for a specific item (مسح كل المكونات لوجبة معينة - مفيد عند التعديل)
-        public static void DeleteAllByMenuItem(int menuItemId)
+        public virtual void DeleteAllByMenuItem(int menuItemId)
         {
             string query = $"DELETE FROM menu_item_ingredients WHERE menu_item_id = {menuItemId}";
             DatabaseHelper.ExecuteNonQuery(query);
         }
 
         // 🔥 Helper: reuse mapping logic
-        private static List<menu_item_ingredients> MapToList(string query)
+        private  List<menu_item_ingredients> MapToList(string query)
         {
             DataTable dt = DatabaseHelper.ExecuteQuery(query);
 

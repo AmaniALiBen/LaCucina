@@ -15,6 +15,7 @@ namespace LaCucina
         public int id;
         public string name;
         public static UCIngredient lastSelectedIngredient=null;
+        IngredientsRepository ingredientsRepository = new IngredientsRepository();
         public Action OnIngredientDeleted { get; set; }
         public int Id
         {
@@ -52,22 +53,7 @@ namespace LaCucina
 
         private void btnRemoveIngredient_Click(object sender, EventArgs e)
         {
-            //DataBase.ingredients.Remove(this.id);
-            //List<int> remove = new List<int>();
-
-            //foreach (var ingredientInItem in DataBase.ingredientInItem)
-            //{
-            //    if (ingredientInItem.Value.ingredientId == this.id)
-            //    {
-            //        remove.Add(ingredientInItem.Key);
-            //    }
-            //}
-
-            //foreach (int id in remove)
-            //{
-            //    DataBase.ingredientInItem.Remove(id);
-            //}
-            //this.Dispose();
+            
             DialogResult result = MessageBox.Show(
                 $"Are you sure you want to delete '{this.name}'?",
                 "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -76,7 +62,7 @@ namespace LaCucina
             {
                 
                     // 2. استدعاء اللوجيك المفسول تماماً 🔥
-                    bool isDeleted = IngredientsRepository.DeleteIngredient(this.id);
+                    bool isDeleted = ingredientsRepository.DeleteIngredient(this.id);
 
                     if (isDeleted)
                     {

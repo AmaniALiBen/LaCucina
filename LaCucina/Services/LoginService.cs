@@ -7,7 +7,14 @@ namespace LaCucina.Services
 {
     public class LoginService
     {
-        private UserRepository repo = new UserRepository();
+        private readonly UserRepository repo;
+
+        public LoginService() : this(new UserRepository()) { }
+
+        public LoginService(UserRepository repo)
+        {
+            this.repo = repo;
+        }
 
         public User ConfirmLogin(string username, string password)
         {
@@ -29,6 +36,7 @@ namespace LaCucina.Services
         }
 
        
+
         private string HashPassword(string password)
         {
             using (var sha = SHA256.Create())

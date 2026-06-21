@@ -7,6 +7,8 @@ namespace LaCucina
     public partial class UCDiscountManager : UserControl
     {
         Control _selectedRow;
+        DiscountRepository discountRepository = new DiscountRepository();
+        DiscountsManager discountsManager = new DiscountsManager();
 
         public UCDiscountManager()
         {
@@ -19,7 +21,7 @@ namespace LaCucina
             tblDiscounts.Controls.Clear();
 
             // استدعاء دالة الـ DataTable الأصلية من الريبو لقراءة الـ IDs بشكل صحيح
-            DataTable dt = DiscountRepository.GetAllDiscountsTable();
+            DataTable dt = discountRepository.GetAllDiscountsTable();
 
             foreach (DataRow row in dt.Rows)
             {
@@ -110,7 +112,7 @@ namespace LaCucina
                 if (double.TryParse(txtValue.Texts, out double value))
                 {
                     // استدعاء دالة اللوجيك الحية التي تضيف لقاعدة البيانات مباشرة
-                    bool success = DiscountsManager.AddDiscount(
+                    bool success = discountsManager.AddDiscount(
                         txtDiscountName.Texts,
                         type,
                         value,
@@ -155,7 +157,7 @@ namespace LaCucina
                 );
 
                 // استدعاء اللوجيك للتحديث
-                bool success = DiscountsManager.UpdateDB(dbId, updatedDiscount);
+                bool success = discountsManager.UpdateDB(dbId, updatedDiscount);
 
                 if (success)
                 {
@@ -172,7 +174,7 @@ namespace LaCucina
             {
                 int dbId = Convert.ToInt32(_selectedRow.Tag);
 
-                bool success = DiscountsManager.DeleteDiscount(dbId);
+                bool success = discountsManager.DeleteDiscount(dbId);
 
                 if (success)
                 {
@@ -184,12 +186,12 @@ namespace LaCucina
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            DiscountsManager.clearFields(this);
+            discountsManager.clearFields(this);
         }
 
         private void btnDiscard_Click(object sender, EventArgs e)
         {
-            DiscountsManager.clearFields(this);
+            discountsManager.clearFields(this);
             gradiantAddDiscount.Visible = true;
             btnClear.Visible = true;
             gradiantSaveChanges.Visible = false;

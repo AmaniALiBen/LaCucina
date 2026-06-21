@@ -16,23 +16,30 @@ namespace LaCucina
         public bool isEditing;
         public Action OnClose;
         public bool picChanged = false;
-
+        private menuItemIngredientsRepository itemIngredientsRepo = new menuItemIngredientsRepository();
+        private IngredientsRepository ingredientsRepository = new IngredientsRepository();
+        private CategoryRepository categoryRepository = new CategoryRepository();
 
         public UCItem(int id, bool isEditing)
         {
             this.id = id;
             this.isEditing = isEditing;
+            categoriesList = categoryRepository.GetAll();
             InitializeComponent();
             fillSearchResultPanel();
             fillCmbCategory();
             LoadInfo();
         }
-        public UCItem() { }
+        public UCItem()
+        {
+            categoriesList = categoryRepository.GetAll();
+        }
 
 
-        List<Categories> categoriesList = CategoryRepository.GetAll();
-        List<ingredients> ingredientsList = IngredientsRepository.GetAll();
-        List<menu_item_ingredients> itemIngredientsList = menuItemIngredientsRepository.GetAll();
+        List<Categories> categoriesList = new List<Categories>();
+        List<ingredients> ingredientsList = new List<ingredients>();
+        List<menu_item_ingredients> itemIngredientsList = new List<menu_item_ingredients>();
+
 
         private void SetPicImage(Image newImage)
         {
@@ -92,7 +99,7 @@ namespace LaCucina
             pnlMainIngredients.Controls.Clear();
             pnlSideIngredients.Controls.Clear();
 
-            this.itemIngredientsList = menuItemIngredientsRepository.GetByMenuItem(this.id);
+            this.itemIngredientsList = itemIngredientsRepo.GetByMenuItem(this.id);
 
             foreach (menu_item_ingredients itemIngredient in this.itemIngredientsList)
             {
@@ -101,7 +108,7 @@ namespace LaCucina
                 ing.itemId = itemIngredient.ItemId;
                 ing.isMain = itemIngredient.IsMain;
 
-                ingredients i = IngredientsRepository.GetById(itemIngredient.IngredientId);
+                ingredients i = ingredientsRepository.GetById(itemIngredient.IngredientId);
                 if (i != null)
                 {
                     ing.Name = i.Name;
@@ -135,12 +142,12 @@ namespace LaCucina
 
         public void fillSearchResultPanel()
         {
-           
+
             pnlSearchResults.Controls.Clear();
 
             string query = txtSearch.Texts.ToLower().Trim();
 
-            this.ingredientsList = IngredientsRepository.GetAll();
+            this.ingredientsList = ingredientsRepository.GetAll();
 
             foreach (ingredients ingredient in this.ingredientsList)
             {
@@ -172,7 +179,7 @@ namespace LaCucina
             pnlMainIngredients.Controls.Clear();
             pnlSideIngredients.Controls.Clear();
 
-            itemIngredientsList = menuItemIngredientsRepository.GetAll();
+            itemIngredientsList = itemIngredientsRepo.GetAll();
 
             fillIngredintsPanels();
         }
@@ -192,9 +199,9 @@ namespace LaCucina
             string name = txtSearch.Texts.Trim();
             if (string.IsNullOrEmpty(name)) return;
 
-            int newId = IngredientsRepository.Add(name);
+            int newId = ingredientsRepository.Add(name);
 
-            ingredients i = new ingredients(newId, name,false);
+            ingredients i = new ingredients(newId, name, false);
             ingredientsList.Add(i);
 
             addIngrediantToPannel(newId, name, isNew: true);
@@ -202,9 +209,9 @@ namespace LaCucina
 
         private void addIngrediantToPannel(int ingredientId, string name, bool isNew)
         {
-             var existingControls = pnlMainIngredients.Controls.OfType<UCIngredientInItem>()
-            .Concat(pnlSideIngredients.Controls.OfType<UCIngredientInItem>());
-           
+            var existingControls = pnlMainIngredients.Controls.OfType<UCIngredientInItem>()
+           .Concat(pnlSideIngredients.Controls.OfType<UCIngredientInItem>());
+
             foreach (var control in existingControls)
             {
                 if (control.ingredientId == ingredientId)
@@ -314,7 +321,7 @@ namespace LaCucina
             {
                 ItemRepository repo = new ItemRepository();
                 repo.Update(item);
-                menuItemIngredientsRepository.DeleteAllByMenuItem(this.id);
+                itemIngredientsRepo.DeleteAllByMenuItem(this.id);
             }
             else
             {
@@ -322,17 +329,17 @@ namespace LaCucina
                 this.id = repo.Add(item);
             }
 
-           
+
             foreach (UCIngredientInItem control in pnlMainIngredients.Controls.OfType<UCIngredientInItem>())
             {
                 menu_item_ingredients mIngredients = new menu_item_ingredients(this.id, control.ingredientId, isMain: true);
-                menuItemIngredientsRepository.Add(mIngredients);
+                itemIngredientsRepo.Add(mIngredients);
             }
 
             foreach (UCIngredientInItem control in pnlSideIngredients.Controls.OfType<UCIngredientInItem>())
             {
                 menu_item_ingredients mIngredients = new menu_item_ingredients(this.id, control.ingredientId, isMain: false);
-                menuItemIngredientsRepository.Add(mIngredients);
+                itemIngredientsRepo.Add(mIngredients);
             }
 
             MessageBox.Show("New Item and its ingredients saved successfully!", "Success",
@@ -345,7 +352,7 @@ namespace LaCucina
         }
         public void CleanupImages()
         {
-            if (picItem.Image != null)
+            if (picItem.Image != null)
             {
                 picItem.Image.Dispose();
                 picItem.Image = null;

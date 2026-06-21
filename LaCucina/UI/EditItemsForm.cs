@@ -15,7 +15,7 @@ namespace LaCucina
         Form form;
 
         UCbtnCategory _selectedCategory = null;
-
+        private CategoryRepository categoryRepository = new CategoryRepository();
         public EditItemsForm(Form form)
         {
             this.form = form;
@@ -27,7 +27,7 @@ namespace LaCucina
             pnlProducts.Controls.Clear();
             pnlCategoriesNavbar.Controls.Clear();
 
-            List<Categories> categoryList = CategoryRepository.GetAll();
+            List<Categories> categoryList = categoryRepository.GetAll();
 
             foreach (Categories cat in categoryList)
             {

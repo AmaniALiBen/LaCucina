@@ -594,7 +594,6 @@ namespace LaCucina
             service.editLocation(this.id, this.Location);
         }
 
-        
 
         private void UCtable_Load(object sender, EventArgs e)
         {
