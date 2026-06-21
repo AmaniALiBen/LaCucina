@@ -141,7 +141,27 @@ namespace LaCucinaTests
             // Assert
             Assert.That(Session.CurrentUser, Is.EqualTo(user));
         }
+        [Test]
+        public void ConfirmLogin_NullPassword_ReturnsNull()
+        {
+            // Arrange
+            var user = new User
+            {
+                Username = "admin",
+                PasswordHash = Hash("secret123"),
+                IsActive = true,
+                IsDeleted = false
+            };
+            var mockRepo = new Mock<UserRepository>();
+            mockRepo.Setup(r => r.GetByUsername("admin")).Returns(user);
+            var service = new LoginService(mockRepo.Object);
 
+            // Act
+            var result = service.ConfirmLogin("admin", null);
+
+            // Assert
+            Assert.That(result, Is.Null);
+        }
 
         private string Hash(string password)
         {

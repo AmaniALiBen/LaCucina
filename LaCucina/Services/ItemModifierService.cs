@@ -1,23 +1,22 @@
-﻿using LaCucina.Models;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LaCucina.DataLink;
+using LaCucina.Models;
 
 namespace LaCucina.Services
 {
     public class ItemModifierService
     {
-        public ItemDetails GetItemCustomizationDetails(int menuItemId)
-        {
-            ItemRepository repo = new ItemRepository();
-            ItemDetails details = repo.GetItemDetailsWithIngredients(menuItemId);
+        private readonly ItemRepository repo;
 
-            return details;
+        public ItemModifierService() : this(new ItemRepository()) { }
+
+        public ItemModifierService(ItemRepository repo)
+        {
+            this.repo = repo;
         }
 
-     
+        public ItemDetails GetItemCustomizationDetails(int menuItemId)
+        {
+            return repo.GetItemDetailsWithIngredients(menuItemId);
+        }
     }
 }

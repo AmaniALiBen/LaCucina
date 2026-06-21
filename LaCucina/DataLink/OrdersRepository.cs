@@ -11,7 +11,7 @@ namespace LaCucina.DataLink
         //  Filter helpers
         // ────────────────────────────────────────────────────────────────
 
-        public List<string> GetWaiters()
+        public virtual List<string> GetWaiters()
         {
             string sql = @"
                 SELECT DISTINCT u.username
@@ -28,7 +28,7 @@ namespace LaCucina.DataLink
             return result;
         }
 
-        public List<string> GetTables()
+        public virtual List<string> GetTables()
         {
             string sql = @"
                 SELECT number
@@ -49,7 +49,7 @@ namespace LaCucina.DataLink
         //  Order list
         // ────────────────────────────────────────────────────────────────
 
-        public List<OrderRowDto> GetOrders(
+        public virtual List<OrderRowDto> GetOrders(
             DateTime from,
             DateTime to,
             string   waiter = null
@@ -101,7 +101,7 @@ namespace LaCucina.DataLink
         //  Order detail (receipt)
         // ────────────────────────────────────────────────────────────────
 
-        public OrderDetailDto GetOrderDetail(int orderId)
+        public virtual OrderDetailDto GetOrderDetail(int orderId)
         {
             // ── 1. Header ────────────────────────────────────────────────
             string headerSql = $@"

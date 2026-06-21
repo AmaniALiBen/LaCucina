@@ -118,8 +118,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItemModifierServiceTests.cs" />
     <Compile Include="LoginServiceTests.cs" />
     <Compile Include="MenuServiceTests.cs" />
+    <Compile Include="OrdersServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
