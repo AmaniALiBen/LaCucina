@@ -39,6 +39,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.rjPanel2 = new CustomControls.RJControls.RJPanel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.send = new CustomControls.RJControls.RJgradiantPanal();
             this.btnStock = new CustomControls.RJControls.RJButton();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,15 +49,14 @@
             this.materialDivider3 = new MaterialSkin.Controls.MaterialDivider();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.rjPanel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnlPrepSummary.SuspendLayout();
             this.rjPanel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.send.SuspendLayout();
             this.rjPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // rjPanel4
@@ -70,10 +70,10 @@
             this.rjPanel4.Controls.Add(this.panel1);
             this.rjPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rjPanel4.ForeColor = System.Drawing.Color.Black;
-            this.rjPanel4.Location = new System.Drawing.Point(0, 72);
-            this.rjPanel4.Margin = new System.Windows.Forms.Padding(45, 44, 45, 44);
+            this.rjPanel4.Location = new System.Drawing.Point(0, 76);
+            this.rjPanel4.Margin = new System.Windows.Forms.Padding(45, 46, 45, 46);
             this.rjPanel4.Name = "rjPanel4";
-            this.rjPanel4.Size = new System.Drawing.Size(1300, 668);
+            this.rjPanel4.Size = new System.Drawing.Size(1300, 703);
             this.rjPanel4.TabIndex = 3;
             // 
             // pnlBatches
@@ -84,17 +84,17 @@
             this.pnlBatches.Location = new System.Drawing.Point(267, 0);
             this.pnlBatches.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBatches.Name = "pnlBatches";
-            this.pnlBatches.Padding = new System.Windows.Forms.Padding(30, 50, 10, 50);
-            this.pnlBatches.Size = new System.Drawing.Size(1033, 607);
+            this.pnlBatches.Padding = new System.Windows.Forms.Padding(30, 53, 10, 53);
+            this.pnlBatches.Size = new System.Drawing.Size(1033, 639);
             this.pnlBatches.TabIndex = 0;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(267, 607);
+            this.panel3.Location = new System.Drawing.Point(267, 639);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1033, 61);
+            this.panel3.Size = new System.Drawing.Size(1033, 64);
             this.panel3.TabIndex = 28;
             // 
             // panel1
@@ -104,7 +104,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(267, 668);
+            this.panel1.Size = new System.Drawing.Size(267, 703);
             this.panel1.TabIndex = 0;
             // 
             // pnlPrepSummary
@@ -123,8 +123,8 @@
             this.pnlPrepSummary.Location = new System.Drawing.Point(0, 0);
             this.pnlPrepSummary.Margin = new System.Windows.Forms.Padding(15, 4, 4, 4);
             this.pnlPrepSummary.Name = "pnlPrepSummary";
-            this.pnlPrepSummary.Padding = new System.Windows.Forms.Padding(0, 31, 0, 7);
-            this.pnlPrepSummary.Size = new System.Drawing.Size(267, 668);
+            this.pnlPrepSummary.Padding = new System.Windows.Forms.Padding(0, 33, 0, 7);
+            this.pnlPrepSummary.Size = new System.Drawing.Size(267, 703);
             this.pnlPrepSummary.TabIndex = 0;
             // 
             // pnlItemsList
@@ -132,10 +132,10 @@
             this.pnlItemsList.AutoScroll = true;
             this.pnlItemsList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlItemsList.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.pnlItemsList.Location = new System.Drawing.Point(0, 199);
+            this.pnlItemsList.Location = new System.Drawing.Point(0, 205);
             this.pnlItemsList.Name = "pnlItemsList";
-            this.pnlItemsList.Padding = new System.Windows.Forms.Padding(0, 0, 20, 20);
-            this.pnlItemsList.Size = new System.Drawing.Size(267, 462);
+            this.pnlItemsList.Padding = new System.Windows.Forms.Padding(0, 0, 20, 21);
+            this.pnlItemsList.Size = new System.Drawing.Size(267, 491);
             this.pnlItemsList.TabIndex = 25;
             this.pnlItemsList.WrapContents = false;
             // 
@@ -145,11 +145,11 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(128)))), ((int)(((byte)(16)))));
-            this.label3.Location = new System.Drawing.Point(0, 131);
+            this.label3.Location = new System.Drawing.Point(0, 135);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(8, 31, 0, 7);
-            this.label3.Size = new System.Drawing.Size(187, 68);
+            this.label3.Padding = new System.Windows.Forms.Padding(8, 33, 0, 7);
+            this.label3.Size = new System.Drawing.Size(187, 70);
             this.label3.TabIndex = 24;
             this.label3.Text = "         On the Fire";
             // 
@@ -159,11 +159,11 @@
             this.lblItemsInQueue.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblItemsInQueue.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblItemsInQueue.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblItemsInQueue.Location = new System.Drawing.Point(0, 81);
+            this.lblItemsInQueue.Location = new System.Drawing.Point(0, 84);
             this.lblItemsInQueue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblItemsInQueue.Name = "lblItemsInQueue";
-            this.lblItemsInQueue.Padding = new System.Windows.Forms.Padding(8, 15, 0, 7);
-            this.lblItemsInQueue.Size = new System.Drawing.Size(224, 50);
+            this.lblItemsInQueue.Padding = new System.Windows.Forms.Padding(8, 16, 0, 7);
+            this.lblItemsInQueue.Size = new System.Drawing.Size(224, 51);
             this.lblItemsInQueue.TabIndex = 23;
             this.lblItemsInQueue.Text = "    Items in Queue ×18";
             // 
@@ -171,7 +171,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 80);
+            this.panel2.Location = new System.Drawing.Point(0, 83);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(267, 1);
             this.panel2.TabIndex = 22;
@@ -182,11 +182,11 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(128)))), ((int)(((byte)(16)))));
-            this.label1.Location = new System.Drawing.Point(0, 31);
+            this.label1.Location = new System.Drawing.Point(0, 33);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(8, 10, 0, 7);
-            this.label1.Size = new System.Drawing.Size(218, 49);
+            this.label1.Padding = new System.Windows.Forms.Padding(8, 11, 0, 7);
+            this.label1.Size = new System.Drawing.Size(218, 50);
             this.label1.TabIndex = 21;
             this.label1.Text = "    Prep Summary ";
             // 
@@ -203,11 +203,20 @@
             this.rjPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.rjPanel2.ForeColor = System.Drawing.Color.Black;
             this.rjPanel2.Location = new System.Drawing.Point(0, 0);
-            this.rjPanel2.Margin = new System.Windows.Forms.Padding(45, 4, 4, 44);
+            this.rjPanel2.Margin = new System.Windows.Forms.Padding(45, 4, 4, 46);
             this.rjPanel2.Name = "rjPanel2";
-            this.rjPanel2.Size = new System.Drawing.Size(1300, 72);
+            this.rjPanel2.Size = new System.Drawing.Size(1300, 76);
             this.rjPanel2.TabIndex = 2;
             this.rjPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.rjPanel2_Paint);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.send);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(885, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(200, 75);
+            this.panel4.TabIndex = 3;
             // 
             // send
             // 
@@ -220,9 +229,9 @@
             this.send.GradientAngle = 0F;
             this.send.GradientBottomColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(128)))), ((int)(((byte)(16)))));
             this.send.GradientTopColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(160)))), ((int)(((byte)(0)))));
-            this.send.Location = new System.Drawing.Point(17, 20);
+            this.send.Location = new System.Drawing.Point(17, 21);
             this.send.Name = "send";
-            this.send.Size = new System.Drawing.Size(176, 39);
+            this.send.Size = new System.Drawing.Size(176, 41);
             this.send.TabIndex = 2;
             // 
             // btnStock
@@ -242,7 +251,7 @@
             this.btnStock.Location = new System.Drawing.Point(0, 0);
             this.btnStock.Margin = new System.Windows.Forms.Padding(4);
             this.btnStock.Name = "btnStock";
-            this.btnStock.Size = new System.Drawing.Size(176, 39);
+            this.btnStock.Size = new System.Drawing.Size(176, 41);
             this.btnStock.TabIndex = 2;
             this.btnStock.Text = "Stock Control";
             this.btnStock.TextColor = System.Drawing.Color.Black;
@@ -258,8 +267,8 @@
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Padding = new System.Windows.Forms.Padding(8, 20, 0, 7);
-            this.label6.Size = new System.Drawing.Size(220, 56);
+            this.label6.Padding = new System.Windows.Forms.Padding(8, 21, 0, 7);
+            this.label6.Size = new System.Drawing.Size(220, 57);
             this.label6.TabIndex = 20;
             this.label6.Text = "Kitchen Orders 🍴";
             // 
@@ -269,7 +278,7 @@
             this.materialDivider5.Depth = 0;
             this.materialDivider5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.materialDivider5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.materialDivider5.Location = new System.Drawing.Point(0, 71);
+            this.materialDivider5.Location = new System.Drawing.Point(0, 75);
             this.materialDivider5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider5.Name = "materialDivider5";
             this.materialDivider5.Size = new System.Drawing.Size(1085, 1);
@@ -292,7 +301,7 @@
             this.rjPanel6.Margin = new System.Windows.Forms.Padding(4);
             this.rjPanel6.Name = "rjPanel6";
             this.rjPanel6.Padding = new System.Windows.Forms.Padding(3);
-            this.rjPanel6.Size = new System.Drawing.Size(215, 72);
+            this.rjPanel6.Size = new System.Drawing.Size(215, 76);
             this.rjPanel6.TabIndex = 13;
             // 
             // btnLogout
@@ -312,7 +321,7 @@
             this.btnLogout.Location = new System.Drawing.Point(154, 9);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(0);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(58, 50);
+            this.btnLogout.Size = new System.Drawing.Size(58, 53);
             this.btnLogout.TabIndex = 14;
             this.btnLogout.TextColor = System.Drawing.Color.Silver;
             this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -325,7 +334,7 @@
             this.materialDivider3.Depth = 0;
             this.materialDivider3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.materialDivider3.ForeColor = System.Drawing.Color.Gray;
-            this.materialDivider3.Location = new System.Drawing.Point(3, 68);
+            this.materialDivider3.Location = new System.Drawing.Point(3, 72);
             this.materialDivider3.Margin = new System.Windows.Forms.Padding(4);
             this.materialDivider3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialDivider3.Name = "materialDivider3";
@@ -336,10 +345,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::LaCucina.Properties.Resources.user__4_;
-            this.pictureBox2.Location = new System.Drawing.Point(10, 22);
+            this.pictureBox2.Location = new System.Drawing.Point(10, 23);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 31);
+            this.pictureBox2.Size = new System.Drawing.Size(32, 33);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
@@ -350,32 +359,23 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Yu Gothic", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.label4.Location = new System.Drawing.Point(42, 22);
+            this.label4.Location = new System.Drawing.Point(42, 23);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 29);
             this.label4.TabIndex = 9;
             this.label4.Text = "maysem";
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.send);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(885, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 71);
-            this.panel4.TabIndex = 3;
-            // 
             // KDS
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.ClientSize = new System.Drawing.Size(1300, 740);
+            this.ClientSize = new System.Drawing.Size(1300, 779);
             this.Controls.Add(this.rjPanel4);
             this.Controls.Add(this.rjPanel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "KDS";
             this.Text = "KDS";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -386,11 +386,11 @@
             this.pnlPrepSummary.PerformLayout();
             this.rjPanel2.ResumeLayout(false);
             this.rjPanel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
             this.send.ResumeLayout(false);
             this.rjPanel6.ResumeLayout(false);
             this.rjPanel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
