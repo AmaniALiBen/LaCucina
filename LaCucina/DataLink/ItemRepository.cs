@@ -13,7 +13,7 @@ namespace LaCucina
     public class ItemRepository
     {
         // 🔹 1. Get items by category (for cards)
-        public List<Item> GetByCategory(int categoryId)
+        public virtual List<Item> GetByCategory(int categoryId)
         {
             string query = $@"
             SELECT menu_item_id, menu_item_name, price, category_id, is_active
@@ -25,7 +25,7 @@ namespace LaCucina
         }
 
         // 🔹 2. Get item by id (for edit page)
-        public Item GetById(int id)
+        public virtual Item GetById(int id)
         {
             string query = $@"
             SELECT *
@@ -50,7 +50,7 @@ namespace LaCucina
         }
 
         // 🔹 3. Get active items only (POS menu)
-        public List<Item> GetActiveItemsByCategory(int categoryId)
+        public virtual List<Item> GetActiveItemsByCategory(int categoryId)
         {
             string query = $@"
             SELECT menu_item_id, menu_item_name, price, category_id, is_active
@@ -64,7 +64,7 @@ namespace LaCucina
         }
 
         // 🔹 4. Search items
-        public List<Item> Search(string keyword)
+        public virtual List<Item> Search(string keyword)
         {
             string query = $@"
             SELECT menu_item_id, menu_item_name, price, category_id, is_active
@@ -76,7 +76,7 @@ namespace LaCucina
         }
 
         // 🔹 5. Add item
-        public int Add(Item item)
+        public virtual int Add(Item item)
         {
             string query = $@"INSERT INTO menu_items (menu_item_name, category_id, price, is_active,is_deleted) 
                               VALUES ('{item.Name}', {item.CategoryId}, {item.Price}, {(item.IsActive ? 1 : 0)},0);
@@ -87,7 +87,7 @@ namespace LaCucina
         }
 
         // 🔹 6. Update item
-        public void Update(Item item)
+        public virtual void Update(Item item)
         {
             string query = $@"
             UPDATE menu_items
@@ -102,7 +102,7 @@ namespace LaCucina
         }
 
         // 🔹 7. Soft delete
-        public void Delete(int id)
+        public virtual void Delete(int id)
         {
             string query = $@"
             UPDATE menu_items
@@ -112,7 +112,7 @@ namespace LaCucina
             DatabaseHelper.ExecuteNonQuery(query);
         }
 
-        public void DisableItemForToday(int menuItemId)
+        public virtual void DisableItemForToday(int menuItemId)
         {
             DateTime nextWorkingDay = DateTime.Today.AddDays(1).AddHours(8);
 
@@ -123,13 +123,13 @@ namespace LaCucina
             DatabaseHelper.ExecuteNonQuery(query);
         }
 
-        public void EnableItemManually(int menuItemId)
+        public virtual void EnableItemManually(int menuItemId)
         {
             string query = $@"UPDATE menu_items SET disabled_until = NULL WHERE menu_item_id = {menuItemId}";
             DatabaseHelper.ExecuteNonQuery(query);
         }
 
-        public List<Item> GetByCategoryForChef(int categoryId)
+        public virtual List<Item> GetByCategoryForChef(int categoryId)
         {
             string query = $@"
             SELECT menu_item_id, menu_item_name, price, category_id, is_active, disabled_until
@@ -140,7 +140,7 @@ namespace LaCucina
             return MapToList(query);
         }
 
-        public ItemDetails GetItemDetailsWithIngredients(int menuItemId)
+        public virtual ItemDetails GetItemDetailsWithIngredients(int menuItemId)
         {
             ItemDetails details = new ItemDetails();
 
@@ -184,7 +184,7 @@ namespace LaCucina
 
         // 🌟 تحديث دالة الحفظ والـ Send (تتعامل بالسعر الكامل ولا تفرض خصومات أثناء تعليق الطلب)
         // 🌟 تحديث دالة الحفظ والـ Send
-        public bool SaveFullOrderTransaction(
+        public virtual bool SaveFullOrderTransaction(
             int tableId,
             int userId,
             List<MemoryOrderItem> items,
@@ -306,7 +306,7 @@ namespace LaCucina
             }
         }
         // 🌟 دالة مساعدة جديدة: لتحديث تفاصيل الخصم الإجمالية للفاتورة لحظة الدفع الفعلي
-        public bool UpdateOrderDiscountDetails(int orderId, double subTotal, double finalTotal, int? discountId, byte? discountType, double discountAmountValue)
+        public virtual bool UpdateOrderDiscountDetails(int orderId, double subTotal, double finalTotal, int? discountId, byte? discountType, double discountAmountValue)
         {
             try
             {
@@ -335,7 +335,7 @@ namespace LaCucina
             }
         }
 
-        private void SaveOrderItemsAndIngredients(int orderId, List<MemoryOrderItem> items, string batchIdString)
+        public virtual void SaveOrderItemsAndIngredients(int orderId, List<MemoryOrderItem> items, string batchIdString)
         {
             foreach (MemoryOrderItem item in items)
             {
@@ -382,7 +382,7 @@ namespace LaCucina
         
 
         // Method 1: Update table status to occupied when order is saved
-        public void UpdateTableStatusToOccupied(int tableId)
+        public virtual void UpdateTableStatusToOccupied(int tableId)
         {
             string query = $@"
     UPDATE dining_tables 
@@ -393,7 +393,7 @@ namespace LaCucina
         }
 
         // Method 2: Update table status to vacant when order is closed
-        public void UpdateTableStatusToVacant(int tableId)
+        public virtual  void UpdateTableStatusToVacant(int tableId)
         {
             string query = $@"
     UPDATE dining_tables 
@@ -402,7 +402,7 @@ namespace LaCucina
 
             DatabaseHelper.ExecuteNonQuery(query);
         }
-        public List<MemoryOrderItem> GetActiveOrderItemsByTable(int tableId, out int openOrderId, out double currentTotal)
+        public virtual List<MemoryOrderItem> GetActiveOrderItemsByTable(int tableId, out int openOrderId, out double currentTotal)
         {
             List<MemoryOrderItem> loadedItems = new List<MemoryOrderItem>();
             openOrderId = 0;
@@ -462,7 +462,7 @@ namespace LaCucina
             return loadedItems;
         }
 
-        public bool PayAndCloseOrder(int orderId)
+        public virtual bool PayAndCloseOrder(int orderId)
         {
             try
             {
@@ -500,7 +500,7 @@ namespace LaCucina
             }
         }
 
-        public DataTable GetActiveDiscountsForToday()
+        public virtual DataTable GetActiveDiscountsForToday()
         {
             string query = @"
         SELECT discount_id, discount_name, discount_type, discount_amount 
@@ -512,7 +512,7 @@ namespace LaCucina
             return DatabaseHelper.ExecuteQuery(query);
         }
 
-        private List<Item> MapToList(string query)
+        public  List<Item> MapToList(string query)
         {
             DataTable dt = DatabaseHelper.ExecuteQuery(query);
             List<Item> items = new List<Item>();
